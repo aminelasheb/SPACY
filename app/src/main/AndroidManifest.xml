@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.spacy">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/astro"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/astro"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.example.spacy.quiz7_arabe"></activity>
+        <activity android:name="com.example.spacy.quiz7_fr" />
+        <activity android:name="com.example.spacy.ColorsAn" />
+        <activity android:name="com.example.spacy.level7menu" />
+        <activity android:name="com.example.spacy.quiz7_ang" />
+        <activity android:name="com.example.spacy.objectsAn" />
+        <activity android:name="com.example.spacy.QUIZCSAr"></activity>
+        <activity android:name="com.example.spacy.aftercsquizar" />
+        <activity android:name="com.example.spacy.QUIZCSFr" />
+        <activity android:name="com.example.spacy.aftercsquizfr" />
+        <activity android:name="com.example.spacy.aftercsqucsquiz" />
+        <activity android:name="com.example.spacy.QUIZCSAn" />
+        <activity android:name="com.example.spacy.CSQUIZAr" />
+        <activity android:name="com.example.spacy.CSQUIZFr" />
+        <activity android:name="com.example.spacy.SCQUIZAn" />
+        <activity android:name="com.example.spacy.ShapesAr" />
+        <activity android:name="com.example.spacy.ShapesFr" />
+        <activity android:name="com.example.spacy.ShapesAng" />
+        <activity android:name="com.example.spacy.ColorsAr" />
+        <activity android:name="com.example.spacy.ColorsFr" />
+        <activity android:name="com.example.spacy.objectsarabe" />
+        <activity android:name="com.example.spacy.objectsFR" />
+        <activity android:name="com.example.spacy.CSQ" />
+        <activity android:name="com.example.spacy.Quiz6An"></activity>
+        <activity android:name="com.example.spacy.Quiz6Fr" />
+        <activity android:name="com.example.spacy.Quiz6Ar" />
+        <activity android:name="com.example.spacy.AnimalsAn" />
+        <activity android:name="com.example.spacy.AnimalsFr" />
+        <activity android:name="com.example.spacy.AnimalsAr" />
+        <activity android:name="com.example.spacy.AQ" />
+        <activity android:name="com.example.spacy.quizAr" />
+        <activity android:name="com.example.spacy.quizFr" />
+        <activity android:name="com.example.spacy.AlphabitFr" />
+        <activity android:name="com.example.spacy.alphabitArab" />
+
+
+        <activity android:name="com.example.spacy.FruitsAR" />
+        <activity android:name="com.example.spacy.FruitsFR" />
+        <activity android:name="com.example.spacy.FruitsAN" />
+        <activity android:name="com.example.spacy.LegumesAr" />
+        <activity android:name="com.example.spacy.Legumesfr" />
+        <activity android:name="com.example.spacy.Vegetable" />
+        <activity android:name="com.example.spacy.level5menu" />
+        <activity android:name="com.example.spacy.Quiz5AN" />
+        <activity android:name="com.example.spacy.Quiz5AR" />
+        <activity android:name="com.example.spacy.Quiz5FR" />
+
+        <activity android:name=".level3menu" />
+        <activity android:name=".body_fr" />
+        <activity android:name=".body_ar" />
+        <activity android:name=".Quiz3Fr" />
+        <activity android:name=".Quiz3Ar" />
+
+        <activity android:name=".Quiz3AN" />
+
+        <activity android:name=".body_ang" />
+        <activity android:name=".clothes_fr" />
+        <activity android:name=".clothes_ar" />
+        <activity android:name=".clothes_ang" />
+
+
+        <activity android:name=".Famqfr"/>
+        <activity android:name=".FamqAr"/>
+        <activity android:name=".FamqAn"/>
+        <activity android:name=".Famag"/>
+        <activity android:name=".Famar"/>
+        <activity android:name=".Famfr"/>
+        <activity android:name=".Jobsag"/>
+        <activity android:name=".Jobsar"/>
+        <activity android:name=".Jobsfr"/>
+        <activity android:name=".qjobsfr"/>
+        <activity android:name=".qjobsar"/>
+        <activity android:name=".qjobsag"/>
+        <activity android:name=".JOFA"/>
+        <activity android:name=".afamqan"/>
+        <activity android:name=".afamqar"/>
+        <activity android:name=".afamqfr"/>
+
+        <activity
+            android:name="com.example.spacy.AlphabetAng"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity android:name="com.example.spacy.AFA" />
+        <activity
+            android:name="com.example.spacy.Quiz"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name="com.example.spacy.NumbersFr"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name="com.example.spacy.ANQ"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name="com.example.spacy.levels"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name="com.example.spacy.NumAn"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name="com.example.spacy.NumAr"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name="com.example.spacy.Splash"
+            android:theme="@style/Theme.Design.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

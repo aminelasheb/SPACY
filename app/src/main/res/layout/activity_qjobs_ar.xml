@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/formequiz"
+    android:padding="20dp"
+    android:layout_height="match_parent"
+    tools:context=".qjobsar">
+
+    <TextView
+        android:id="@+id/tv_points2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="المجموع :0"
+        android:textColor="@color/white"/>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        android:layout_marginTop="20dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/tv_points2"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" />
+
+    <include layout="@layout/layout_buttons2"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/progressBar2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>

@@ -1,0 +1,423 @@
+<resources>
+    <string name="app_name">Spacy</string>
+    <string name="Login">Login</string>
+
+    <string name="question1"> Fill in the missing letter:
+                            A,B,__,D </string>
+    <string name="question1_A"> H </string>
+    <string name="question1_B"> M </string>
+    <string name="question1_C"> C </string>
+    <string name="question1_D"> P </string>
+    <string name="answer1"> C </string>
+
+
+    <string name="question2"> T ,is the uppercase form of
+                             </string>
+    <string name="question2_A"> w </string>
+    <string name="question2_B"> q </string>
+    <string name="question2_C"> m </string>
+    <string name="question2_D"> t </string>
+    <string name="answer2"> t </string>
+
+
+    <string name="question4_A"> 1 </string>
+    <string name="question4_B"> 8 </string>
+    <string name="question4_C"> 0 </string>
+    <string name="question4_D"> 3 </string>
+    <string name="answer4"> 0 </string>
+
+    <string name="question3"> m ,is the lowercase form of
+                             </string>
+    <string name="question3_A"> N </string>
+    <string name="question3_B"> M </string>
+    <string name="question3_C"> P </string>
+    <string name="question3_D"> J </string>
+    <string name="answer3"> M </string>
+
+    <string name="question18"> d ,minuscule forme de :
+                             </string>
+    <string name="question18_A"> N </string>
+    <string name="question18_B"> M </string>
+    <string name="question18_C"> P </string>
+    <string name="question18_D"> D </string>
+    <string name="answer18"> D </string>
+
+
+    <string name="question5"> 1 + 1
+                             </string>
+    <string name="question5_A"> 0 </string>
+    <string name="question5_B"> 1 </string>
+    <string name="question5_C"> 5 </string>
+    <string name="question5_D"> 2 </string>
+    <string name="answer5"> 2 </string>
+
+    <string name="question6_A"> 3 </string>
+    <string name="question6_B"> 2 </string>
+    <string name="question6_C"> 7</string>
+    <string name="question6_D"> 9 </string>
+    <string name="answer6"> 2 </string>
+
+    <string name="question7_A"> 4 </string>
+    <string name="question7_B"> 9 </string>
+    <string name="question7_C"> 3</string>
+    <string name="question7_D"> 8 </string>
+    <string name="answer7"> 3 </string>
+
+    <string name="question8_A"> a </string>
+    <string name="question8_B"> x </string>
+    <string name="question8_C"> d</string>
+    <string name="question8_D"> p </string>
+    <string name="answer8"> a </string>
+
+    <string name="question9_A"> M </string>
+    <string name="question9_B"> D </string>
+    <string name="question9_C"> B</string>
+    <string name="question9_D"> X </string>
+    <string name="answer9"> B </string>
+
+    <string name="question10_A"> 5 </string>
+    <string name="question10_B"> 4 </string>
+    <string name="question10_C"> 3</string>
+    <string name="question10_D"> 9 </string>
+    <string name="answer10"> 9 </string>
+
+    <string name="question11">
+                            E,F,__,H </string>
+    <string name="question11_A"> P </string>
+    <string name="question11_B"> D </string>
+    <string name="question11_C"> S</string>
+    <string name="question11_D"> G </string>
+    <string name="answer11"> G </string>
+
+
+    <string name="question12_A"> Xx </string>
+    <string name="question12_B"> Ee </string>
+    <string name="question12_C"> Ss </string>
+    <string name="question12_D"> Dd </string>
+    <string name="answer12"> Ee </string>
+
+    <string name="question13_A"> Six </string>
+    <string name="question13_B"> Neuf </string>
+    <string name="question13_C"> Trois </string>
+    <string name="question13_D"> Un </string>
+    <string name="answer13"> Six </string>
+
+    <string name="question19_A"> 3 </string>
+    <string name="question19_B"> 9 </string>
+    <string name="question19_C"> 8 </string>
+    <string name="question19_D"> 1 </string>
+    <string name="answer19"> 8 </string>
+
+    <string name="title_activity_quiz_arab">QuizArab</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="question14">
+                           أ ,ب , ... </string>
+    <string name="question14_A"> ت </string>
+    <string name="question14_B"> ج </string>
+    <string name="question14_C"> م </string>
+    <string name="question14_D"> و </string>
+    <string name="answer14"> ت </string>
+
+    <string name="question15">
+                            5 </string>
+    <string name="question15_A"> عشرة </string>
+    <string name="question15_B"> خمسة </string>
+    <string name="question15_C"> سبعة </string>
+    <string name="question15_D"> ثمانية </string>
+    <string name="answer15"> خمسة </string>
+
+    <string name="question16">
+                            يوجد في اللغة العربية  </string>
+    <string name="question16_A"> 12 حرف </string>
+    <string name="question16_B"> 15 حرف </string>
+    <string name="question16_C"> 28 حرف </string>
+    <string name="question16_D"> 52 حرف </string>
+    <string name="answer16">  حرف </string>
+    <string name="title_activity_splash">splash</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="question20">ستة</string>
+    <string name="question25_A">ت</string>
+    <string name="question25_B">ج</string>
+    <string name="question25_C">ي</string>
+    <string name="question25_D">ب</string>
+    <string name="answer25">ب</string>
+    <string name="question23">Neuf</string>
+    <string name="question28_A">Panda</string>
+    <string name="question28_B">Lapin</string>
+    <string name="question28_C">Singe</string>
+    <string name="question28_D">Mouton</string>
+    <string name="answer28">Singe</string>
+    <string name="question29_A">Chat</string>
+    <string name="question29_B">Cheval</string>
+    <string name="question29_C">Elephant</string>
+    <string name="question29_D">Vache</string>
+    <string name="answer29">Chat</string>
+    <string name="question33">Gorille</string>
+    <string name="question38_A">Panda</string>
+    <string name="question38_B">Singe</string>
+    <string name="question38_C">Lion</string>
+    <string name="question38_D">Girafe</string>
+    <string name="answer38">Panda</string>
+    <string name="question48_A">Fox</string>
+    <string name="question48_B">Gorilla</string>
+    <string name="question48_C">Lion</string>
+    <string name="question48_D">Snake</string>
+    <string name="answer48">Snake</string>
+    <string name="question43">Rabbit</string>
+    <string name="question49_A">Monkey</string>
+    <string name="question49_B">Panda</string>
+    <string name="question49_C">Snake</string>
+    <string name="question49_D">Elephant</string>
+    <string name="answer49">Elephant</string>
+    <string name="question48a_A">Cow</string>
+    <string name="question48a_B">Cat</string>
+    <string name="question48a_C">Dog</string>
+    <string name="question48a_D">Horse</string>
+    <string name="answer48a">Cat</string>
+    <string name="question58_A">ثعبان</string>
+    <string name="question58_B">فيل</string>
+    <string name="question58_C">سنجاب</string>
+    <string name="question58_D">غزال</string>
+    <string name="answer58">ثعبان</string>
+    <string name="question63">زرافة</string>
+    <string name="question69_A">ثعلب</string>
+    <string name="question69_B">كلب</string>
+    <string name="question69_C">قطة</string>
+    <string name="question69_D">أرنب</string>
+    <string name="answer69">ثعلب</string>
+    <string name="question68_A">أسد</string>
+    <string name="question68_B">حصان</string>
+    <string name="question68_C">باندا</string>
+    <string name="question68_D">ثعلب</string>
+    <string name="answer68">حصان</string>
+    ///////////////////////////
+
+    <string name="option1">hammer</string>
+    <string name="option2">bed</string>
+    <string name="option3">computer</string>
+    <string name="option4">backpack</string>
+    <string name="option5">drums</string>
+    <string name="option6">keys</string>
+    <string name="option7">ball</string>
+    <string name="option8">hammer</string>
+    <string name="option9">ball</string>
+    <string name="option10">shoes</string>
+    <string name="option11">keys</string>
+    <string name="option13">book</string>
+
+
+    <string name="answerqc1">backpack</string>
+    <string name="answerqc2">  ball</string>
+    <string name="answerqc3">  keys</string>
+
+
+    <string name="option12">clock</string>
+    ///////////////////////////////fr
+
+    <string name="option1a">marteau</string>
+    <string name="option2b">lit</string>
+    <string name="option3c">ordinateur</string>
+    <string name="option4d">sac a dos</string>
+    <string name="option5e">batterie</string>
+    <string name="option6f">clés</string>
+    <string name="option7g">ballon</string>
+    <string name="option8h">marteau</string>
+    <string name="option9i">ballon</string>
+    <string name="option10j">chaussure</string>
+    <string name="option11k">clés</string>
+    <string name="option13l">livre</string>
+
+
+    <string name="answerqc1m">sac a dos</string>
+    <string name="answerqc2n">  ballon</string>
+    <string name="answerqc3o">  clés</string>
+
+
+    <string name="option12q">horloge</string>
+    /////////////////////////////////arabe
+    <string name="option1aa">مطرقة</string>
+    <string name="option2bb">سرير</string>
+    <string name="option3cc">حاسوب</string>
+    <string name="option4dd">حقيبة ظهر</string>
+    <string name="option5ee">طبل</string>
+    <string name="option6ff">مفاتيح</string>
+    <string name="option7gg">كرة</string>
+    <string name="option8hh">مطرقة</string>
+    <string name="option9ii">كرة</string>
+    <string name="option10jj">حذاء</string>
+    <string name="option11kk">مفاتيح</string>
+    <string name="option13ll">كتاب</string>
+
+
+    <string name="answerqc1mm">حقيبة ظهر</string>
+    <string name="answerqc2nn">  كرة</string>
+    <string name="answerqc3oo">  مفاتيح</string>
+
+
+    <string name="option12qq">ساعة</string>
+
+
+
+    <string name="question70_A">Yellow</string>
+    <string name="question70_B">Pink</string>
+    <string name="question70_C">Purple</string>
+    <string name="question70_D">Grey</string>
+    <string name="answer70">Yellow</string>
+
+    <string name="question71">Purple</string>
+
+    <string name="question71_A">Triangle</string>
+    <string name="question71_B">Circle</string>
+    <string name="question71_C">Square</string>
+    <string name="question71_D">Oval</string>
+    <string name="answer71">Square</string>
+
+    <string name="question72_A">Triangle</string>
+    <string name="question72_B">Circle</string>
+    <string name="question72_C">Star</string>
+    <string name="question72_D">Oval</string>
+    <string name="answer72">Star</string>
+
+    <string name="question80_A">Jaune</string>
+    <string name="question80_B">Rose</string>
+    <string name="question80_C">Violet</string>
+    <string name="question80_D">Gris</string>
+    <string name="answer80">Jaune</string>
+
+    <string name="question81">Violet</string>
+
+    <string name="question81_A">Triangle</string>
+    <string name="question81_B">Cercle</string>
+    <string name="question81_C">Carrée</string>
+    <string name="question81_D">Ovale</string>
+    <string name="answer81">Carrée</string>
+
+    <string name="question82_A">Triangle</string>
+    <string name="question82_B">Cercle</string>
+    <string name="question82_C">Etoile</string>
+    <string name="question82_D">Ovale</string>
+    <string name="answer82">Etoile</string>
+
+    <string name="question90_A">أصفر</string>
+    <string name="question90_B">وردي</string>
+    <string name="question90_C">بنفسجي</string>
+    <string name="question90_D">رمادي</string>
+    <string name="answer90">أصفر</string>
+
+    <string name="question91">بنفسجي</string>
+
+    <string name="question91_A">مثلث</string>
+    <string name="question91_B">دائرة</string>
+    <string name="question91_C">مربع</string>
+    <string name="question91_D">بيضوي</string>
+    <string name="answer91">مربع</string>
+
+    <string name="question92_A">مثلث</string>
+    <string name="question92_B">دائرة</string>
+    <string name="question92_C">نجمة</string>
+    <string name="question92_D">بيضوي</string>
+    <string name="answer92">نجمة</string>
+    chafik lrk, [11.05.21 19:53]
+    <string name="question101_a">T-shirt</string>
+    <string name="question102_a">pantalon</string>
+    <string name="question103_a">chapeau</string>
+    <string name="question104_a">lunette</string>
+    <string name="question101_c">visage</string>
+    <string name="question105_a">gants</string>
+    <string name="question105_b">costume</string>
+    <string name="question105_d">botte</string>
+    <string name="question104_b">jambe</string>
+    <string name="question104_c">bouche</string>
+    <string name="question104_d">pied</string>
+    <string name="question106_a">glasses</string>
+    <string name="question106_b">tee-shirt</string>
+    <string name="question106_c">pant</string>
+    <string name="question106_d">cap</string>
+    <string name="question107_a">face</string>
+    <string name="question107_b">gloves</string>
+    <string name="question107_c">boot</string>
+    <string name="question107_d">leg</string>
+    <string name="question107_e">mouth</string>
+    <string name="question107_h">foot</string>
+    <string name="question108_a">قميص</string>
+    <string name="question108_b">نظارات</string>
+    <string name="question108_c">سروال</string>
+    <string name="question108_d">قبعة</string>
+    <string name="question108_e">وجه</string>
+    <string name="question108_h">قفازات</string>
+    <string name="question108_j">بدلة</string>
+    <string name="question108_k">حذاء</string>
+    <string name="question108_l">ساق</string>
+    <string name="question108_ll">فم</string>
+    <string name="question108_ll1">قدم</string>
+
+
+
+    <string name="question5_000">Banana</string>
+    <string name="question5_001">Apple</string>
+    <string name="question5_002">Pear</string>
+    <string name="question5_003">Strawberry</string>
+    <string name="question5_004">Orange</string>
+    <string name="question5_005">Melon</string>
+    <string name="question5_006">Fig</string>
+    <string name="question5_007">Tomato</string>
+    <string name="question5_008">Broccoli</string>
+    <string name="question5_009">Leek</string>
+    <string name="question5_010">Potato</string>
+    <string name="question5_011">Carrot</string>
+    <string name="question5_012">Poire</string>
+    <string name="question5_013">Raisin</string>
+    <string name="question5_014">Pomme</string>
+    <string name="question5_015">Mandarine</string>
+    <string name="question5_016">Mangue</string>
+    //AR
+    <string name="question5_017">موز</string>
+    <string name="question5_018"> برتقال</string>
+    <string name="question5_019">خوخ</string>
+    <string name="question5_020">تمر</string>
+    <string name="question5_021">عنب</string>
+    <string name="question5_022">بطاطا</string>
+    <string name="question5_023">طماطم</string>
+    <string name="question5_024">جزر</string>
+    <string name="question5_025">بصل</string>
+    <string name="question5_026">لفت</string>
+   //FR
+    <string name="question5_027">Melon</string>
+    <string name="question5_028">Raisin</string>
+    <string name="question5_029">Figue</string>
+    <string name="question5_030">Fraise</string>
+    <string name="question5_031">Cerise</string>
+    <string name="question5_032">Onion</string>
+    <string name="question5_033">Obergine</string>
+    <string name="question5_034">Concombre</string>
+    <string name="question5_035">Laitue</string>
+    <string name="question5_036">Courgette</string>
+=======
+    <string name="questionf">if you are sick you will go to the :</string>
+    <string name="questionf1">nurce</string>
+    <string name="questionf12">doctor</string>
+    <string name="questionf13">teacher</string>
+    <string name="questionf14">chef</string>
+    <string name="answerf1">doctor</string>
+    <string name="questionf21">policeman</string>
+    <string name="questionf22">firefighter</string>
+    <string name="answerf2">policeman</string>
+    <string name="answerf3">chef</string>
+    <string name="questionf5">sinner</string>
+    <string name="answerf4">chef</string>
+
+
+
+>>>>>>> origin/master
+
+
+</resources>

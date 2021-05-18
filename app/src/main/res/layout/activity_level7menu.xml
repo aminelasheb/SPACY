@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/board2"
+    android:layout_height="match_parent"
+    tools:context=".level7menu">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="232dp"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/astro3" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+
+        android:layout_marginTop="180dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card6r"
+            android:foreground="?selectableItemBackground"
+
+            android:layout_width="322dp"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#9CFC59E0"
+            app:cardCornerRadius="20dp">
+
+            <TextView
+                android:id="@+id/alpha6r"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/baloo"
+                android:text="Objects"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+
+
+        android:layout_weight="1">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card8r"
+            android:layout_width="300dp"
+            android:foreground="?selectableItemBackground"
+
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#FC59E0"
+            app:cardCornerRadius="40dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quiz"
+                android:id="@+id/quizz6r"
+                android:fontFamily="@font/baloo"
+                android:textSize="25sp"
+                android:textColor="@color/black"
+                android:layout_gravity="center" />
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

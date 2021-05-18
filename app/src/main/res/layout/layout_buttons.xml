@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/formequiz"
+    tools:context=".qjobsag">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Change the image to the correct one :"
+        android:textSize="40dp"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:id="@+id/iv_arrow"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:layout_weight="1"
+        android:scaleType="centerInside"
+        android:src="@drawable/astronome" />
+
+    <ImageView
+        android:id="@+id/iv_button"
+        android:layout_width="match_parent"
+        android:scaleType="centerInside"
+        android:layout_weight="1"
+        android:src="@drawable/rocket"
+        android:layout_height="600dp"/>
+</LinearLayout>

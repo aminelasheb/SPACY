@@ -8,7 +8,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class AFA extends AppCompatActivity {
+public class LanguageLearning extends AppCompatActivity {
 
     private View Ang;
     private View Fr;
@@ -20,15 +20,15 @@ public class AFA extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.afa);
+        setContentView(R.layout.activity_language_learning);
         MyPre=getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         Ang = findViewById(R.id.ang);
         Ang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AFA.this, LanguageLearning.class);
+                Intent intent = new Intent(LanguageLearning.this, levels.class);
                 SharedPreferences.Editor editor = MyPre.edit();
-                editor.putString("LangApp","English");
+                editor.putString("LangLearn","An");
                 editor.commit();
                 startActivity(intent);
             }
@@ -38,9 +38,9 @@ public class AFA extends AppCompatActivity {
         Ar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AFA.this, LanguageLearning.class);
+                Intent intent = new Intent(LanguageLearning.this, levels.class);
                 SharedPreferences.Editor editor = MyPre.edit();
-                editor.putString("LangApp","العربية");
+                editor.putString("LangLearn","Ar");
                 editor.commit();
                 startActivity(intent);
             }
@@ -50,9 +50,9 @@ public class AFA extends AppCompatActivity {
         Fr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AFA.this, LanguageLearning.class);
+                Intent intent = new Intent(LanguageLearning.this, levels.class);
                 SharedPreferences.Editor editor = MyPre.edit();
-                editor.putString("LangApp","Français");
+                editor.putString("LangLearn","Fr");
                 editor.commit();
                 startActivity(intent);
             }

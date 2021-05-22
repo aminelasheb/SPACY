@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinner">
+        <item>English</item>
+        <item>العربية</item>
+        <item>Français</item>
+
+    </string-array>
+</resources>

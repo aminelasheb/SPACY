@@ -199,7 +199,6 @@
     <string name="question68_C">باندا</string>
     <string name="question68_D">ثعلب</string>
     <string name="answer68">حصان</string>
-    ///////////////////////////
 
     <string name="option1">hammer</string>
     <string name="option2">bed</string>
@@ -221,7 +220,6 @@
 
 
     <string name="option12">clock</string>
-    ///////////////////////////////fr
 
     <string name="option1a">marteau</string>
     <string name="option2b">lit</string>
@@ -264,7 +262,6 @@
 
 
     <string name="option12qq">ساعة</string>
-
 
 
     <string name="question70_A">Yellow</string>
@@ -326,7 +323,6 @@
     <string name="question92_C">نجمة</string>
     <string name="question92_D">بيضوي</string>
     <string name="answer92">نجمة</string>
-    chafik lrk, [11.05.21 19:53]
     <string name="question101_a">T-shirt</string>
     <string name="question102_a">pantalon</string>
     <string name="question103_a">chapeau</string>
@@ -361,7 +357,6 @@
     <string name="question108_ll1">قدم</string>
 
 
-
     <string name="question5_000">Banana</string>
     <string name="question5_001">Apple</string>
     <string name="question5_002">Pear</string>
@@ -379,7 +374,6 @@
     <string name="question5_014">Pomme</string>
     <string name="question5_015">Mandarine</string>
     <string name="question5_016">Mangue</string>
-    //AR
     <string name="question5_017">موز</string>
     <string name="question5_018"> برتقال</string>
     <string name="question5_019">خوخ</string>
@@ -390,7 +384,6 @@
     <string name="question5_024">جزر</string>
     <string name="question5_025">بصل</string>
     <string name="question5_026">لفت</string>
-   //FR
     <string name="question5_027">Melon</string>
     <string name="question5_028">Raisin</string>
     <string name="question5_029">Figue</string>
@@ -401,7 +394,6 @@
     <string name="question5_034">Concombre</string>
     <string name="question5_035">Laitue</string>
     <string name="question5_036">Courgette</string>
-=======
     <string name="questionf">if you are sick you will go to the :</string>
     <string name="questionf1">nurce</string>
     <string name="questionf12">doctor</string>
@@ -414,10 +406,6 @@
     <string name="answerf3">chef</string>
     <string name="questionf5">sinner</string>
     <string name="answerf4">chef</string>
-
-
-
->>>>>>> origin/master
 
 
 </resources>

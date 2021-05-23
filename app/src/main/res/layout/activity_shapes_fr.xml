@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backalphaone"
+    android:background="@drawable/backshapes"
     android:orientation="vertical"
     tools:context=".ShapesFr">
 
@@ -21,7 +21,7 @@
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vpp_horizontalss3"
         android:layout_width="310dp"
-        android:layout_height="300dp"
+        android:layout_height="370dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="80dp"
         android:layout_marginBottom="20dp"
@@ -31,7 +31,7 @@
         android:id="@+id/speakerforme"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/backkk"
         app:srcCompat="@drawable/astromusic" />
 

@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class ANQ extends AppCompatActivity {
     private CardView card5;
     private CardView card6;
@@ -24,9 +26,16 @@ public class ANQ extends AppCompatActivity {
         SharedPreferences sharedPreferences = this.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         language = sharedPreferences.getString("LangApp","/");
         languageLearn = sharedPreferences.getString("LangLearn","/");
+        Intent intent = getIntent();
+        String lang=intent.getStringExtra("Lang");
+
+
+
 
 
         setContentView(R.layout.anq);
+        TextView Lang=findViewById(R.id.alphaa) ;
+        Lang.setText(lang);
         QZ = findViewById(R.id.quizz);
         NM = findViewById(R.id.num);
         ALPH = findViewById(R.id.alpha);

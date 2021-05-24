@@ -21,12 +21,15 @@ public class JOFA extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
+        String lang=intent.getStringExtra("Lang");
         SharedPreferences sharedPreferences = this.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         language = sharedPreferences.getString("LangApp","/");
         languageLearn = sharedPreferences.getString("LangLearn","/");
 
 
         setContentView(R.layout.activity_level4);
+        TextView Lang=findViewById(R.id.alpha) ;
+        Lang.setText(lang);
         QZ = findViewById(R.id.quiz3);
         FAM = findViewById(R.id.family);
         JB = findViewById(R.id.jobs);

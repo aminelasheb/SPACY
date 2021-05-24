@@ -20,11 +20,14 @@ public class CSQ extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
+        String lang=intent.getStringExtra("Lang");
         SharedPreferences sharedPreferences = this.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         language = sharedPreferences.getString("LangApp","/");
         languageLearn = sharedPreferences.getString("LangLearn","/");
 
         setContentView(R.layout.activity_c_s_q);
+        TextView Lang=findViewById(R.id.alpha) ;
+        Lang.setText(lang);
         QZ = findViewById(R.id.quizz2);
         CL = findViewById(R.id.color);
         SH = findViewById(R.id.shape);

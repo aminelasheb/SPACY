@@ -38,6 +38,7 @@ public class learnFragment extends Fragment implements adapterRecycler.OnitemLis
     private ImageView imageView;
     private TextView textView;
     TextView Mes, Mesa;
+    String L1,L2,L3,L4,L5,L6,L7;
     String language;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -78,36 +79,36 @@ public class learnFragment extends Fragment implements adapterRecycler.OnitemLis
         if (language.equals("العربية")) {
             Mes.setText("اهلاا");
             Mesa.setText("اختر مستوى \n و ابدا التعلم");
-            itemlist.add(new itemrecycler(R.drawable.star1,"المستوى 1"));
-            itemlist.add(new itemrecycler(R.drawable.star2,"المستوى 2"));
-            itemlist.add(new itemrecycler(R.drawable.star3,"المستوى 3"));
-            itemlist.add(new itemrecycler(R.drawable.star4,"المستوى 4"));
-            itemlist.add(new itemrecycler(R.drawable.star5,"المستوى 5"));
-            itemlist.add(new itemrecycler(R.drawable.star6,"المستوى 6"));
-            itemlist.add(new itemrecycler(R.drawable.star7,"المستوى 7"));
+            itemlist.add(new itemrecycler(R.drawable.star1,L1="المستوى 1"));
+            itemlist.add(new itemrecycler(R.drawable.star2,L2="المستوى 2"));
+            itemlist.add(new itemrecycler(R.drawable.star3,L3="المستوى 3"));
+            itemlist.add(new itemrecycler(R.drawable.star4,L4="المستوى 4"));
+            itemlist.add(new itemrecycler(R.drawable.star5,L5="المستوى 5"));
+            itemlist.add(new itemrecycler(R.drawable.star6,L6="المستوى 6"));
+            itemlist.add(new itemrecycler(R.drawable.star7,L7="المستوى 7"));
 
         } else if (language.equals("Français")) {
             Mes.setText("Saluut");
             Mesa.setText("Choisissez un niveau \n Et commencez à apprendre");
-            itemlist.add(new itemrecycler(R.drawable.star1,"Niveau 1"));
-            itemlist.add(new itemrecycler(R.drawable.star2,"Niveau 2"));
-            itemlist.add(new itemrecycler(R.drawable.star3,"Niveau 3"));
-            itemlist.add(new itemrecycler(R.drawable.star4,"Niveau 4"));
-            itemlist.add(new itemrecycler(R.drawable.star5,"Niveau 5"));
-            itemlist.add(new itemrecycler(R.drawable.star6,"Niveau 6"));
-            itemlist.add(new itemrecycler(R.drawable.star7,"Niveau 7"));
+            itemlist.add(new itemrecycler(R.drawable.star1,L1="Niveau 1"));
+            itemlist.add(new itemrecycler(R.drawable.star2,L2="Niveau 2"));
+            itemlist.add(new itemrecycler(R.drawable.star3,L3="Niveau 3"));
+            itemlist.add(new itemrecycler(R.drawable.star4,L4="Niveau 4"));
+            itemlist.add(new itemrecycler(R.drawable.star5,L5="Niveau 5"));
+            itemlist.add(new itemrecycler(R.drawable.star6,L6="Niveau 6"));
+            itemlist.add(new itemrecycler(R.drawable.star7,L7="Niveau 7"));
 
 
         } else {
         Mes.setText("Hello there !!");
         Mesa.setText("Choose a level \n And start learning");
-            itemlist.add(new itemrecycler(R.drawable.star1,"Level1"));
-            itemlist.add(new itemrecycler(R.drawable.star2,"Level2"));
-            itemlist.add(new itemrecycler(R.drawable.star3,"Level3"));
-            itemlist.add(new itemrecycler(R.drawable.star4,"Level4"));
-            itemlist.add(new itemrecycler(R.drawable.star5,"Level5"));
-            itemlist.add(new itemrecycler(R.drawable.star6,"Level6"));
-            itemlist.add(new itemrecycler(R.drawable.star7,"Level7"));
+            itemlist.add(new itemrecycler(R.drawable.star1,L1="Level1"));
+            itemlist.add(new itemrecycler(R.drawable.star2,L2="Level2"));
+            itemlist.add(new itemrecycler(R.drawable.star3,L3="Level3"));
+            itemlist.add(new itemrecycler(R.drawable.star4,L4="Level4"));
+            itemlist.add(new itemrecycler(R.drawable.star5,L5="Level5"));
+            itemlist.add(new itemrecycler(R.drawable.star6,L6="Level6"));
+            itemlist.add(new itemrecycler(R.drawable.star7,L7="Level7"));
 
 
     }
@@ -368,30 +369,43 @@ public class learnFragment extends Fragment implements adapterRecycler.OnitemLis
     public void onItemClick(int position) {
         if(position==0){
             Intent intent=new Intent(getActivity(),ANQ.class);
+            intent.putExtra("Lang",L1);
             startActivity(intent);
         }
         if(position==1){
             Intent intent=new Intent(getActivity(),CSQ.class);
+            intent.putExtra("Lang",L2);
+
             startActivity(intent);
         }
         if(position==2){
             Intent intent=new Intent(getActivity(),level3menu.class);
+            intent.putExtra("Lang",L3);
+
             startActivity(intent);
         }
         if(position==3){
             Intent intent=new Intent(getActivity(),JOFA.class);
+            intent.putExtra("Lang",L4);
+
             startActivity(intent);
         }
         if(position==4){
             Intent intent=new Intent(getActivity(),level5menu.class);
+            intent.putExtra("Lang",L5);
+
             startActivity(intent);
         }
         if(position==5){
             Intent intent=new Intent(getActivity(),AQ.class);
+            intent.putExtra("Lang",L6);
+
             startActivity(intent);
         }
         if(position==6){
             Intent intent=new Intent(getActivity(),level7menu.class);
+            intent.putExtra("Lang",L7);
+
             startActivity(intent);
         }
 

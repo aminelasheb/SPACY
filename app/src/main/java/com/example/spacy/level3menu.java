@@ -22,12 +22,15 @@ public class level3menu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Intent intent = getIntent();
+        String lang=intent.getStringExtra("Lang");
         SharedPreferences sharedPreferences = this.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         language = sharedPreferences.getString("LangApp","/");
         languageLearn = sharedPreferences.getString("LangLearn","/");
 
         setContentView(R.layout.activity_level3);
+        TextView Lang=findViewById(R.id.alpha) ;
+        Lang.setText(lang);
 
         QZ = findViewById(R.id.quiz13);
         clot = findViewById(R.id.clothes1);

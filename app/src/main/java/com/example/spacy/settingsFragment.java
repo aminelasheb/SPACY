@@ -160,7 +160,7 @@ String languageLearn ;
                     txt1.setText("Langue d'application est : ");
                     txt3.setText("Changer la langue :");
                     txt2.setText(sharedPreferences.getString("LangLearn","/"));
-                    txt4.setText("Lange d'apprentissage :");
+                    txt4.setText("Langue d'apprentissage :");
                     txt5.setText("Changer la langue");
                 } else if (txt.getText().toString().equals("English")){
                     FancyToast.makeText(getContext(),"The language of the app has been changed successfully!",FancyToast.LENGTH_SHORT,FancyToast.INFO,false).show();

@@ -7,14 +7,21 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import com.shashank.sony.fancytoastlib.FancyToast;
 
-public class QUIZCSAn extends AppCompatActivity {
+public class QUIZCSAn extends AppCompatActivity implements View.OnClickListener {
+
+    private ImageButton prevButton;
+    private ImageButton nextButton;
 
     private ImageView Questionimagee;
     private TextView optionA, optionB, optionC, optionD;
@@ -24,6 +31,7 @@ public class QUIZCSAn extends AppCompatActivity {
     private String language;
     private View optionT, optionI;
     int currentIndex;
+    private int currentQuestionIndex = 0;
     int userscore = 0;
     private MediaPlayer mMediaPlayer;
     private final MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
@@ -41,12 +49,12 @@ public class QUIZCSAn extends AppCompatActivity {
 
     private final answerClass[] questionBank = new answerClass[]{
 
-            new answerClass(2, R.drawable.yellow, R.string.question70_A, R.string.question70_B
+            new answerClass(2, R.drawable.yellowquiz, R.string.question70_A, R.string.question70_B
                     , R.string.question70_C, R.string.question70_D, R.string.answer70),
-            new answerClass(5, R.raw.orangee, R.drawable.black, R.drawable.white
-                    , R.drawable.orange, R.drawable.bleu, R.drawable.orange),
-            new answerClass(4, R.string.question71, R.drawable.violet, R.drawable.green
-                    , R.drawable.white, R.drawable.pink, R.drawable.violet),
+            new answerClass(5, R.raw.orangee, R.drawable.blackquiz, R.drawable.whitequiz
+                    , R.drawable.orangequiz, R.drawable.bleuquiz, R.drawable.orangequiz),
+            new answerClass(4, R.string.question71, R.drawable.violetquiz, R.drawable.greenquiz
+                    , R.drawable.whitequiz, R.drawable.pinkquiz, R.drawable.violetquiz),
             new answerClass(3, R.raw.square, R.string.question71_A, R.string.question71_B
                     , R.string.question71_C, R.string.question71_D, R.string.answer71),
             new answerClass(2, R.drawable.star, R.string.question72_A, R.string.question72_B
@@ -64,7 +72,10 @@ public class QUIZCSAn extends AppCompatActivity {
 
     };
 
+
+
     final int PROGRESS_BAR = (int) Math.ceil(100 / questionBank.length);
+    private Object v;
 
 
     @Override
@@ -73,6 +84,10 @@ public class QUIZCSAn extends AppCompatActivity {
         Intent intent = getIntent();
         language = intent.getStringExtra("language");
         setContentView(R.layout.activity_q_u_i_z_c_s_an);
+
+
+
+
 
         //        questionNumber.setText(qn+"/"+questionBank.length+"Question");
 //        score.setText("Score :"+userscore+"/"+questionBank.length);
@@ -96,6 +111,14 @@ public class QUIZCSAn extends AppCompatActivity {
         progressBar = findViewById(R.id.progress_barr);
         checkout1 = findViewById(R.id.select_optionn);
         checkout2 = findViewById(R.id.CorrectAnswerr);
+        prevButton = findViewById(R.id.prevbutton);
+        nextButton = findViewById(R.id.nextbutton);
+
+
+        prevButton.setOnClickListener(this);
+        nextButton.setOnClickListener(this);
+
+
 
         if ((questionBank[currentIndex].getQc() == 1) || (questionBank[currentIndex].getQc() == 4)) {
             if (Questionimagee.getVisibility() != View.GONE) {
@@ -254,6 +277,8 @@ public class QUIZCSAn extends AppCompatActivity {
 
     private void updateQuestion() {
         currentIndex = (currentIndex + 1) % questionBank.length;
+
+
         if (currentIndex == 0) {
             AlertDialog.Builder alert = new AlertDialog.Builder(this);
             alert.setTitle("Jeux terminé!");
@@ -430,4 +455,30 @@ public class QUIZCSAn extends AppCompatActivity {
         }
 
     }
+
+
+    @Override
+    public void onClick(View v) {
+
+
+        switch (v.getId()) {
+
+            case R.id.nextbutton:
+                currentQuestionIndex = (currentQuestionIndex + 1) % questionBank.length;
+                updateQuestion();
+                break;
+
+            case R.id.prevbutton:
+                Log.e("previous", "index"+ currentQuestionIndex);
+                if (currentQuestionIndex > 0) {
+                    currentQuestionIndex = (currentQuestionIndex -1) ;
+                    updateQuestion();
+                }
+        }
+
+    }
+
+
+
+
 }

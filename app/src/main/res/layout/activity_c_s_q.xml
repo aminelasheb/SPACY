@@ -27,7 +27,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_margin="10dp"
-            app:cardBackgroundColor="#9CFC59E0"
+            app:cardBackgroundColor="#F1E7EA"
             app:cardCornerRadius="15dp">
             <TextView
                 android:layout_width="wrap_content"
@@ -46,7 +46,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_margin="10dp"
-            app:cardBackgroundColor="#9CFC59E0"
+            app:cardBackgroundColor="#FBC531"
             app:cardCornerRadius="15dp">
 
             <TextView
@@ -74,7 +74,7 @@
             android:layout_width="300dp"
             android:layout_height="100dp"
             android:layout_margin="10dp"
-            app:cardBackgroundColor="#FC59E0"
+            app:cardBackgroundColor="#FBC531"
             app:cardCornerRadius="40dp">
             <TextView
                 android:layout_width="wrap_content"

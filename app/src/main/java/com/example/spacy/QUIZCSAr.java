@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,7 @@ public class QUIZCSAr extends AppCompatActivity {
     private TextView questionNumber, question, score;
     private TextView checkout1, checkout2;
     private View optionT, optionI;
+    private String languagess;
     int currentIndex;
     int userscore = 0;
     private MediaPlayer mMediaPlayer;
@@ -39,12 +41,12 @@ public class QUIZCSAr extends AppCompatActivity {
 
     private final answerClass[] questionBank = new answerClass[]{
 
-            new answerClass(2, R.drawable.yellow, R.string.question90_A, R.string.question90_B
+            new answerClass(2, R.drawable.yellowquiz, R.string.question90_A, R.string.question90_B
                     , R.string.question90_C, R.string.question90_D, R.string.answer90),
-            new answerClass(5, R.raw.orangear, R.drawable.black, R.drawable.white
-                    , R.drawable.orange, R.drawable.bleu, R.drawable.orange),
-            new answerClass(4, R.string.question91, R.drawable.violet, R.drawable.green
-                    , R.drawable.white, R.drawable.pink, R.drawable.violet),
+            new answerClass(5, R.raw.orangear, R.drawable.blackquiz, R.drawable.whitequiz
+                    , R.drawable.orangequiz, R.drawable.bleuquiz, R.drawable.orangequiz),
+            new answerClass(4, R.string.question91, R.drawable.violetquiz, R.drawable.greenquiz
+                    , R.drawable.whitequiz, R.drawable.pinkquiz, R.drawable.violetquiz),
             new answerClass(3, R.raw.squarear, R.string.question91_A, R.string.question91_B
                     , R.string.question91_C, R.string.question91_D, R.string.answer91),
             new answerClass(2, R.drawable.star, R.string.question92_A, R.string.question92_B
@@ -257,7 +259,9 @@ public class QUIZCSAr extends AppCompatActivity {
             alert.setPositiveButton("Retour ", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
-                    finish();
+                    Intent intent = new Intent(QUIZCSAr.this, CSQ.class);
+                    intent.putExtra("language", languagess);
+                    startActivity(intent);
                 }
             });
 

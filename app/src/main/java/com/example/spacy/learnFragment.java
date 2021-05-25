@@ -79,36 +79,36 @@ public class learnFragment extends Fragment implements adapterRecycler.OnitemLis
         if (language.equals("العربية")) {
             Mes.setText("اهلاا");
             Mesa.setText("اختر مستوى \n و ابدا التعلم");
-            itemlist.add(new itemrecycler(R.drawable.start1,L1="المستوى 1","الحروف ,الأرقام"));
-            itemlist.add(new itemrecycler(R.drawable.start2,L2="المستوى 2","الألوان ,الأشكال"));
-            itemlist.add(new itemrecycler(R.drawable.start3,L3="المستوى 3","الجسم ,الملابس"));
-            itemlist.add(new itemrecycler(R.drawable.start4,L4="المستوى 4","العائلة ,المهن"));
-            itemlist.add(new itemrecycler(R.drawable.start5,L5="المستوى 5","الفواكه ,الخضر"));
-            itemlist.add(new itemrecycler(R.drawable.start6,L6="المستوى 6","الحيوانات"));
-            itemlist.add(new itemrecycler(R.drawable.start7,L7="المستوى 7","الأشياء"));
+            itemlist.add(new itemrecycler(2,R.drawable.start1,L1="المستوى 1","الحروف ,الأرقام"));
+            itemlist.add(new itemrecycler(2,R.drawable.start2,L2="المستوى 2","الألوان ,الأشكال"));
+            itemlist.add(new itemrecycler(2,R.drawable.start3,L3="المستوى 3","الجسم ,الملابس"));
+            itemlist.add(new itemrecycler(2,R.drawable.start4,L4="المستوى 4","العائلة ,المهن"));
+            itemlist.add(new itemrecycler(2,R.drawable.start5,L5="المستوى 5","الفواكه ,الخضر"));
+            itemlist.add(new itemrecycler(2,R.drawable.start6,L6="المستوى 6","الحيوانات"));
+            itemlist.add(new itemrecycler(2,R.drawable.start7,L7="المستوى 7","الأشياء"));
 
         } else if (language.equals("Français")) {
             Mes.setText("Saluut");
             Mesa.setText("Choisissez un niveau \n Et commencez à apprendre");
-            itemlist.add(new itemrecycler(R.drawable.start1,L1="Niveau 1","Alphabets ,Nombers"));
-            itemlist.add(new itemrecycler(R.drawable.start2,L2="Niveau 2","Couleurs ,Formes"));
-            itemlist.add(new itemrecycler(R.drawable.start3,L3="Niveau 3","Corps ,Vetements"));
-            itemlist.add(new itemrecycler(R.drawable.start4,L4="Niveau 4", "Famille ,Professions"));
-            itemlist.add(new itemrecycler(R.drawable.start5,L5="Niveau 5","Fruits ,Légumes"));
-            itemlist.add(new itemrecycler(R.drawable.start6,L6="Niveau 6","Animaux "));
-            itemlist.add(new itemrecycler(R.drawable.start7,L7="Niveau 7","Objects "));
+            itemlist.add(new itemrecycler(1,R.drawable.start1,L1="Niveau 1","Alphabets ,Nombers"));
+            itemlist.add(new itemrecycler(1,R.drawable.start2,L2="Niveau 2","Couleurs ,Formes"));
+            itemlist.add(new itemrecycler(1,R.drawable.start3,L3="Niveau 3","Corps ,Vetements"));
+            itemlist.add(new itemrecycler(1,R.drawable.start4,L4="Niveau 4", "Famille ,Professions"));
+            itemlist.add(new itemrecycler(1,R.drawable.start5,L5="Niveau 5","Fruits ,Légumes"));
+            itemlist.add(new itemrecycler(1,R.drawable.start6,L6="Niveau 6","Animaux "));
+            itemlist.add(new itemrecycler(1,R.drawable.start7,L7="Niveau 7","Objects "));
 
 
         } else {
         Mes.setText("Hello there !!");
         Mesa.setText("Choose a level \n And start learning");
-            itemlist.add(new itemrecycler(R.drawable.start1,L1="Level1","Alphabets ,Numbers"));
-            itemlist.add(new itemrecycler(R.drawable.start2,L2="Level2","Colors ,Shapes"));
-            itemlist.add(new itemrecycler(R.drawable.start3,L3="Level3","Body ,Clothes"));
-            itemlist.add(new itemrecycler(R.drawable.start4,L4="Level4","Family ,Jobs"));
-            itemlist.add(new itemrecycler(R.drawable.start5,L5="Level5","Fruit ,Vegetable"));
-            itemlist.add(new itemrecycler(R.drawable.start6,L6="Level6","Animals"));
-            itemlist.add(new itemrecycler(R.drawable.start7,L7="Level7","Objects"));
+            itemlist.add(new itemrecycler(1,R.drawable.start1,L1="Level1","Alphabets ,Numbers"));
+            itemlist.add(new itemrecycler(1,R.drawable.start2,L2="Level2","Colors ,Shapes"));
+            itemlist.add(new itemrecycler(1,R.drawable.start3,L3="Level3","Body ,Clothes"));
+            itemlist.add(new itemrecycler(1,R.drawable.start4,L4="Level4","Family ,Jobs"));
+            itemlist.add(new itemrecycler(1,R.drawable.start5,L5="Level5","Fruit ,Vegetable"));
+            itemlist.add(new itemrecycler(1,R.drawable.start6,L6="Level6","Animals"));
+            itemlist.add(new itemrecycler(1,R.drawable.start7,L7="Level7","Objects"));
 
 
     }

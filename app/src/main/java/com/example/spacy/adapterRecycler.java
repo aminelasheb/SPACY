@@ -2,6 +2,8 @@ package com.example.spacy;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,13 +20,13 @@ import java.util.ArrayList;
 public class adapterRecycler extends RecyclerView.Adapter<adapterRecycler.adapterViewHolder>{
    private ArrayList<itemrecycler> mitemlist;
    private OnitemListener mOnitemlistener;
+
     public static class adapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private final ImageView mImageView;
         public TextView mTextView1,mTextView2;
         OnitemListener onitemListener;
         public adapterViewHolder(View itemView,OnitemListener onitemListener) {
             super(itemView);
-
             mImageView=itemView.findViewById(R.id.imageView);
             mTextView1=itemView.findViewById(R.id.textView);
             mTextView2=itemView.findViewById(R.id.textView2);
@@ -49,16 +51,25 @@ public class adapterRecycler extends RecyclerView.Adapter<adapterRecycler.adapte
     public adapterViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
         View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.items_recycle,parent,false);
         adapterViewHolder avh=new adapterViewHolder(v,mOnitemlistener);
+
+
+
         return avh;
     }
 
     @Override
     public void onBindViewHolder( adapterViewHolder holder, int position) {
-        itemrecycler cuurentitem=mitemlist.get(position);
 
+        itemrecycler cuurentitem=mitemlist.get(position);
+        int T = cuurentitem.getT() ;
+        if (T==1) {  holder.mTextView1.setGravity(Gravity.LEFT);
+            holder.mTextView2.setGravity(Gravity.LEFT);}
+        else if (T==2) {holder.mTextView1.setGravity(Gravity.RIGHT);
+            holder.mTextView2.setGravity(Gravity.RIGHT); }
         holder.mImageView.setImageResource(cuurentitem.getmImageRessource());
         holder.mTextView1.setText(cuurentitem.getMtext1());
         holder.mTextView2.setText(cuurentitem.getMtext2());
+
 
     }
 

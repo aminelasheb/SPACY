@@ -11,6 +11,16 @@
     app:cardBackgroundColor="#FA343450"
     app:cardCornerRadius="25dp">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="1sp"
+        android:visibility="gone"
+        android:id="@+id/T"
+        />
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -31,7 +41,7 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:gravity="center"
@@ -43,7 +53,7 @@
     <TextView
         android:id="@+id/textView2"
 android:layout_marginBottom="40dp"
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
         android:layout_height="match_parent"
         android:fontFamily="@font/baloo"
         android:text="Level 1"

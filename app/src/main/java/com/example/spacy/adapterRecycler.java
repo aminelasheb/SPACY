@@ -1,5 +1,7 @@
 package com.example.spacy;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +24,7 @@ public class adapterRecycler extends RecyclerView.Adapter<adapterRecycler.adapte
         OnitemListener onitemListener;
         public adapterViewHolder(View itemView,OnitemListener onitemListener) {
             super(itemView);
+
             mImageView=itemView.findViewById(R.id.imageView);
             mTextView1=itemView.findViewById(R.id.textView);
             mTextView2=itemView.findViewById(R.id.textView2);
@@ -56,7 +59,6 @@ public class adapterRecycler extends RecyclerView.Adapter<adapterRecycler.adapte
         holder.mImageView.setImageResource(cuurentitem.getmImageRessource());
         holder.mTextView1.setText(cuurentitem.getMtext1());
         holder.mTextView2.setText(cuurentitem.getMtext2());
-
 
     }
 

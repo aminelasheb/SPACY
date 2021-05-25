@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import android.preference.PreferenceManager;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,8 +35,8 @@ public class settingsFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     Spinner spinner ;
     Spinner spinner2 ;
+    TextView txt1 ,txt2 ,txt;
 
-    TextView txt,txt1,txt3 ,txt2,txt4,txt5;
  Button change,change2 ;
 String languageLearn ;
     SharedPreferences MyPre ;
@@ -82,17 +83,14 @@ String languageLearn ;
                                    Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
         // Inflate the layout for this fragment
-        txt = view.findViewById(R.id.textView);
         spinner = (Spinner) view.findViewById(R.id.spinner);
         spinner2 = (Spinner) view.findViewById(R.id.spinner2);
         change = view.findViewById(R.id.changee);
         change2 = view.findViewById(R.id.changee2);
 
         txt1=view.findViewById(R.id.txt1);
-        txt3=view.findViewById(R.id.txt3);
-        txt2 = view.findViewById(R.id.textView2);
-        txt4 = view.findViewById(R.id.txt4);
-        txt5 = view.findViewById(R.id.txt5);
+        txt2 = view.findViewById(R.id.txt2);
+        txt = view.findViewById(R.id.txt);
 
 
 
@@ -107,45 +105,45 @@ String languageLearn ;
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         String language = sharedPreferences.getString("LangApp", "/");
         languageLearn = sharedPreferences.getString("LangLearn", "/");
-        txt2.setText(languageLearn);
+        txt.setText(language);
         if (language.equals("العربية")) {
 
-            txt.setText("العربية ");
-            txt1.setText("لغة التطبيق");
-            txt3.setText("تغيير اللغة");
-            txt4.setText("لغة التعلم :");
-            txt5.setText("تغيير اللغة");
-            if (languageLearn.equals("An") ) { txt2.setText("الانجليزية");
+txt1.setGravity(Gravity.RIGHT);
+            txt2.setGravity(Gravity.RIGHT);
+
+            txt1.setText("لغة التطبيق : العربية ");
+
+            if (languageLearn.equals("An") ) { txt2.setText("لغة التعلم : الانجليزية");
             }
-            else if (languageLearn.equals("Ar") ) {txt2.setText("العربية"); }
-            else if (languageLearn.equals("Fr") ) {txt2.setText("الفرنسية"); }
+            else if (languageLearn.equals("Ar") ) {txt2.setText("لغة التعلم : العربية"); }
+            else if (languageLearn.equals("Fr") ) {txt2.setText("لغة التعلم : الفرنسية"); } }
 
 
 
 
-        } else if (language.equals("Français")) {
-            txt.setText("Français");
-            txt1.setText("Langue d'application");
-            txt3.setText("Changer la langue :");
-            txt4.setText("Langue d'apprentissage :");
-            txt5.setText("Changer la langue");
-            if (languageLearn.equals("An") ) { txt2.setText("Anglais");
+            else if (language.equals("Français")) {
+            txt1.setGravity(Gravity.LEFT);
+            txt2.setGravity(Gravity.LEFT);
+
+            txt1.setText("La langue d'application est : Français ");
+
+            if (languageLearn.equals("An")) {
+                txt2.setText("La langue d'apprentissage est : Anglais ");
+            } else if (languageLearn.equals("Ar")) {
+                txt2.setText("La langue d'apprentissage est : Arabe");
+            } else if (languageLearn.equals("Fr")) {
+                txt2.setText("La langue d'apprentissage est : Français");
             }
-            else if (languageLearn.equals("Ar") ) {txt2.setText("Arabe"); }
-            else if (languageLearn.equals("Fr") ) {txt2.setText("Français"); }
+        } else if (language.equals("English")) {
+                    txt1.setGravity(Gravity.LEFT);
+                    txt2.setGravity(Gravity.LEFT);
 
-        } else {
-            txt.setText("English");
-            txt1.setText("App language is : ");
-            txt3.setText("Change language :");
-            txt4.setText("Learning language :");
-            txt5.setText("Change language");
-            if (languageLearn.equals("An") ) { txt2.setText("English");
-            }
-            else if (languageLearn.equals("Ar") ) {txt2.setText("Arabic"); }
-            else if (languageLearn.equals("Fr") ) {txt2.setText("French"); }
+                    txt1.setText("App language : English ");
 
-        }
+                    if (languageLearn.equals("An") ) { txt2.setText("Learning language is : English");
+                    }
+                    else if (languageLearn.equals("Ar") ) {txt2.setText("Learning language is : Arabic"); }
+                    else if (languageLearn.equals("Fr") ) {txt2.setText("Learning language is : French"); } }
 // Create an ArrayAdapter using the string arr  ay and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
                 R.array.spinner, android.R.layout.simple_spinner_item);
@@ -154,8 +152,6 @@ String languageLearn ;
 // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
         spinner2.setAdapter(adapter);
-        String name = sharedPreferences.getString("LangApp","/");
-        txt.setText(name);
 
         change.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -163,42 +159,48 @@ String languageLearn ;
                 MyPre=view.getContext().getSharedPreferences("MyPref", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = MyPre.edit();
                 editor.putString("LangApp",spinner.getSelectedItem().toString());
+                txt.setText(spinner.getSelectedItem().toString());
                 editor.commit();
-                txt.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_START) ;
-                txt.setText(sharedPreferences.getString("LangApp","/"));
                 if (spinner.getSelectedItem().toString().equals("العربية")) {
 
                     FancyToast.makeText(getContext(),"تم تغيير لغة التطبيق بنجاح!",FancyToast.LENGTH_SHORT,FancyToast.INFO,false).show();
-                    txt1.setText("لغة التطبيق");
-                    txt3.setText("تغيير اللغة");
-                    if (spinner.getSelectedItem().toString().equals("English")) { txt2.setText("الانجليزية");
-                    }
-                    else if (languageLearn.equals("Ar") ) {txt2.setText("العربية"); }
-                    else if (languageLearn.equals("Fr") ) {txt2.setText("الفرنسية"); }
-                    txt4.setText("لغة التعلم");
-                    txt5.setText("تغيير اللغة");
+                    txt1.setGravity(Gravity.RIGHT);
+                    txt2.setGravity(Gravity.RIGHT);
 
-                } else if (spinner.getSelectedItem().toString().equals("Français")) {
+                    txt1.setText("لغة التطبيق : العربية ");
+
+                    if (languageLearn.equals("An") ) { txt2.setText("لغة التعلم : الانجليزية");
+                    }
+                    else if (languageLearn.equals("Ar") ) {txt2.setText("لغة التعلم : العربية"); }
+                    else if (languageLearn.equals("Fr") ) {txt2.setText("لغة التعلم : الفرنسية"); } }
+
+                else if (spinner.getSelectedItem().toString().equals("Français")) {
                     FancyToast.makeText(getContext(),"La langue de l'application a été modifiée avec succès!",FancyToast.LENGTH_SHORT,FancyToast.INFO,false).show();
 
-                    txt1.setText("Langue d'application est : ");
-                    txt3.setText("Changer la langue :");
-                    if (languageLearn.equals("An") ) { txt2.setText("Anglais");
+                    txt1.setGravity(Gravity.LEFT);
+                    txt2.setGravity(Gravity.LEFT);
+
+                    txt1.setText("La langue d'application est : Français ");
+
+                    if (languageLearn.equals("An")) {
+                        txt2.setText("La langue d'apprentissage est : Anglais ");
+                    } else if (languageLearn.equals("Ar")) {
+                        txt2.setText("La langue d'apprentissage est : Arabe");
+                    } else if (languageLearn.equals("Fr")) {
+                        txt2.setText("La langue d'apprentissage est : Français");
                     }
-                    else if (languageLearn.equals("Ar") ) {txt2.setText("Arabe"); }
-                    else if (languageLearn.equals("Fr") ) {txt2.setText("Français"); }
-                    txt4.setText("Langue d'apprentissage :");
-                    txt5.setText("Changer la langue");
                 } else if (spinner.getSelectedItem().toString().equals("English")){
                     FancyToast.makeText(getContext(),"The language of the app has been changed successfully!",FancyToast.LENGTH_SHORT,FancyToast.INFO,false).show();
 
-                    txt1.setText("App language is : ");
-                    txt3.setText("Change language :");
-                    if (languageLearn.equals("An") ) { txt2.setText("English");
+                    txt1.setGravity(Gravity.LEFT);
+                    txt2.setGravity(Gravity.LEFT);
+
+                    txt1.setText("App language : English ");
+
+                    if (languageLearn.equals("An") ) { txt2.setText("Learning language is : English");
                     }
-                    else if (languageLearn.equals("Ar") ) {txt2.setText("Arabic"); }
-                    else if (languageLearn.equals("Fr") ) {txt2.setText("French"); }                    txt4.setText("Learn language :");
-                    txt5.setText("Changer the language");
+                    else if (languageLearn.equals("Ar") ) {txt2.setText("Learning language is : Arabic"); }
+                    else if (languageLearn.equals("Fr") ) {txt2.setText("Learning language is : French"); }
                 }
             }
         });
@@ -209,26 +211,38 @@ String languageLearn ;
                 MyPre=view.getContext().getSharedPreferences("MyPref", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = MyPre.edit();
                 if (spinner2.getSelectedItem().toString().equals("English")) {
-                    if (txt.getText().toString().equals("English") ) { txt2.setText("English");
+                    if (txt.getText().toString().equals("English") ) {
+                        txt2.setGravity(Gravity.LEFT);
+
+                        txt2.setText("Learning language is : English");
                     }
-                    else if (txt.getText().toString().equals("العربية") ) {txt2.setText("انجليزية"); }
-                    else if (txt.getText().toString().equals("Français") ) {txt2.setText("Anglais"); }
+                    else if (txt.getText().toString().equals("العربية") ) {                        txt2.setGravity(Gravity.RIGHT);
+                        txt2.setText("لغة التعلم : الانجليزية"); }
+                    else if (txt.getText().toString().equals("Français") ) {
+                        txt2.setGravity(Gravity.LEFT);
+                        txt2.setText("Langue d'apprentissage est : Anglais "); }
 
                     editor.putString("LangLearn","An");}
                 else if (spinner2.getSelectedItem().toString().equals("العربية")) {
-                    if (txt.getText().toString().equals("English") ) { txt2.setText("Arabic");
+                    if (txt.getText().toString().equals("English") ) {
+                        txt2.setGravity(Gravity.LEFT);
+                        txt2.setText("Learning language is : Arabic");
                     }
-                    else if (txt.getText().toString().equals("العربية") ) {txt2.setText("العربية "); }
-                    else if (txt.getText().toString().equals("Français") ) {txt2.setText("Arabe"); }
+                    else if (txt.getText().toString().equals("العربية") ) {       txt2.setGravity(Gravity.RIGHT);txt2.setText("لغة التعلم : العربية "); }
+                    else if (txt.getText().toString().equals("Français") ) {
+                        txt2.setGravity(Gravity.LEFT);
+                        txt2.setText("Langue d'apprentissage est : Arabe"); }
 
                     editor.putString("LangLearn","Ar");}
 
 
                 else if (spinner2.getSelectedItem().toString().equals("Français")) {
-                    if (txt.getText().toString().equals("English") ) { txt2.setText("French");
+                    if (txt.getText().toString().equals("English") ) {                        txt2.setGravity(Gravity.LEFT);
+                        txt2.setText("Learning language is : French");
                 }
-                else if (txt.getText().toString().equals("العربية") ) {txt2.setText("الفرنسية"); }
-                else if (txt.getText().toString().equals("Français") ) {txt2.setText("Français"); }
+                else if (txt.getText().toString().equals("العربية") ) {       txt2.setGravity(Gravity.RIGHT);txt2.setText("لغة التعلم : الفرنسية"); }
+                else if (txt.getText().toString().equals("Français") ) {                        txt2.setGravity(Gravity.LEFT);
+                        txt2.setText("Langue d'apprentissage est : Français"); }
                 editor.putString("LangLearn","Fr");}
 
                 editor.commit();

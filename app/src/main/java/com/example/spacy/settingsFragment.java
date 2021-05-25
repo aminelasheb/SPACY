@@ -167,6 +167,7 @@ String languageLearn ;
                 txt.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_START) ;
                 txt.setText(sharedPreferences.getString("LangApp","/"));
                 if (spinner.getSelectedItem().toString().equals("العربية")) {
+
                     FancyToast.makeText(getContext(),"تم تغيير لغة التطبيق بنجاح!",FancyToast.LENGTH_SHORT,FancyToast.INFO,false).show();
                     txt1.setText("لغة التطبيق");
                     txt3.setText("تغيير اللغة");

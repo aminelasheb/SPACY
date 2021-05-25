@@ -18,12 +18,14 @@ public class adapterRecycler extends RecyclerView.Adapter<adapterRecycler.adapte
    private OnitemListener mOnitemlistener;
     public static class adapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private final ImageView mImageView;
-        public TextView mTextView1;
+        public TextView mTextView1,mTextView2;
         OnitemListener onitemListener;
         public adapterViewHolder(View itemView,OnitemListener onitemListener) {
             super(itemView);
             mImageView=itemView.findViewById(R.id.imageView);
             mTextView1=itemView.findViewById(R.id.textView);
+            mTextView2=itemView.findViewById(R.id.textView2);
+
             this.onitemListener=onitemListener;
         itemView.setOnClickListener(this);
 
@@ -53,6 +55,9 @@ public class adapterRecycler extends RecyclerView.Adapter<adapterRecycler.adapte
 
         holder.mImageView.setImageResource(cuurentitem.getmImageRessource());
         holder.mTextView1.setText(cuurentitem.getMtext1());
+        holder.mTextView2.setText(cuurentitem.getMtext2());
+
+
     }
 
     @Override

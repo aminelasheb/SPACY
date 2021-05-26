@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/baloo"
-        android:text="  لغة التطبيق  "
+        android:text="  مرحبا ,تعلم معنا  "
         android:layout_centerHorizontal="true"
         android:layout_marginTop="148dp"
 
@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/baloo"
-        android:text="App language"
+        android:text="Hello, learn with us"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="173dp"
 
@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/baloo"
-        android:text="  Language d'application  "
+        android:text="  Bonjour, apprenez avec nous"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="198dp"
 
@@ -136,7 +136,6 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/fr"
         android:layout_gravity="center"
-
         android:layout_width="wrap_content"
         android:layout_height="120dp"
         android:layout_margin="10dp"

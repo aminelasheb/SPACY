@@ -9,7 +9,6 @@
         android:roundIcon="@drawable/astro"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LanguageLearning"></activity>
         <activity android:name=".quiz7_arabe" />
         <activity android:name=".quiz7_fr" />
         <activity android:name=".ColorsAn" />

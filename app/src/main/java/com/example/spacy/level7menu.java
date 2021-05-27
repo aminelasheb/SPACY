@@ -26,8 +26,8 @@ public class level7menu extends AppCompatActivity {
 
 
 
-        QZ = findViewById(R.id.quizz6r);
-        ALPH = findViewById(R.id.alpha6r);
+//        QZ = findViewById(R.id.quizz6r);
+//        ALPH = findViewById(R.id.alpha6r);
 
         if (language.equals("Français")) {
             QZ.setText("QUIZ");
@@ -42,8 +42,8 @@ public class level7menu extends AppCompatActivity {
     }
 
 
-        card6_6 = findViewById(R.id.card6r);
-        card5_6 = findViewById(R.id.card8r);
+//        card6_6 = findViewById(R.id.card6r);
+//        card5_6 = findViewById(R.id.card8r);
 
         card6_6.setOnClickListener(new View.OnClickListener() {
             @Override

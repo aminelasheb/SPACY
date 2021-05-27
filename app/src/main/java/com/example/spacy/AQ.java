@@ -45,7 +45,6 @@ public class AQ extends AppCompatActivity {
         }
 
 
-        CardView numbers = findViewById(R.id.card4);
 
         card6_6 = findViewById(R.id.card6_6);
         card5_6 = findViewById(R.id.card5_6);

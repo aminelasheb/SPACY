@@ -8,11 +8,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class CSQ extends AppCompatActivity {
-    private CardView card21;
-    private CardView card22;
+    private RelativeLayout card21;
+    private RelativeLayout card22;
+    private ImageView SCQUIZ;
     private String language,languageLearn ;
     private TextView QZ, CL, SH;
 
@@ -26,8 +29,8 @@ public class CSQ extends AppCompatActivity {
 
         setContentView(R.layout.activity_c_s_q);
         QZ = findViewById(R.id.quizz2);
-        CL = findViewById(R.id.color);
-        SH = findViewById(R.id.shape);
+        CL = findViewById(R.id.colors2);
+        SH = findViewById(R.id.shapes);
 
         if (language.equals("Français")) {
             QZ.setText("QUIZ");
@@ -45,10 +48,10 @@ public class CSQ extends AppCompatActivity {
     }
 
 
-        CardView SCQUIZ = findViewById(R.id.card23);
+    SCQUIZ = findViewById(R.id.poo2);
 
-        card21 = findViewById(R.id.card21);
-        card22 = findViewById(R.id.card22);
+        card21 = findViewById(R.id.colors);
+        card22 = findViewById(R.id.shape);
 
         card21.setOnClickListener(new View.OnClickListener() {
             @Override

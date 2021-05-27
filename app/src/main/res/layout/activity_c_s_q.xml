@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
@@ -7,93 +7,193 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CSQ">
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_marginTop="15dp"
+    <HorizontalScrollView
+        android:id="@+id/scrollView1"
+        android:scrollbars="none"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:srcCompat="@drawable/astro3" />
+        android:layout_height="370dp"
+        android:layout_marginTop="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+        <LinearLayout
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
 
-        android:layout_marginTop="180dp">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="270dp"
+                android:layout_height="340dp"
+                android:layout_marginStart="40dp"
+                android:id="@+id/colors"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shapecard5"
+                android:layout_marginEnd="30dp">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card21"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_margin="10dp"
-            app:cardBackgroundColor="#F1E7EA"
-            app:cardCornerRadius="15dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Colors"
-                android:id="@+id/color"
-                android:fontFamily="@font/baloo"
-                android:textSize="25sp"
-                android:textColor="@color/black"
-                android:layout_gravity="center"/>
 
-        </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card22"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_margin="10dp"
-            app:cardBackgroundColor="#FBC531"
-            app:cardCornerRadius="15dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/baloo"
-                android:text="Shapes"
+                    android:layout_marginStart="67dp"
+                    android:layout_marginTop="249dp"
+                    android:fontFamily="@font/baloo"
+                    android:layout_centerHorizontal="true"
+                    android:text="COLORS"
+                    android:id="@+id/colors2"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"/>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="270dp"
+                android:layout_height="340dp"
+                android:layout_marginTop="20dp"
                 android:id="@+id/shape"
-                android:textColor="@color/black"
-                android:textSize="25sp" />
-
-        </androidx.cardview.widget.CardView>
+                android:background="@drawable/shapecard6"
+                >
 
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="67dp"
+                    android:layout_marginTop="249dp"
+                    android:fontFamily="@font/baloo"
+                    android:text="SHAPES"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/shapes"
+                    android:textColor="@color/white"
+                    android:textSize="30sp" />
+
+            </RelativeLayout>
+
+
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="340dp"
+                android:layout_marginTop="20dp"
+                app:srcCompat="@drawable/shapecard2" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView2"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="200dp"-->
+<!--        app:srcCompat="@drawable/astro3" />-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center"-->
+
+<!--        android:layout_marginTop="180dp">-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/card21"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:layout_margin="10dp"-->
+<!--            app:cardBackgroundColor="#F1E7EA"-->
+<!--            app:cardCornerRadius="15dp">-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Colors"-->
+<!--                android:id="@+id/color"-->
+<!--                android:fontFamily="@font/baloo"-->
+<!--                android:textSize="25sp"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:layout_gravity="center"/>-->
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/card22"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:layout_margin="10dp"-->
+<!--            app:cardBackgroundColor="#FBC531"-->
+<!--            app:cardCornerRadius="15dp">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:fontFamily="@font/baloo"-->
+<!--                android:text="Shapes"-->
+<!--                android:id="@+id/shape"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="25sp" />-->
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+
+<!--    </LinearLayout>-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_weight="1">-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/card23"-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:layout_margin="10dp"-->
+<!--            app:cardBackgroundColor="#FBC531"-->
+<!--            app:cardCornerRadius="40dp">-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Quiz"-->
+<!--                android:id="@+id/quizz2"-->
+<!--                android:fontFamily="@font/baloo"-->
+<!--                android:textSize="25sp"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:layout_gravity="center"/>-->
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+
+
+
+<!--    </LinearLayout>-->
+    <ImageView
+        android:layout_width="335dp"
+        android:layout_height="265dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/poo2"
+        android:layout_marginStart="33dp"
+        android:layout_marginEnd="-33dp"
+        android:layout_marginBottom="46dp"
+        android:src="@drawable/poo" />
+
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_weight="1">
+         android:id="@+id/quizz2"
+        android:layout_alignParentStart="true"
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card23"
-            android:layout_width="300dp"
-            android:layout_height="100dp"
-            android:layout_margin="10dp"
-            app:cardBackgroundColor="#FBC531"
-            app:cardCornerRadius="40dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Quiz"
-                android:id="@+id/quizz2"
-                android:fontFamily="@font/baloo"
-                android:textSize="25sp"
-                android:textColor="@color/black"
-                android:layout_gravity="center"/>
-
-        </androidx.cardview.widget.CardView>
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="234dp"
+        android:layout_marginBottom="237dp"
+        android:fontFamily="@font/baloo"
+        android:text="Quiz"
+        android:textColor="@color/black"
+        android:textSize="35sp" />
 
 
 
 
-    </LinearLayout>
-
-
-
-
-</LinearLayout>
+</RelativeLayout>

@@ -20,7 +20,7 @@ public class AQ extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
-        language = intent.getStringExtra("language");
+        String lang=intent.getStringExtra("Lang");
         SharedPreferences sharedPreferences = this.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         language = sharedPreferences.getString("LangApp","/");
         languageLearn = sharedPreferences.getString("LangLearn","/");
@@ -29,6 +29,8 @@ public class AQ extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_a_q);
+        TextView Lang=findViewById(R.id.alpha) ;
+        Lang.setText(lang);
         QZ = findViewById(R.id.quizz6);
         ALPH = findViewById(R.id.alpha6);
 

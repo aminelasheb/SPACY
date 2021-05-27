@@ -23,7 +23,10 @@ public class level7menu extends AppCompatActivity {
         SharedPreferences sharedPreferences = this.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         language = sharedPreferences.getString("LangApp","/");
         languageLearn = sharedPreferences.getString("LangLearn","/");
-
+        Intent intent = getIntent();
+        String lang=intent.getStringExtra("Lang");
+        TextView Lang=findViewById(R.id.alpha) ;
+        Lang.setText(lang);
 
 
 //        QZ = findViewById(R.id.quizz6r);

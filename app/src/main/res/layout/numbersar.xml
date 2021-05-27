@@ -26,12 +26,19 @@
         android:layout_marginBottom="20dp"
         android:orientation="horizontal" />
 
-    <ImageView
-        android:id="@+id/speakeraan2"
+
+    <FrameLayout
         android:layout_width="match_parent"
+        android:background="@drawable/backkk"
         android:layout_height="100dp"
         android:layout_marginTop="90dp"
-        android:background="@drawable/backkk"
-        app:srcCompat="@drawable/astromusic" />
+        >
+        <ImageView
+            android:id="@+id/speakeraan2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="30dp"
+            android:background="?android:attr/selectableItemBackground"
+            app:srcCompat="@drawable/astromusic" /></FrameLayout>
 
 </LinearLayout>

@@ -151,12 +151,12 @@
         android:paddingLeft="50dp"
         android:paddingRight="50dp">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/optiondesign3"
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/optiondesign3"
 
-            android:paddingTop="14dp">
+                android:paddingTop="14dp">
 
             <TextView
                 android:id="@+id/Option1"

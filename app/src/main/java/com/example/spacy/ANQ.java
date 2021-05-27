@@ -8,18 +8,16 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.HorizontalScrollView;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class ANQ extends AppCompatActivity {
-    private RelativeLayout card5;
-    private RelativeLayout card6;
-    private ImageView quiz;
+    private CardView card5;
+    private CardView card6;
     private String language;
     private String languageLearn;
-   private HorizontalScrollView hsv;
+
     private TextView QZ, NM, ALPH;
 
     @Override
@@ -28,32 +26,40 @@ public class ANQ extends AppCompatActivity {
         SharedPreferences sharedPreferences = this.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         language = sharedPreferences.getString("LangApp","/");
         languageLearn = sharedPreferences.getString("LangLearn","/");
+        Intent intent = getIntent();
+        String lang=intent.getStringExtra("Lang");
+
+
+
 
 
         setContentView(R.layout.anq);
-//        QZ = findViewById(R.id.quizz);
-//        NM = findViewById(R.id.num);
-//        ALPH = findViewById(R.id.alpha);
-//        if (language.equals("Français")) {
-//            QZ.setText("QUIZ");
-//            NM.setText("Nombres");
-//            ALPH.setText("Alphabets");
-//
-//        } else if (language.equals("العربية")) {
-//            QZ.setText("اختبار");
-//            NM.setText("الأرقام");
-//            ALPH.setText("الحروف");
-//        } else if (language.equals("English")) {
-//            QZ.setText("QUIZ");
-//            NM.setText("Numbers");
-//            ALPH.setText("Alphabets");
-//        }
+        TextView Lang=findViewById(R.id.alphaa) ;
+        Lang.setText(lang);
+        QZ = findViewById(R.id.quizz);
+        NM = findViewById(R.id.num);
+        ALPH = findViewById(R.id.alpha);
+
+        if (language.equals("Français")) {
+            QZ.setText("QUIZ");
+            NM.setText("Nombres");
+            ALPH.setText("Alphabets");
+
+        } else if (language.equals("العربية")) {
+            QZ.setText("اختبار");
+            NM.setText("الأرقام");
+            ALPH.setText("الحروف");
+        } else if (language.equals("English")) {
+            QZ.setText("QUIZ");
+            NM.setText("Numbers");
+            ALPH.setText("Alphabets");
+        }
 
 
 
 
-//        CardView numbers = findViewById(R.id.card4);
-        quiz=findViewById(R.id.poo);
+        CardView numbers = findViewById(R.id.card4);
+
         card6 = findViewById(R.id.card6);
         card5 = findViewById(R.id.card5);
 
@@ -61,7 +67,7 @@ public class ANQ extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (languageLearn.equals("An")) {
-                    Intent intent = new Intent(ANQ.this,Quiz.class);
+                    Intent intent = new Intent(ANQ.this, Quiz.class);
                     startActivity(intent);
                 } else if (languageLearn.equals("Fr")) {
                     Intent intent = new Intent(ANQ.this, quizFr.class);
@@ -90,8 +96,8 @@ public class ANQ extends AppCompatActivity {
             }
 
         });
-//
-        card6.setOnClickListener(new View.OnClickListener() {
+
+        numbers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (languageLearn.equals("An")) {
@@ -108,7 +114,6 @@ public class ANQ extends AppCompatActivity {
 
             }
         });
-
 
 
     }

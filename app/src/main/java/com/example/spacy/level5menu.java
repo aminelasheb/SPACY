@@ -24,11 +24,14 @@ public class level5menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         Intent intent = getIntent();
+        String lang=intent.getStringExtra("Lang");
         SharedPreferences sharedPreferences = this.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         language = sharedPreferences.getString("LangApp","/");
         languageLearn = sharedPreferences.getString("LangLearn","/");
 
         setContentView(R.layout.activity_level5menu);
+        TextView Lang=findViewById(R.id.alpha) ;
+        Lang.setText(lang);
 
         QZ = findViewById(R.id.quiz55);
         FRT = findViewById(R.id.FRT1);

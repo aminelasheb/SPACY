@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context=".settingsFragment">
 
+
     <!-- TODO: Update blank fragment layout -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -15,30 +16,22 @@ app:cardBackgroundColor="#9CFC59E0"
         android:layout_margin="10dp"
         app:cardCornerRadius="15dp">
 <LinearLayout
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:layout_margin="20dp"
-
    >
+
     <TextView
-
         android:id="@+id/txt1"
-
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
+        android:textSize="18dp"
+        android:gravity="left"
         android:fontFamily="@font/baloo"
         android:textColor="@color/black"
         android:text="Language of  app is :"/>
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15dp"
-        android:fontFamily="@font/baloo"
-android:textColor="@color/black"
-        android:text="TextView" />
+
 
 
 
@@ -51,21 +44,18 @@ android:textColor="@color/black"
         android:layout_margin="10dp"
         app:cardCornerRadius="15dp">
     <LinearLayout
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_margin="10dp"
-        >
 
-        <TextView
-            android:id="@+id/txt3"
+        android:layout_gravity="center">
+
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:fontFamily="@font/baloo"
-            android:text="Change Language "
-            android:textColor="@color/black"
-            android:textSize="15dp" />
+            android:src="@drawable/web" />
 
         <Spinner
             android:id="@+id/spinner"
@@ -90,13 +80,14 @@ android:textColor="@color/black"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardBackgroundColor="#9CFC59E0"
         app:cardCornerRadius="15dp">
         <LinearLayout
 
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_margin="20dp"
@@ -104,22 +95,15 @@ android:textColor="@color/black"
             >
             <TextView
 
-                android:id="@+id/txt4"
-
-                android:layout_width="wrap_content"
+                android:id="@+id/txt2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="15dp"
+                android:textSize="18dp"
+                android:gravity="left"
                 android:fontFamily="@font/baloo"
                 android:textColor="@color/black"
                 android:text="Language of learning is :"/>
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:fontFamily="@font/baloo"
-                android:textColor="@color/black"
-                android:text="TextView" />
+
 
 
 
@@ -136,15 +120,16 @@ android:textColor="@color/black"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_margin="10dp"
-            >
 
-            <TextView
-                android:id="@+id/txt5"
+            android:layout_gravity="center">
+
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
+                android:layout_margin="2dp"
+                android:src="@drawable/world2"
                 android:fontFamily="@font/baloo"
-                android:text="Change language"
+                android:text="Change Language "
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
@@ -166,4 +151,12 @@ android:textColor="@color/black"
 
 
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:textSize="1sp"
+        android:text="English" />
 </LinearLayout>

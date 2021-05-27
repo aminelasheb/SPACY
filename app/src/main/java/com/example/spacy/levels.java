@@ -17,6 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import org.jetbrains.annotations.NotNull;
 
 public class levels extends AppCompatActivity {
+    MeowBottomNavigation bottomNavigation;
         private BottomNavigationView navView;
     public String lang;
     TextView Mes, Mesa;

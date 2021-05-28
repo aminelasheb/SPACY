@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "430808835969",
+    "project_id": "spacy-22",
+    "storage_bucket": "spacy-22.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:430808835969:android:6f036d64208fbce25faa80",
+        "android_client_info": {
+          "package_name": "com.example.spacy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "430808835969-m26mqu2o1dsj1eua2gaq9ol69jcnmho9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoTpLcEFiRM6nrCfifWr84Ai0sCGEswmI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "430808835969-m26mqu2o1dsj1eua2gaq9ol69jcnmho9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

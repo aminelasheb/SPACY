@@ -159,4 +159,30 @@ app:cardBackgroundColor="#9CFC59E0"
         android:visibility="gone"
         android:textSize="1sp"
         android:text="English" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#9CFC59E0"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/logout"
+
+        app:cardCornerRadius="15dp">
+
+
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:src="@drawable/logout"
+    />
+
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
 </LinearLayout>

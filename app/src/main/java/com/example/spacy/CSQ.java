@@ -29,7 +29,7 @@ public class CSQ extends AppCompatActivity {
         languageLearn = sharedPreferences.getString("LangLearn","/");
 
         setContentView(R.layout.activity_c_s_q);
-        TextView Lang=findViewById(R.id.alpha) ;
+        TextView Lang=findViewById(R.id.alphaa) ;
         Lang.setText(lang);
         QZ = findViewById(R.id.quizz2);
         CL = findViewById(R.id.colors2);

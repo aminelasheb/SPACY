@@ -7,6 +7,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CSQ">
+    <TextView
+        android:id="@+id/alphaa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="/"
+        android:textSize="30sp" />
     <HorizontalScrollView
         android:id="@+id/scrollView1"
         android:scrollbars="none"
@@ -27,7 +36,7 @@
                 android:layout_marginStart="40dp"
                 android:id="@+id/colors"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/shapecard5"
+                android:background="@drawable/shapecard7"
                 android:layout_marginEnd="30dp">
 
 
@@ -52,7 +61,7 @@
                 android:layout_height="340dp"
                 android:layout_marginTop="20dp"
                 android:id="@+id/shape"
-                android:background="@drawable/shapecard6"
+                android:background="@drawable/shapecard5"
                 >
 
 

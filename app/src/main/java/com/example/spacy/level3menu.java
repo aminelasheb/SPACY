@@ -9,13 +9,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.shashank.sony.fancytoastlib.FancyToast;
 
 public class level3menu extends AppCompatActivity {
-    private CardView card11;
-    private CardView card13;
+    private RelativeLayout card11;
+    private ImageView card13;
     private String language,languageLearn;
     private TextView QZ, clot,bd;
 
@@ -29,7 +31,7 @@ public class level3menu extends AppCompatActivity {
         languageLearn = sharedPreferences.getString("LangLearn","/");
 
         setContentView(R.layout.activity_level3);
-        TextView Lang=findViewById(R.id.alpha) ;
+        TextView Lang=findViewById(R.id.alphaa) ;
         Lang.setText(lang);
 
         QZ = findViewById(R.id.quiz13);
@@ -52,7 +54,7 @@ public class level3menu extends AppCompatActivity {
     }
 
 
-        CardView clooth = findViewById(R.id.card12);
+       RelativeLayout clooth = findViewById(R.id.card12);
         card11 = findViewById(R.id.card11);
         card13 = findViewById(R.id.card13);
 

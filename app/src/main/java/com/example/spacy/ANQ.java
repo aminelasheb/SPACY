@@ -6,15 +6,18 @@ import androidx.cardview.widget.CardView;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
 public class ANQ extends AppCompatActivity {
-    private CardView card5;
-    private CardView card6;
+    private RelativeLayout card5;
+    private ImageView card6;
     private String language;
     private String languageLearn;
 
@@ -28,11 +31,6 @@ public class ANQ extends AppCompatActivity {
         languageLearn = sharedPreferences.getString("LangLearn","/");
         Intent intent = getIntent();
         String lang=intent.getStringExtra("Lang");
-
-
-
-
-
         setContentView(R.layout.anq);
         TextView Lang=findViewById(R.id.alphaa) ;
         Lang.setText(lang);
@@ -58,7 +56,7 @@ public class ANQ extends AppCompatActivity {
 
 
 
-        CardView numbers = findViewById(R.id.card4);
+        RelativeLayout numbers = findViewById(R.id.card4);
 
         card6 = findViewById(R.id.card6);
         card5 = findViewById(R.id.card5);

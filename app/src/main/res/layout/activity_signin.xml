@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/backlogin2"
+    android:layout_height="match_parent"
+    tools:context=".signin">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="212dp"
+    android:paddingLeft="30dp"
+    android:paddingRight="10dp">
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign In"
+        android:id="@+id/sig"
+        android:fontFamily="@font/baloo"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        android:layout_marginTop="47dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="fill up the informations below or continue using one of your accounts."
+        android:fontFamily="@font/baloo"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_below="@id/sig"/>
+
+
+
+</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+            <EditText
+                 android:drawableLeft="@drawable/ic_action_name"
+                android:textColorHint="#999999"
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="320dp"
+                android:layout_height="70dp"
+                android:drawablePadding="10dp"
+                android:paddingLeft="40dp"
+                android:background="@drawable/edit_text_bg"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="60dp"
+                android:textSize="15sp"
+                android:inputType="textPersonName"
+               android:hint="Username" />
+
+        <EditText
+            android:textSize="15sp"
+            android:drawablePadding="10dp"
+            android:drawableLeft="@drawable/ic_action_person"
+            android:id="@+id/editTextTextPassword2"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/editTextTextPersonName"
+            android:layout_width="320dp"
+            android:layout_height="70dp"
+            android:hint="Password"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_bg"
+            android:paddingLeft="40dp"
+
+            android:inputType="textPassword" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgot Password?"
+            android:layout_below="@id/editTextTextPassword2"
+            android:layout_marginLeft="170dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/baloo"
+            android:id="@+id/frgtpass"
+            android:layout_marginTop="13dp"
+            android:textSize="20sp"/>
+        <Button
+            android:layout_width="320dp"
+            android:layout_height="70dp"
+            android:layout_below="@id/frgtpass"
+                android:layout_marginTop="40dp"
+            android:text="Sign In"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:id="@+id/sign3"
+            android:textSize="23sp"
+            android:fontFamily="@font/baloo"
+            android:background="@drawable/btn_bg"
+            android:layout_centerHorizontal="true"/>
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/google"
+            android:id="@+id/google"
+            android:layout_below="@+id/sign3"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="80dp"/>
+        <ImageView
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/fb"
+            android:layout_below="@+id/sign3"
+            android:layout_marginTop="30dp"
+           android:layout_toRightOf="@id/google"
+            android:layout_marginLeft="60dp"/>
+    </RelativeLayout>
+
+</LinearLayout>

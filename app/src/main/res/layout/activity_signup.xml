@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/backlogin2"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".signup">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="212dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="10dp">
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:id="@+id/sig"
+            android:fontFamily="@font/baloo"
+            android:textColor="@color/white"
+            android:textSize="50sp"
+            android:layout_marginTop="47dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fill up the informations below and click sign up."
+            android:fontFamily="@font/baloo"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_below="@id/sig"/>
+
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+android:drawableLeft="@drawable/ic_action_person2"
+            android:drawablePadding="20dp"
+            android:textColorHint="#999999"
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="320dp"
+            android:layout_height="70dp"
+            android:paddingLeft="30dp"
+            android:background="@drawable/edit_text_bg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:textSize="15sp"
+            android:inputType="textPersonName"
+
+            android:hint="Full Name" />
+
+        <EditText
+            android:textSize="15sp"
+
+            android:id="@+id/editTextTextPassword2"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/editTextTextPersonName"
+            android:layout_width="320dp"
+            android:layout_height="70dp"
+            android:hint="Username"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_bg"
+            android:paddingLeft="30dp"
+            android:drawablePadding="20dp"
+            android:drawableLeft="@drawable/ic_action_person"
+
+            android:inputType="textPersonName" />
+        <EditText
+            android:textSize="15sp"
+
+            android:id="@+id/editTextTextPassword3"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/editTextTextPassword2"
+            android:layout_width="320dp"
+            android:layout_height="70dp"
+            android:hint="Email"
+            android:drawablePadding="20dp"
+            android:drawableLeft="@drawable/ic_action_email"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_bg"
+            android:paddingLeft="30dp"
+
+            android:inputType="textEmailAddress"
+             />
+        <EditText
+            android:textSize="15sp"
+
+            android:id="@+id/editTextTextPassword4"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/editTextTextPassword3"
+            android:layout_width="320dp"
+            android:layout_height="70dp"
+            android:hint="Password"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_text_bg"
+            android:paddingLeft="30dp"
+            android:drawableLeft="@drawable/ic_action_name"
+android:drawablePadding="20dp"
+            android:inputType="textPassword"
+            />
+<!--      -->
+        <Button
+            android:layout_width="320dp"
+            android:layout_height="70dp"
+            android:layout_below="@id/editTextTextPassword4"
+            android:layout_marginTop="20dp"
+            android:text="Sign Up"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="23sp"
+            android:fontFamily="@font/baloo"
+            android:background="@drawable/btn_bg"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+</LinearLayout>

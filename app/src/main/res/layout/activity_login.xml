@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/backlogin"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".login">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+       >
+
+        <ImageView
+            android:id="@+id/imageMobile"
+            android:layout_width="210dp"
+            android:layout_height="177dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/astro" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="46dp"
+            android:fontFamily="@font/baloo"
+
+            android:text="SPACY"
+            android:textColor="@color/white"
+            android:textSize="45sp" />
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 android:id="@+id/welcome"
+                android:layout_marginTop="55dp"
+                android:fontFamily="@font/baloo"
+                android:text="Welcome"
+                android:textColor="@color/white"
+                android:textSize="45sp" />
+            <TextView
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/welcome"
+                android:fontFamily="@font/baloo"
+                android:text="If you already have an account sign in if you d'ont  create one by signing up. "
+                android:textColor="@color/white"
+                android:textSize="17sp"/>
+          <androidx.cardview.widget.CardView
+              android:layout_width="150dp"
+              android:layout_height="70dp"
+              android:id="@+id/sign"
+              android:layout_marginTop="215dp"
+              app:cardCornerRadius="60dp">
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:text="Sign In"
+                  android:gravity="center"
+                  android:textColor="@color/black"
+                  android:fontFamily="@font/baloo"
+                  android:textSize="25sp"/>
+
+
+          </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="70dp"
+                android:id="@+id/signup"
+                android:layout_marginLeft="13dp"
+                android:layout_toRightOf="@id/sign"
+                android:layout_marginTop="215dp"
+                app:cardBackgroundColor="#32324A"
+                app:cardCornerRadius="60dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Sign Up"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:fontFamily="@font/baloo"
+                    android:textSize="25sp"/>
+
+
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+
+
+
+</LinearLayout>

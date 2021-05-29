@@ -1,6 +1,7 @@
 package com.example.spacy;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -14,10 +15,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
 import org.w3c.dom.Text;
@@ -36,7 +39,7 @@ public class settingsFragment extends Fragment {
     Spinner spinner ;
     Spinner spinner2 ;
     TextView txt1 ,txt2 ,txt;
-
+View logOut ;
  Button change,change2 ;
 String languageLearn ;
     SharedPreferences MyPre ;
@@ -87,6 +90,8 @@ String languageLearn ;
         spinner2 = (Spinner) view.findViewById(R.id.spinner2);
         change = view.findViewById(R.id.changee);
         change2 = view.findViewById(R.id.changee2);
+        logOut = view.findViewById(R.id.logout);
+
 
         txt1=view.findViewById(R.id.txt1);
         txt2 = view.findViewById(R.id.txt2);
@@ -152,6 +157,16 @@ txt1.setGravity(Gravity.RIGHT);
 // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
         spinner2.setAdapter(adapter);
+
+        logOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Toast.makeText(getContext(), "SignOut success", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getContext(), login.class);
+                startActivity(intent);
+            }
+        });
 
         change.setOnClickListener(new View.OnClickListener() {
             @Override

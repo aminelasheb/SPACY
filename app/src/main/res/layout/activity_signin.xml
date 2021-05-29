@@ -17,7 +17,7 @@
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign In"
+        android:text="Log In"
         android:id="@+id/sig"
         android:fontFamily="@font/baloo"
         android:textColor="@color/white"
@@ -40,7 +40,7 @@
         android:layout_height="match_parent">
 
             <EditText
-                 android:drawableLeft="@drawable/ic_action_name"
+                 android:drawableLeft="@drawable/ic_action_person"
                 android:textColorHint="#999999"
                 android:id="@+id/editTextTextPersonName"
                 android:layout_width="320dp"
@@ -51,13 +51,13 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="60dp"
                 android:textSize="15sp"
-                android:inputType="textPersonName"
-               android:hint="Username" />
+                android:inputType="textEmailAddress"
+               android:hint="E-mail" />
 
         <EditText
             android:textSize="15sp"
             android:drawablePadding="10dp"
-            android:drawableLeft="@drawable/ic_action_person"
+            android:drawableLeft="@drawable/ic_action_name"
             android:id="@+id/editTextTextPassword2"
             android:layout_centerHorizontal="true"
             android:layout_below="@id/editTextTextPersonName"
@@ -85,7 +85,7 @@
             android:layout_height="70dp"
             android:layout_below="@id/frgtpass"
                 android:layout_marginTop="40dp"
-            android:text="Sign In"
+            android:text="Log In"
             android:textColor="@color/white"
             android:textAllCaps="false"
             android:id="@+id/sign3"

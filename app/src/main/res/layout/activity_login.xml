@@ -98,7 +98,7 @@
             <FrameLayout
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="72dp"
+                android:layout_marginLeft="68dp"
                 android:layout_marginTop="15dp"
                 android:layout_toRightOf="@id/sign">
             <TextView

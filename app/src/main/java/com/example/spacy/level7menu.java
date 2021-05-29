@@ -6,13 +6,16 @@ import androidx.cardview.widget.CardView;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class level7menu extends AppCompatActivity {
-    private CardView card5_6;
-    private CardView card6_6;
+    private RelativeLayout card5_6;
+    private ImageView card6_6;
     private String language,languageLearn;
     private TextView QZ, ALPH;
 
@@ -25,12 +28,12 @@ public class level7menu extends AppCompatActivity {
         languageLearn = sharedPreferences.getString("LangLearn","/");
         Intent intent = getIntent();
         String lang=intent.getStringExtra("Lang");
-        TextView Lang=findViewById(R.id.alpha) ;
+        TextView Lang=findViewById(R.id.alphaa) ;
         Lang.setText(lang);
 
 
-//        QZ = findViewById(R.id.quizz6r);
-//        ALPH = findViewById(R.id.alpha6r);
+       QZ = findViewById(R.id.quizz7);
+       ALPH = findViewById(R.id.objects7);
 
         if (language.equals("Français")) {
             QZ.setText("QUIZ");
@@ -44,11 +47,10 @@ public class level7menu extends AppCompatActivity {
         ALPH.setText("Objects");
     }
 
+        card6_6 = findViewById(R.id.poo7);
+        card5_6 = findViewById(R.id.objects);
 
-//        card6_6 = findViewById(R.id.card6r);
-//        card5_6 = findViewById(R.id.card8r);
-
-        card6_6.setOnClickListener(new View.OnClickListener() {
+        card5_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (languageLearn.equals("An")) {
@@ -66,7 +68,7 @@ public class level7menu extends AppCompatActivity {
             }
         });
 
-        card5_6.setOnClickListener(new View.OnClickListener() {
+        card6_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (languageLearn.equals("An")) {

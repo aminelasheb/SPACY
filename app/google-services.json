@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "276082446155",
+    "project_id": "button-1d02e",
+    "storage_bucket": "button-1d02e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:276082446155:android:6847cb7960a41177d022ce",
+        "android_client_info": {
+          "package_name": "com.example.spacy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "276082446155-533t1cd8k5j13l2saj1fdqueng5398r7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApmSBekh5sAhI6KN3bJHno0ozuZmop8cQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "276082446155-533t1cd8k5j13l2saj1fdqueng5398r7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -6,14 +6,16 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 public class JOFA extends AppCompatActivity {
-    private CardView cardf;
-    private CardView cardj;
+    private RelativeLayout cardf;
+    private ImageView cardj;
     private String language,languageLearn;
     private TextView QZ, FAM, JB;
 
@@ -28,9 +30,9 @@ public class JOFA extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_level4);
-        TextView Lang=findViewById(R.id.alpha) ;
+        TextView Lang=findViewById(R.id.alphaa) ;
         Lang.setText(lang);
-        QZ = findViewById(R.id.quiz3);
+        QZ = findViewById(R.id.quiz4);
         FAM = findViewById(R.id.family);
         JB = findViewById(R.id.jobs);
 
@@ -51,12 +53,12 @@ public class JOFA extends AppCompatActivity {
 
 
 
-        CardView JOFA = findViewById(R.id.cardq3);
+         RelativeLayout JOFA = findViewById(R.id.card44);
 
-        cardf = findViewById(R.id.cardf);
-        cardj = findViewById(R.id.cardj);
+        cardf = findViewById(R.id.card55);
+        cardj = findViewById(R.id.poo3);
 
-        cardf.setOnClickListener(new View.OnClickListener() {
+        JOFA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (languageLearn.equals("An")) {
@@ -72,7 +74,7 @@ public class JOFA extends AppCompatActivity {
             }
         });
 
-        cardj.setOnClickListener(new View.OnClickListener() {
+        cardf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (languageLearn.equals("An")) {
@@ -90,7 +92,7 @@ public class JOFA extends AppCompatActivity {
 
         });
 
-        JOFA.setOnClickListener(new View.OnClickListener() {
+        cardj.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (languageLearn.equals("An")) {

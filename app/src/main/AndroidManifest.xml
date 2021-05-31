@@ -10,6 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".quiz7_arabe" />
+
+
         <activity android:name=".quiz7_fr" />
         <activity android:name=".ColorsAn" />
         <activity android:name=".login" />

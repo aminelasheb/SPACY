@@ -186,4 +186,33 @@ app:cardBackgroundColor="#9CFC59E0"
 
 
     </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#9CFC59E0"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/contact"
+
+        app:cardCornerRadius="15dp">
+
+
+       <TextView
+           android:layout_height="match_parent"
+           android:layout_width="match_parent"
+           android:textSize="18dp"
+           android:gravity="left"
+           android:layout_margin="20dp"
+           android:fontFamily="@font/baloo"
+           android:textColor="@color/black"
+           android:text="Contact US"></TextView>
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
 </LinearLayout>

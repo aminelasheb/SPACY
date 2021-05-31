@@ -9,13 +9,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.shashank.sony.fancytoastlib.FancyToast;
 
 public class level5menu extends AppCompatActivity {
-    private CardView card50;
-    private CardView card51;
+    private RelativeLayout card115;
+    private ImageView card135;
     private String language,languageLearn;
     private TextView QZ, FRT,VGT;
 
@@ -30,12 +32,12 @@ public class level5menu extends AppCompatActivity {
         languageLearn = sharedPreferences.getString("LangLearn","/");
 
         setContentView(R.layout.activity_level5menu);
-        TextView Lang=findViewById(R.id.alpha) ;
+        TextView Lang=findViewById(R.id.alphaa) ;
         Lang.setText(lang);
 
-        QZ = findViewById(R.id.quiz55);
-        FRT = findViewById(R.id.FRT1);
-        VGT = findViewById(R.id.VGT1);
+        QZ = findViewById(R.id.quiz135);
+        FRT = findViewById(R.id.fruit1);
+        VGT = findViewById(R.id.vegetable1);
 
         if (language.equals("Français")) {
             QZ.setText("QUIZ");
@@ -54,11 +56,11 @@ public class level5menu extends AppCompatActivity {
 
 
 
-        CardView Quiiiz = findViewById(R.id.card52);
-        card50 = findViewById(R.id.card50);
-        card51 = findViewById(R.id.card51);
+        RelativeLayout Quiiiz = findViewById(R.id.card125);
+        card115 = findViewById(R.id.card115);
+        card135 = findViewById(R.id.card135);
 
-        card51.setOnClickListener(new View.OnClickListener() {
+        Quiiiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (languageLearn.equals("An")) {
@@ -76,7 +78,7 @@ public class level5menu extends AppCompatActivity {
             }
         });
 
-        card50.setOnClickListener(new View.OnClickListener() {
+        card115.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (languageLearn.equals("An")) {
@@ -92,7 +94,7 @@ public class level5menu extends AppCompatActivity {
                 }
             }
         });
-        Quiiiz.setOnClickListener(new View.OnClickListener() {
+        card135.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (languageLearn.equals("An")) {

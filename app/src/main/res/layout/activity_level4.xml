@@ -11,6 +11,8 @@
 
  <TextView
      android:id="@+id/alphaa"
+     android:fontFamily="@font/baloo"
+
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
      android:layout_alignParentTop="true"

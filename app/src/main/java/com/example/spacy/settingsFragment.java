@@ -3,6 +3,7 @@ package com.example.spacy;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -39,7 +40,7 @@ public class settingsFragment extends Fragment {
     Spinner spinner ;
     Spinner spinner2 ;
     TextView txt1 ,txt2 ,txt;
-View logOut ;
+View logOut,Contact ;
  Button change,change2 ;
 String languageLearn ;
     SharedPreferences MyPre ;
@@ -91,6 +92,7 @@ String languageLearn ;
         change = view.findViewById(R.id.changee);
         change2 = view.findViewById(R.id.changee2);
         logOut = view.findViewById(R.id.logout);
+        Contact = view.findViewById(R.id.contact);
 
 
         txt1=view.findViewById(R.id.txt1);
@@ -164,6 +166,16 @@ txt1.setGravity(Gravity.RIGHT);
                 FirebaseAuth.getInstance().signOut();
                 Toast.makeText(getContext(), "SignOut success", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getContext(), login.class);
+                startActivity(intent);
+            }
+        });
+
+        Contact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:ma.lasheb@esi-sba.dz")); // only email apps should handle this
+                intent.putExtra(Intent.EXTRA_SUBJECT, "About SPACY app");
                 startActivity(intent);
             }
         });

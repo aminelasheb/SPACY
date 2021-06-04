@@ -37,6 +37,7 @@ public class AFA extends AppCompatActivity {
                 editor.putString("LangLearn","An");
                 editor.commit();
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -49,6 +50,7 @@ public class AFA extends AppCompatActivity {
                 editor.putString("LangLearn","Ar");
                 editor.commit();
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -61,6 +63,7 @@ public class AFA extends AppCompatActivity {
                 editor.putString("LangLearn","Fr");
                 editor.commit();
                 startActivity(intent);
+                finish();
             }
         });
 

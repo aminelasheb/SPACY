@@ -120,18 +120,18 @@ public class learnFragment extends Fragment implements adapterRecycler.OnitemLis
                     Mes.startAnimation(alphaAnimation);
                     Mes.setVisibility(View.VISIBLE);
                 }
-            }, 4000);
+            }, 2000);
             Mes.postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     AlphaAnimation alphaAnimation = new AlphaAnimation(1, 0);
-                    alphaAnimation.setDuration(700);
+                    alphaAnimation.setDuration(1000);
                     Mes.startAnimation(alphaAnimation);
                     Mes.setVisibility(View.INVISIBLE);
 
                 }
 
-            }, 7000);
+            }, 3500);
             Mesa.setVisibility(View.INVISIBLE);
             boolean b = Mesa.postDelayed(new Runnable() {
                 @Override
@@ -141,7 +141,7 @@ public class learnFragment extends Fragment implements adapterRecycler.OnitemLis
                     Mesa.startAnimation(alphaAnimation);
                     Mesa.setVisibility(View.VISIBLE);
                 }
-            }, 8000);
+            }, 5300);
 
         }
 

@@ -35,12 +35,10 @@ public class signin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
-//        email = findViewById(R.id.email);
-//        password = findViewById(R.id.editTextTextPassword2);
         login = findViewById(R.id.sign3);
         email3=findViewById(R.id.emaillayout);
-        email2=findViewById(R.id.myedit);
-        email2.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        email=findViewById(R.id.myedit);
+        email.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if(hasFocus){
@@ -51,9 +49,9 @@ public class signin extends AppCompatActivity {
                 }
             }
         });
-        password2=findViewById(R.id.myedit2);
+        password=findViewById(R.id.myedit2);
         password3=findViewById(R.id.passwordlayout);
-        password2.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        password.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if(hasFocus){
@@ -65,52 +63,47 @@ public class signin extends AppCompatActivity {
             }
         });
 
-////        mAuth = FirebaseAuth.getInstance();
-//
-//  email2 .setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//email2.setHint("email");
-//            }
-//        });
-//
-//        login.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String txt_email = email.getText().toString();
-//                String txt_password = password.getText().toString();
-//
-//                if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)){
-//                    Toast.makeText(signin.this, "Empty Credentials!", Toast.LENGTH_SHORT).show();
-//                } else {
-//                    loginUser(txt_email , txt_password);
-//                }
-//            }
-//        });
+        mAuth = FirebaseAuth.getInstance();
+
+
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String txt_email = email.getText().toString();
+                String txt_password = password.getText().toString();
+
+                if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)){
+                    Toast.makeText(signin.this, "Empty Credentials!", Toast.LENGTH_SHORT).show();
+                } else {
+                    loginUser(txt_email , txt_password);
+                }
+            }
+        });
     }
-//
-//    private void loginUser(String email, String password) {
-//
-//        mAuth.signInWithEmailAndPassword(email , password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//            @Override
-//            public void onComplete(@NonNull Task<AuthResult> task) {
-//                if (task.isSuccessful()){
-//                    Toast.makeText(signin.this, "Update the profile " +
-//                            "for better expereince", Toast.LENGTH_SHORT).show();
-//                    Intent intent = new Intent(signin.this , AFA.class);
-//                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                    startActivity(intent);
-//                    finish();
-//                }
-//            }
-//        }).addOnFailureListener(new OnFailureListener() {
-//            @Override
-//            public void onFailure(@NonNull Exception e) {
-//                Toast.makeText(signin.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//
-//    }
+
+    private void loginUser(String email, String password) {
+        
+
+        mAuth.signInWithEmailAndPassword(email , password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()){
+                  Toast.makeText(signin.this, "LogIn Success", Toast.LENGTH_SHORT).show();
+                  Intent intent = new Intent(signin.this , AFA.class);
+                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                 startActivity(intent);
+                 finish();
+             }
+          }
+       }).addOnFailureListener(new OnFailureListener() {
+           @Override
+           public void onFailure(@NonNull Exception e) {
+               Toast.makeText(signin.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+          }
+      });
+
+    }
 
 
 }

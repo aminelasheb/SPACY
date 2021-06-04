@@ -176,6 +176,7 @@ txt1.setGravity(Gravity.RIGHT);
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
                 intent.setData(Uri.parse("mailto:ma.lasheb@esi-sba.dz")); // only email apps should handle this
                 intent.putExtra(Intent.EXTRA_SUBJECT, "About SPACY app");
+
                 startActivity(intent);
             }
         });

@@ -8,24 +8,33 @@
     android:background="@drawable/board"
     tools:context=".JOFA"
     tools:ignore="MissingDefaultResource">
-
- <TextView
-     android:id="@+id/alphaa"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-     android:layout_alignParentTop="true"
+ <androidx.cardview.widget.CardView
+     android:layout_width="140dp"
+     android:layout_height="55dp"
      android:layout_centerHorizontal="true"
-     android:textColor="#fff"
+
      android:layout_marginTop="15dp"
-     android:layout_marginLeft="200dp"
-     android:text="/"
-     android:textSize="30sp" />
+     app:cardBackgroundColor="#2D2D2D"
+     app:cardCornerRadius="70dp">
+
+  <TextView
+      android:id="@+id/alphaa"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:textColor="@color/white"
+    android:fontFamily="@font/baloo"
+      android:text="/"
+      android:textSize="23sp" />
+ </androidx.cardview.widget.CardView>
+
+
  <HorizontalScrollView
      android:id="@+id/scrollView1"
      android:scrollbars="none"
      android:layout_width="match_parent"
      android:layout_height="370dp"
-     android:layout_marginTop="40dp"
+     android:layout_marginTop="70dp"
      android:layout_alignParentStart="true"
      android:layout_alignParentTop="true">
   <LinearLayout
@@ -94,11 +103,8 @@
        app:srcCompat="@drawable/shapecard2" />
   </LinearLayout>
  </HorizontalScrollView>
- <RelativeLayout
-     android:layout_width="400dp"
-     android:layout_height="280dp"
-     android:layout_marginTop="420dp"
-     />
+
+
  <ImageView
      android:layout_width="335dp"
      android:layout_height="265dp"
@@ -116,142 +122,15 @@
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
      android:id="@+id/quiz4"
-     android:layout_marginTop="425dp"
-     android:layout_marginLeft="250dp"
+     android:layout_alignParentStart="true"
+     android:layout_alignParentBottom="true"
+     android:layout_marginStart="234dp"
+     android:layout_marginBottom="237dp"
      android:fontFamily="@font/baloo"
      android:text="Quiz"
      android:textColor="@color/black"
      android:textSize="35sp" />
 
 </RelativeLayout>
- <!--   <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="190dp"
-        app:srcCompat="@drawable/astrobook" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        >
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card"
-            android:foreground="?selectableItemBackground"
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:cardBackgroundColor="#262841"
-            app:cardCornerRadius="20dp">
-
-            <TextView
-                android:id="@+id/alpha"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/baloo"
-                android:text="/"
-                android:layout_marginRight="7dp"
-                android:layout_marginLeft="7dp"
-                android:textColor="#FF8BAB"
-                android:textSize="20sp" />
-
-        </androidx.cardview.widget.CardView>
-
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-
-        android:layout_marginTop="180dp">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardf"
-            android:layout_width="150dp"
-            android:foreground="?selectableItemBackground"
-
-            android:layout_height="150dp"
-            android:layout_margin="10dp"
-            app:cardBackgroundColor="#9CFC59E0"
-            app:cardCornerRadius="15dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Family"
-                android:id="@+id/family"
-                android:fontFamily="@font/baloo"
-                android:textSize="25sp"
-                android:textColor="@color/black"
-                android:layout_gravity="center"/>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardj"
-            android:foreground="?selectableItemBackground"
-
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_margin="10dp"
-            app:cardBackgroundColor="#9CFC59E0"
-            app:cardCornerRadius="15dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/baloo"
-                android:text="Jobs"
-                android:id="@+id/jobs"
-                android:textColor="@color/black"
-                android:textSize="25sp" />
-
-        </androidx.cardview.widget.CardView>
-
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-
-
-        android:layout_weight="1">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardq3"
-            android:foreground="?selectableItemBackground"
-
-            android:layout_width="300dp"
-            android:layout_height="100dp"
-            android:layout_margin="10dp"
-            app:cardBackgroundColor="#FC59E0"
-            app:cardCornerRadius="40dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Quiz"
-                android:id="@+id/quiz3"
-                android:fontFamily="@font/baloo"
-                android:textSize="25sp"
-                android:textColor="@color/black"
-                android:layout_gravity="center"/>
-
-        </androidx.cardview.widget.CardView>
-
-
-
-
-    </LinearLayout>
-
--->
 
 

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -15,12 +16,16 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class signin extends AppCompatActivity {
 
-    private EditText email;
+    private TextInputEditText email;
+    private TextInputEditText email2,password2;
+    private TextInputLayout email3,password3;
     private EditText password;
     private Button login;
 
@@ -30,49 +35,82 @@ public class signin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
-        email = findViewById(R.id.editTextTextPersonName);
-        password = findViewById(R.id.editTextTextPassword2);
+//        email = findViewById(R.id.email);
+//        password = findViewById(R.id.editTextTextPassword2);
         login = findViewById(R.id.sign3);
-
-        mAuth = FirebaseAuth.getInstance();
-
-
-
-        login.setOnClickListener(new View.OnClickListener() {
+        email3=findViewById(R.id.emaillayout);
+        email2=findViewById(R.id.myedit);
+        email2.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
-            public void onClick(View v) {
-                String txt_email = email.getText().toString();
-                String txt_password = password.getText().toString();
-
-                if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)){
-                    Toast.makeText(signin.this, "Empty Credentials!", Toast.LENGTH_SHORT).show();
-                } else {
-                    loginUser(txt_email , txt_password);
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus){
+                    email3.setHint(" Email");
+                }
+        else {
+            email3.setHint("Enter Email");
                 }
             }
         });
-    }
-
-    private void loginUser(String email, String password) {
-
-        mAuth.signInWithEmailAndPassword(email , password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        password2=findViewById(R.id.myedit2);
+        password3=findViewById(R.id.passwordlayout);
+        password2.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
-                    Toast.makeText(signin.this, "Update the profile " +
-                            "for better expereince", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(signin.this , AFA.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                    finish();
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus){
+                   password3.setHint(" Password");
                 }
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(signin.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                else {
+                   password3.setHint("Enter Password");
+                }
             }
         });
 
+////        mAuth = FirebaseAuth.getInstance();
+//
+//  email2 .setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//email2.setHint("email");
+//            }
+//        });
+//
+//        login.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String txt_email = email.getText().toString();
+//                String txt_password = password.getText().toString();
+//
+//                if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)){
+//                    Toast.makeText(signin.this, "Empty Credentials!", Toast.LENGTH_SHORT).show();
+//                } else {
+//                    loginUser(txt_email , txt_password);
+//                }
+//            }
+//        });
     }
+//
+//    private void loginUser(String email, String password) {
+//
+//        mAuth.signInWithEmailAndPassword(email , password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//            @Override
+//            public void onComplete(@NonNull Task<AuthResult> task) {
+//                if (task.isSuccessful()){
+//                    Toast.makeText(signin.this, "Update the profile " +
+//                            "for better expereince", Toast.LENGTH_SHORT).show();
+//                    Intent intent = new Intent(signin.this , AFA.class);
+//                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                    startActivity(intent);
+//                    finish();
+//                }
+//            }
+//        }).addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception e) {
+//                Toast.makeText(signin.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//
+//    }
+
+
 }

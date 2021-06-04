@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/board"
+    android:background="@drawable/learn"
     android:orientation="vertical"
     tools:context=".AFA"
     tools:ignore="MissingDefaultResource">
@@ -16,8 +16,6 @@
         app:srcCompat="@drawable/astrolang2"
         android:layout_height="135dp"/>
 
-    <!--        />-->
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,7 +24,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="148dp"
 
-        android:textColor="#FB59C7"
+        android:textColor="@color/white"
         android:textSize="20sp" />
     <TextView
         android:layout_width="wrap_content"
@@ -36,7 +34,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="173dp"
 
-        android:textColor="#FB59C7"
+        android:textColor="@color/white"
         android:textSize="20sp" />
     <TextView
         android:layout_width="wrap_content"
@@ -46,7 +44,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="198dp"
 
-        android:textColor="#FB59C7"
+        android:textColor="@color/white"
         android:textSize="20sp" />
 
     <LinearLayout

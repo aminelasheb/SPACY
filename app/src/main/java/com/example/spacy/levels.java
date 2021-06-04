@@ -17,15 +17,18 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import org.jetbrains.annotations.NotNull;
 
 public class levels extends AppCompatActivity {
-    MeowBottomNavigation bottomNavigation;
-        private BottomNavigationView navView;
+
+    private BottomNavigationView navView;
+
     public String lang;
     TextView Mes, Mesa;
     // Animation
     private Animation show_anim, hide_anim;
+    public static int counter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        counter=0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.levels);
         Intent intent = getIntent();
@@ -35,6 +38,7 @@ public class levels extends AppCompatActivity {
 
         navView= findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(navListener);
+        navView.setOnNavigationItemReselectedListener(navListenerr);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new learnFragment()).commit();
 
         // Init animations
@@ -60,18 +64,33 @@ public class levels extends AppCompatActivity {
             switch (item.getItemId()){
                 case R.id.navigation_learn:
                     selectedfragment=new learnFragment();
+                    counter++;
                     break;
                 case R.id.navigation_profil:
                     selectedfragment=new profilFragment();
+                    counter++;
                     break;
                 case R.id.navigation_settings:
                     selectedfragment=new settingsFragment();
+                    counter++;
                     break;
             }
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,selectedfragment).commit();
             return true;
         }
     };
+    private BottomNavigationView.OnNavigationItemReselectedListener navListenerr=new BottomNavigationView.OnNavigationItemReselectedListener() {
+        @Override
+        public void onNavigationItemReselected(@NonNull @NotNull MenuItem item) {
+
+
+            }
+
+
+    };
+
+
+
 }
 
 

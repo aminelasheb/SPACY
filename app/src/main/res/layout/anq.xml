@@ -8,17 +8,26 @@
     android:background="@drawable/board"
     tools:context=".ANQ"
     tools:ignore="MissingDefaultResource">
-
-
-    <TextView
-        android:id="@+id/alphaa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+    <androidx.cardview.widget.CardView
+        android:layout_width="140dp"
+        android:layout_height="55dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:text="/"
-        android:textSize="30sp" />
+        app:cardBackgroundColor="#2D2D2D"
+        app:cardCornerRadius="70dp">
+
+        <TextView
+            android:id="@+id/alphaa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:fontFamily="@font/baloo"
+            android:layout_gravity="center"
+            android:text="/"
+            android:textSize="23sp" />
+
+    </androidx.cardview.widget.CardView>
+
 
     <HorizontalScrollView
         android:id="@+id/scrollView1"

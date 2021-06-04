@@ -9,13 +9,13 @@
         android:roundIcon="@drawable/astro"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".testtextinput"></activity>
         <activity android:name=".quiz7_arabe" />
         <activity android:name=".quiz7_fr" />
         <activity android:name=".ColorsAn" />
         <activity android:name=".login" />
         <activity android:name=".signin" />
         <activity android:name=".signup" />
-
         <activity android:name=".level7menu" />
         <activity android:name=".quiz7_ang" />
         <activity android:name=".objectsAn" />

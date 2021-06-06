@@ -36,7 +36,7 @@ public class Splash extends AppCompatActivity {
             public void run() {
                 Intent intent = new Intent(Splash.this,login.class);
                 startActivity(intent);
-                finish();//matkhalich el user yerja3 lel splash screen ki yerja3
+                finish();//matkhalich el user yerja3 lel splash screen ki yepressi return
             }
         }, splash_screen);
     }

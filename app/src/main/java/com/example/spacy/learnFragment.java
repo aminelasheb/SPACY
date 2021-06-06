@@ -108,41 +108,45 @@ public class learnFragment extends Fragment implements adapterRecycler.OnitemLis
 
         ast = AnimationUtils.loadAnimation(getActivity(), R.anim.astro);
         imageView = getView().findViewById(R.id.astro2);
-        imageView.setAnimation(ast);
+        if(levels.counter==0){
+            imageView.setAnimation(ast);
 
+            Mes.setVisibility(View.INVISIBLE);
+            Mes.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    AlphaAnimation alphaAnimation = new AlphaAnimation(0, 1);
+                    alphaAnimation.setDuration(700);
+                    Mes.startAnimation(alphaAnimation);
+                    Mes.setVisibility(View.VISIBLE);
+                }
+            }, 2000);
+            Mes.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    AlphaAnimation alphaAnimation = new AlphaAnimation(1, 0);
+                    alphaAnimation.setDuration(1000);
+                    Mes.startAnimation(alphaAnimation);
+                    Mes.setVisibility(View.INVISIBLE);
 
+                }
 
-        Mes.setVisibility(View.INVISIBLE);
-        Mes.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                AlphaAnimation alphaAnimation = new AlphaAnimation(0, 1);
-                alphaAnimation.setDuration(700);
-                Mes.startAnimation(alphaAnimation);
-                Mes.setVisibility(View.VISIBLE);
-            }
-        }, 4000);
-        Mes.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                AlphaAnimation alphaAnimation = new AlphaAnimation(1, 0);
-                alphaAnimation.setDuration(700);
-                Mes.startAnimation(alphaAnimation);
-                Mes.setVisibility(View.INVISIBLE);
+            }, 3500);
+            Mesa.setVisibility(View.INVISIBLE);
+            boolean b = Mesa.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    AlphaAnimation alphaAnimation = new AlphaAnimation(0, 1);
+                    alphaAnimation.setDuration(700);
+                    Mesa.startAnimation(alphaAnimation);
+                    Mesa.setVisibility(View.VISIBLE);
+                }
+            }, 5300);
 
-            }
+        }
 
-        }, 7000);
-        Mesa.setVisibility(View.INVISIBLE);
-        boolean b = Mesa.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                AlphaAnimation alphaAnimation = new AlphaAnimation(0, 1);
-                alphaAnimation.setDuration(700);
-                Mesa.startAnimation(alphaAnimation);
-                Mesa.setVisibility(View.VISIBLE);
-            }
-        }, 8000);
+Mes.setVisibility(View.GONE);
+
 
 
         /////////////////////////////////////////////////////////////////////

@@ -11,6 +11,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="green">#4CAF50</color>
+    <color name="red">#F44336</color>
+
     <color name="alphabets">#C95249</color>
     <color name="nav">#1DFFFFFF</color>
 </resources>

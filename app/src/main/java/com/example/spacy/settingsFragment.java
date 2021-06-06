@@ -21,6 +21,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
@@ -33,6 +34,10 @@ import org.w3c.dom.Text;
  */
 public class settingsFragment extends Fragment {
 
+    TextInputLayout FullName,UserName,Email;
+    TextView fullnamelabel,usernamelabel;
+
+     
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -75,12 +80,22 @@ String languageLearn ;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+        //ShowAllData
+
+
+
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
 
         }
     }
+
+
 
     @Override
     public  View onCreateView(LayoutInflater inflater, ViewGroup container,

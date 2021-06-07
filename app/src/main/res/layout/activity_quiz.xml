@@ -279,7 +279,7 @@
 
 
             android:onClick="updateQuestionn"
-            android:text="confirm"
+            android:text="Ckeck"
             android:textSize="25sp" />
     </RelativeLayout>
 

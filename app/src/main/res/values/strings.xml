@@ -132,7 +132,7 @@
     <string name="question16_B"> 15 حرف </string>
     <string name="question16_C"> 28 حرف </string>
     <string name="question16_D"> 52 حرف </string>
-    <string name="answer16">  حرف </string>
+    <string name="answer16"> 28 حرف </string>
     <string name="title_activity_splash">splash</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>

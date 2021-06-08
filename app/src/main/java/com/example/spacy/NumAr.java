@@ -27,7 +27,7 @@ public class NumAr extends AppCompatActivity {
 
 
     int[] vocals = {R.raw.a00, R.raw.a01, R.raw.a02, R.raw.a03, R.raw.a04, R.raw.a05, R.raw.a06, R.raw.a07
-            , R.raw.a08, R.raw.a09, R.raw.a09};
+            , R.raw.a08, R.raw.a09, R.raw.a10ar};
 
     //Create String array
     String[] Names = {"صفر", "واحد", "اثنان", "ثلاثة", "أربعة", "خمسة", "ستة", "سبعة", "ثمانية", "تسعة", "عشرة",};

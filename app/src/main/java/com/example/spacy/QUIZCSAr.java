@@ -185,6 +185,7 @@ public class QUIZCSAr extends AppCompatActivity {
 
                     boolean result = checkAnswer(currentOptionA);
                     if (result) {
+                        userscore=userscore-1 ;
                         optionA.setBackgroundColor(0xFF00FF00);
                         OptionAa = true;
                     } else {
@@ -208,6 +209,7 @@ public class QUIZCSAr extends AppCompatActivity {
 
                     boolean result1 = checkAnswer(currentOptionB);
                     if (result1) {
+                        userscore=userscore-1 ;
                         optionB.setBackgroundColor(0xFF00FF00);
                         OptionBb = true;
                     } else {
@@ -230,6 +232,7 @@ public class QUIZCSAr extends AppCompatActivity {
 
                     boolean result3 = checkAnswer(currentOptionC);
                     if (result3) {
+                        userscore=userscore-1 ;
                         optionC.setBackgroundColor(0xFF00FF00);
                         OptionCc = true;
                     } else {
@@ -251,6 +254,7 @@ public class QUIZCSAr extends AppCompatActivity {
 
                     boolean result4 = checkAnswer(currentOptionD);
                     if (result4) {
+                        userscore=userscore-1 ;
                         optionD.setBackgroundColor(0xFF00FF00);
                         OptionDd = true;
                     } else {
@@ -271,6 +275,7 @@ public class QUIZCSAr extends AppCompatActivity {
 
                     boolean result5 = checkAnsweri(currentOptionA);
                     if (result5) {
+                        userscore=userscore-1 ;
                         optionAi.setBackgroundColor(0xFF00FF00);
                         OptionAii = true;
                     } else {
@@ -292,6 +297,7 @@ public class QUIZCSAr extends AppCompatActivity {
 
                     boolean result6 = checkAnsweri(currentOptionB);
                     if (result6) {
+                        userscore=userscore-1 ;
                         optionBi.setBackgroundColor(0xFF00FF00);
                         OptionBii = true;
                     } else {
@@ -313,6 +319,7 @@ public class QUIZCSAr extends AppCompatActivity {
 
                     boolean result7 = checkAnsweri(currentOptionC);
                     if (result7) {
+                        userscore=userscore-1 ;
                         optionCi.setBackgroundColor(0xFF00FF00);
                         OptionCii = true;
                     } else {
@@ -334,6 +341,7 @@ public class QUIZCSAr extends AppCompatActivity {
 
                     boolean result7 = checkAnsweri(currentOptionD);
                     if (result7) {
+                        userscore=userscore-1 ;
                         optionDi.setBackgroundColor(0xFF00FF00);
                         OptionDii = true;
                     } else {
@@ -362,27 +370,35 @@ public class QUIZCSAr extends AppCompatActivity {
 
         if (correctanswer == true){
             optionA.setBackgroundColor(0xFF00FF00);
+            userscore=userscore-1 ;
         }
         if (correctanswerb == true){
             optionB.setBackgroundColor(0xFF00FF00);
+            userscore=userscore-1 ;
         }
         if (correctanswerc == true){
             optionC.setBackgroundColor(0xFF00FF00);
+            userscore=userscore-1 ;
         }
         if (correctanswerd == true){
             optionD.setBackgroundColor(0xFF00FF00);
+            userscore=userscore-1 ;
         }
         if (correctansweri == true){
             optionAi.setBackgroundColor(0xFF00FF00);
+            userscore=userscore-1 ;
         }
         if (correctanswerib == true){
             optionBi.setBackgroundColor(0xFF00FF00);
+            userscore=userscore-1 ;
         }
         if (correctansweric == true){
             optionCi.setBackgroundColor(0xFF00FF00);
+            userscore=userscore-1 ;
         }
         if (correctanswerid == true){
             optionDi.setBackgroundColor(0xFF00FF00);
+            userscore=userscore-1 ;
         }
 
 

@@ -44,17 +44,17 @@ public class Quiz5FR extends AppCompatActivity {
     private final answerClass[] questionBank = new answerClass[]{
 
             new answerClass(2, R.drawable.figue, R.string.question5_027,
-                    R.string.question5_028, R.string.question5_029, R.string.question5_030, R.string.question5_031),
+                    R.string.question5_028, R.string.question5_029, R.string.question5_030, R.string.question5_029),
             new answerClass(5, R.raw.champignon, R.drawable.tomatte, R.drawable.carotte
-                    , R.drawable.pommedeterre, R.drawable.champignon, R.drawable.onion),
+                    , R.drawable.pommedeterre, R.drawable.champignon, R.drawable.champignon),
             new answerClass(4, R.string.question5_027, R.drawable.fraise, R.drawable.melon
-                    , R.drawable.bannane, R.drawable.maiis, R.drawable.peche),
+                    , R.drawable.bannane, R.drawable.maiis, R.drawable.melon),
             new answerClass(3, R.raw.cerise, R.string.question5_027, R.string.question5_028,
-                    R.string.question5_029, R.string.question5_030, R.string.question5_031),
+                    R.string.question5_029, R.string.question5_031, R.string.question5_031),
             new answerClass(2, R.drawable.obergine, R.string.question5_032, R.string.question5_033,
-                    R.string.question5_034, R.string.question5_035, R.string.question5_036),
+                    R.string.question5_034, R.string.question5_035, R.string.question5_033),
             new answerClass(5, R.raw.raisin, R.drawable.kiwi, R.drawable.pastheque
-                    , R.drawable.poire, R.drawable.datte, R.drawable.raisin),
+                    , R.drawable.raisin, R.drawable.datte, R.drawable.raisin),
             // 1 : Question text and replies text
             // 2 : Question image and replies text
             // 3 : Question vocal and replies text
@@ -183,6 +183,7 @@ public class Quiz5FR extends AppCompatActivity {
 
                     boolean result = checkAnswer(currentOptionA);
                     if (result) {
+                        userscore=userscore-1 ;
                         optionA.setBackgroundColor(0xFF00FF00);
                         OptionAa = true;
                     } else {
@@ -205,6 +206,7 @@ public class Quiz5FR extends AppCompatActivity {
 
                     boolean result1 = checkAnswer(currentOptionB);
                     if (result1) {
+                        userscore=userscore-1 ;
                         optionB.setBackgroundColor(0xFF00FF00);
                         OptionBb = true;
                     } else {
@@ -227,6 +229,7 @@ public class Quiz5FR extends AppCompatActivity {
 
                     boolean result3 = checkAnswer(currentOptionC);
                     if (result3) {
+                        userscore=userscore-1 ;
                         optionC.setBackgroundColor(0xFF00FF00);
                         OptionCc = true;
                     } else {
@@ -248,6 +251,7 @@ public class Quiz5FR extends AppCompatActivity {
 
                     boolean result4 = checkAnswer(currentOptionD);
                     if (result4) {
+                        userscore=userscore-1 ;
                         optionD.setBackgroundColor(0xFF00FF00);
                         OptionDd = true;
                     } else {
@@ -268,6 +272,7 @@ public class Quiz5FR extends AppCompatActivity {
 
                     boolean result5 = checkAnsweri(currentOptionA);
                     if (result5) {
+                        userscore=userscore-1 ;
                         optionAi.setBackgroundColor(0xFF00FF00);
                         OptionAii = true;
                     } else {
@@ -291,6 +296,7 @@ public class Quiz5FR extends AppCompatActivity {
 
                     boolean result6 = checkAnsweri(currentOptionB);
                     if (result6) {
+                        userscore=userscore-1 ;
                         optionBi.setBackgroundColor(0xFF00FF00);
                         OptionBii = true;
                     } else {
@@ -312,6 +318,7 @@ public class Quiz5FR extends AppCompatActivity {
 
                     boolean result7 = checkAnsweri(currentOptionC);
                     if (result7) {
+                        userscore=userscore-1 ;
                         optionCi.setBackgroundColor(0xFF00FF00);
                         OptionCii = true;
                     } else {
@@ -333,6 +340,7 @@ public class Quiz5FR extends AppCompatActivity {
 
                     boolean result7 = checkAnsweri(currentOptionD);
                     if (result7) {
+                        userscore=userscore-1 ;
                         optionDi.setBackgroundColor(0xFF00FF00);
                         OptionDii = true;
                     } else {
@@ -365,28 +373,31 @@ public class Quiz5FR extends AppCompatActivity {
 
         if (correctanswer == true){
             optionA.setBackgroundColor(0xFF00FF00);
+            userscore=userscore-1 ;
         }
         if (correctanswerb == true){
             optionB.setBackgroundColor(0xFF00FF00);
+            userscore=userscore-1 ;
         }
         if (correctanswerc == true){
             optionC.setBackgroundColor(0xFF00FF00);
+            userscore=userscore-1 ;
         }
         if (correctanswerd == true){
             optionD.setBackgroundColor(0xFF00FF00);
-        }
+            userscore=userscore-1 ;}
         if (correctansweri == true){
             optionAi.setBackgroundColor(0xFF00FF00);
-        }
+            userscore=userscore-1 ;}
         if (correctanswerib == true){
             optionBi.setBackgroundColor(0xFF00FF00);
-        }
+            userscore=userscore-1 ;}
         if (correctansweric == true){
             optionCi.setBackgroundColor(0xFF00FF00);
-        }
+            userscore=userscore-1 ;}
         if (correctanswerid == true){
             optionDi.setBackgroundColor(0xFF00FF00);
-        }
+            userscore=userscore-1 ;}
 
 
     }

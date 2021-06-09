@@ -27,7 +27,7 @@ public class AnimalsAr extends AppCompatActivity {
             R.drawable.rabbit,};
 
 
-    int[] vocals = {R.raw.catar, R.raw.dogar, R.raw.elephantar, R.raw.foxar,
+        int[] vocals = {R.raw.catar, R.raw.dogar, R.raw.elephantar, R.raw.foxar,
             R.raw.horsear, R.raw.lionar, R.raw.monkeyar, R.raw.pandaar, R.raw.snakear,
             R.raw.rabitar};
 

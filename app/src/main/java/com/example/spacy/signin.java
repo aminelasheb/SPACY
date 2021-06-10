@@ -16,10 +16,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,6 +33,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
+import com.squareup.picasso.Picasso;
 
 public class signin extends AppCompatActivity  {
 
@@ -130,18 +133,29 @@ public class signin extends AppCompatActivity  {
         if (requestCode == RC_SIGN_IN) {
             // The Task returned from this call is always completed, no need to attach
             // a listener.
+            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            handleSignInResult(task);
+            handleSignInResult(task,result);
         }
     }
 
-    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
+    private void handleSignInResult(Task<GoogleSignInAccount> completedTask,GoogleSignInResult result) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             SharedPreferences sharedPreferences = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString("GM","GOOGLE") ;
+            GoogleSignInAccount acct = result.getSignInAccount();
+            editor.putString("Name",acct.getDisplayName()) ;
+            try {
+                String PhotoUrl = acct.getPhotoUrl().toString();
+                editor.putString("Image",PhotoUrl) ;
+
+            } catch (Exception e) {
+
+            }
             editor.commit();
+
 //             Signed in successfully, show authenticated UI.
             updateUI(account);
         } catch (ApiException e) {

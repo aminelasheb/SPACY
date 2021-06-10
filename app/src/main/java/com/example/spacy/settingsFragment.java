@@ -204,6 +204,10 @@ txt1.setGravity(Gravity.RIGHT);
                 FirebaseAuth.getInstance().signOut();
                 Toast.makeText(getContext(), "SignOut from MAIL success", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getContext(), login.class);
+                    SharedPreferences sharedPreferences = getContext().getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("GM","/") ;
+                    editor.commit();
                 startActivity(intent); }
                 else if ( GM.equals("GOOGLE") ) {
                     signOut();
@@ -339,6 +343,10 @@ txt1.setGravity(Gravity.RIGHT);
                     public void onComplete(@NonNull Task<Void> task) {
                         Toast.makeText(getContext(), "SignOut from GOOGLE success", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getContext(), login.class);
+                        SharedPreferences sharedPreferences = getContext().getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("GM","/") ;
+                        editor.commit();
                         startActivity(intent);
                     }
                 });

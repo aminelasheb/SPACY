@@ -8,7 +8,7 @@
 
     tools:context=".learnFragment"
     tools:ignore="MissingClass"
-    android:background="@drawable/art22">
+    android:background="@drawable/art4">
 
     <RelativeLayout
         android:layout_width="match_parent"

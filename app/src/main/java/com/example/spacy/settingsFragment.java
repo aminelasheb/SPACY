@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.preference.PreferenceManager;
@@ -21,6 +22,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.shashank.sony.fancytoastlib.FancyToast;
@@ -47,6 +55,8 @@ public class settingsFragment extends Fragment {
     TextView txt1 ,txt2 ,txt;
 View logOut,Contact ;
  Button change,change2 ;
+    GoogleSignInAccount account ;
+    GoogleSignInClient mGoogleSignInClient ;
 String languageLearn ;
     SharedPreferences MyPre ;
 
@@ -96,6 +106,12 @@ String languageLearn ;
     }
 
 
+    @Override
+    public void onStart() {
+        super.onStart();
+         account = GoogleSignIn.getLastSignedInAccount(getContext());
+
+    }
 
     @Override
     public  View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -127,7 +143,13 @@ String languageLearn ;
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         String language = sharedPreferences.getString("LangApp", "/");
         languageLearn = sharedPreferences.getString("LangLearn", "/");
+        String GM = sharedPreferences.getString("GM","/") ;
         txt.setText(language);
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+
+        mGoogleSignInClient = GoogleSignIn.getClient(getContext(), gso);
         if (language.equals("العربية")) {
 
 txt1.setGravity(Gravity.RIGHT);
@@ -178,12 +200,16 @@ txt1.setGravity(Gravity.RIGHT);
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if ( GM.equals("MAIL") ) {
                 FirebaseAuth.getInstance().signOut();
-                Toast.makeText(getContext(), "SignOut success", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "SignOut from MAIL success", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getContext(), login.class);
-                startActivity(intent);
-            }
-        });
+                startActivity(intent); }
+                else if ( GM.equals("GOOGLE") ) {
+                    signOut();
+
+            } } });
+
 
         Contact.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -305,4 +331,16 @@ txt1.setGravity(Gravity.RIGHT);
 
 
 
-            } }); }}
+            } }) ; }
+    private void signOut() {
+        mGoogleSignInClient.signOut()
+                .addOnCompleteListener(getActivity(), new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Toast.makeText(getContext(), "SignOut from GOOGLE success", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getContext(), login.class);
+                        startActivity(intent);
+                    }
+                });
+    }}
+

@@ -128,10 +128,11 @@ public class signup extends AppCompatActivity {
                 map.put("email", email);
                map.put("username" , username);
                 map.put("id" , mAuth.getCurrentUser().getUid());
-                map.put("bio" , "");
-                map.put("imageurl" , "default");
+                map.put("language" , "");
+                map.put("image" , "");
+                map.put("score","0") ;
                 pd.setMessage("Info uploaded!");
-
+FirebaseDatabase.getInstance().getReference().child("INFO").updateChildren(map) ;
                             pd.dismiss();
                 SharedPreferences sharedPreferences = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();

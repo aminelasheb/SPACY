@@ -33,7 +33,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
+
+import java.util.HashMap;
 
 public class signin extends AppCompatActivity  {
 
@@ -115,6 +118,7 @@ public class signin extends AppCompatActivity  {
                     Toast.makeText(signin.this, "Empty Credentials!", Toast.LENGTH_SHORT).show();
                 } else {
                     loginUser(txt_email , txt_password);
+
                 }
             }
         });
@@ -155,7 +159,13 @@ public class signin extends AppCompatActivity  {
 
             }
             editor.commit();
-
+            HashMap<String , Object> map = new HashMap<>();
+            map.put("email", acct.getEmail());
+            map.put("username" , acct.getDisplayName());
+            map.put("id" , mAuth.getCurrentUser().getUid());
+            map.put("language" , "");
+            map.put("image" , "");
+            FirebaseDatabase.getInstance().getReference().child("INFO").updateChildren(map) ;
 //             Signed in successfully, show authenticated UI.
             updateUI(account);
         } catch (ApiException e) {

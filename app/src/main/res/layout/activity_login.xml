@@ -121,6 +121,7 @@
                 android:layout_height="32dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="19dp"
+                android:background="#32324A"
                 android:layout_toRightOf="@id/textview88"
                 android:src="@drawable/arrow" />
 

@@ -120,8 +120,10 @@
                 android:layout_width="28dp"
                 android:layout_height="32dp"
                 android:layout_marginLeft="10dp"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
                 android:layout_marginTop="19dp"
-                android:background="#32324A"
+                android:background="@drawable/aa12"
                 android:layout_toRightOf="@id/textview88"
                 android:src="@drawable/arrow" />
 

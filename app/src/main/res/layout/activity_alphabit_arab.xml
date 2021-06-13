@@ -1,43 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backalphaone"
+    android:background="@drawable/artf7"
     tools:context=".alphabitArab">
 
+
     <TextView
+        android:id="@+id/ident"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="50dp"
-        android:layout_marginTop="50dp"
-        android:text="الحروف العربية "
-        android:textColor="#ffffff"/>
+        android:textSize="41dp"
+        android:fontFamily="@font/baloo"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="37dp"
+        android:text="ََالحروف"
+        android:textColor="@color/white" />
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="13dp"
+        android:layout_width="127dp"
+        android:layout_height="143dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/astroui1"
+        android:layout_toRightOf="@+id/ident"/>
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="appuyer sur lastronaut"-->
+<!--        android:fontFamily="@font/baloo"-->
+<!--        android:textSize="18dp"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:layout_below="@+id/ident"-->
+<!--        android:layout_marginLeft="30dp"/>-->
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/vp_horizontal3"
-        android:layout_width="330dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="130dp"
-        android:layout_height="230dp"
-        android:orientation="horizontal" />
 
+    <androidx.viewpager.widget.ViewPager
 
-
-    <FrameLayout
         android:layout_width="match_parent"
-        android:background="@drawable/backkk"
-        android:layout_height="100dp"
-        android:layout_marginTop="90dp"
-        >
+        android:layout_centerInParent="true"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:foregroundGravity="center"
+        android:overScrollMode="never"
+        android:id="@+id/vp_horizontal3"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+
         <ImageView
             android:id="@+id/speakeraar"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginBottom="30dp"
+            android:layout_width="160dp"
+            android:layout_height="240dp"
             android:background="?android:attr/selectableItemBackground"
-            app:srcCompat="@drawable/astromusic" /></FrameLayout>
+            app:srcCompat="@drawable/astromusic2" />
+    </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

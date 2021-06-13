@@ -1,12 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/board"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".settingsFragment">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50dp"
+        android:layout_marginTop="17dp"
+        android:textColor="#fff"
+        android:text="Profile"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/baloo"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/backArrow"
+        tools:ignore="UnknownId"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="80dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            app:civ_border_width="1dp"
+            app:civ_border_color="@color/white"
+            android:src="@drawable/child" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/imageView5"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            app:civ_border_width="1dp"
+            app:civ_border_color="@color/black"
+            android:layout_marginStart="80dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="120dp"
+            android:src="@drawable/plus"
+            />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="210dp"
+        android:src="@drawable/line"
+        />
 
 
 
-</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="User"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:id="@+id/Name"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="280dp"
+        android:fontFamily="@font/baloo"
+        android:background="@drawable/edit"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Your Score :"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:id="@+id/scoreee"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="340dp"
+        android:fontFamily="@font/baloo"
+        android:background="@drawable/edit"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:id="@+id/score"
+        android:gravity="center"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+
+        android:layout_marginLeft="260dp"
+        android:layout_marginTop="340dp"
+        android:fontFamily="@font/baloo"
+        android:background="@drawable/edit"
+        />
+
+<!--    <LinearLayout-->
+<!--        android:layout_marginTop="340dp"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        android:padding="20dp"-->
+<!--        >-->
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Full Name"-->
+<!--            android:id="@id/fullnameprofil"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:textColorHint="#FF4CC1"-->
+<!--            >-->
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:text="///"-->
+<!--                android:id="@+id/fullnamefield"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:textColor="#ffff"-->
+<!--                android:textColorHint="#fff"-->
+<!--                />-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="UserName"-->
+<!--            android:id="@+id/Usernameprofil"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:textColorHint="#FF4CC1"-->
+
+<!--            >-->
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:text="///"-->
+<!--                android:id="@+id/usernamefieled"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:textColor="#ffff"-->
+
+<!--                />-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Email"-->
+<!--            android:id="@+id/emailprofil"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:textColorHint="#FF4CC1"-->
+<!--            >-->
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:text="///"-->
+<!--                android:id="@+id/emailfieled"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:textColor="#ffff"-->
+<!--                android:textColorHint="#fff"-->
+<!--                />-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--    </LinearLayout>-->
+
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="390dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/astrmi"
+        />
+
+
+
+
+
+
+
+</RelativeLayout>

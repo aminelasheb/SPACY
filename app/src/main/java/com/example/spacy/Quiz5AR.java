@@ -21,6 +21,10 @@ public class Quiz5AR extends AppCompatActivity {
     private TextView questionNumber, question, score;
     private TextView checkout1, checkout2;
     private View optionT, optionI;
+    boolean Reponse = false;
+    boolean correctanswer;
+    boolean OptionAa,OptionBb,OptionCc,OptionDd,OptionAii,OptionBii,OptionCii,OptionDii ;
+
     int currentIndex;
     int userscore = 0;
     private MediaPlayer mMediaPlayer;
@@ -40,17 +44,17 @@ public class Quiz5AR extends AppCompatActivity {
     private final answerClass[] questionBank = new answerClass[]{
 
             new answerClass(2, R.drawable.onion, R.string.question5_022,
-                    R.string.question5_023, R.string.question5_024, R.string.question5_025, R.string.question5_026),
+                    R.string.question5_023, R.string.question5_024, R.string.question5_025, R.string.question5_025),
             new answerClass(5, R.raw.pommedeterrear, R.drawable.tomatte, R.drawable.carotte
-                    , R.drawable.pommedeterre, R.drawable.champignon, R.drawable.onion),
+                    , R.drawable.pommedeterre, R.drawable.champignon, R.drawable.pommedeterre),
             new answerClass(4, R.string.question5_017, R.drawable.fraise, R.drawable.pomme
-                    , R.drawable.bannane, R.drawable.maiis, R.drawable.peche),
+                    , R.drawable.bannane, R.drawable.maiis, R.drawable.bannane),
             new answerClass(3, R.raw.dattear, R.string.question5_017, R.string.question5_018,
-                    R.string.question5_019, R.string.question5_020, R.string.question5_021),
-            new answerClass(2, R.drawable.raisin, R.string.question5_017, R.string.question5_018,
+                    R.string.question5_019, R.string.question5_020, R.string.question5_020),
+            new answerClass(2, R.drawable.raisin, R.string.question5_017, R.string.question5_021,
                     R.string.question5_019, R.string.question5_020, R.string.question5_021),
             new answerClass(5, R.raw.cerisear, R.drawable.kiwi, R.drawable.pastheque
-                    , R.drawable.poire, R.drawable.datte, R.drawable.cerise),
+                    , R.drawable.cerise, R.drawable.datte, R.drawable.cerise),
             // 1 : Question text and replies text
             // 2 : Question image and replies text
             // 3 : Question vocal and replies text
@@ -174,8 +178,21 @@ public class Quiz5AR extends AppCompatActivity {
         optionA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkAnswer(currentOptionA);
-                updateQuestion();
+                if (Reponse == false) {
+                    Reponse = true;
+
+                    boolean result = checkAnswer(currentOptionA);
+                    if (result) {
+                        userscore=userscore-1 ;
+                        optionA.setBackgroundColor(0xFF00FF00);
+                        OptionAa = true;
+                    } else {
+                        optionA.setBackgroundColor(0xFFFF0000);
+                        OptionAa=false;
+                    }
+
+                    checkAnswer(currentOptionA);
+                }
 
             }
         });
@@ -184,8 +201,22 @@ public class Quiz5AR extends AppCompatActivity {
         optionB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkAnswer(currentOptionB);
-                updateQuestion();
+                if (Reponse == false) {
+                    Reponse = true;
+
+                    boolean result1 = checkAnswer(currentOptionB);
+                    if (result1) {
+                        userscore=userscore-1 ;
+                        optionB.setBackgroundColor(0xFF00FF00);
+                        OptionBb = true;
+                    } else {
+                        optionB.setBackgroundColor(0xFFFF0000);
+                        OptionBb = false;
+                    }
+
+
+                    checkAnswer(currentOptionB);
+                }
             }
         });
 
@@ -193,8 +224,21 @@ public class Quiz5AR extends AppCompatActivity {
         optionC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkAnswer(currentOptionC);
-                updateQuestion();
+                if (Reponse == false) {
+                    Reponse = true;
+
+                    boolean result3 = checkAnswer(currentOptionC);
+                    if (result3) {
+                        userscore=userscore-1 ;
+                        optionC.setBackgroundColor(0xFF00FF00);
+                        OptionCc = true;
+                    } else {
+                        optionC.setBackgroundColor(0xFFFF0000);
+                        OptionAa = false;
+                    }
+
+                    checkAnswer(currentOptionC);
+                }
             }
         });
 
@@ -202,25 +246,66 @@ public class Quiz5AR extends AppCompatActivity {
         optionD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkAnswer(currentOptionD);
-                updateQuestion();
+                if (Reponse == false) {
+                    Reponse = true;
+
+                    boolean result4 = checkAnswer(currentOptionD);
+                    if (result4) {
+                        userscore=userscore-1 ;
+                        optionD.setBackgroundColor(0xFF00FF00);
+                        OptionDd = true;
+                    } else {
+                        optionD.setBackgroundColor(0xFFFF0000);
+                        OptionDd = false;
+                    }
+
+                    checkAnswer(currentOptionD);
+                }
             }
         });
+
         optionAi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkAnsweri(currentOptionA);
-                updateQuestion();
+                if (Reponse == false) {
+                    Reponse = true;
+
+                    boolean result5 = checkAnsweri(currentOptionA);
+                    if (result5) {
+                        userscore=userscore-1 ;
+                        optionAi.setBackgroundColor(0xFF00FF00);
+                        OptionAii = true;
+                    } else {
+                        optionAi.setBackgroundColor(0xFFFF0000);
+                        OptionAii = false;
+                    }
+
+                    checkAnsweri(currentOptionA);
+                }
 
             }
+
         });
 
 
         optionBi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkAnsweri(currentOptionB);
-                updateQuestion();
+                if (Reponse == false) {
+                    Reponse = true;
+
+                    boolean result6 = checkAnsweri(currentOptionB);
+                    if (result6) {
+                        userscore=userscore-1 ;
+                        optionBi.setBackgroundColor(0xFF00FF00);
+                        OptionBii = true;
+                    } else {
+                        optionBi.setBackgroundColor(0xFFFF0000);
+                        OptionBii = false;
+                    }
+
+                    checkAnsweri(currentOptionB);
+                }
             }
         });
 
@@ -228,8 +313,21 @@ public class Quiz5AR extends AppCompatActivity {
         optionCi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkAnsweri(currentOptionC);
-                updateQuestion();
+                if (Reponse == false) {
+                    Reponse = true;
+
+                    boolean result7 = checkAnsweri(currentOptionC);
+                    if (result7) {
+                        userscore=userscore-1 ;
+                        optionCi.setBackgroundColor(0xFF00FF00);
+                        OptionCii = true;
+                    } else {
+                        optionCi.setBackgroundColor(0xFFFF0000);
+                        OptionCii = false;
+                    }
+
+                    checkAnsweri(currentOptionC);
+                }
             }
         });
 
@@ -237,13 +335,92 @@ public class Quiz5AR extends AppCompatActivity {
         optionDi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkAnsweri(currentOptionD);
-                updateQuestion();
+                if (Reponse == false) {
+                    Reponse = true;
+
+                    boolean result7 = checkAnsweri(currentOptionD);
+                    if (result7) {
+                        userscore=userscore-1 ;
+                        optionDi.setBackgroundColor(0xFF00FF00);
+                        OptionDii = true;
+                    } else {
+                        optionDi.setBackgroundColor(0xFFFF0000);
+                        OptionDii = true;
+                    }
+
+                    checkAnsweri(currentOptionD);
+                }
+
             }
+
+
         });
 
+
+
     }
+
+    private void updateQuestionn() {
+
+        boolean correctansweri = checkAnsweri(currentOptionA);
+        boolean correctanswerib = checkAnsweri(currentOptionB);
+        boolean correctansweric = checkAnsweri(currentOptionC);
+        boolean correctanswerid = checkAnsweri(currentOptionD);
+        boolean correctanswer = checkAnswer(currentOptionA);
+        boolean correctanswerb = checkAnswer(currentOptionB);
+        boolean correctanswerc = checkAnswer(currentOptionC);
+        boolean correctanswerd = checkAnswer(currentOptionD);
+
+        if (correctanswer == true){
+            optionA.setBackgroundColor(0xFF00FF00);
+            userscore=userscore-1 ;
+        }
+        if (correctanswerb == true){
+            optionB.setBackgroundColor(0xFF00FF00);
+            userscore=userscore-1 ;
+        }
+        if (correctanswerc == true){
+            optionC.setBackgroundColor(0xFF00FF00);
+            userscore=userscore-1 ;
+        }
+        if (correctanswerd == true){
+            optionD.setBackgroundColor(0xFF00FF00);
+            userscore=userscore-1 ;
+        }
+        if (correctansweri == true){
+            optionAi.setBackgroundColor(0xFF00FF00);
+            userscore=userscore-1 ;
+        }
+        if (correctanswerib == true){
+            optionBi.setBackgroundColor(0xFF00FF00);
+            userscore=userscore-1 ;
+        }
+        if (correctansweric == true){
+            optionCi.setBackgroundColor(0xFF00FF00);
+            userscore=userscore-1 ;
+        }
+        if (correctanswerid == true){
+            optionDi.setBackgroundColor(0xFF00FF00);
+            userscore=userscore-1 ;
+        }
+
+
+    }
+
+
+
+
     private void updateQuestion() {
+        Reponse=false;
+        optionA.setBackgroundColor(1);
+        optionB.setBackgroundColor(1);
+        optionC.setBackgroundColor(1);
+        optionD.setBackgroundColor(1);
+        optionAi.setBackgroundColor(1);
+        optionBi.setBackgroundColor(1);
+        optionCi.setBackgroundColor(1);
+        optionDi.setBackgroundColor(1);
+
         currentIndex = (currentIndex + 1) % questionBank.length;
         if (currentIndex == 0) {
             AlertDialog.Builder alert = new AlertDialog.Builder(this);
@@ -356,7 +533,7 @@ public class Quiz5AR extends AppCompatActivity {
 
     }
 
-    private void checkAnswer(int currentSelection) {
+    private boolean checkAnswer(int currentSelection) {
 
         int currentAnswer = questionBank[currentIndex].getAnswerid();
         checkout1.setText(currentSelection);
@@ -365,17 +542,18 @@ public class Quiz5AR extends AppCompatActivity {
         if (checkout1.getText().toString().trim().equals(checkout2.getText().toString().trim())) {
 //            Toast toast = Toast.makeText(this, "Right ✅!", FancyToast.LENGTH_LONG);
 //            toast.show();
-            FancyToast.makeText(this, "Vrai ✅!", FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, false).show();
+           // FancyToast.makeText(this, "Vrai ✅!", FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, false).show();
             userscore = userscore + 1;
+            return true;
         } else
 //        {                 Toast toast = Toast.makeText(this, "Wrong ❌!", FancyToast.LENGTH_LONG);
 //            toast.show();
 
-            FancyToast.makeText(this, "Faux ❌!", FancyToast.LENGTH_SHORT, FancyToast.ERROR, false).show();
-
+            //FancyToast.makeText(this, "Faux ❌!", FancyToast.LENGTH_SHORT, FancyToast.ERROR, false).show();
+            return false;
     }
 
-    private void checkAnsweri(int currentSelection) {
+    private boolean checkAnsweri(int currentSelection) {
 
         int currentAnswer = questionBank[currentIndex].getAnswerid();
 //        checkout1.setText(currentSelection);
@@ -384,14 +562,15 @@ public class Quiz5AR extends AppCompatActivity {
         if (currentSelection == currentAnswer) {
 //            Toast toast = Toast.makeText(this, "Right ✅!", FancyToast.LENGTH_LONG);
 //            toast.show();
-            FancyToast.makeText(this, "Vrai ✅!", FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, false).show();
+            //FancyToast.makeText(this, "Vrai ✅!", FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, false).show();
             userscore = userscore + 1;
+            return true;
         } else
 //        {                 Toast toast = Toast.makeText(this, "Wrong ❌!", FancyToast.LENGTH_LONG);
 //            toast.show();
 
-            FancyToast.makeText(this, "Faux ❌!", FancyToast.LENGTH_SHORT, FancyToast.ERROR, false).show();
-
+            //FancyToast.makeText(this, "Faux ❌!", FancyToast.LENGTH_SHORT, FancyToast.ERROR, false).show();
+             return false;
     }
 
     @Override
@@ -413,5 +592,20 @@ public class Quiz5AR extends AppCompatActivity {
             // is not configured to play an audio file at the moment.
             mMediaPlayer = null;
         }
+    }
+    public void updateQuestion(View view) {
+
+        updateQuestion();
+
+
+
+
+    }
+    public void updateQuestionn(View view) {
+        updateQuestionn();
+
+
+
+
     }
 }

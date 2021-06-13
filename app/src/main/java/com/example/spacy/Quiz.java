@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -11,7 +12,11 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.shashank.sony.fancytoastlib.FancyToast;
+
+import java.util.HashMap;
 
 public class Quiz extends AppCompatActivity {
 
@@ -21,8 +26,14 @@ public class Quiz extends AppCompatActivity {
     private TextView questionNumber, question, score;
     private TextView checkout1, checkout2;
     private View optionT, optionI;
+    boolean Reponse = false;
+    boolean correctanswer;
+    boolean OptionAa,OptionBb,OptionCc,OptionDd,OptionAii,OptionBii,OptionCii,OptionDii ;
+    ImageButton next;
     int currentIndex;
+    int nbrquestion,c;
     int userscore = 0;
+    int i;
     private MediaPlayer mMediaPlayer;
     private final MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
@@ -81,7 +92,7 @@ public class Quiz extends AppCompatActivity {
 //        questionNumber.setText(qn+"/"+questionBank.length+"Question");
 //        score.setText("Score :"+userscore+"/"+questionBank.length);
 
-
+        next=findViewById(R.id.nextbutton1);
         optionA = findViewById(R.id.Option1);
         optionB = findViewById(R.id.Option2);
         optionC = findViewById(R.id.Option3);
@@ -184,8 +195,21 @@ public class Quiz extends AppCompatActivity {
         optionA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkAnswer(currentOptionA);
-                updateQuestion();
+                if (Reponse == false) {
+                    Reponse = true;
+
+                    boolean result = checkAnswer(currentOptionA);
+                    if (result) {
+                        userscore=userscore-1 ;
+                        optionA.setBackgroundColor(0xFF00FF00);
+                        OptionAa = true;
+                    } else {
+                        optionA.setBackgroundColor(0xFFFF0000);
+                        OptionAa=false;
+                    }
+
+                    checkAnswer(currentOptionA);
+                }
 
             }
         });
@@ -194,8 +218,23 @@ public class Quiz extends AppCompatActivity {
         optionB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkAnswer(currentOptionB);
-                updateQuestion();
+                if (Reponse == false) {
+                    Reponse = true;
+
+                    boolean result1 = checkAnswer(currentOptionB);
+                    if (result1) {
+                        userscore=userscore-1 ;
+
+                        optionB.setBackgroundColor(0xFF00FF00);
+                        OptionBb = true;
+                    } else {
+                        optionB.setBackgroundColor(0xFFFF0000);
+                        OptionBb = false;
+                    }
+
+
+                    checkAnswer(currentOptionB);
+                }
             }
         });
 
@@ -203,8 +242,21 @@ public class Quiz extends AppCompatActivity {
         optionC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkAnswer(currentOptionC);
-                updateQuestion();
+                if (Reponse == false) {
+                    Reponse = true;
+
+                    boolean result3 = checkAnswer(currentOptionC);
+                    if (result3) {
+                        userscore=userscore-1 ;
+                        optionC.setBackgroundColor(0xFF00FF00);
+                        OptionCc = true;
+                    } else {
+                        optionC.setBackgroundColor(0xFFFF0000);
+                        OptionAa = false;
+                    }
+
+                    checkAnswer(currentOptionC);
+                }
             }
         });
 
@@ -212,26 +264,69 @@ public class Quiz extends AppCompatActivity {
         optionD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkAnswer(currentOptionD);
-                updateQuestion();
+                if (Reponse == false) {
+                    Reponse = true;
+
+                    boolean result4 = checkAnswer(currentOptionD);
+                    if (result4) {
+                        userscore=userscore-1 ;
+                        optionD.setBackgroundColor(0xFF00FF00);
+                        OptionDd = true;
+                    } else {
+                        optionD.setBackgroundColor(0xFFFF0000);
+                        OptionDd = false;
+                    }
+
+                    checkAnswer(currentOptionD);
+                }
             }
         });
 
         optionAi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkAnsweri(currentOptionA);
-                updateQuestion();
+                if (Reponse == false) {
+                    Reponse = true;
+
+                    boolean result5 = checkAnsweri(currentOptionA);
+                    if (result5) {
+
+                        userscore=userscore-1 ;
+
+                        optionAi.setBackgroundColor(0xFF00FF00);
+                        OptionAii = true;
+                    } else {
+                        optionAi.setBackgroundColor(0xFFFF0000);
+                        OptionAii = false;
+                    }
+
+                    checkAnsweri(currentOptionA);
+                }
 
             }
+
         });
 
 
         optionBi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkAnsweri(currentOptionB);
-                updateQuestion();
+                if (Reponse == false) {
+                    Reponse = true;
+
+                    boolean result6 = checkAnsweri(currentOptionB);
+                    if (result6) {
+                        userscore=userscore-1 ;
+
+                        optionBi.setBackgroundColor(0xFF00FF00);
+                        OptionBii = true;
+                    } else {
+                        optionBi.setBackgroundColor(0xFFFF0000);
+                        OptionBii = false;
+                    }
+
+                    checkAnsweri(currentOptionB);
+                }
             }
         });
 
@@ -239,8 +334,22 @@ public class Quiz extends AppCompatActivity {
         optionCi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkAnsweri(currentOptionC);
-                updateQuestion();
+                if (Reponse == false) {
+                    Reponse = true;
+
+                    boolean result7 = checkAnsweri(currentOptionC);
+                    if (result7) {
+                        userscore=userscore-1 ;
+
+                        optionCi.setBackgroundColor(0xFF00FF00);
+                        OptionCii = true;
+                    } else {
+                        optionCi.setBackgroundColor(0xFFFF0000);
+                        OptionCii = false;
+                    }
+
+                    checkAnsweri(currentOptionC);
+                }
             }
         });
 
@@ -248,17 +357,109 @@ public class Quiz extends AppCompatActivity {
         optionDi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkAnsweri(currentOptionD);
-                updateQuestion();
+                if (Reponse == false) {
+                    Reponse = true;
+
+                    boolean result7 = checkAnsweri(currentOptionD);
+                    if (result7) {
+                        userscore=userscore-1 ;
+
+                        optionDi.setBackgroundColor(0xFF00FF00);
+                        OptionDii = true;
+                    } else {
+                        optionDi.setBackgroundColor(0xFFFF0000);
+                        OptionDii = true;
+                    }
+
+                    checkAnsweri(currentOptionD);
+                }
+
             }
+
+
         });
+
 
 
     }
 
+    private void updateQuestionn() {
+
+        boolean correctansweri = checkAnsweri(currentOptionA);
+        boolean correctanswerib = checkAnsweri(currentOptionB);
+        boolean correctansweric = checkAnsweri(currentOptionC);
+        boolean correctanswerid = checkAnsweri(currentOptionD);
+        boolean correctanswer = checkAnswer(currentOptionA);
+        boolean correctanswerb = checkAnswer(currentOptionB);
+        boolean correctanswerc = checkAnswer(currentOptionC);
+        boolean correctanswerd = checkAnswer(currentOptionD);
+
+           if (correctanswer == true){
+               userscore=userscore-1 ;
+               optionA.setBackgroundColor(0xFF00FF00);
+           }
+        if (correctanswerb == true){
+            userscore=userscore-1 ;
+
+            optionB.setBackgroundColor(0xFF00FF00);
+        }
+        if (correctanswerc == true){
+            userscore=userscore-1 ;
+
+            optionC.setBackgroundColor(0xFF00FF00);
+        }
+        if (correctanswerd == true){
+            userscore=userscore-1 ;
+
+            optionD.setBackgroundColor(0xFF00FF00);
+        }
+        if (correctansweri == true){
+            userscore=userscore-1 ;
+
+            optionAi.setBackgroundColor(0xFF00FF00);
+        }
+        if (correctanswerib == true){
+            userscore=userscore-1 ;
+
+            optionBi.setBackgroundColor(0xFF00FF00);
+        }
+        if (correctansweric == true){
+            userscore=userscore-1 ;
+
+            optionCi.setBackgroundColor(0xFF00FF00);
+        }
+        if (correctanswerid == true){
+            userscore=userscore-1 ;
+
+            optionDi.setBackgroundColor(0xFF00FF00);
+        }
+
+
+    }
+
+
+
+
     private void updateQuestion() {
+        Reponse=false;
+        optionA.setBackgroundColor(1);
+        optionB.setBackgroundColor(1);
+        optionC.setBackgroundColor(1);
+        optionD.setBackgroundColor(1);
+        optionAi.setBackgroundColor(1);
+        optionBi.setBackgroundColor(1);
+        optionCi.setBackgroundColor(1);
+        optionDi.setBackgroundColor(1);
+
+
+
+
         currentIndex = (currentIndex + 1) % questionBank.length;
         if (currentIndex == 0) {
+            HashMap<String , Object> map = new HashMap<>();
+            map.put("score" ,userscore);
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO");
+            reference.updateChildren(map) ;
             AlertDialog.Builder alert = new AlertDialog.Builder(this);
             alert.setTitle("Game Over");
             alert.setCancelable(false);
@@ -369,10 +570,13 @@ public class Quiz extends AppCompatActivity {
         score.setText("Score :" + userscore + "/" + questionBank.length);
         progressBar.incrementProgressBy(PROGRESS_BAR);
 
+
+
     }
 
 
-    private void checkAnswer(int currentSelection) {
+
+    private boolean checkAnswer(int currentSelection) {
 
         int currentAnswer = questionBank[currentIndex].getAnswerid();
         checkout1.setText(currentSelection);
@@ -381,17 +585,19 @@ public class Quiz extends AppCompatActivity {
         if (checkout1.getText().toString().trim().equals(checkout2.getText().toString().trim())) {
 //            Toast toast = Toast.makeText(this, "Right ✅!", FancyToast.LENGTH_LONG);
 //            toast.show();
-            FancyToast.makeText(this, "Right ✅!", FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, false).show();
-            userscore = userscore + 1;
-        } else
+            //FancyToast.makeText(this, "Right ✅!", FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, false).show();
+            userscore = userscore +1;
+            return true;
+        } else {
 //        {                 Toast toast = Toast.makeText(this, "Wrong ❌!", FancyToast.LENGTH_LONG);
 //            toast.show();
 
-            FancyToast.makeText(this, "Wrong ❌!", FancyToast.LENGTH_SHORT, FancyToast.ERROR, false).show();
-
+            //FancyToast.makeText(this, "Wrong ❌!", FancyToast.LENGTH_SHORT, FancyToast.ERROR, false).show();
+            return false;
+        }
     }
 
-    private void checkAnsweri(int currentSelection) {
+    private boolean checkAnsweri(int currentSelection) {
 
         int currentAnswer = questionBank[currentIndex].getAnswerid();
 //        checkout1.setText(currentSelection);
@@ -400,15 +606,20 @@ public class Quiz extends AppCompatActivity {
         if (currentSelection == currentAnswer) {
 //            Toast toast = Toast.makeText(this, "Right ✅!", FancyToast.LENGTH_LONG);
 //            toast.show();
-            FancyToast.makeText(this, "Right ✅!", FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, false).show();
-            userscore = userscore + 1;
-        } else
+            //FancyToast.makeText(this, "Right ✅!", FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, false).show();
+            userscore=userscore+1 ;
+            return true;
+        } else{
 //        {                 Toast toast = Toast.makeText(this, "Wrong ❌!", FancyToast.LENGTH_LONG);
 //            toast.show();
 
-            FancyToast.makeText(this, "Wrong ❌!", FancyToast.LENGTH_SHORT, FancyToast.ERROR, false).show();
+            //FancyToast.makeText(this, "Wrong ❌!", FancyToast.LENGTH_SHORT, FancyToast.ERROR, false).show();
 
+            return false;
+        }
     }
+
+
 
     @Override
     protected void onStop() {
@@ -432,4 +643,19 @@ public class Quiz extends AppCompatActivity {
     }
 
 
+    public void updateQuestion(View view) {
+
+        updateQuestion();
+
+
+
+
+    }
+    public void updateQuestionn(View view) {
+        updateQuestionn();
+
+
+
+
+    }
 }

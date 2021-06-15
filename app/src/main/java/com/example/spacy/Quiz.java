@@ -57,7 +57,7 @@ String id ;
 
             new answerClass(1, R.string.question1, R.string.question1_A, R.string.question1_B
                     , R.string.question1_C, R.string.question1_D, R.string.answer1),
-            new answerClass(3, R.raw.b, R.string.question9_A, R.string.question9_B
+            new answerClass(3, R.raw.benglish, R.string.question9_A, R.string.question9_B
                     , R.string.question9_C, R.string.question9_D, R.string.answer9),
             new answerClass(1, R.string.question2, R.string.question2_A, R.string.question2_B
                     , R.string.question2_C, R.string.question2_D, R.string.answer2),
@@ -206,9 +206,9 @@ String id ;
                     verifier=true;
                     verifier1=false; verifier2=false; verifier3=false; verifier4=false;
                     verifier5=false; verifier6=false; verifier7=false;
-                    //boolean resultt = checkAnswer(currentOptionA);
+                   // boolean resultt = checkAnswer(currentOptionA);
                     //if (resultt) {
-                      //  userscore=userscore-1 ;
+                    //    userscore=userscore ;
                         //optionA.setBackgroundColor(0xFF00FF00);
                         //OptionAa = true;
                     //} else {
@@ -573,6 +573,7 @@ String id ;
         optionBi.setBackgroundColor(1);
         optionCi.setBackgroundColor(1);
         optionDi.setBackgroundColor(1);
+
 
 
 

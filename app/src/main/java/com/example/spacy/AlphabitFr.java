@@ -28,9 +28,9 @@ public class AlphabitFr extends AppCompatActivity {
     };
 
 
-    int[] vocals = {R.raw.afr, R.raw.bfr, R.raw.cfr, R.raw.dfr, R.raw.efr, R.raw.ffr, R.raw.gfr, R.raw.hfr
-            , R.raw.ifr, R.raw.jfr, R.raw.kfr, R.raw.lfr, R.raw.mfr, R.raw.nfr, R.raw.ofr, R.raw.pfr, R.raw.qfr, R.raw.rfr
-            , R.raw.sfr, R.raw.tfr, R.raw.ufr, R.raw.vfr, R.raw.wfr, R.raw.xfr, R.raw.yfr, R.raw.zfr,};
+    int[] vocals = {R.raw.alettrefr, R.raw.blettfr, R.raw.clettrefr, R.raw.dlettre, R.raw.efr, R.raw.flettrefr, R.raw.glettrefr, R.raw.hlettrefr
+            , R.raw.ilettrefr, R.raw.jlettrefr, R.raw.klettrefr, R.raw.lfr, R.raw.mfr, R.raw.nnfr, R.raw.oofr, R.raw.ppfr, R.raw.qqfr, R.raw.rrfr
+            , R.raw.ssfr, R.raw.ttfr, R.raw.ufr, R.raw.vvfr, R.raw.wwfr, R.raw.xfr, R.raw.yfr, R.raw.zfr,};
 
 
     @Override

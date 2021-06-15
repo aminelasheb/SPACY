@@ -49,11 +49,11 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             app:civ_border_width="1dp"
-            app:civ_border_color="@color/black"
+            app:civ_border_color="@color/white"
             android:layout_marginStart="80dp"
             android:layout_marginLeft="80dp"
             android:layout_marginTop="120dp"
-            android:src="@drawable/plus"
+            android:src="@drawable/change"
             />
 
     </RelativeLayout>
@@ -61,10 +61,19 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginTop="210dp"
+        android:layout_marginTop="255dp"
         android:src="@drawable/line"
         />
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="35dp"
+        android:layout_marginTop="320dp"
+        android:textColor="#fff"
+        android:text="My dashboard"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/baloo"
+        />
 
 
     <TextView
@@ -78,7 +87,7 @@
         android:id="@+id/Name"
         android:gravity="center"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="240dp"
         android:fontFamily="@font/baloo"
         android:background="@drawable/edit"
         />
@@ -86,36 +95,52 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="Your Score :"
+        android:text="English :"
         android:textColor="#000000"
         android:textSize="18dp"
         android:paddingLeft="3dp"
         android:paddingRight="3dp"
-        android:id="@+id/scoreee"
+        android:id="@+id/anglais"
         android:gravity="center"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="340dp"
+        android:layout_marginTop="490dp"
         android:fontFamily="@font/baloo"
         android:background="@drawable/edit"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="0"
+        android:text="/"
         android:textColor="#000000"
         android:textSize="18dp"
-        android:id="@+id/score"
+        android:id="@+id/Anscore"
         android:gravity="center"
         android:paddingLeft="3dp"
         android:paddingRight="3dp"
 
         android:layout_marginLeft="260dp"
-        android:layout_marginTop="340dp"
+        android:layout_marginTop="490dp"
         android:fontFamily="@font/baloo"
         android:background="@drawable/edit"
         />
 
-<!--    <LinearLayout-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="French:"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:id="@+id/French"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="390dp"
+        android:fontFamily="@font/baloo"
+        android:background="@drawable/edit"
+        />
+
+    <!--    <LinearLayout-->
 <!--        android:layout_marginTop="340dp"-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="wrap_content"-->
@@ -182,14 +207,56 @@
 
 <!--    </LinearLayout>-->
 
-
-    <ImageView
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_marginTop="390dp"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Arabic:"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:id="@+id/arab"
+        android:gravity="center"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/astrmi"
+        android:layout_marginTop="440dp"
+        android:fontFamily="@font/baloo"
+        android:background="@drawable/edit"
         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="/"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:id="@+id/aScore"
+        android:gravity="center"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+
+        android:layout_marginLeft="260dp"
+        android:layout_marginTop="440dp"
+        android:fontFamily="@font/baloo"
+        android:background="@drawable/edit"
+        />
+
+
+
+    <TextView
+        android:id="@+id/lang"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginLeft="260dp"
+        android:layout_marginTop="390dp"
+        android:background="@drawable/edit"
+        android:fontFamily="@font/baloo"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="3dp"
+        android:text="/"
+        android:textColor="#000000"
+        android:textSize="18dp" />
+
+
 
 
 

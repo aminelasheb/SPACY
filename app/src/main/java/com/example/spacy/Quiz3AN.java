@@ -47,7 +47,7 @@ Quiz3AN extends AppCompatActivity {
 
 
 
-            new answerClass(2, R.drawable.shirt1 ,R.string.question106_b, R.string.question106_a,
+            new answerClass(2, R.drawable.shirt ,R.string.question106_b, R.string.question106_a,
                     R.string.question106_c,R.string.question106_d,R.string.question106_b),
             new answerClass(5, R.raw.head, R.drawable.eye, R.drawable.orl
                     , R.drawable.head1, R.drawable.hair4, R.drawable.head1),

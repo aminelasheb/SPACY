@@ -27,6 +27,7 @@ public class AFA extends AppCompatActivity {
     private View Ang;
     private View Fr;
     private View Ar;
+    Boolean a,ar,f ;
 
 
     SharedPreferences MyPre;
@@ -34,14 +35,13 @@ public class AFA extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        a=false;ar=false;f=false;
         setContentView(R.layout.afa);
         MyPre = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         SharedPreferences sharedPreferences = this.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         String language = sharedPreferences.getString("LangApp", "English");
         String act = sharedPreferences.getString("acct", "/");
         String gm = sharedPreferences.getString("GM", "/");
-
-
         SharedPreferences.Editor editor = MyPre.edit();
         editor.putString("LangApp", language);
         editor.commit();
@@ -54,6 +54,13 @@ public class AFA extends AppCompatActivity {
             public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
                 editor.putString("image", snapshot.child("image").getValue().toString());
                 editor.commit();
+                if(!snapshot.child("Anglais").getValue().toString().equals("0") &&
+                        !snapshot.child("Anglais").getValue().toString().equals("-1") ) {a=true;}
+                if(snapshot.child("Français").getValue().toString().equals("0") &&
+                !snapshot.child("Français").getValue().toString().equals("-1") ) {f=true;}
+                if(snapshot.child("العربية").getValue().toString().equals("0") &&
+                !snapshot.child("العربية").getValue().toString().equals("-1") ) {ar=true;}
+
 
 
             }
@@ -71,6 +78,7 @@ public class AFA extends AppCompatActivity {
                 Intent intent = new Intent(AFA.this, levels.class);
                 SharedPreferences.Editor editor = MyPre.edit();
                 editor.putString("LangLearn", "An");
+                if (a==false) {
                 HashMap<String, Object> map = new HashMap<>();
                 map.put("Anglais", "0");
                 map.put("new", "false");
@@ -84,7 +92,7 @@ public class AFA extends AppCompatActivity {
                 } else if (gm.equals("GOOGLE")) {
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(act);
                     reference.updateChildren(map);
-                }
+                } }
 
 
                 editor.commit();
@@ -102,6 +110,7 @@ public class AFA extends AppCompatActivity {
                 Intent intent = new Intent(AFA.this, levels.class);
                 SharedPreferences.Editor editor = MyPre.edit();
                 editor.putString("LangLearn", "Ar");
+                if (ar==false) {
                 HashMap<String, Object> map = new HashMap<>();
                 map.put("العربية", "0");
                 map.put("new", "false");
@@ -115,7 +124,7 @@ public class AFA extends AppCompatActivity {
                 } else if (gm.equals("GOOGLE")) {
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(act);
                     reference.updateChildren(map);
-                }
+                } }
                 editor.commit();
                 startActivity(intent);
                 finish();
@@ -131,6 +140,7 @@ public class AFA extends AppCompatActivity {
                 Intent intent = new Intent(AFA.this, levels.class);
                 SharedPreferences.Editor editor = MyPre.edit();
                 editor.putString("LangLearn", "Fr");
+                if (f==false){
                 HashMap<String, Object> map = new HashMap<>();
                 map.put("Français", "0");
                 map.put("new", "false");
@@ -145,7 +155,7 @@ public class AFA extends AppCompatActivity {
                 } else if (gm.equals("GOOGLE")) {
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(act);
                     reference.updateChildren(map);
-                }
+                } }
                 editor.commit();
                 startActivity(intent);
                 finish();

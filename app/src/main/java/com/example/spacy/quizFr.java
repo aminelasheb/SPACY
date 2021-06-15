@@ -11,7 +11,12 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.shashank.sony.fancytoastlib.FancyToast;
+
+import java.util.HashMap;
 
 public class quizFr extends AppCompatActivity {
 
@@ -551,6 +556,11 @@ public class quizFr extends AppCompatActivity {
 
         currentIndex = (currentIndex + 1) % questionBank.length;
         if (currentIndex == 0) {
+            HashMap<String , Object> map = new HashMap<>();
+            map.put("Français" ,userscore+"");
+
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+            reference.updateChildren(map) ;
             AlertDialog.Builder alert = new AlertDialog.Builder(this);
             alert.setTitle("Jeux terminé!");
             alert.setCancelable(false);

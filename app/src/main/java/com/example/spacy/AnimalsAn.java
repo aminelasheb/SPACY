@@ -111,17 +111,21 @@ loadcards();
     private void loadcards(){
 
         aymenmodelArrayList=new ArrayList<>();
+//    String[] Names = {"Cow", "Dog", "Elephant", "Fox", "Giraffe", "Horse", "Lion", "Monkey", "Panda", "Snake", "Gorilla", "Rabbit"};
 
-        aymenmodelArrayList.add(new aymenmodel("Cat",R.drawable.cat));
+        aymenmodelArrayList.add(new aymenmodel("Cow",R.drawable.cow));
         aymenmodelArrayList.add(new aymenmodel("Dog",R.drawable.dog));
         aymenmodelArrayList.add(new aymenmodel("Elephant",R.drawable.elepant));
         aymenmodelArrayList.add(new aymenmodel("fox", R.drawable.fox));
+        aymenmodelArrayList.add(new aymenmodel("Giraffe",R.drawable.giraffe));
         aymenmodelArrayList.add(new aymenmodel("Horse",R.drawable.horse));
         aymenmodelArrayList.add(new aymenmodel("Lyon",R.drawable.lion));
         aymenmodelArrayList.add(new aymenmodel("Monkey",R.drawable.monkey));
         aymenmodelArrayList.add(new aymenmodel("Panda",R.drawable.panda));
         aymenmodelArrayList.add(new aymenmodel("Snake",R.drawable.snake));
+        aymenmodelArrayList.add(new aymenmodel("Gorilla",R.drawable.gorilla));
         aymenmodelArrayList.add(new aymenmodel("Rabbit",R.drawable.rabbit));
+
 
 
 

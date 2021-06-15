@@ -37,6 +37,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.shashank.sony.fancytoastlib.FancyToast;
 import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
@@ -165,11 +166,15 @@ public class signin extends AppCompatActivity  {
                 @Override
                 public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
 
-neww = snapshot.child("new").getValue().toString();
-                    if (!(neww=="false")) {
+                    if (!(snapshot.hasChild("new"))) {
                         map.put("Anglais","-1") ;
                         map.put("Français","-1") ;
-                        map.put("العربية","-1") ; }
+                        map.put("العربية","-1") ;
+                        FirebaseDatabase.getInstance().getReference().child("INFO").child(acct.getId()).setValue(map) ;
+
+                        Toast toast = Toast.makeText(signin.this, "Right ✅!", FancyToast.LENGTH_LONG);
+            toast.show();
+                    }
                 }
 
                 @Override
@@ -178,7 +183,6 @@ neww = snapshot.child("new").getValue().toString();
                 }
             });
 
-            FirebaseDatabase.getInstance().getReference().child("INFO").child(acct.getId()).updateChildren(map) ;
             editor.putString("Name",acct.getDisplayName()) ;
             try {
                 String PhotoUrl = acct.getPhotoUrl().toString();

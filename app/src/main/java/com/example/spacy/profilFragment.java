@@ -84,14 +84,25 @@ public class profilFragment extends Fragment {
 
         SharedPreferences.Editor editor = MyPre.edit();
 
+        if (GM.equals("GOOGLE")) {
+            plus.setAlpha(0f);
+            name.setText(Name);
+            try {
+                Picasso.with(getContext()).load(IM).into(profile);
+            } catch (Exception e) {
 
+            }
+
+
+        }
         english.setVisibility(View.GONE);
         englishScore.setVisibility(View.GONE);
         french.setVisibility(View.GONE);
         frenchScore.setVisibility(View.GONE);
         arabicScore.setVisibility(View.GONE);
         Arab.setVisibility(View.GONE);
-        Name = sharedPreferences.getString("Name","/") ;
+        Name = sharedPreferences.getString("Name","User") ;
+        name.setText(Name);
         if (GM.equals("MAIL")) { id = FirebaseAuth.getInstance().getCurrentUser().getUid() ;}
         else if (GM.equals("GOOGLE")) { id = act ;}
 
@@ -105,6 +116,8 @@ public class profilFragment extends Fragment {
                 frenchScore.setText(snapshot.child("Français").getValue().toString());
                 englishScore.setText(snapshot.child("Anglais").getValue().toString());
                 if (GM.equals("MAIL")) {
+
+
                     editor.putString("image", snapshot.child("image").getValue().toString());
                     editor.commit();
                 }
@@ -164,8 +177,10 @@ public class profilFragment extends Fragment {
 
 
                 if (sharedPreferences.getString("image", "/").equals("1")) {
+                    im="2" ;
                     editor.putString("image", "2");
                 } else if (sharedPreferences.getString("image", "/").equals("2")) {
+                    im="1" ;
                     editor.putString("image", "1");
                 }
                 editor.commit();
@@ -181,35 +196,10 @@ public class profilFragment extends Fragment {
 
                 }
 
-                if (GM.equals("MAIL")) {
-                    DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
-
-                    reference.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
-                            name.setText(snapshot.child("username").getValue().toString());
-
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull @NotNull DatabaseError error) {
-
-                        }
-                    });
-                }
 
 
-                if (GM.equals("GOOGLE")) {
-                    plus.setAlpha(0f);
-                    name.setText(Name);
-                    try {
-                        Picasso.with(getContext()).load(IM).into(profile);
-                    } catch (Exception e) {
-
-                    }
 
 
-                }
             }
 
 

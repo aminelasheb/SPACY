@@ -23,7 +23,7 @@ public class ColorsFr extends AppCompatActivity {
         }
     };
     int[] images = {R.drawable.black, R.drawable.white, R.drawable.yellow
-            , R.drawable.violet, R.drawable.red, R.drawable.pink, R.drawable.greyy, R.drawable.green, R.drawable.brown, R.drawable.bleu, R.drawable.orange};
+            , R.drawable.violet, R.drawable.red, R.drawable.pink, R.drawable.pink, R.drawable.green, R.drawable.brown, R.drawable.bleu, R.drawable.orange};
 
 
     int[] vocals = {R.raw.noir, R.raw.blanc, R.raw.jaune, R.raw.violet, R.raw.rouge,

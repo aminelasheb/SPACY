@@ -297,13 +297,12 @@
 
         <ImageButton
             android:onClick="updateQuestion"
-            android:layout_marginLeft="320dp"
+            android:layout_marginLeft="16dp"
             android:id="@+id/nextbutton1"
             android:layout_width="90dp"
             android:layout_height="70dp"
-            android:background="@drawable/arrow"
+            android:background="@drawable/arrowarabe"
             />
-
 
     </RelativeLayout>
 

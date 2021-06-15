@@ -11,7 +11,7 @@
         android:roundIcon="@drawable/astro"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".testtextinput"></activity>
+
         <activity android:name=".quiz7_arabe" />
 
 

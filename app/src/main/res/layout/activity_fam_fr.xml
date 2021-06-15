@@ -1,44 +1,68 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:orientation="vertical"
+android:background="@drawable/artf4"
+android:layout_height="match_parent"
+tools:context=".Famfr">
+
+
+<TextView
+    android:id="@+id/ident"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="41dp"
+    android:fontFamily="@font/baloo"
+    android:layout_marginLeft="30dp"
+    android:layout_marginTop="37dp"
+    android:text="Ma famille"
+    android:textColor="@color/black" />
+<ImageView
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="13dp"
+    android:layout_width="127dp"
+    android:layout_height="143dp"
+    android:scaleType="centerCrop"
+    android:src="@drawable/astroui1"
+    android:layout_toRightOf="@+id/ident"/>
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="appuyer sur lastroanut"
+    android:fontFamily="@font/baloo"
+    android:textSize="18dp"
+    android:textColor="@color/black"
+    android:layout_below="@+id/ident"
+    android:layout_marginLeft="30dp"/>
+
+
+<androidx.viewpager.widget.ViewPager
+
     android:layout_width="match_parent"
+    android:layout_centerInParent="true"
     android:layout_height="match_parent"
-    android:background="@drawable/backalphaone"
-    tools:context=".Famfr">
+    android:clipToPadding="false"
+    android:foregroundGravity="center"
+    android:overScrollMode="never"
+    android:id="@+id/vp_horizontalje1"
+    />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="50dp"
-        android:layout_marginTop="50dp"
-        android:text="Ma famille "
-        android:fontFamily="@font/baloo"
-        android:textColor="@color/white"/>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_alignParentBottom="true"
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/vp_horizontalje1"
-        android:layout_width="350dp"
-        android:layout_height="320dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal" />
+    android:layout_height="wrap_content">
 
-
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:background="@drawable/backkk"
-        android:layout_height="100dp"
-        android:layout_marginTop="90dp"
-        >
-        <ImageView
-            android:id="@+id/speakerje1"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginBottom="30dp"
-            android:background="?android:attr/selectableItemBackground"
-            app:srcCompat="@drawable/astromusic" /></FrameLayout>
-
+    <ImageView
+        android:id="@+id/speakerje1"
+        android:layout_width="160dp"
+        android:layout_height="240dp"
+        android:background="?android:attr/selectableItemBackground"
+        app:srcCompat="@drawable/astromusic2" />
 </LinearLayout>
+
+
+</RelativeLayout>

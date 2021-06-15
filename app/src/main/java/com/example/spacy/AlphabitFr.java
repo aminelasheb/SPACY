@@ -129,10 +129,10 @@ public class AlphabitFr extends AppCompatActivity {
         aymenmodelArrayList.add(new aymenmodel("",R.drawable.tlett));
         aymenmodelArrayList.add(new aymenmodel("",R.drawable.ulett));
         aymenmodelArrayList.add(new aymenmodel("",R.drawable.vlett));
-        aymenmodelArrayList.add(new aymenmodel("",R.drawable.slett));
-        aymenmodelArrayList.add(new aymenmodel("",R.drawable.tlett));
-        aymenmodelArrayList.add(new aymenmodel("",R.drawable.ulett));
-        aymenmodelArrayList.add(new aymenmodel("",R.drawable.vlett));
+        aymenmodelArrayList.add(new aymenmodel("",R.drawable.wlet));
+        aymenmodelArrayList.add(new aymenmodel("",R.drawable.xlet));
+        aymenmodelArrayList.add(new aymenmodel("",R.drawable.ylet));
+        aymenmodelArrayList.add(new aymenmodel("",R.drawable.zlet));
 
 
 

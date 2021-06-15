@@ -44,7 +44,7 @@ public class Quiz3Fr extends AppCompatActivity {
     //table of answers
     private final answerClass[] questionBank = new answerClass[]{
 
-            new answerClass(2, R.drawable.shirt1 ,R.string.question101_a, R.string.question104_a,
+            new answerClass(2, R.drawable.shirt ,R.string.question101_a, R.string.question104_a,
                 R.string.question102_a,R.string.question103_a,R.string.question101_a),
             new answerClass(5, R.raw.tete, R.drawable.eye, R.drawable.orl
                     , R.drawable.head1, R.drawable.hair4, R.drawable.head1),

@@ -2,6 +2,7 @@ package com.example.spacy;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
@@ -11,10 +12,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
+
 public class ColorsFr extends AppCompatActivity {
     //initialize variable
-    ViewPager2 vpVertical, vpHorizontal;
+    private ViewPager vpHorizontal;
     private MediaPlayer mMediaPlayer;
+    private adaptervp adaptervpp;
+    private ArrayList<aymenmodel> aymenmodelArrayList;
+
 
     private final MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
@@ -22,17 +28,17 @@ public class ColorsFr extends AppCompatActivity {
             releaseMediaPlayer();
         }
     };
-    int[] images = {R.drawable.black, R.drawable.white, R.drawable.yellow
-            , R.drawable.violet, R.drawable.red, R.drawable.pink, R.drawable.pink, R.drawable.green, R.drawable.brown, R.drawable.bleu, R.drawable.orange};
+  //  int[] images = {R.drawable.black, R.drawable.white, R.drawable.yellow
+          //  , R.drawable.violet, R.drawable.red, R.drawable.pink, R.drawable.pink, R.drawable.green, R.drawable.brown, R.drawable.bleu, R.drawable.orange};
 
 
     int[] vocals = {R.raw.noir, R.raw.blanc, R.raw.jaune, R.raw.violet, R.raw.rouge,
             R.raw.rose, R.raw.gris, R.raw.vert, R.raw.marron, R.raw.bleufr, R.raw.orangeee};
 
     //Create String array
-    String[] Names = {"Noir", "Blanc", "Jaune", "Violet", "Rouge", "Rose", "Gris", "Vert", "Marron", "Bleu", "Orange"};
+    //String[] Names = {"Noir", "Blanc", "Jaune", "Violet", "Rouge", "Rose", "Gris", "Vert", "Marron", "Bleu", "Orange"};
 
-    MainAdapter4 adapter;
+ //   MainAdapter4 adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,36 +52,36 @@ public class ColorsFr extends AppCompatActivity {
         vpHorizontal = findViewById(R.id.vpp_horizontalll3);
 
         //initialize main adapter
-        adapter = new MainAdapter4(images, Names);
+       // adapter = new MainAdapter4(images, Names);
 
         //set clip padding
-        vpHorizontal.setClipToPadding(false);
+       // vpHorizontal.setClipToPadding(false);
         //set clip children
-        vpHorizontal.setClipChildren(false);
+       // vpHorizontal.setClipChildren(false);
         //set page limit
-        vpHorizontal.setOffscreenPageLimit(3);
+       // vpHorizontal.setOffscreenPageLimit(3);
         //set default start position
-        vpHorizontal.getChildAt(0).setOverScrollMode(View.OVER_SCROLL_NEVER);
+       // vpHorizontal.getChildAt(0).setOverScrollMode(View.OVER_SCROLL_NEVER);
         //set adapter on horizontal viewpager
-        vpHorizontal.setAdapter(adapter);
+      //  vpHorizontal.setAdapter(adapter);
 
 
         //initialize composite page transformer
-        CompositePageTransformer transformer = new CompositePageTransformer();
+       //CompositePageTransformer transformer = new CompositePageTransformer();
         //add margin between page
-        transformer.addTransformer(new MarginPageTransformer(8));
+       // transformer.addTransformer(new MarginPageTransformer(8));
         //increase selected page size
-        transformer.addTransformer(new ViewPager2.PageTransformer() {
-            @Override
-            public void transformPage(@NonNull View page, float position) {
-                float v = 1 - Math.abs(position);
+       // transformer.addTransformer(new ViewPager2.PageTransformer() {
+        //    @Override
+         //   public void transformPage(@NonNull View page, float position) {
+            //    float v = 1 - Math.abs(position);
                 //set scale y
-                page.setScaleY(0.8f + v * 0.2f);
-            }
-        });
+             //  page.setScaleY(0.8f + v * 0.2f);
+           // }
+        //});
         //set page transform
-        vpHorizontal.setPageTransformer(transformer);
-
+      //  vpHorizontal.setPageTransformer(transformer);
+        loadcards();
         im.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -103,5 +109,28 @@ public class ColorsFr extends AppCompatActivity {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
+    }
+    private void loadcards(){
+
+        aymenmodelArrayList=new ArrayList<>();
+
+        aymenmodelArrayList.add(new aymenmodel("Noir",R.drawable.black));
+        aymenmodelArrayList.add(new aymenmodel("Blanc",R.drawable.white));
+        aymenmodelArrayList.add(new aymenmodel("Jaune",R.drawable.yellow));
+        aymenmodelArrayList.add(new aymenmodel("Violet", R.drawable.violet));
+        aymenmodelArrayList.add(new aymenmodel("Rouge",R.drawable.red));
+        aymenmodelArrayList.add(new aymenmodel("Rose",R.drawable.pink));
+        aymenmodelArrayList.add(new aymenmodel("Gris",R.drawable.greyy));
+        aymenmodelArrayList.add(new aymenmodel("Vert",R.drawable.green));
+        aymenmodelArrayList.add(new aymenmodel("Marron",R.drawable.brown));
+        aymenmodelArrayList.add(new aymenmodel("Bleu",R.drawable.bleu));
+        aymenmodelArrayList.add(new aymenmodel("Orange",R.drawable.orange1));
+
+        adaptervpp=new adaptervp(this,aymenmodelArrayList);
+
+        vpHorizontal.setAdapter(adaptervpp);
+
+        vpHorizontal.setPadding(50,400,50,0);
+
     }
 }

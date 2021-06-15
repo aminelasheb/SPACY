@@ -22,7 +22,7 @@ public class alphabitArab extends AppCompatActivity {
     int[] vocals = {R.raw.alif, R.raw.baa, R.raw.taa, R.raw.thaa, R.raw.gim, R.raw.ha, R.raw.khaa,
             R.raw.da, R.raw.dha, R.raw.ra, R.raw.za, R.raw.sin, R.raw.ch, R.raw.sad,
             R.raw.dhae, R.raw.taee, R.raw.dhaad, R.raw.aa, R.raw.gha, R.raw.ff, R.raw.kaaf,
-            R.raw.kaaf, R.raw.la, R.raw.mim, R.raw.hae, R.raw.wa, R.raw.ya,};
+            R.raw.kaaf, R.raw.la, R.raw.mim, R.raw.hae,R.raw.hae, R.raw.wa, R.raw.ya,};
 
 
 //    MainAdapter2 adapter;
@@ -133,7 +133,8 @@ public class alphabitArab extends AppCompatActivity {
         aymenmodelArrayList.add(new aymenmodel("",R.drawable.kahfj56));
         aymenmodelArrayList.add(new aymenmodel("",R.drawable.lala154));
         aymenmodelArrayList.add(new aymenmodel("",R.drawable.mim345));
-        aymenmodelArrayList.add(new aymenmodel("",R.drawable.haa2021));
+        aymenmodelArrayList.add(new aymenmodel("",R.drawable.naa));
+        aymenmodelArrayList.add(new aymenmodel("",R.drawable.haap));
         aymenmodelArrayList.add(new aymenmodel("",R.drawable.waw5653));
         aymenmodelArrayList.add(new aymenmodel("",R.drawable.yay4665));
 

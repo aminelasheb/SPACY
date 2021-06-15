@@ -1,48 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/backalphaone"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:orientation="vertical"
+android:background="@drawable/artf5"
+android:layout_height="match_parent"
+tools:context=".body_fr">
+
+
+<TextView
+    android:id="@+id/ident"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="41dp"
+    android:fontFamily="@font/baloo"
+    android:layout_marginLeft="30dp"
+    android:layout_marginTop="37dp"
+    android:text="corps humain"
+    android:textColor="@color/black" />
+<ImageView
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="13dp"
+    android:layout_width="127dp"
+    android:layout_height="143dp"
+    android:scaleType="centerCrop"
+    android:src="@drawable/astroui1"
+    android:layout_toRightOf="@+id/ident"/>
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="appuyer sur lastroanut"
+    android:fontFamily="@font/baloo"
+    android:textSize="18dp"
+    android:textColor="@color/black"
+    android:layout_below="@+id/ident"
+    android:layout_marginLeft="30dp"/>
+
+
+<androidx.viewpager.widget.ViewPager
+
     android:layout_width="match_parent"
+    android:layout_centerInParent="true"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".body_fr">
+    android:clipToPadding="false"
+    android:foregroundGravity="center"
+    android:overScrollMode="never"
+    android:id="@+id/horizo66"
+    />
 
-    <TextView
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_alignParentBottom="true"
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="50dp"
-        android:fontFamily="@font/baloo"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"
-        android:text="corps humain "
-        android:textColor="#ffffff"/>
+    android:layout_height="wrap_content">
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:layout_width="250dp"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="110dp"
-        android:layout_height="230dp"
-        android:id="@+id/horizo66"
-        android:orientation="horizontal" />
-
-
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:background="@drawable/backkk"
-        android:layout_height="100dp"
-        android:layout_marginTop="90dp"
-        >
-        <ImageView
-            android:id="@+id/speakerabodar"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginBottom="30dp"
-            android:background="?android:attr/selectableItemBackground"
-            app:srcCompat="@drawable/astromusic" /></FrameLayout>
-
-
+    <ImageView
+        android:id="@+id/speakerabodar"
+        android:layout_width="160dp"
+        android:layout_height="240dp"
+        android:background="?android:attr/selectableItemBackground"
+        app:srcCompat="@drawable/astromusic2" />
 </LinearLayout>
+
+
+</RelativeLayout>

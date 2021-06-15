@@ -1,46 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:orientation="vertical"
+android:background="@drawable/artf3"
+android:layout_height="match_parent"
+tools:context=".FruitsAN">
+
+<TextView
+    android:id="@+id/ident"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="41dp"
+    android:fontFamily="@font/baloo"
+    android:layout_marginLeft="30dp"
+    android:layout_marginTop="37dp"
+    android:text="Fruits"
+    android:textColor="@color/black" />
+<ImageView
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="13dp"
+    android:layout_width="127dp"
+    android:layout_height="143dp"
+    android:scaleType="centerCrop"
+    android:src="@drawable/astroui1"
+    android:layout_toRightOf="@+id/ident"/>
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Tap the astronaut"
+    android:fontFamily="@font/baloo"
+    android:textSize="18dp"
+    android:textColor="@color/black"
+    android:layout_below="@+id/ident"
+    android:layout_marginLeft="30dp"/>
+
+
+<androidx.viewpager.widget.ViewPager
+
+    android:id="@+id/vp_horizontalfag"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backalphaone"
-    tools:context=".FruitsAN">
+    android:clipToPadding="false"
+    android:foregroundGravity="center"
+    android:overScrollMode="never" />
 
-    <TextView
-        android:layout_width="156dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:fontFamily="@font/baloo"
-        android:rotationX="10"
-        android:text="  Fruits"
-        android:textColor="@color/white"
-        android:textSize="50dp" />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_alignParentBottom="true"
+    android:layout_height="wrap_content">
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/vp_horizontalfag"
-        android:layout_width="350dp"
-        android:layout_height="320dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal" />
-
-
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:background="@drawable/backkk"
-        android:layout_height="100dp"
-        android:layout_marginTop="90dp"
-        >
-        <ImageView
-            android:id="@+id/speakerfruitan"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginBottom="30dp"
-            android:background="?android:attr/selectableItemBackground"
-            app:srcCompat="@drawable/astromusic" /></FrameLayout>
-
+    <ImageView
+        android:id="@+id/speakerfruitan"
+        android:layout_width="160dp"
+        android:layout_height="240dp"
+        android:background="?android:attr/selectableItemBackground"
+        app:srcCompat="@drawable/astromusic2" />
 </LinearLayout>
+
+
+</RelativeLayout>

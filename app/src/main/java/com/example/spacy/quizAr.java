@@ -11,7 +11,11 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.shashank.sony.fancytoastlib.FancyToast;
+
+import java.util.HashMap;
 
 public class quizAr extends AppCompatActivity {
 
@@ -425,6 +429,10 @@ public class quizAr extends AppCompatActivity {
 
         currentIndex = (currentIndex + 1) % questionBank.length;
         if (currentIndex == 0) {
+            HashMap<String , Object> map = new HashMap<>();
+            map.put("العربية" ,userscore+"");
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO");
+            reference.updateChildren(map) ;
             AlertDialog.Builder alert = new AlertDialog.Builder(this);
             alert.setTitle("انتهت اللعبة");
             alert.setCancelable(false);

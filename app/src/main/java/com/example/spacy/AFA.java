@@ -27,42 +27,65 @@ public class AFA extends AppCompatActivity {
     private View Ang;
     private View Fr;
     private View Ar;
+    private  String language;
 
 
     SharedPreferences MyPre;
+    String New ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.afa);
         MyPre = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         SharedPreferences sharedPreferences = this.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
-        String language = sharedPreferences.getString("LangApp", "English");
+        if (!sharedPreferences.getString("newwww","yy").equals("no")) {
+
+            if(getResources().getConfiguration().locale.getDefault().getDisplayLanguage().equals("English")) {
+
+
+            language = "English";
+            New = "no";
+
+
+        }
+        else if(getResources().getConfiguration().locale.getDefault().getDisplayLanguage().equals("français")){
+            language =  "Français";
+            New = "no";
+
+        }
+        else {  Toast toast = Toast.makeText(AFA.this ,"you can change language of application from settings",FancyToast.LENGTH_LONG);
+            toast.show();
+
+        }
+
+            SharedPreferences.Editor editor = MyPre.edit();
+            editor.putString("LangApp", language);
+            editor.putString("newwww",New)      ;
+            editor.commit(); }
+
         String act = sharedPreferences.getString("acct", "/");
         String gm = sharedPreferences.getString("GM", "/");
-
-
         SharedPreferences.Editor editor = MyPre.edit();
-        editor.putString("LangApp", language);
-        editor.commit();
-
 
         if (gm.equals("MAIL")) {
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
-                editor.putString("image", snapshot.child("image").getValue().toString());
-                editor.commit();
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+            reference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                    editor.putString("image", snapshot.child("image").getValue().toString());
+                    editor.commit();
 
 
-            }
+                }
 
-            @Override
-            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                @Override
 
-            }
-        }); }
+                public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+                }
+            }); }
 
         Ang = findViewById(R.id.ang);
         Ang.setOnClickListener(new View.OnClickListener() {

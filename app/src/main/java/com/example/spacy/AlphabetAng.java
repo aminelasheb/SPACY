@@ -31,9 +31,9 @@ public class AlphabetAng extends AppCompatActivity {
 //            R.drawable.mlett, R.drawable.nlett, R.drawable.olett, R.drawable.plett, R.drawable.qlett, R.drawable.rlett,
 //            R.drawable.slett, R.drawable.tlett, R.drawable.ulett, R.drawable.vlett,};
 
-    int[] vocals = {R.raw.a, R.raw.b, R.raw.c, R.raw.d, R.raw.e, R.raw.f, R.raw.g, R.raw.h
-            , R.raw.i, R.raw.j, R.raw.k, R.raw.l, R.raw.m, R.raw.n, R.raw.o, R.raw.p, R.raw.q, R.raw.r
-            , R.raw.s, R.raw.t, R.raw.u, R.raw.v, R.raw.w, R.raw.x, R.raw.y, R.raw.z,};
+    int[] vocals = {R.raw.aenglish, R.raw.benglish, R.raw.cenglish, R.raw.demglish, R.raw.eenglish, R.raw.fenglish, R.raw.genglish, R.raw.henglish
+            , R.raw.ienglish, R.raw.jenglish, R.raw.kenglish, R.raw.lenglish, R.raw.menglish, R.raw.nenglish, R.raw.oenglish, R.raw.penglish, R.raw.qenglish, R.raw.renglish
+            , R.raw.senglish, R.raw.tenglish, R.raw.uenglish, R.raw.venglish, R.raw.wenglish, R.raw.xenglish, R.raw.yenglish, R.raw.zenglish,};
 //
 //
 //    MainAdapter2 adapter;

@@ -136,6 +136,7 @@ public class signup extends AppCompatActivity {
             SharedPreferences sharedPreferences = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString("GM","MAIL") ;
+            editor.putString("Name",username) ;
             editor.commit();
             Toast.makeText(signup.this, "SignIn success", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(signup.this , AFA.class);

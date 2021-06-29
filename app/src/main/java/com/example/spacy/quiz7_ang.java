@@ -3,7 +3,9 @@ package com.example.spacy;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +13,12 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.shashank.sony.fancytoastlib.FancyToast;
+
+import java.util.HashMap;
 
 public class quiz7_ang extends AppCompatActivity {
     private ImageView Questionimagee;
@@ -26,7 +33,7 @@ public class quiz7_ang extends AppCompatActivity {
     boolean Reponse = false;
     boolean correctanswer;
     boolean OptionAa,OptionBb,OptionCc,OptionDd,OptionAii,OptionBii,OptionCii,OptionDii ;
-
+String id;
     int userscore = 0;
     private MediaPlayer mMediaPlayer;
     private final MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
@@ -554,6 +561,20 @@ public class quiz7_ang extends AppCompatActivity {
 
         currentIndex = (currentIndex + 1) % questionBank.length;
         if (currentIndex == 0) {
+            SharedPreferences sharedPreferences = this.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+            String GM = sharedPreferences.getString("GM","/") ;
+            if (GM.equals("MAIL")||GM.equals("GOOGLE")) {
+                if (GM.equals("MAIL")) {id= FirebaseAuth.getInstance().getCurrentUser().getUid() ;}
+                else if (GM.equals("GOOGLE")) {id = sharedPreferences.getString("acct", "/"); ;}
+                HashMap<String , Object> map = new HashMap<>();
+                map.put("Anglais7" ,userscore+"");
+                DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(id);
+                reference.updateChildren(map) ; }
+            else if (GM.equals("LATER")) {
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("Anglais7", userscore+"");
+                editor.commit();
+            }
             AlertDialog.Builder alert = new AlertDialog.Builder(this);
             alert.setTitle("Jeux terminé!");
             alert.setCancelable(false);

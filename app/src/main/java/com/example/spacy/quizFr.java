@@ -570,7 +570,7 @@ String id ;
                 reference.updateChildren(map) ; }
             else if (GM.equals("LATER")) {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("Anglais1", userscore+"");
+                editor.putString("Français1", userscore+"");
                 editor.commit();
             }
 

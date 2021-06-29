@@ -164,6 +164,10 @@ public class profilFragment extends Fragment {
             }
         }); }
 
+        else if (GM.equals("LATER")) {
+
+        }
+
         plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

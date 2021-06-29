@@ -63,6 +63,7 @@ public class signin extends AppCompatActivity  {
         updateUI(account);
     }
 
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -170,6 +171,8 @@ public class signin extends AppCompatActivity  {
                         map.put("Anglais","-1") ;
                         map.put("Français","-1") ;
                         map.put("العربية","-1") ;
+
+
                         FirebaseDatabase.getInstance().getReference().child("INFO").child(acct.getId()).setValue(map) ;
 
                         Toast toast = Toast.makeText(signin.this, "Right ✅!", FancyToast.LENGTH_LONG);

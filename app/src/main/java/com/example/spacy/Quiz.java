@@ -590,6 +590,11 @@ String id ;
             map.put("Anglais" ,userscore+"");
             DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(id);
             reference.updateChildren(map) ; }
+            else if (GM.equals("LATER")) {
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("Anglais1", userscore+"");
+                editor.commit();
+            }
             AlertDialog.Builder alert = new AlertDialog.Builder(this);
             alert.setTitle("Game Over");
             alert.setCancelable(false);

@@ -42,6 +42,8 @@ private CardView sign;
                 SharedPreferences MyPre = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = MyPre.edit();
                 editor.putString("GM", "LATER");
+                editor.putString("NEW","false");
+
                 editor.commit();
                 Intent intent = new Intent(login.this, AFA.class);
                 startActivity(intent);

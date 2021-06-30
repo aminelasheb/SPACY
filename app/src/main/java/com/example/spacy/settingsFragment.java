@@ -10,21 +10,16 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
-import android.preference.PreferenceManager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -36,8 +31,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.shashank.sony.fancytoastlib.FancyToast;
-
-import org.w3c.dom.Text;
 
 import java.util.HashMap;
 
@@ -58,7 +51,7 @@ public class settingsFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     Spinner spinner ;
     Spinner spinner2 ;
-    TextView txt1 ,txt2 ,txt,txt3,txt4,txt5,txt6;
+    TextView txt1 ,txt2 ,txt,txt3,txt4, ShareIt,txt6;
 View Contact ;
         CardView logOut;
      ImageButton change,change2 ;
@@ -137,7 +130,7 @@ View Contact ;
         txt1=view.findViewById(R.id.txt1);
         txt2 = view.findViewById(R.id.txt2);
         txt = view.findViewById(R.id.txt);
-txt5=view.findViewById(R.id.shareit);
+ShareIt =view.findViewById(R.id.shareit);
 txt6=view.findViewById(R.id.terms);
 
 
@@ -167,11 +160,11 @@ txt1.setGravity(Gravity.RIGHT);
             txt2.setGravity(Gravity.RIGHT);
             txt3.setGravity(Gravity.RIGHT);
             txt4.setGravity(Gravity.RIGHT);
-            txt5.setGravity(Gravity.RIGHT);
+            ShareIt.setGravity(Gravity.RIGHT);
             txt6.setGravity(Gravity.RIGHT);
-            txt5.setText("مشاركة");
+            ShareIt.setText("مشاركة");
             txt6.setText("شروط الخدمة و السياسة");
-            txt5.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.share,0);
+            ShareIt.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.share,0);
             txt3.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.logout,0);
             txt1.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.language,0);
             txt2.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.language,0);
@@ -201,11 +194,11 @@ txt1.setGravity(Gravity.RIGHT);
             txt1.setText("langue d'application : Français ");
             txt3.setText("Se déconnecter");
             txt4.setText("nous contacter");
-            txt5.setGravity(Gravity.LEFT);
+            ShareIt.setGravity(Gravity.LEFT);
             txt6.setGravity(Gravity.LEFT);
-            txt5.setText("Partager");
+            ShareIt.setText("Partager");
             txt6.setText("Conditions d'utilisation et confidentialité");
-            txt5.setCompoundDrawablesWithIntrinsicBounds(R.drawable.share,0,0,0);
+            ShareIt.setCompoundDrawablesWithIntrinsicBounds(R.drawable.share,0,0,0);
             txt4.setCompoundDrawablesWithIntrinsicBounds(R.drawable.contact,0,0,0);
             txt3.setCompoundDrawablesWithIntrinsicBounds(R.drawable.logout,0,0,0);
             txt2.setCompoundDrawablesWithIntrinsicBounds(R.drawable.language,0,0,0);
@@ -226,11 +219,11 @@ txt1.setGravity(Gravity.RIGHT);
             txt4.setGravity(Gravity.LEFT);
             txt3.setText("Log out");
             txt4.setText("contact us");
-            txt5.setText("Share");
+            ShareIt.setText("Share");
             txt6.setText("Terms of Service and Privacy Policy");
-            txt5.setGravity(Gravity.LEFT);
+            ShareIt.setGravity(Gravity.LEFT);
             txt6.setGravity(Gravity.LEFT);
-            txt5.setCompoundDrawablesWithIntrinsicBounds(R.drawable.share,0,0,0);
+            ShareIt.setCompoundDrawablesWithIntrinsicBounds(R.drawable.share,0,0,0);
             txt4.setCompoundDrawablesWithIntrinsicBounds(R.drawable.contact,0,0,0);
             txt3.setCompoundDrawablesWithIntrinsicBounds(R.drawable.logout,0,0,0);
             txt2.setCompoundDrawablesWithIntrinsicBounds(R.drawable.language,0,0,0);
@@ -249,6 +242,23 @@ txt1.setGravity(Gravity.RIGHT);
 // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
         spinner2.setAdapter(adapter);
+
+        ShareIt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                    shareIntent.setType("text/plain");
+                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "SPACY");
+                    String shareMessage= "\nHey ,I'm using SPACY APP and it's so helpful to make your child learn languages in a very easy way ,I' am recommend you this application ,Download it from this link :\n\n";
+                    shareMessage = shareMessage + "https://www.google.com" ;
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+                    startActivity(Intent.createChooser(shareIntent, "Share to"));
+                } catch(Exception e) {
+                    //e.toString();
+                }
+            }
+        });
 
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -300,11 +310,11 @@ txt1.setGravity(Gravity.RIGHT);
                     txt2.setGravity(Gravity.RIGHT);
                     txt3.setGravity(Gravity.RIGHT);
                     txt4.setGravity(Gravity.RIGHT);
-                    txt5.setGravity(Gravity.RIGHT);
+                    ShareIt.setGravity(Gravity.RIGHT);
                     txt6.setGravity(Gravity.RIGHT);
-                    txt5.setText("مشاركة");
+                    ShareIt.setText("مشاركة");
                     txt6.setText("شروط الخدمة و السياسة");
-                    txt5.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.share,0);
+                    ShareIt.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.share,0);
                     txt4.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.contact,0);
                     txt3.setText("تسجيل الخروج");
                     txt3.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.logout,0);
@@ -320,11 +330,11 @@ txt1.setGravity(Gravity.RIGHT);
 
                 else if (spinner.getSelectedItem().toString().equals("Français")) {
                     FancyToast.makeText(getContext(),"La langue de l'application a été modifiée avec succès!",FancyToast.LENGTH_SHORT,FancyToast.INFO,false).show();
-                    txt5.setGravity(Gravity.LEFT);
+                    ShareIt.setGravity(Gravity.LEFT);
                     txt6.setGravity(Gravity.LEFT);
-                    txt5.setText("Partager");
+                    ShareIt.setText("Partager");
                     txt6.setText("Conditions d'utilisation et confidentialité");
-                    txt5.setCompoundDrawablesWithIntrinsicBounds(R.drawable.share,0,0,0);
+                    ShareIt.setCompoundDrawablesWithIntrinsicBounds(R.drawable.share,0,0,0);
                     txt1.setGravity(Gravity.LEFT);
                     txt2.setGravity(Gravity.LEFT);
                     txt3.setGravity(Gravity.LEFT);
@@ -346,11 +356,11 @@ txt1.setGravity(Gravity.RIGHT);
                     }
                 } else if (spinner.getSelectedItem().toString().equals("English")){
                     FancyToast.makeText(getContext(),"The language of the app has been changed successfully!",FancyToast.LENGTH_SHORT,FancyToast.INFO,false).show();
-                    txt5.setText("Share");
+                    ShareIt.setText("Share");
                     txt6.setText("Terms of Service and Privacy Policy");
-                    txt5.setGravity(Gravity.LEFT);
+                    ShareIt.setGravity(Gravity.LEFT);
                     txt6.setGravity(Gravity.LEFT);
-                    txt5.setCompoundDrawablesWithIntrinsicBounds(R.drawable.share,0,0,0);
+                    ShareIt.setCompoundDrawablesWithIntrinsicBounds(R.drawable.share,0,0,0);
                     txt1.setGravity(Gravity.LEFT);
                     txt2.setGravity(Gravity.LEFT);
                     txt3.setGravity(Gravity.LEFT);

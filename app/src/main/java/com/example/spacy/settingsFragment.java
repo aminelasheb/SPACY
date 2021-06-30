@@ -1,5 +1,6 @@
 package com.example.spacy;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ShareCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.Gravity;
@@ -287,11 +289,16 @@ txt1.setGravity(Gravity.RIGHT);
         Contact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_SENDTO);
-                intent.setData(Uri.parse("mailto:ma.lasheb@esi-sba.dz")); // only email apps should handle this
-                intent.putExtra(Intent.EXTRA_SUBJECT, "About SPACY app");
+                Activity activity = getActivity();
 
-                startActivity(intent);
+                        ShareCompat.IntentBuilder.from(activity)
+                                .setType("message/rfc822")
+                                .addEmailTo("ma.lasheb@esi-sba.dz")
+                                .setSubject("About Spacy App")
+                                .setText("I was given the opportunity to try your application, and I want to say")
+                                //.setHtmlText(body) //If you are using HTML in your body text
+                                .setChooserTitle("Choose GMAIL and Send")
+                                .startChooser();
             }
         });
 

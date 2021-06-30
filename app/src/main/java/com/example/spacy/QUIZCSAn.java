@@ -5,19 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.ViewFlipper;
-
-import com.shashank.sony.fancytoastlib.FancyToast;
 
 public class QUIZCSAn extends AppCompatActivity  {
 
@@ -64,7 +58,7 @@ public class QUIZCSAn extends AppCompatActivity  {
             new answerClass(2, R.drawable.star, R.string.question72_A, R.string.question72_B
                     , R.string.question72_C, R.string.question72_D, R.string.answer72),
             new answerClass(5, R.raw.hexagon, R.drawable.hexagon, R.drawable.star
-                    , R.drawable.circle, R.drawable.square, R.drawable.hexagon),
+                    , R.drawable.circle1, R.drawable.square, R.drawable.hexagon),
 
 
 // 1 : Question text and replies text

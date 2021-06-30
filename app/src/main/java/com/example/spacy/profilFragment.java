@@ -20,6 +20,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.github.lzyzsd.circleprogress.CircleProgress;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -39,6 +40,7 @@ import java.util.HashMap;
  * create an instance of this fragment.
  */
 public class profilFragment extends Fragment {
+    CircleProgress circleProgress;
     RecyclerView recyclerView;
     ImageView profile,plus ;
     TextView name,score ;  final int PICK_IMAGE = 100;

@@ -12,8 +12,6 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.shashank.sony.fancytoastlib.FancyToast;
-
 public class QUIZCSFr extends AppCompatActivity {
 
     private ImageView Questionimagee;
@@ -55,7 +53,7 @@ public class QUIZCSFr extends AppCompatActivity {
             new answerClass(2, R.drawable.star, R.string.question82_A, R.string.question82_B
                     , R.string.question82_C, R.string.question82_D, R.string.answer82),
             new answerClass(5, R.raw.hexagone, R.drawable.hexagon, R.drawable.star
-                    , R.drawable.circle, R.drawable.square, R.drawable.hexagon),
+                    , R.drawable.circle1, R.drawable.square, R.drawable.hexagon),
 
 
 // 1 : Question text and replies text

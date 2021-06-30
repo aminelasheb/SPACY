@@ -22,7 +22,7 @@ public class ShapesAr extends AppCompatActivity {
             releaseMediaPlayer();
         }
     };
-    int[] images = {R.drawable.square, R.drawable.triangle, R.drawable.circle
+    int[] images = {R.drawable.square, R.drawable.triangle, R.drawable.circle1
             , R.drawable.rectangle, R.drawable.oval, R.drawable.star, R.drawable.rhombus, R.drawable.pentagon, R.drawable.hexagon, R.drawable.heart};
 
 

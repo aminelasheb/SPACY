@@ -7,9 +7,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import org.intellij.lang.annotations.Language;
 
 public class login extends AppCompatActivity {
 private CardView sign;
@@ -19,6 +22,52 @@ private CardView sign;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        TextView laterr = findViewById(R.id.textview88) ;
+        TextView welc = findViewById(R.id.welcome);
+        TextView mm = findViewById(R.id.mm) ;
+        TextView signn = findViewById(R.id.signin) ;
+        TextView signupp = findViewById(R.id.signupp) ;
+
+
+        String Language =this.getSharedPreferences("MyPref", Context.MODE_PRIVATE).getString("LangApp","/");
+        if (Language.equals("العربية")) {
+            if (welc.getGravity()!= Gravity.RIGHT) { welc.setGravity(Gravity.RIGHT); }
+            if (mm.getGravity()!=Gravity.RIGHT) { mm.setGravity(Gravity.RIGHT); }
+
+
+            laterr.setText("لاحقا");
+            welc.setText("مرحبا");
+            mm.setText("إذا كان لديك حساب بالفعل ، فقم بتسجيل الدخول إذا لم تقم بإنشاء حساب عن طريق التسجيل.");
+            signn.setText("تسجيل الدخول");
+            signupp.setText("تسجيل حساب");
+
+
+        }
+        else  if (Language.equals("Français")) {
+
+            if (welc.getGravity()!= Gravity.LEFT) { welc.setGravity(Gravity.LEFT); }
+            if (mm.getGravity()!=Gravity.LEFT) { mm.setGravity(Gravity.LEFT); }
+
+
+            laterr.setText("Après");
+            welc.setText("Bienvenue");
+            mm.setText("Si vous avez déjà un compte, connectez-vous si vous n'en avez pas créé en vous inscrivant.");
+            signn.setText("Se connecter");
+            signupp.setText("S'inscrire");
+        }
+        else {
+
+            if (welc.getGravity()!= Gravity.LEFT) { welc.setGravity(Gravity.LEFT); }
+            if (mm.getGravity()!=Gravity.LEFT) { mm.setGravity(Gravity.LEFT); }
+
+
+            laterr.setText("LATER");
+            welc.setText("Welcome");
+            mm.setText("If you already have an account, sign in if you haven't created one by registering.");
+            signn.setText("Sign in");
+            signupp.setText("Sign up");
+        }
+
         sign=findViewById(R.id.sign);
         sign2=findViewById(R.id.signup);
         later=findViewById(R.id.later);

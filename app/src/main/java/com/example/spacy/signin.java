@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -41,6 +42,7 @@ import com.shashank.sony.fancytoastlib.FancyToast;
 import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
+import org.w3c.dom.Text;
 
 import java.util.HashMap;
 
@@ -68,10 +70,134 @@ public class signin extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
+        login = findViewById(R.id.sign3);
+        password=findViewById(R.id.myedit2);
+        email=findViewById(R.id.myedit);
+        TextView sign2 = findViewById(R.id.sig2) ;
+        TextView sign = findViewById(R.id.sig) ;
+        TextView orr = findViewById(R.id.or) ;
 
 
 
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        String Language =this.getSharedPreferences("MyPref", Context.MODE_PRIVATE).getString("LangApp","/");
+        if (Language.equals("العربية")) {
+            if (sign.getGravity()!=Gravity.RIGHT) { sign.setGravity(Gravity.RIGHT); }
+            if (password.getGravity()!=Gravity.RIGHT) { password.setGravity(Gravity.RIGHT); }
+            if (email.getGravity()!=Gravity.RIGHT) { email.setGravity(Gravity.RIGHT); }
+            if (sign2.getGravity()!=Gravity.RIGHT) { sign2.setGravity(Gravity.RIGHT); }
+
+            sign.setText("تسجيل الدخول");
+            sign2.setText("املأ المعلومات أدناه أو استمر في استخدام أحد حساباتك.");
+            login.setText("تسجيل الدخول");
+            orr.setText("  أو  ");
+
+
+            email.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if(hasFocus){
+                        email3.setHint("البريد الإلكتروني");
+                    }
+                    else {
+                        email3.setHint("أدخل البريد الإلكتروني");
+                    }
+                }
+            });
+
+            password.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if(hasFocus){
+                        password3.setHint("كلمة المرور");
+                    }
+                    else {
+                        password3.setHint("أدخل كلمة المرور");
+                    }
+                }
+            });
+
+        }
+
+        else  if (Language.equals("Français")) {
+            if (sign.getGravity()!=Gravity.LEFT) { sign.setGravity(Gravity.LEFT); }
+            if (password.getGravity()!=Gravity.LEFT) { password.setGravity(Gravity.LEFT); }
+            if (email.getGravity()!=Gravity.LEFT) { email.setGravity(Gravity.LEFT); }
+            if (sign2.getGravity()!=Gravity.LEFT) { sign2.setGravity(Gravity.LEFT); }
+
+            sign.setText("Se connecter");
+            sign2.setText("Remplissez les informations ci-dessous ou continuez à utiliser l'un de vos comptes.");
+            login.setText("Se connecter");
+            orr.setText(" Où ");
+
+
+            email.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if(hasFocus){
+                        email3.setHint("E-mail");
+                    }
+                    else {
+                        email3.setHint("Entrez l'e-mail");
+                    }
+                }
+            });
+
+            password.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if(hasFocus){
+                        password3.setHint("Mot de passe");
+                    }
+                    else {
+                        password3.setHint("Entrer le mot de passe");
+                    }
+                }
+            });
+
+
+        }
+        else {
+
+            if (sign.getGravity()!=Gravity.LEFT) { sign.setGravity(Gravity.LEFT); }
+            if (password.getGravity()!=Gravity.LEFT) { password.setGravity(Gravity.LEFT); }
+            if (email.getGravity()!=Gravity.LEFT) { email.setGravity(Gravity.LEFT); }
+            if (sign2.getGravity()!=Gravity.LEFT) { sign2.setGravity(Gravity.LEFT); }
+
+            sign.setText("Log in");
+            sign2.setText("Complete the information below or continue to use one of your accounts.");
+            login.setText("Log in");
+            orr.setText(" Or ");
+
+
+            email.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if(hasFocus){
+                        email3.setHint("E-mail");
+                    }
+                    else {
+                        email3.setHint("Enter e-mail");
+                    }
+                }
+            });
+
+            password.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if(hasFocus){
+                        password3.setHint("Password");
+                    }
+                    else {
+                        password3.setHint("Enter password");
+                    }
+                }
+            });
+
+        }
+
+
+
+            GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
 
@@ -84,33 +210,10 @@ public class signin extends AppCompatActivity  {
             }
         });
 
-        login = findViewById(R.id.sign3);
         email3=findViewById(R.id.emaillayout);
-        email=findViewById(R.id.myedit);
-        email.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if(hasFocus){
-                    email3.setHint(" Email");
-                }
-        else {
-            email3.setHint("Enter Email");
-                }
-            }
-        });
-        password=findViewById(R.id.myedit2);
+
         password3=findViewById(R.id.passwordlayout);
-        password.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if(hasFocus){
-                   password3.setHint(" Password");
-                }
-                else {
-                   password3.setHint("Enter Password");
-                }
-            }
-        });
+
 
         mAuth = FirebaseAuth.getInstance();
 

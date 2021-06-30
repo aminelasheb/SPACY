@@ -62,7 +62,7 @@ public class AFA extends AppCompatActivity {
 
             SharedPreferences.Editor editor = MyPre.edit();
             editor.putString("LangApp", language);
-            editor.putString("newwww",New)      ;
+            editor.putString("newwww", New)  ;
             editor.commit(); }
 
         String act = sharedPreferences.getString("acct", "/");

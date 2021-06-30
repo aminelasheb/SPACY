@@ -56,7 +56,7 @@ public class learnFragment extends Fragment implements adapterRecycler.OnitemLis
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ArrayList<itemrecycler> itemlist=new ArrayList<>();
-                SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         language = sharedPreferences.getString("LangApp","/");
         Mes = getView().findViewById(R.id.mess);
         Mesa = getView().findViewById(R.id.mesa);

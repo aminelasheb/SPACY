@@ -33,8 +33,14 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.shashank.sony.fancytoastlib.FancyToast;
 import com.squareup.picasso.Picasso;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 
@@ -48,6 +54,7 @@ public class signin extends AppCompatActivity  {
     private Button login;
     GoogleSignInClient mGoogleSignInClient ;
     private FirebaseAuth mAuth;
+    String neww ;
 
     @Override
     protected void onStart() {
@@ -56,6 +63,7 @@ public class signin extends AppCompatActivity  {
         updateUI(account);
     }
 
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -149,7 +157,35 @@ public class signin extends AppCompatActivity  {
             SharedPreferences sharedPreferences = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString("GM","GOOGLE") ;
+
             GoogleSignInAccount acct = result.getSignInAccount();
+            editor.putString("acct",acct.getId()) ;
+            HashMap<String , Object> map = new HashMap<>();
+
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(acct.getId());
+            reference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+
+                    if (!(snapshot.hasChild("new"))) {
+                        map.put("Anglais","-1") ;
+                        map.put("Français","-1") ;
+                        map.put("العربية","-1") ;
+
+
+                        FirebaseDatabase.getInstance().getReference().child("INFO").child(acct.getId()).setValue(map) ;
+
+                        Toast toast = Toast.makeText(signin.this, "Right ✅!", FancyToast.LENGTH_LONG);
+            toast.show();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+                }
+            });
+
             editor.putString("Name",acct.getDisplayName()) ;
             try {
                 String PhotoUrl = acct.getPhotoUrl().toString();
@@ -159,13 +195,7 @@ public class signin extends AppCompatActivity  {
 
             }
             editor.commit();
-            HashMap<String , Object> map = new HashMap<>();
-            map.put("email", acct.getEmail());
-            map.put("username" , acct.getDisplayName());
-            map.put("id" , mAuth.getCurrentUser().getUid());
-            map.put("language" , "");
-            map.put("image" , "");
-            FirebaseDatabase.getInstance().getReference().child("INFO").updateChildren(map) ;
+
 //             Signed in successfully, show authenticated UI.
             updateUI(account);
         } catch (ApiException e) {

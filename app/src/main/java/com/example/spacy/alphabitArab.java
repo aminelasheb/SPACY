@@ -19,10 +19,10 @@ public class alphabitArab extends AppCompatActivity {
    ViewPager vpVertical, vpHorizontal;
     private adaptervp adaptervpp1;
     private ArrayList<aymenmodel> aymenmodelArrayList;
-    int[] vocals = {R.raw.alif, R.raw.baa, R.raw.taa, R.raw.thaa, R.raw.gim, R.raw.ha, R.raw.khaa,
-            R.raw.da, R.raw.dha, R.raw.ra, R.raw.za, R.raw.sin, R.raw.ch, R.raw.sad,
-            R.raw.dhae, R.raw.taee, R.raw.dhaad, R.raw.aa, R.raw.gha, R.raw.ff, R.raw.kaaf,
-            R.raw.kaaf, R.raw.la, R.raw.mim, R.raw.hae, R.raw.wa, R.raw.ya,};
+    int[] vocals = {R.raw.alifara, R.raw.baaara, R.raw.taaara, R.raw.thaaara, R.raw.jimara, R.raw.haara, R.raw.khaara,
+            R.raw.dalara, R.raw.dhalara, R.raw.raaara, R.raw.zayara, R.raw.sinara, R.raw.chineara, R.raw.sadara,
+            R.raw.dhaara, R.raw.ttara, R.raw.dhaara, R.raw.ayenara, R.raw.ghayenara, R.raw.faaara, R.raw.kafara,
+            R.raw.kafeara, R.raw.lamara, R.raw.mimara, R.raw.nonara,R.raw.haara, R.raw.wawara, R.raw.yaara,};
 
 
 //    MainAdapter2 adapter;
@@ -133,7 +133,8 @@ public class alphabitArab extends AppCompatActivity {
         aymenmodelArrayList.add(new aymenmodel("",R.drawable.kahfj56));
         aymenmodelArrayList.add(new aymenmodel("",R.drawable.lala154));
         aymenmodelArrayList.add(new aymenmodel("",R.drawable.mim345));
-        aymenmodelArrayList.add(new aymenmodel("",R.drawable.haa2021));
+        aymenmodelArrayList.add(new aymenmodel("",R.drawable.naa));
+        aymenmodelArrayList.add(new aymenmodel("",R.drawable.haap));
         aymenmodelArrayList.add(new aymenmodel("",R.drawable.waw5653));
         aymenmodelArrayList.add(new aymenmodel("",R.drawable.yay4665));
 

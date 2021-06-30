@@ -114,38 +114,38 @@ public class signup extends AppCompatActivity {
             }
         });
     }
-
     private void registerUser(final String username, final String email, String password) {
 
         pd.setMessage("Please Wait!");
         pd.show();
 
-        mAuth.createUserWithEmailAndPassword(email , password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-            @Override
-            public void onSuccess(AuthResult authResult) {
-                pd.setMessage("Uploading info!");
-                HashMap<String , Object> map = new HashMap<>();
-                map.put("email", email);
-               map.put("username" , username);
-                map.put("id" , mAuth.getCurrentUser().getUid());
-                map.put("language" , "");
-                map.put("image" , "");
-                map.put("score","0") ;
-                pd.setMessage("Info uploaded!");
-FirebaseDatabase.getInstance().getReference().child("INFO").updateChildren(map) ;
-                            pd.dismiss();
-                SharedPreferences sharedPreferences = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("GM","MAIL") ;
-                editor.commit();
-                            Toast.makeText(signup.this, "SignIn success", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(signup.this , AFA.class);
-                          intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            startActivity(intent);
-                           finish();
+     mAuth.createUserWithEmailAndPassword(email , password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+        @Override
+        public void onSuccess(AuthResult authResult) {
+            pd.setMessage("Uploading info!");
+            HashMap<String , Object> map = new HashMap<>();
+            map.put("email", email);
+            map.put("username" , username);
+            map.put("Anglais","-1") ;
+            map.put("Français","-1") ;
+            map.put("العربية","-1") ;
+            map.put("image","1") ;
+            pd.setMessage("Info uploaded!");
+            FirebaseDatabase.getInstance().getReference().child("INFO").child(mAuth.getCurrentUser().getUid()).updateChildren(map) ;
+            pd.dismiss();
+            SharedPreferences sharedPreferences = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("GM","MAIL") ;
+            editor.putString("Name",username) ;
+            editor.commit();
+            Toast.makeText(signup.this, "SignIn success", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(signup.this , AFA.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
 
-             }
-              });
+        }
+    });
 
 }
 

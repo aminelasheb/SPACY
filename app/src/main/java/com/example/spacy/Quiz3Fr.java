@@ -3,7 +3,9 @@ package com.example.spacy;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -11,9 +13,13 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
 import java.security.interfaces.RSAKey;
+import java.util.HashMap;
 
 public class Quiz3Fr extends AppCompatActivity {
     private ImageView Questionimagee;
@@ -24,6 +30,8 @@ public class Quiz3Fr extends AppCompatActivity {
     private View optionT, optionI;
     boolean Reponse = false;
     boolean correctanswer;
+    boolean verifier,verifier1,verifier2,verifier3,verifier4,verifier5,verifier6,verifier7,verifier8;
+String id;
     boolean OptionAa,OptionBb,OptionCc,OptionDd,OptionAii,OptionBii,OptionCii,OptionDii ;
     int currentIndex;
     int userscore = 0;
@@ -44,7 +52,7 @@ public class Quiz3Fr extends AppCompatActivity {
     //table of answers
     private final answerClass[] questionBank = new answerClass[]{
 
-            new answerClass(2, R.drawable.shirt1 ,R.string.question101_a, R.string.question104_a,
+            new answerClass(2, R.drawable.shirt ,R.string.question101_a, R.string.question104_a,
                 R.string.question102_a,R.string.question103_a,R.string.question101_a),
             new answerClass(5, R.raw.tete, R.drawable.eye, R.drawable.orl
                     , R.drawable.head1, R.drawable.hair4, R.drawable.head1),
@@ -186,18 +194,21 @@ public class Quiz3Fr extends AppCompatActivity {
             public void onClick(View view) {
                 if (Reponse == false) {
                     Reponse = true;
+                    optionA.setBackgroundColor(0xFF323360);
+                    verifier=true;
+                    verifier1=false; verifier2=false; verifier3=false; verifier4=false;
+                    verifier5=false; verifier6=false; verifier7=false;
+                    //boolean resultt = checkAnswer(currentOptionA);
+                    //if (resultt) {
+                    //  userscore=userscore-1 ;
+                    //optionA.setBackgroundColor(0xFF00FF00);
+                    //OptionAa = true;
+                    //} else {
+                    //optionA.setBackgroundColor(0xFFFF0000);
+                    //  OptionAa=false;
+                    //}
 
-                    boolean result = checkAnswer(currentOptionA);
-                    if (result) {
-                        userscore=userscore-1 ;
-                        optionA.setBackgroundColor(0xFF00FF00);
-                        OptionAa = true;
-                    } else {
-                        optionA.setBackgroundColor(0xFFFF0000);
-                        OptionAa=false;
-                    }
 
-                    checkAnswer(currentOptionA);
                 }
 
             }
@@ -209,19 +220,23 @@ public class Quiz3Fr extends AppCompatActivity {
             public void onClick(View view) {
                 if (Reponse == false) {
                     Reponse = true;
+                    optionB.setBackgroundColor(0xFF323360);
+                    verifier1=true;
+                    verifier=false; verifier2=false; verifier3=false; verifier4=false;
+                    verifier5=false; verifier6=false; verifier7=false;
 
-                    boolean result1 = checkAnswer(currentOptionB);
-                    if (result1) {
-                        userscore=userscore-1 ;
-                        optionB.setBackgroundColor(0xFF00FF00);
-                        OptionBb = true;
-                    } else {
-                        optionB.setBackgroundColor(0xFFFF0000);
-                        OptionBb = false;
-                    }
+                    // boolean resulttt = checkAnswer(currentOptionB);
+                    //if (resulttt) {
+                    //  userscore=userscore-1 ;
+                    //optionB.setBackgroundColor(0xFF00FF00);
+                    // OptionBb = true;
+                    //} else {
+                    //optionB.setBackgroundColor(0xFFFF0000);
+                    //  OptionBb = false;
+                    //}
 
 
-                    checkAnswer(currentOptionB);
+
                 }
             }
         });
@@ -232,18 +247,22 @@ public class Quiz3Fr extends AppCompatActivity {
             public void onClick(View view) {
                 if (Reponse == false) {
                     Reponse = true;
+                    optionC.setBackgroundColor(0xFF323360);
+                    verifier2=true;
+                    verifier=false; verifier1=false; verifier3=false; verifier4=false;
+                    verifier5=false; verifier6=false; verifier7=false;
 
-                    boolean result3 = checkAnswer(currentOptionC);
-                    if (result3) {
-                        userscore=userscore-1 ;
-                        optionC.setBackgroundColor(0xFF00FF00);
-                        OptionCc = true;
-                    } else {
-                        optionC.setBackgroundColor(0xFFFF0000);
-                        OptionAa = false;
-                    }
+                    //boolean resultttt = checkAnswer(currentOptionC);
+                    //if (resultttt) {
+                    //  userscore=userscore-1 ;
+                    //optionC.setBackgroundColor(0xFF00FF00);
+                    //OptionCc = true;
+                    //} else {
+                    //optionC.setBackgroundColor(0xFFFF0000);
+                    //  OptionAa = false;
+                    //}
 
-                    checkAnswer(currentOptionC);
+
                 }
             }
         });
@@ -254,18 +273,16 @@ public class Quiz3Fr extends AppCompatActivity {
             public void onClick(View view) {
                 if (Reponse == false) {
                     Reponse = true;
+                    optionD.setBackgroundColor(0xFF323360);
+                    verifier3=true;
+                    verifier=false; verifier1=false; verifier2=false; verifier4=false;
+                    verifier5=false; verifier6=false; verifier7=false;
 
-                    boolean result4 = checkAnswer(currentOptionD);
-                    if (result4) {
-                        userscore=userscore-1 ;
-                        optionD.setBackgroundColor(0xFF00FF00);
-                        OptionDd = true;
-                    } else {
-                        optionD.setBackgroundColor(0xFFFF0000);
-                        OptionDd = false;
-                    }
+                    //  userscore=userscore-1;
+                    // if (OptionDd==false){
+                    //   userscore=userscore+1;
+                    // }
 
-                    checkAnswer(currentOptionD);
                 }
             }
         });
@@ -275,18 +292,23 @@ public class Quiz3Fr extends AppCompatActivity {
             public void onClick(View view) {
                 if (Reponse == false) {
                     Reponse = true;
+                    optionAi.setBackgroundColor(0xFF323360);
+                    verifier4=true;
+                    verifier=false; verifier1=false; verifier3=false; verifier2=false;
+                    verifier5=false; verifier6=false; verifier7=false;
 
-                    boolean result5 = checkAnsweri(currentOptionA);
-                    if (result5) {
+                    boolean resultt4 = checkAnsweri(currentOptionA);
+                    if (resultt4) {
                         userscore=userscore-1 ;
-                        optionAi.setBackgroundColor(0xFF00FF00);
+                        // optionAi.setBackgroundColor(0xFF00FF00);
                         OptionAii = true;
                     } else {
-                        optionAi.setBackgroundColor(0xFFFF0000);
+                        //optionAi.setBackgroundColor(0xFFFF0000);
                         OptionAii = false;
                     }
 
                     checkAnsweri(currentOptionA);
+
                 }
 
             }
@@ -299,18 +321,23 @@ public class Quiz3Fr extends AppCompatActivity {
             public void onClick(View view) {
                 if (Reponse == false) {
                     Reponse = true;
+                    optionBi.setBackgroundColor(0xFF323360);
+                    verifier5=true;
+                    verifier=false; verifier1=false; verifier3=false; verifier4=false;
+                    verifier2=false; verifier6=false; verifier7=false;
 
-                    boolean result6 = checkAnsweri(currentOptionB);
-                    if (result6) {
+                    boolean resultt5 = checkAnsweri(currentOptionB);
+                    if (resultt5) {
                         userscore=userscore-1 ;
-                        optionBi.setBackgroundColor(0xFF00FF00);
+                        //optionBi.setBackgroundColor(0xFF00FF00);
                         OptionBii = true;
                     } else {
-                        optionBi.setBackgroundColor(0xFFFF0000);
+                        //optionBi.setBackgroundColor(0xFFFF0000);
                         OptionBii = false;
                     }
 
                     checkAnsweri(currentOptionB);
+
                 }
             }
         });
@@ -321,18 +348,23 @@ public class Quiz3Fr extends AppCompatActivity {
             public void onClick(View view) {
                 if (Reponse == false) {
                     Reponse = true;
+                    optionCi.setBackgroundColor(0xFF323360);
+                    verifier6=true;
+                    verifier=false; verifier1=false; verifier3=false; verifier4=false;
+                    verifier5=false; verifier2=false; verifier7=false;
 
-                    boolean result7 = checkAnsweri(currentOptionC);
-                    if (result7) {
+                    boolean resultt6 = checkAnsweri(currentOptionC);
+                    if (resultt6) {
                         userscore=userscore-1 ;
-                        optionCi.setBackgroundColor(0xFF00FF00);
+                        //optionCi.setBackgroundColor(0xFF00FF00);
                         OptionCii = true;
                     } else {
-                        optionCi.setBackgroundColor(0xFFFF0000);
+                        //optionCi.setBackgroundColor(0xFFFF0000);
                         OptionCii = false;
                     }
 
                     checkAnsweri(currentOptionC);
+
                 }
             }
         });
@@ -343,18 +375,17 @@ public class Quiz3Fr extends AppCompatActivity {
             public void onClick(View view) {
                 if (Reponse == false) {
                     Reponse = true;
+                    optionDi.setBackgroundColor(0xFF323360);
+                    verifier7=true;
+                    verifier=false; verifier1=false; verifier3=false; verifier4=false;
+                    verifier5=false; verifier6=false; verifier2=false;
 
-                    boolean result7 = checkAnsweri(currentOptionD);
-                    if (result7) {
-                        userscore=userscore-1 ;
-                        optionDi.setBackgroundColor(0xFF00FF00);
-                        OptionDii = true;
-                    } else {
-                        optionDi.setBackgroundColor(0xFFFF0000);
-                        OptionDii = true;
+                    userscore=userscore-1;
+                    if (OptionDii==false){
+                        userscore=userscore+1;
                     }
-
                     checkAnsweri(currentOptionD);
+
                 }
 
             }
@@ -376,6 +407,107 @@ public class Quiz3Fr extends AppCompatActivity {
         boolean correctanswerb = checkAnswer(currentOptionB);
         boolean correctanswerc = checkAnswer(currentOptionC);
         boolean correctanswerd = checkAnswer(currentOptionD);
+
+        if (verifier) {
+            boolean result = checkAnswer(currentOptionA);
+            if (result) {
+                optionA.setBackgroundColor(0xFF00FF00);
+                userscore=userscore-1;
+                OptionAa = true;
+            } else {
+                optionA.setBackgroundColor(0xFFFF0000);
+                OptionAa = false;
+            }
+            checkAnswer(currentOptionA);
+        }
+
+
+
+        if (verifier1) {
+            boolean result1 = checkAnswer(currentOptionB);
+            if (result1) {
+                optionB.setBackgroundColor(0xFF00FF00);
+                OptionBb = true;
+                userscore=userscore-1;
+            } else {
+                optionB.setBackgroundColor(0xFFFF0000);
+                OptionBb = false;
+            }
+            checkAnswer(currentOptionB);
+        }
+        if (verifier2) {
+            boolean result2 = checkAnswer(currentOptionC);
+            if (result2) {
+
+                optionC.setBackgroundColor(0xFF00FF00);
+                userscore=userscore-1;
+                OptionCc = true;
+            } else {
+                optionC.setBackgroundColor(0xFFFF0000);
+                OptionCc = false;
+            }
+            checkAnswer(currentOptionC);
+        }
+        if (verifier3) {
+            boolean result3 = checkAnswer(currentOptionD);
+            if (result3) {
+                userscore=userscore-1;
+                optionD.setBackgroundColor(0xFF00FF00);
+                OptionDd = true;
+            } else {
+                optionD.setBackgroundColor(0xFFFF0000);
+                OptionDd = false;
+            }
+            checkAnswer(currentOptionD);
+        }
+        if (verifier4) {
+            boolean result4 = checkAnsweri(currentOptionA);
+            if (result4) {
+                userscore=userscore-1;
+                OptionAii = true;
+                optionAi.setBackgroundColor(0xFF00FF00);
+            } else {
+                OptionAii = false;
+                optionAi.setBackgroundColor(0xFFFF0000);
+
+            }
+        }
+        if (verifier5) {
+            boolean result5 = checkAnsweri(currentOptionB);
+            if (result5) {
+                userscore=userscore-1;
+                OptionBii = true;
+                optionBi.setBackgroundColor(0xFF00FF00);
+            } else {
+                OptionBii = false;
+                optionBi.setBackgroundColor(0xFFFF0000);
+
+            }
+        }
+        if (verifier6) {
+            boolean result6 = checkAnsweri(currentOptionC);
+            if (result6) {
+                userscore=userscore-1;
+                OptionCii = true;
+                optionCi.setBackgroundColor(0xFF00FF00);
+            } else {
+                OptionCii = false;
+                optionCi.setBackgroundColor(0xFFFF0000);
+
+            }
+        }
+        if (verifier7) {
+            boolean result7 = checkAnsweri(currentOptionD);
+            if (result7) {
+                userscore=userscore-1;
+                OptionDii = true;
+                optionDi.setBackgroundColor(0xFF00FF00);
+            } else {
+                OptionDii = false;
+                optionDi.setBackgroundColor(0xFFFF0000);
+
+            }
+        }
 
         if (correctanswer == true){
             optionA.setBackgroundColor(0xFF00FF00);
@@ -419,6 +551,22 @@ public class Quiz3Fr extends AppCompatActivity {
 
         currentIndex = (currentIndex + 1) % questionBank.length;
         if (currentIndex == 0) {
+
+
+            SharedPreferences sharedPreferences = this.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+            String GM = sharedPreferences.getString("GM","/") ;
+            if (GM.equals("MAIL")||GM.equals("GOOGLE")) {
+                if (GM.equals("MAIL")) {id= FirebaseAuth.getInstance().getCurrentUser().getUid() ;}
+                else if (GM.equals("GOOGLE")) {id = sharedPreferences.getString("acct", "/"); ;}
+                HashMap<String , Object> map = new HashMap<>();
+                map.put("Français3" ,userscore+"");
+                DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(id);
+                reference.updateChildren(map) ; }
+            else if (GM.equals("LATER")) {
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("Français3", userscore+"");
+                editor.commit();
+            }
             AlertDialog.Builder alert = new AlertDialog.Builder(this);
             alert.setTitle("Jeux terminé!");
             alert.setCancelable(false);

@@ -10,42 +10,24 @@
     tools:ignore="MissingDefaultResource">
 
     <ImageView
+        android:layout_width="301dp"
+        android:layout_height="142dp"
         android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
         android:layout_marginTop="18dp"
-        app:srcCompat="@drawable/astrolang2"
-        android:layout_height="135dp"/>
+        app:srcCompat="@drawable/astrolang2" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/baloo"
-        android:text="  مرحبا ,تعلم معنا  "
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="148dp"
-
-        android:textColor="@color/white"
-        android:textSize="20sp" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="175dp"
         android:fontFamily="@font/baloo"
-        android:text="Hello, learn with us"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="173dp"
-
+        android:gravity="center"
+        android:id="@+id/txt"
+        android:text="  Bonjour\n apprenez avec nous"
         android:textColor="@color/white"
-        android:textSize="20sp" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/baloo"
-        android:text="  Bonjour, apprenez avec nous"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="198dp"
-
-        android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        tools:ignore="InvalidId" />
 
     <LinearLayout
         android:layout_centerHorizontal="true"

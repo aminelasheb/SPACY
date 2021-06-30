@@ -1,5 +1,6 @@
 package com.example.spacy;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -7,22 +8,20 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.core.app.ShareCompat;
 import androidx.fragment.app.Fragment;
 
-import android.preference.PreferenceManager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -31,9 +30,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
-import org.w3c.dom.Text;
+import java.util.HashMap;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -52,12 +53,13 @@ public class settingsFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     Spinner spinner ;
     Spinner spinner2 ;
-    TextView txt1 ,txt2 ,txt;
-View logOut,Contact ;
- Button change,change2 ;
+    TextView txt1 ,txt2 ,txt,txt3,txt4, ShareIt,txt6;
+View Contact ;
+        CardView logOut;
+     ImageButton change,change2 ;
     GoogleSignInAccount account ;
     GoogleSignInClient mGoogleSignInClient ;
-String languageLearn ;
+  String languageLearn ;
     SharedPreferences MyPre ;
 
 
@@ -109,7 +111,11 @@ String languageLearn ;
     @Override
     public void onStart() {
         super.onStart();
+
+
          account = GoogleSignIn.getLastSignedInAccount(getContext());
+
+
 
     }
 
@@ -117,6 +123,7 @@ String languageLearn ;
     public  View onCreateView(LayoutInflater inflater, ViewGroup container,
                                    Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
+
         // Inflate the layout for this fragment
         spinner = (Spinner) view.findViewById(R.id.spinner);
         spinner2 = (Spinner) view.findViewById(R.id.spinner2);
@@ -124,15 +131,13 @@ String languageLearn ;
         change2 = view.findViewById(R.id.changee2);
         logOut = view.findViewById(R.id.logout);
         Contact = view.findViewById(R.id.contact);
-
-
+        txt3=view.findViewById(R.id.logoutt);
+        txt4=view.findViewById(R.id.contactt);
         txt1=view.findViewById(R.id.txt1);
         txt2 = view.findViewById(R.id.txt2);
         txt = view.findViewById(R.id.txt);
-
-
-
-
+        ShareIt =view.findViewById(R.id.shareit);
+        txt6=view.findViewById(R.id.terms);
 
 
         return view ;
@@ -144,6 +149,8 @@ String languageLearn ;
         String language = sharedPreferences.getString("LangApp", "/");
         languageLearn = sharedPreferences.getString("LangLearn", "/");
         String GM = sharedPreferences.getString("GM","/") ;
+        String act = sharedPreferences.getString("acct", "/");
+
         txt.setText(language);
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -154,6 +161,22 @@ String languageLearn ;
 
 txt1.setGravity(Gravity.RIGHT);
             txt2.setGravity(Gravity.RIGHT);
+            txt3.setGravity(Gravity.RIGHT);
+            txt4.setGravity(Gravity.RIGHT);
+            ShareIt.setGravity(Gravity.RIGHT);
+            txt6.setGravity(Gravity.RIGHT);
+            ShareIt.setText("مشاركة");
+            txt6.setText("شروط الخدمة و السياسة");
+            ShareIt.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.share,0);
+            txt3.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.logout,0);
+            txt1.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.language,0);
+            txt2.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.language,0);
+            txt4.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.contact,0);
+
+
+            txt3.setText("تسجيل الخروج");
+            txt4.setText("تواصل معنا");
+
 
             txt1.setText("لغة التطبيق : العربية ");
 
@@ -168,26 +191,52 @@ txt1.setGravity(Gravity.RIGHT);
             else if (language.equals("Français")) {
             txt1.setGravity(Gravity.LEFT);
             txt2.setGravity(Gravity.LEFT);
+            txt3.setGravity(Gravity.LEFT);
+            txt4.setGravity(Gravity.LEFT);
 
-            txt1.setText("La langue d'application est : Français ");
+            txt1.setText("langue d'application : Français ");
+            txt3.setText("Se déconnecter");
+            txt4.setText("nous contacter");
+            ShareIt.setGravity(Gravity.LEFT);
+            txt6.setGravity(Gravity.LEFT);
+            ShareIt.setText("Partager");
+            txt6.setText("Conditions d'utilisation et confidentialité");
+            ShareIt.setCompoundDrawablesWithIntrinsicBounds(R.drawable.share,0,0,0);
+            txt4.setCompoundDrawablesWithIntrinsicBounds(R.drawable.contact,0,0,0);
+            txt3.setCompoundDrawablesWithIntrinsicBounds(R.drawable.logout,0,0,0);
+            txt2.setCompoundDrawablesWithIntrinsicBounds(R.drawable.language,0,0,0);
+            txt1.setCompoundDrawablesWithIntrinsicBounds(R.drawable.language,0,0,0);
+
 
             if (languageLearn.equals("An")) {
-                txt2.setText("La langue d'apprentissage est : Anglais ");
+                txt2.setText("langue d'apprentissage : Anglais ");
             } else if (languageLearn.equals("Ar")) {
-                txt2.setText("La langue d'apprentissage est : Arabe");
+                txt2.setText("langue d'apprentissage : Arabe");
             } else if (languageLearn.equals("Fr")) {
-                txt2.setText("La langue d'apprentissage est : Français");
+                txt2.setText("langue d'apprentissage : Français");
             }
         } else if (language.equals("English")) {
                     txt1.setGravity(Gravity.LEFT);
                     txt2.setGravity(Gravity.LEFT);
-
+            txt3.setGravity(Gravity.LEFT);
+            txt4.setGravity(Gravity.LEFT);
+            txt3.setText("Log out");
+            txt4.setText("contact us");
+            ShareIt.setText("Share");
+            txt6.setText("Terms of Service and Privacy Policy");
+            ShareIt.setGravity(Gravity.LEFT);
+            txt6.setGravity(Gravity.LEFT);
+            ShareIt.setCompoundDrawablesWithIntrinsicBounds(R.drawable.share,0,0,0);
+            txt4.setCompoundDrawablesWithIntrinsicBounds(R.drawable.contact,0,0,0);
+            txt3.setCompoundDrawablesWithIntrinsicBounds(R.drawable.logout,0,0,0);
+            txt2.setCompoundDrawablesWithIntrinsicBounds(R.drawable.language,0,0,0);
+            txt1.setCompoundDrawablesWithIntrinsicBounds(R.drawable.language,0,0,0);
                     txt1.setText("App language : English ");
 
-                    if (languageLearn.equals("An") ) { txt2.setText("Learning language is : English");
+                    if (languageLearn.equals("An") ) { txt2.setText("Learning language : English");
                     }
-                    else if (languageLearn.equals("Ar") ) {txt2.setText("Learning language is : Arabic"); }
-                    else if (languageLearn.equals("Fr") ) {txt2.setText("Learning language is : French"); } }
+                    else if (languageLearn.equals("Ar") ) {txt2.setText("Learning language : Arabic"); }
+                    else if (languageLearn.equals("Fr") ) {txt2.setText("Learning language : French"); } }
 // Create an ArrayAdapter using the string arr  ay and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
                 R.array.spinner, android.R.layout.simple_spinner_item);
@@ -196,6 +245,23 @@ txt1.setGravity(Gravity.RIGHT);
 // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
         spinner2.setAdapter(adapter);
+
+        ShareIt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                    shareIntent.setType("text/plain");
+                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "SPACY");
+                    String shareMessage= "\nHey ,I'm using SPACY APP and it's so helpful to make your child learn languages in a very easy way ,I' am recommend you this application ,Download it from this link :\n\n";
+                    shareMessage = shareMessage + "https://www.google.com" ;
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+                    startActivity(Intent.createChooser(shareIntent, "Share to"));
+                } catch(Exception e) {
+                    //e.toString();
+                }
+            }
+        });
 
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -224,11 +290,16 @@ txt1.setGravity(Gravity.RIGHT);
         Contact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_SENDTO);
-                intent.setData(Uri.parse("mailto:ma.lasheb@esi-sba.dz")); // only email apps should handle this
-                intent.putExtra(Intent.EXTRA_SUBJECT, "About SPACY app");
+                Activity activity = getActivity();
 
-                startActivity(intent);
+                        ShareCompat.IntentBuilder.from(activity)
+                                .setType("message/rfc822")
+                                .addEmailTo("spacyaaaaac@gmail.com")
+                                .setSubject("About Spacy App")
+                                .setText("I was given the opportunity to try your application, and I want to say")
+                                //.setHtmlText(body) //If you are using HTML in your body text
+                                .setChooserTitle("Choose GMAIL and Send")
+                                .startChooser();
             }
         });
 
@@ -245,8 +316,20 @@ txt1.setGravity(Gravity.RIGHT);
                     FancyToast.makeText(getContext(),"تم تغيير لغة التطبيق بنجاح!",FancyToast.LENGTH_SHORT,FancyToast.INFO,false).show();
                     txt1.setGravity(Gravity.RIGHT);
                     txt2.setGravity(Gravity.RIGHT);
-
+                    txt3.setGravity(Gravity.RIGHT);
+                    txt4.setGravity(Gravity.RIGHT);
+                    ShareIt.setGravity(Gravity.RIGHT);
+                    txt6.setGravity(Gravity.RIGHT);
+                    ShareIt.setText("مشاركة");
+                    txt6.setText("شروط الخدمة و السياسة");
+                    ShareIt.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.share,0);
+                    txt4.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.contact,0);
+                    txt3.setText("تسجيل الخروج");
+                    txt3.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.logout,0);
+                    txt2.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.language,0);
+                    txt4.setText("تواصل معنا");
                     txt1.setText("لغة التطبيق : العربية ");
+                    txt1.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.language,0);
 
                     if (languageLearn.equals("An") ) { txt2.setText("لغة التعلم : الانجليزية");
                     }
@@ -255,31 +338,53 @@ txt1.setGravity(Gravity.RIGHT);
 
                 else if (spinner.getSelectedItem().toString().equals("Français")) {
                     FancyToast.makeText(getContext(),"La langue de l'application a été modifiée avec succès!",FancyToast.LENGTH_SHORT,FancyToast.INFO,false).show();
-
+                    ShareIt.setGravity(Gravity.LEFT);
+                    txt6.setGravity(Gravity.LEFT);
+                    ShareIt.setText("Partager");
+                    txt6.setText("Conditions d'utilisation et confidentialité");
+                    ShareIt.setCompoundDrawablesWithIntrinsicBounds(R.drawable.share,0,0,0);
                     txt1.setGravity(Gravity.LEFT);
                     txt2.setGravity(Gravity.LEFT);
-
-                    txt1.setText("La langue d'application est : Français ");
+                    txt3.setGravity(Gravity.LEFT);
+                    txt4.setGravity(Gravity.LEFT);
+                    txt4.setCompoundDrawablesWithIntrinsicBounds(R.drawable.contact,0,0,0);
+                    txt3.setCompoundDrawablesWithIntrinsicBounds(R.drawable.logout,0,0,0);
+                    txt2.setCompoundDrawablesWithIntrinsicBounds(R.drawable.language,0,0,0);
+                    txt1.setCompoundDrawablesWithIntrinsicBounds(R.drawable.language,0,0,0);
+                    txt3.setText("Se déconnecter");
+                    txt4.setText("nous contacter");
+                    txt1.setText("langue d'application : Français ");
 
                     if (languageLearn.equals("An")) {
-                        txt2.setText("La langue d'apprentissage est : Anglais ");
+                        txt2.setText("langue d'apprentissage : Anglais");
                     } else if (languageLearn.equals("Ar")) {
-                        txt2.setText("La langue d'apprentissage est : Arabe");
+                        txt2.setText("langue d'apprentissage : Arabe");
                     } else if (languageLearn.equals("Fr")) {
-                        txt2.setText("La langue d'apprentissage est : Français");
+                        txt2.setText("langue d'apprentissage : Français");
                     }
                 } else if (spinner.getSelectedItem().toString().equals("English")){
                     FancyToast.makeText(getContext(),"The language of the app has been changed successfully!",FancyToast.LENGTH_SHORT,FancyToast.INFO,false).show();
-
+                    ShareIt.setText("Share");
+                    txt6.setText("Terms of Service and Privacy Policy");
+                    ShareIt.setGravity(Gravity.LEFT);
+                    txt6.setGravity(Gravity.LEFT);
+                    ShareIt.setCompoundDrawablesWithIntrinsicBounds(R.drawable.share,0,0,0);
                     txt1.setGravity(Gravity.LEFT);
                     txt2.setGravity(Gravity.LEFT);
-
+                    txt3.setGravity(Gravity.LEFT);
+                    txt4.setGravity(Gravity.LEFT);
+                    txt3.setText("Log out");
+                    txt4.setText("contact us");
+                    txt4.setCompoundDrawablesWithIntrinsicBounds(R.drawable.contact,0,0,0);
+                    txt3.setCompoundDrawablesWithIntrinsicBounds(R.drawable.logout,0,0,0);
+                    txt2.setCompoundDrawablesWithIntrinsicBounds(R.drawable.language,0,0,0);
+                    txt1.setCompoundDrawablesWithIntrinsicBounds(R.drawable.language,0,0,0);
                     txt1.setText("App language : English ");
 
-                    if (languageLearn.equals("An") ) { txt2.setText("Learning language is : English");
+                    if (languageLearn.equals("An") ) { txt2.setText("Learning language : English");
                     }
-                    else if (languageLearn.equals("Ar") ) {txt2.setText("Learning language is : Arabic"); }
-                    else if (languageLearn.equals("Fr") ) {txt2.setText("Learning language is : French"); }
+                    else if (languageLearn.equals("Ar") ) {txt2.setText("Learning language : Arabic"); }
+                    else if (languageLearn.equals("Fr") ) {txt2.setText("Learning language : French"); }
                 }
             }
         });
@@ -293,36 +398,90 @@ txt1.setGravity(Gravity.RIGHT);
                     if (txt.getText().toString().equals("English") ) {
                         txt2.setGravity(Gravity.LEFT);
 
-                        txt2.setText("Learning language is : English");
+                        txt2.setText("Learning language : English");
                     }
                     else if (txt.getText().toString().equals("العربية") ) {                        txt2.setGravity(Gravity.RIGHT);
                         txt2.setText("لغة التعلم : الانجليزية"); }
                     else if (txt.getText().toString().equals("Français") ) {
                         txt2.setGravity(Gravity.LEFT);
-                        txt2.setText("Langue d'apprentissage est : Anglais "); }
+                        txt2.setText("Langue d'apprentissage : Anglais "); }
 
-                    editor.putString("LangLearn","An");}
+                    editor.putString("LangLearn","An");
+                    if (GM.equals("LATER"))  { editor.putString("Anglais","true"); }
+                    if (GM.equals("MAIL") || GM.equals("GOOGLE")) {
+
+
+
+                        HashMap<String, Object> map = new HashMap<>();
+                        map.put("َAnglais", "true");
+
+
+                        if (GM.equals("MAIL")) {
+                            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                            reference.updateChildren(map);
+
+                        } else if (GM.equals("GOOGLE")) {
+                            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(act);
+                            reference.updateChildren(map);
+                        } }
+            }
                 else if (spinner2.getSelectedItem().toString().equals("العربية")) {
                     if (txt.getText().toString().equals("English") ) {
                         txt2.setGravity(Gravity.LEFT);
-                        txt2.setText("Learning language is : Arabic");
+                        txt2.setText("Learning language : Arabic");
                     }
                     else if (txt.getText().toString().equals("العربية") ) {       txt2.setGravity(Gravity.RIGHT);txt2.setText("لغة التعلم : العربية "); }
                     else if (txt.getText().toString().equals("Français") ) {
                         txt2.setGravity(Gravity.LEFT);
-                        txt2.setText("Langue d'apprentissage est : Arabe"); }
+                        txt2.setText("Langue d'apprentissage : Arabe"); }
+                    editor.putString("LangLearn","Ar");
 
-                    editor.putString("LangLearn","Ar");}
+                    if (GM.equals("LATER"))  { editor.putString("العربية","true"); }
+                    if (GM.equals("MAIL") || GM.equals("GOOGLE")) {
+
+
+
+                        HashMap<String, Object> map = new HashMap<>();
+                        map.put("Arabe", "true");
+
+
+                        if (GM.equals("MAIL")) {
+                            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                            reference.updateChildren(map);
+
+                        } else if (GM.equals("GOOGLE")) {
+                            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(act);
+                            reference.updateChildren(map);
+                        } }}
 
 
                 else if (spinner2.getSelectedItem().toString().equals("Français")) {
                     if (txt.getText().toString().equals("English") ) {                        txt2.setGravity(Gravity.LEFT);
-                        txt2.setText("Learning language is : French");
+                        txt2.setText("Learning language : French");
                 }
                 else if (txt.getText().toString().equals("العربية") ) {       txt2.setGravity(Gravity.RIGHT);txt2.setText("لغة التعلم : الفرنسية"); }
                 else if (txt.getText().toString().equals("Français") ) {                        txt2.setGravity(Gravity.LEFT);
-                        txt2.setText("Langue d'apprentissage est : Français"); }
-                editor.putString("LangLearn","Fr");}
+                        txt2.setText("Langue d'apprentissage : Français"); }
+                editor.putString("LangLearn","Fr");
+                 if (GM.equals("LATER"))  { editor.putString("Français","true"); }
+                    if (GM.equals("MAIL") || GM.equals("GOOGLE")) {
+
+
+
+                        HashMap<String, Object> map = new HashMap<>();
+                        map.put("Français", "true");
+
+
+                        if (GM.equals("MAIL")) {
+                            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                            reference.updateChildren(map);
+
+                        } else if (GM.equals("GOOGLE")) {
+                            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(act);
+                            reference.updateChildren(map);
+                        } }
+
+                }
 
                 editor.commit();
                 FancyToast.makeText(getContext(),"Language of learning changed successfully!",FancyToast.LENGTH_SHORT,FancyToast.INFO,false).show();

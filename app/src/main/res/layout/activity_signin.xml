@@ -15,7 +15,7 @@
     android:paddingRight="10dp">
     <TextView
 
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:text="Log In"
         android:id="@+id/sig"
@@ -25,7 +25,8 @@
         android:layout_marginTop="47dp"/>
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="350dp"
+        android:id="@+id/sig2"
         android:text="fill up the informations below or continue using one of your accounts."
         android:fontFamily="@font/baloo"
         android:textColor="@color/white"
@@ -35,28 +36,30 @@
 
 
 </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:layout_below="@id/passwordlayout"
-            android:layout_marginTop="10dp"
-            android:id="@+id/frgtpswrd"
-            android:layout_alignRight="@id/passwordlayout"
+            android:id="@+id/orr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/passwordlayout"
+            android:layout_alignRight="@id/passwordlayout"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/baloo"
             android:text="Forgot password ?"
             android:textColor="#7DFFFFFF"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:visibility="gone" />
 
 
         <Button
             android:id="@+id/sign3"
             android:layout_width="210dp"
             android:layout_height="55dp"
-            android:layout_below="@+id/frgtpswrd"
+            android:layout_below="@+id/orr"
 
             android:layout_centerHorizontal="true"
             android:layout_marginTop="47dp"
@@ -67,29 +70,31 @@
             android:textColor="@color/white"
             android:textSize="18sp"
             app:backgroundTint="#2F32C5" />
-<RelativeLayout
-    android:layout_width="150dp"
-    android:layout_height="match_parent"
-    android:layout_marginTop="7dp"
-    android:layout_centerHorizontal="true"
-    android:layout_below="@id/or">
-    <ImageView
-        android:id="@+id/google"
-        android:layout_width="54dp"
-        android:layout_height="54dp"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/google" />
 
-<!--    <ImageView-->
-<!--        android:layout_width="49dp"-->
-<!--        android:layout_height="49dp"-->
-<!--android:visibility="gone"-->
-<!--        android:layout_alignParentEnd="true"-->
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_below="@id/or"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="7dp">
+
+            <ImageView
+                android:id="@+id/google"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/google" />
+
+            <!--    <ImageView-->
+            <!--        android:layout_width="49dp"-->
+            <!--        android:layout_height="49dp"-->
+            <!--android:visibility="gone"-->
+            <!--        android:layout_alignParentEnd="true"-->
 
 
-<!--        android:layout_marginBottom="0dp"-->
-<!--        android:src="@drawable/fb" />-->
-</RelativeLayout>
+            <!--        android:layout_marginBottom="0dp"-->
+            <!--        android:src="@drawable/fb" />-->
+        </RelativeLayout>
 
 
         <com.google.android.material.textfield.TextInputLayout
@@ -113,12 +118,12 @@
             app:startIconTint="#7DFFFFFF">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
                 android:id="@+id/myedit"
-                android:background="@null"
-                android:hint="Enter Email"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@null"
                 android:fontFamily="@font/baloo"
+                android:hint="Enter Email"
                 android:inputType="textEmailAddress"
                 android:textColor="@color/white"
                 android:textCursorDrawable="@null" />
@@ -149,44 +154,47 @@
             app:startIconTint="#7DFFFFFF">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:hint="Enter Password"
                 android:id="@+id/myedit2"
-                android:background="@null"
                 android:layout_width="match_parent"
+
                 android:layout_height="wrap_content"
+                android:background="@null"
                 android:fontFamily="@font/baloo"
+                android:hint="Enter Password"
                 android:inputType="textPassword"
                 android:textColor="@color/white"
                 android:textCursorDrawable="@null" />
         </com.google.android.material.textfield.TextInputLayout>
 
-<ImageView
-    android:layout_width="80dp"
-    android:layout_height="wrap_content"
-    android:layout_alignRight="@id/or"
-    android:layout_marginRight="30dp"
-   android:src="@drawable/ligne"
-    android:layout_below="@id/sign3"
-    android:layout_marginTop="95dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Or"
-            android:textSize="18sp"
-            android:fontFamily="@font/baloo"
-            android:textColor="#2F32C5"
-            android:id="@+id/or"
-            android:layout_below="@id/sign3"
-            android:layout_marginTop="80dp"
-            android:layout_centerHorizontal="true"/>
         <ImageView
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/ligne"
             android:layout_below="@id/sign3"
+            android:layout_alignRight="@id/or"
+            android:layout_marginTop="95dp"
+            android:layout_marginRight="30dp"
+            android:src="@drawable/ligne" />
+
+        <TextView
+            android:id="@+id/or"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sign3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:fontFamily="@font/baloo"
+            android:text="Or"
+            android:textColor="#2F32C5"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sign3"
+            android:layout_alignLeft="@id/or"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="95dp"
-          android:layout_alignLeft="@id/or" />
+            android:src="@drawable/ligne" />
 
 
     </RelativeLayout>

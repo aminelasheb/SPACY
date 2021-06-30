@@ -65,6 +65,17 @@ String id;
 
             new answerClass(5, R.raw.ain, R.drawable.eye, R.drawable.orl
                     , R.drawable.hair4, R.drawable.head1, R.drawable.eye),
+            new answerClass(2, R.drawable.face ,R.string.question108_e, R.string.question108_ll,
+                    R.string.question108_ll1,R.string.question108_l,R.string.question108_e),
+            new answerClass(5, R.raw.fam, R.drawable.bouch, R.drawable.head1
+                    , R.drawable.orl, R.drawable.hair4, R.drawable.bouch),
+            new answerClass(3, R.raw.miitaf,R.string.question108_ll12,R.string.question108_ll15,
+
+                    R.string.question108_b,R.string.question108_h,R.string.question108_ll12),
+
+
+            new answerClass(2, R.drawable.mollet, R.string.question108_l,R.string.question108_ll,
+                    R.string.question108_e, R.string.question108_ll1, R.string.question108_l),
 
 
 // 1 : Question text and replies text

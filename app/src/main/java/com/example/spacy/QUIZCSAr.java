@@ -65,6 +65,15 @@ String id;
                     , R.string.question92_C, R.string.question92_D, R.string.answer92),
             new answerClass(5, R.raw.hexagonar, R.drawable.hexagon, R.drawable.star
                     , R.drawable.circle, R.drawable.square, R.drawable.hexagon),
+            new answerClass(2, R.drawable.pinkquiz, R.string.question90_B, R.string.question90_A
+                    , R.string.question90_C, R.string.question90_D, R.string.question90_B),
+            new answerClass(2, R.drawable.star, R.string.question91_D, R.string.question91_C
+                    , R.string.question92_C, R.string.question91_B, R.string.question92_C),
+            new answerClass(5, R.raw.whitear, R.drawable.blackquiz, R.drawable.orangequiz
+                    , R.drawable.whitequiz, R.drawable.bleuquiz, R.drawable.whitequiz),
+            new answerClass(5, R.raw.trianglear, R.drawable.hexagon, R.drawable.square
+                    , R.drawable.circle, R.drawable.triangle, R.drawable.triangle),
+
 
 
 // 1 : Question text and replies text

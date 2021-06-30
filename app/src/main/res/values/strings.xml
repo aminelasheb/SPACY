@@ -36,10 +36,15 @@
 
     <string name="question18"> d ,minuscule forme de :
                              </string>
+    <string name="question188"> n ,miniscule forme de :
+                             </string>
+
     <string name="question18_A"> N </string>
+    <string name="question18_z"> Q </string>
     <string name="question18_B"> M </string>
     <string name="question18_C"> P </string>
     <string name="question18_D"> D </string>
+    <string name="question18_e"> A </string>
     <string name="answer18"> D </string>
 
 
@@ -104,6 +109,7 @@
 
     <string name="question19_A"> 3 </string>
     <string name="question19_B"> 9 </string>
+    <string name="question19_Bb"> 6 </string>
     <string name="question19_C"> 8 </string>
     <string name="question19_D"> 1 </string>
     <string name="answer19"> 8 </string>
@@ -125,6 +131,8 @@
     <string name="question15_C"> سبعة </string>
     <string name="question15_D"> ثمانية </string>
     <string name="answer15"> خمسة </string>
+    <string name="answer133">واحد</string>
+
 
     <string name="question16">
                             يوجد في اللغة العربية  </string>
@@ -145,16 +153,24 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="question20">ستة</string>
+    <string name="question201">سبعة</string>
     <string name="question25_A">ت</string>
+    <string name="question25_Aa">ألف</string>
+    <string name="question25_Aaj">جيم</string>
+    <string name="question25_Aak">كاف</string>
+    <string name="question25_Aam">عين</string>
+
     <string name="question25_B">ج</string>
     <string name="question25_C">ي</string>
     <string name="question25_D">ب</string>
     <string name="answer25">ب</string>
     <string name="question23">Neuf</string>
+    <string name="question233">sept</string>
     <string name="question28_A">Panda</string>
     <string name="question28_B">Lapin</string>
     <string name="question28_C">Singe</string>
     <string name="question28_D">Mouton</string>
+    <string name="question28_D8">serpent</string>
     <string name="answer28">Singe</string>
     <string name="question29_A">Chat</string>
     <string name="question29_B">Cheval</string>
@@ -253,6 +269,8 @@
     <string name="option9ii">كرة</string>
     <string name="option10jj">حذاء</string>
     <string name="option11kk">مفاتيح</string>
+    <string name="option111kk">كرسي</string>
+
     <string name="option13ll">كتاب</string>
 
 
@@ -268,6 +286,7 @@
     <string name="question70_B">Pink</string>
     <string name="question70_C">Purple</string>
     <string name="question70_D">Grey</string>
+    <string name="question70_Df">red</string>
     <string name="answer70">Yellow</string>
 
     <string name="question71">Purple</string>
@@ -287,6 +306,7 @@
     <string name="question80_A">Jaune</string>
     <string name="question80_B">Rose</string>
     <string name="question80_C">Violet</string>
+    <string name="question80_C4">rouge</string>
     <string name="question80_D">Gris</string>
     <string name="answer80">Jaune</string>
 
@@ -331,6 +351,7 @@
     <string name="question105_a">gants</string>
     <string name="question105_b">costume</string>
     <string name="question105_d">botte</string>
+    <string name="question105_d1">veste</string>
     <string name="question104_b">jambe</string>
     <string name="question104_c">bouche</string>
     <string name="question104_d">pied</string>
@@ -355,9 +376,13 @@
     <string name="question108_l">ساق</string>
     <string name="question108_ll">فم</string>
     <string name="question108_ll1">قدم</string>
+    <string name="question108_ll12">معطف</string>
+    <string name="question108_ll15">حذاء</string>
 
 
     <string name="question5_000">Banana</string>
+    <string name="question5_0033">Garlic</string>
+    <string name="question5_00332">Watermelon</string>
     <string name="question5_001">Apple</string>
     <string name="question5_002">Pear</string>
     <string name="question5_003">Strawberry</string>
@@ -379,16 +404,22 @@
     <string name="question5_019">خوخ</string>
     <string name="question5_020">تمر</string>
     <string name="question5_021">عنب</string>
+    <string name="question5_0211">تفاح</string>
+    <string name="question5_02111">بطيخ</string>
+
     <string name="question5_022">بطاطا</string>
     <string name="question5_023">طماطم</string>
     <string name="question5_024">جزر</string>
     <string name="question5_025">بصل</string>
     <string name="question5_026">لفت</string>
     <string name="question5_027">Melon</string>
+    <string name="question5_0272">ail</string>
     <string name="question5_028">Raisin</string>
     <string name="question5_029">Figue</string>
     <string name="question5_030">Fraise</string>
     <string name="question5_031">Cerise</string>
+    <string name="question5_0311">Pomme</string>
+    <string name="question5_0314">Pastheque</string>
     <string name="question5_032">Onion</string>
     <string name="question5_033">Obergine</string>
     <string name="question5_034">Concombre</string>

@@ -63,6 +63,15 @@ String id;
                     R.string.question5_034, R.string.question5_035, R.string.question5_033),
             new answerClass(5, R.raw.raisin, R.drawable.kiwi, R.drawable.pastheque
                     , R.drawable.raisin, R.drawable.datte, R.drawable.raisin),
+            new answerClass(2, R.drawable.ail, R.string.question5_0272, R.string.question5_030,
+                    R.string.question5_032, R.string.question5_034, R.string.question5_0272),
+            new answerClass(4, R.string.question5_0311, R.drawable.framboise, R.drawable.fraise
+                    , R.drawable.bannane, R.drawable.pomme, R.drawable.pomme),
+            new answerClass(5, R.raw.tomatte, R.drawable.tomatte, R.drawable.ail
+                    , R.drawable.raisin, R.drawable.pastheque, R.drawable.tomatte),
+            new answerClass(2, R.drawable.pastheque, R.string.question5_034,
+                    R.string.question5_035, R.string.question5_036, R.string.question5_0314, R.string.question5_0314),
+
             // 1 : Question text and replies text
             // 2 : Question image and replies text
             // 3 : Question vocal and replies text

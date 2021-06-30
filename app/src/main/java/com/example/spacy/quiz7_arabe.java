@@ -63,6 +63,17 @@ String id;
             new answerClass(5, R.raw.hidae, R.drawable.shoes, R.drawable.ball
                     , R.drawable.clock, R.drawable.pc, R.drawable.shoes),
 
+            new answerClass(2, R.drawable.book, R.string.option13ll, R.string.option10jj
+                    , R.string.option8hh, R.string.option2bb, R.string.option13ll),
+            new answerClass(5, R.raw.sarir, R.drawable.bed, R.drawable.keys
+                    , R.drawable.backpack, R.drawable.clock, R.drawable.bed),
+            new answerClass(3, R.raw.mitra9a, R.string.option5ee, R.string.option8hh
+                    , R.string.option7gg, R.string.option3cc, R.string.option8hh),
+            new answerClass(2, R.drawable.chair, R.string.option10jj, R.string.option12qq
+                    , R.string.option10jj, R.string.option111kk, R.string.option111kk),
+
+
+
 
 // 1 : Question text and replies text
             // 2 : Question image and replies text

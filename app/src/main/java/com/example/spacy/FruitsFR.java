@@ -31,8 +31,8 @@ public class FruitsFR extends AppCompatActivity {
              //    R.drawable.orangee,R.drawable.peche, R.drawable.poire, R.drawable.pomme, R.drawable.raisin, R.drawable.pastheque};
 
     int[] vocals =  {R.raw.abricot, R.raw.ananas, R.raw.avocat,R.raw.bannane, R.raw.cerise, R.raw.citron, R.raw.figue, R.raw.fraise,
-                   R.raw.kiwi, R.raw.grenade, R.raw.mandarine,R.raw.framboise, R.raw.mangue, R.raw.melon, R.raw.noixdecoco, R.raw.orange,R.raw.peche,
-                    R.raw.poire, R.raw.pomme, R.raw.raisin, R.raw.pastheque};
+                   R.raw.kiwi, R.raw.grenade,R.raw.framboise, R.raw.mangue, R.raw.melon, R.raw.noixdecoco, R.raw.orange,R.raw.peche,
+                    R.raw.pomme, R.raw.poire, R.raw.raisin, R.raw.pastheque};
   //  String[] Names ={"Abricot","Ananas","Avocat","Banane","Cerise","Citron","Figue","Fraise","Kiwi","Grenade","Mandarine","Framboise","Mangue",
           //  "Melon","Noix De Coco","Orange","Peche","Poire","Pomme","Raisin","Pastheque"};
           //  MainAdapter5 adapter;
@@ -119,7 +119,7 @@ public class FruitsFR extends AppCompatActivity {
         aymenmodelArrayList.add(new aymenmodel("Fraise",R.drawable.fraise));
         aymenmodelArrayList.add(new aymenmodel("Kiwi",R.drawable.kiwi));
         aymenmodelArrayList.add(new aymenmodel("Grenade",R.drawable.grenade));
-        aymenmodelArrayList.add(new aymenmodel("Mandarine",R.drawable.mandarine));
+
         aymenmodelArrayList.add(new aymenmodel("Framboise",R.drawable.framboise));
         aymenmodelArrayList.add(new aymenmodel("Mangue",R.drawable.mangue));
         aymenmodelArrayList.add(new aymenmodel("Melon",R.drawable.melon));

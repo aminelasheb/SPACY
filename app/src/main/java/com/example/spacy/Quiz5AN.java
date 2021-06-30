@@ -63,6 +63,14 @@ String id;
                     R.string.question5_009, R.string.question5_010, R.string.question5_010),
             new answerClass(5, R.raw.kiwian, R.drawable.kiwi, R.drawable.pastheque
                     , R.drawable.poire, R.drawable.datte, R.drawable.kiwi),
+            new answerClass(2, R.drawable.ail, R.string.question5_0033, R.string.question5_010,
+                    R.string.question5_004, R.string.question5_011, R.string.question5_0033),
+            new answerClass(4, R.string.question5_001, R.drawable.pomme, R.drawable.ananas
+                    , R.drawable.lifte, R.drawable.pastheque, R.drawable.pomme),
+            new answerClass(5, R.raw.tomatean, R.drawable.tomatte, R.drawable.poire
+                    , R.drawable.carotte, R.drawable.champignon, R.drawable.tomatte),
+            new answerClass(2, R.drawable.pastheque, R.string.question5_010,
+                    R.string.question5_009, R.string.question5_008, R.string.question5_00332, R.string.question5_00332),
             // 1 : Question text and replies text
             // 2 : Question image and replies text
             // 3 : Question vocal and replies text

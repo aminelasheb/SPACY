@@ -63,6 +63,15 @@ String id;
                     , R.string.question48a_C, R.string.question48a_D, R.string.answer48a),
             new answerClass(5, R.raw.horse, R.drawable.gorilla, R.drawable.cow
                     , R.drawable.horse, R.drawable.giraffe, R.drawable.horse),
+            new answerClass(2, R.drawable.gorilla, R.string.question48_A, R.string.question48_B
+                    , R.string.question48_C, R.string.question49_C, R.string.question48_B),
+            new answerClass(3, R.raw.fox, R.string.question48_A, R.string.question48a_C
+                    , R.string.question48a_D, R.string.question49_D, R.string.question48_A),
+            new answerClass(5, R.raw.elephant, R.drawable.lion, R.drawable.elepant
+                    , R.drawable.horse, R.drawable.monkey, R.drawable.elepant),
+            new answerClass(2, R.drawable.panda, R.string.question49_C, R.string.question48a_B
+                    , R.string.question43, R.string.answer38, R.string.answer38),
+
 
 
 // 1 : Question text and replies text

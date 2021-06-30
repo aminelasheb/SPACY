@@ -64,6 +64,19 @@ String id ;
             new answerClass(5, R.raw.f07, R.drawable.seven, R.drawable.one
                     , R.drawable.two, R.drawable.zero, R.drawable.seven),
 
+            new answerClass(3, R.raw.blettfr, R.string.question9_C, R.string.question11_D
+                    , R.string.question11_C, R.string.question11_A, R.string.question9_C),
+            new answerClass(4, R.string.question233, R.drawable.nine, R.drawable.zero
+                    , R.drawable.seven, R.drawable.eight, R.drawable.seven),
+            new answerClass(1, R.string.question188, R.string.question18_A, R.string.question18_z
+                    , R.string.question18_e, R.string.question18_B, R.string.question18_A),
+            new answerClass(2, R.drawable.nine, R.string.question19_B, R.string.question19_Bb
+                    , R.string.question19_D, R.string.question19_C, R.string.question19_B),
+
+
+
+
+
 
 // 1 : Question text and replies text
             // 2 : Question image and replies text

@@ -67,6 +67,14 @@ String id;
                     R.string.question107_e, R.string.question107_h, R.string.question107_h),
             new answerClass(5, R.raw.ey, R.drawable.eye, R.drawable.orl
                     , R.drawable.hair4, R.drawable.head1, R.drawable.eye),
+            new answerClass(2, R.drawable.face ,R.string.question107_a, R.string.question104_b,
+                    R.string.question107_h,R.string.question107_d,R.string.question107_a),
+            new answerClass(5, R.raw.boot, R.drawable.boot1, R.drawable.caskette
+                    , R.drawable.shirt, R.drawable.gloves1, R.drawable.boot1),
+            new answerClass(4, R.string.question107_e, R.drawable.pied, R.drawable.nose
+                    , R.drawable.face, R.drawable.bouch, R.drawable.bouch),
+            new answerClass(5, R.raw.mouth, R.drawable.orl, R.drawable.bouch
+                    , R.drawable.eye, R.drawable.head1, R.drawable.bouch),
 
 
 

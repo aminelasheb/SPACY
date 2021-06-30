@@ -59,12 +59,20 @@ String id;
             new answerClass(4, R.string.question101_c, R.drawable.face, R.drawable.pied
                     , R.drawable.nose, R.drawable.mainn, R.drawable.face),
             new answerClass(3, R.raw.botte,R.string.question102_a,R.string.question105_a,
-
-                 R.string.question105_b,R.string.question105_d,R.string.question105_d ),
+                    R.string.question105_b,R.string.question105_d,R.string.question105_d ),
             new answerClass(2, R.drawable.pied, R.string.question101_a,R.string.question104_b,
                      R.string.question104_c, R.string.question104_d, R.string.question104_d),
             new answerClass(5, R.raw.ey2, R.drawable.eye, R.drawable.orl
                     , R.drawable.hair4, R.drawable.head1, R.drawable.eye),
+            new answerClass(2, R.drawable.face ,R.string.question101_c, R.string.question104_c,
+                    R.string.question104_d,R.string.question104_b,R.string.question101_c),
+            new answerClass(5, R.raw.bouch, R.drawable.bouch, R.drawable.head1
+                    , R.drawable.hair4, R.drawable.mollet, R.drawable.bouch),
+            new answerClass(3, R.raw.veste,R.string.question101_a,R.string.question105_d,
+                    R.string.question105_a,R.string.question105_d1,R.string.question105_d1 ),
+            new answerClass(2, R.drawable.jambe1, R.string.question104_b,R.string.question101_a,
+                    R.string.question104_c, R.string.question104_d, R.string.question104_b),
+
 
 
 // 1 : Question text and replies text

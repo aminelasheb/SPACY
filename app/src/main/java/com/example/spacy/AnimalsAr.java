@@ -126,7 +126,7 @@ public class AnimalsAr extends AppCompatActivity {
         aymenmodelArrayList.add(new aymenmodel("قرد",R.drawable.monkey));
         aymenmodelArrayList.add(new aymenmodel("باندا",R.drawable.panda));
         aymenmodelArrayList.add(new aymenmodel("ثعبان",R.drawable.snake));
-        aymenmodelArrayList.add(new aymenmodel("باندا",R.drawable.rabbit));
+        aymenmodelArrayList.add(new aymenmodel("أرنب",R.drawable.rabbit));
 
 
 

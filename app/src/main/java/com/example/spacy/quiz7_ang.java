@@ -64,6 +64,14 @@ String id;
             new answerClass(5, R.raw.shoes, R.drawable.shoes, R.drawable.ball
                     , R.drawable.clock, R.drawable.pc, R.drawable.shoes),
 
+            new answerClass(2, R.drawable.book, R.string.option3, R.string.option2
+                    , R.string.option1, R.string.option13, R.string.option13),
+            new answerClass(5, R.raw.bed, R.drawable.bed, R.drawable.chair
+                    , R.drawable.ball, R.drawable.book, R.drawable.bed),
+            new answerClass(3, R.raw.ball, R.string.option5, R.string.option10
+                    , R.string.option11, R.string.option9, R.string.option9),
+            new answerClass(2, R.drawable.computer, R.string.option3, R.string.option10
+                    , R.string.option13, R.string.option8, R.string.option3),
 
 // 1 : Question text and replies text
             // 2 : Question image and replies text

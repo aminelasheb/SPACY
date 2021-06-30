@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.intellij.lang.annotations.Language;
 
@@ -23,18 +25,22 @@ private CardView sign;
     private CardView sign2;
     ImageView later ;
     SharedPreferences MyPre;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onStart() {
-
         super.onStart();
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        if (this.getSharedPreferences("MyPref", Context.MODE_PRIVATE).getString("GM","/").equals("GOOGLE")) {
+            GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+            updateUI(account);
+        }
+        else if ((this.getSharedPreferences("MyPref", Context.MODE_PRIVATE).getString("GM","/").equals("MAIL")))
+        {
+            FirebaseUser currentUser = mAuth.getCurrentUser();
+            updateeUI(currentUser);
 
-        MyPre = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+        }
 
-        SharedPreferences sharedPreferences = this.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
-
-        updateeUI(sharedPreferences.getString("GM","/"));
 
     }
 
@@ -43,6 +49,8 @@ private CardView sign;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        mAuth = FirebaseAuth.getInstance();
+
         TextView laterr = findViewById(R.id.textview88) ;
         TextView welc = findViewById(R.id.welcome);
         TextView mm = findViewById(R.id.mm) ;
@@ -122,14 +130,24 @@ private CardView sign;
 
     }
 
-    public void updateeUI(String account){
+    public void updateUI(GoogleSignInAccount account){
 
-        if((account == "GOOGLE") || (account == "MAIL") ){
-            Toast.makeText(this,"U Signed In successfully",Toast.LENGTH_LONG).show();
+        if(account != null ) {
+            Toast.makeText(this,"Welcome",Toast.LENGTH_LONG).show();
             startActivity(new Intent(this,levels.class));
 
         }else {
-            Toast.makeText(this,"U Didnt signed in",Toast.LENGTH_LONG).show();
+        }
+
+    }
+
+    public void updateeUI(FirebaseUser account){
+
+        if(account != null ) {
+            Toast.makeText(this,"Welcome",Toast.LENGTH_LONG).show();
+            startActivity(new Intent(this,levels.class));
+
+        }else {
         }
 
     }

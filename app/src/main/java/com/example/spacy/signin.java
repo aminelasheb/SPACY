@@ -62,11 +62,18 @@ public class signin extends AppCompatActivity  {
     @Override
     protected void onStart() {
         super.onStart();
+        if (this.getSharedPreferences("MyPref", Context.MODE_PRIVATE).getString("GM","/").equals("GOOGLE")) {
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        MyPre = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
-        SharedPreferences sharedPreferences = this.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+            updateUI(account);
+        }
+        else if ((this.getSharedPreferences("MyPref", Context.MODE_PRIVATE).getString("GM","/").equals("MAIL")))
+        {
+            FirebaseUser currentUser = mAuth.getCurrentUser();
+            updateeUI(currentUser);
 
-        updateeUI(sharedPreferences.getString("GM","/"));
+        }
+
+
     }
 
     
@@ -347,26 +354,26 @@ editor.putString("GM","MAIL") ;
     public void updateUI(GoogleSignInAccount account){
 
         if(account != null ) {
-            Toast.makeText(this,"U Signed In successfully",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Welcome",Toast.LENGTH_LONG).show();
             startActivity(new Intent(this,levels.class));
 
         }else {
-            Toast.makeText(this,"U Didnt signed in",Toast.LENGTH_LONG).show();
         }
 
     }
 
-    public void updateeUI(String account){
+    public void updateeUI(FirebaseUser account){
 
-        if((account == "GOOGLE") || (account == "MAIL") ){
-            Toast.makeText(this,"U Signed In successfully",Toast.LENGTH_LONG).show();
+        if(account != null ) {
+            Toast.makeText(this,"Welcome",Toast.LENGTH_LONG).show();
             startActivity(new Intent(this,levels.class));
 
         }else {
-            Toast.makeText(this,"U Didnt signed in",Toast.LENGTH_LONG).show();
         }
 
     }
+
+
     private void signOut() {
         mGoogleSignInClient.signOut()
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {

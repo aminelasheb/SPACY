@@ -33,6 +33,8 @@ android {
 }
 
 dependencies {
+    compile 'com.github.lzyzsd:circleprogress:1.2.1'
+
     compile 'com.google.android.gms:play-services-auth:12.0.1'
     implementation platform('com.google.firebase:firebase-bom:28.0.1')
     implementation 'com.google.firebase:firebase-database'

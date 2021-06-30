@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,11 +22,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.lzyzsd.circleprogress.CircleProgress;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.shashank.sony.fancytoastlib.FancyToast;
 import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
@@ -40,12 +43,16 @@ import java.util.HashMap;
  * create an instance of this fragment.
  */
 public class profilFragment extends Fragment {
-    CircleProgress circleProgress;
+
+    ProgressBar circleProgress;
     RecyclerView recyclerView;
     ImageView profile,plus ;
-    TextView name,score ;  final int PICK_IMAGE = 100;
+    TextView name,score,score2,score3,progress ;  final int PICK_IMAGE = 100;
     String GM ,Name ,IM ;
+    int scoree,SCOREE;
+    int SCORE=0 ;
 
+    TextView email ,emailx ;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -54,6 +61,13 @@ public class profilFragment extends Fragment {
         name =view.findViewById(R.id.Name) ;
         plus=view.findViewById(R.id.imageView5) ;
         score=view.findViewById(R.id.score);
+        score2=view.findViewById(R.id.score2);
+email=view.findViewById(R.id.txt2);
+        emailx=view.findViewById(R.id.txtx);
+        progress=view.findViewById(R.id.text_view_progress);
+        circleProgress=view.findViewById(R.id.progress_bar);
+        score3=view.findViewById(R.id.score3);
+
         return view ;
 
     }
@@ -64,21 +78,126 @@ public class profilFragment extends Fragment {
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         String GM = sharedPreferences.getString("GM","/") ;
         String Name = sharedPreferences.getString("Name","/") ;
+        String emaill = sharedPreferences.getString("email","/") ;
+
         String IM = sharedPreferences.getString("Image","/") ;
 
+        if (GM.equals("LATER")) {
+            email.setVisibility(View.GONE);
+            emailx.setVisibility(View.GONE);
+            if  (sharedPreferences.getString("Anglais","/").equals("true") ) {
+                scoree=0 ;
+                scoree=scoree+Integer.parseInt(sharedPreferences.getString("Anglais1","0")) ;
+                scoree=scoree+Integer.parseInt(sharedPreferences.getString("Anglais2","0")) ;
+                scoree=scoree+Integer.parseInt(sharedPreferences.getString("Anglais3","0")) ;
+                scoree=scoree+Integer.parseInt(sharedPreferences.getString("Anglais4","0")) ;
+                scoree=scoree+Integer.parseInt(sharedPreferences.getString("Anglais5","0")) ;
+                scoree=scoree+Integer.parseInt(sharedPreferences.getString("Anglais6","0")) ;
+                scoree=scoree+Integer.parseInt(sharedPreferences.getString("Anglais7","0")) ;
+
+                SCOREE=SCOREE+scoree;
+                if (scoree<=9) {score.setText("0"+scoree+"/70");}
+                else if (scoree>9) {score.setText(+scoree+"/70");} }
+
+            if  (sharedPreferences.getString("Français","/").equals("true") ) {
+                scoree=0 ;
+                scoree=scoree+Integer.parseInt(sharedPreferences.getString("Français1","0")) ;
+                scoree=scoree+Integer.parseInt(sharedPreferences.getString("Français2","0")) ;
+                scoree=scoree+Integer.parseInt(sharedPreferences.getString("Français3","0")) ;
+                scoree=scoree+Integer.parseInt(sharedPreferences.getString("Français4","0")) ;
+                scoree=scoree+Integer.parseInt(sharedPreferences.getString("Français5","0")) ;
+                scoree=scoree+Integer.parseInt(sharedPreferences.getString("Français6","0")) ;
+                scoree=scoree+Integer.parseInt(sharedPreferences.getString("Français7","0")) ;
+
+                SCOREE=SCOREE+scoree;
+
+                if (scoree<=9) {score2.setText("0"+scoree+"/70");}
+                else if (scoree>9) {score2.setText(+scoree+"/70");} }
+
+            if  (sharedPreferences.getString("Arabe","/").equals("true") ) {
+                scoree=0 ;
+                scoree=scoree+Integer.parseInt(sharedPreferences.getString("Arabe1","0")) ;
+                scoree=scoree+Integer.parseInt(sharedPreferences.getString("Arabe2","0")) ;
+                scoree=scoree+Integer.parseInt(sharedPreferences.getString("Arabe3","0")) ;
+                scoree=scoree+Integer.parseInt(sharedPreferences.getString("Arabe4","0")) ;
+                scoree=scoree+Integer.parseInt(sharedPreferences.getString("Arabe5","0")) ;
+                scoree=scoree+Integer.parseInt(sharedPreferences.getString("Arabe6","0")) ;
+                scoree=scoree+Integer.parseInt(sharedPreferences.getString("Arabe7","0")) ;
+
+                SCOREE=SCOREE+scoree;
+
+                if (scoree<=9) {score3.setText("0aaa"+scoree+"/70");}
+                else if (scoree>9) {score3.setText("aaa"+scoree+"/70");} }
+
+            progress.setText(SCOREE*100/210+"%");
+            circleProgress.setProgress(SCOREE*100/210);
+
+        }
+
         if (GM.equals("MAIL")) {
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO");
+            if (email.getVisibility()==View.GONE) { email.setVisibility(View.VISIBLE);}
+            if (emailx.getVisibility()==View.GONE) {emailx.setVisibility(View.VISIBLE);}
+
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
 reference.addValueEventListener(new ValueEventListener() {
     @Override
     public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
         name.setText(snapshot.child("username").getValue().toString());
-        score.setText(snapshot.child("score").getValue().toString());
+        emailx.setText(snapshot.child("email").getValue().toString());
+SCOREE=0;
+        if  ( snapshot.hasChild("Anglais")) {
+            scoree=0 ;
+            if  ( snapshot.hasChild("Anglais1")) { scoree=scoree+Integer.parseInt(snapshot.child("Anglais1").getValue().toString()) ;}
+            if  ( snapshot.hasChild("Anglais2")) { scoree=scoree+Integer.parseInt(snapshot.child("Anglais2").getValue().toString()); }
+            if  ( snapshot.hasChild("Anglais3")) { scoree=scoree+Integer.parseInt(snapshot.child("Anglais3").getValue().toString()) ;}
+            if  ( snapshot.hasChild("Anglais4")) { scoree=scoree+Integer.parseInt(snapshot.child("Anglais4").getValue().toString()); }
+            if  ( snapshot.hasChild("Anglais5")) { scoree=scoree+Integer.parseInt(snapshot.child("Anglais5").getValue().toString()); }
+            if  ( snapshot.hasChild("Anglais6")) { scoree=scoree+Integer.parseInt(snapshot.child("Anglais6").getValue().toString()); }
+            if  ( snapshot.hasChild("Anglais7")) { scoree=scoree+Integer.parseInt(snapshot.child("Anglais7").getValue().toString()); }
+            SCOREE=SCOREE+scoree;
+
+            if (scoree<=9) {score.setText("0"+scoree+"/70");}
+            else if (scoree>9) {score.setText(+scoree+"/70");} }
+
+        if  ( snapshot.hasChild("Français")) {
+            scoree=0 ;
+            if  ( snapshot.hasChild("Français1")) { scoree=scoree+Integer.parseInt(snapshot.child("Français1").getValue().toString()) ;}
+            if  ( snapshot.hasChild("Français2")) { scoree=scoree+Integer.parseInt(snapshot.child("Français2").getValue().toString()) ;}
+            if  ( snapshot.hasChild("Français3")) { scoree=scoree+Integer.parseInt(snapshot.child("Français3").getValue().toString()) ;}
+            if  ( snapshot.hasChild("Français4")) { scoree=scoree+Integer.parseInt(snapshot.child("Français4").getValue().toString()) ;}
+            if  ( snapshot.hasChild("Français5")) { scoree=scoree+Integer.parseInt(snapshot.child("Français5").getValue().toString()) ;}
+            if  ( snapshot.hasChild("Français6")) { scoree=scoree+Integer.parseInt(snapshot.child("Français6").getValue().toString()) ;}
+            if  ( snapshot.hasChild("Français7")) { scoree=scoree+Integer.parseInt(snapshot.child("Français7").getValue().toString()) ;}
+            SCOREE=SCOREE+scoree;
+
+            if (scoree<=9) {score2.setText("0"+scoree+"/70");}
+            else if (scoree>9) {score2.setText(+scoree+"/70");} }
+
+        if  ( snapshot.hasChild("العربية")) {
+            scoree=0 ;
+            if  ( snapshot.hasChild("Arabe1")) { scoree=scoree+Integer.parseInt(snapshot.child("Arabe1").getValue().toString()) ;}
+            if  ( snapshot.hasChild("Arabe2")) { scoree=scoree+Integer.parseInt(snapshot.child("Arabe2").getValue().toString()) ;}
+            if  ( snapshot.hasChild("Arabe3")) { scoree=scoree+Integer.parseInt(snapshot.child("Arabe3").getValue().toString()) ;}
+            if  ( snapshot.hasChild("Arabe4")) { scoree=scoree+Integer.parseInt(snapshot.child("Arabe4").getValue().toString()) ;}
+            if  ( snapshot.hasChild("Arabe5")) { scoree=scoree+Integer.parseInt(snapshot.child("Arabe5").getValue().toString()) ;}
+            if  ( snapshot.hasChild("Arabe6")) { scoree=scoree+Integer.parseInt(snapshot.child("Arabe6").getValue().toString()) ;}
+            if  ( snapshot.hasChild("Arabe7")) { scoree=scoree+Integer.parseInt(snapshot.child("Arabe7").getValue().toString()) ;}
+            SCOREE=SCOREE+scoree;
+
+            if (scoree<=9) {score3.setText("0"+scoree+"/70");}
+            else if (scoree>9) {score3.setText(+scoree+"/70");}}
+
+        progress.setText(SCOREE*100/210+"%");
+        circleProgress.setProgress(SCOREE*100/210);
     }
 
     @Override
     public void onCancelled(@NonNull @NotNull DatabaseError error) {
 
     }
+
+
+
 });
         }
 
@@ -94,18 +213,73 @@ reference.addValueEventListener(new ValueEventListener() {
 
 
         if (GM.equals("GOOGLE")) {
+
+            if (email.getVisibility()==View.GONE) { email.setVisibility(View.VISIBLE);}
+            if (emailx.getVisibility()==View.GONE) {emailx.setVisibility(View.VISIBLE);}
+
             plus.setAlpha(0f);
 name.setText(Name);
+emailx.setText(emaill) ;
             try {
                 Picasso.with(getContext()).load(IM).into(profile);
             } catch (Exception e) {
 
             }
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO");
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(sharedPreferences.getString("acct", "/"));
             reference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
-                    score.setText(snapshot.child("score").getValue().toString());
+                    SCOREE=0 ;
+                    if  ( snapshot.hasChild("Anglais")) {
+                        scoree=0 ;
+                        if  ( snapshot.hasChild("Anglais1")) { scoree=scoree+Integer.parseInt(snapshot.child("Anglais1").getValue().toString()) ;}
+                        if  ( snapshot.hasChild("Anglais2")) { scoree=scoree+Integer.parseInt(snapshot.child("Anglais2").getValue().toString()); }
+                        if  ( snapshot.hasChild("Anglais3")) { scoree=scoree+Integer.parseInt(snapshot.child("Anglais3").getValue().toString()) ;}
+                        if  ( snapshot.hasChild("Anglais4")) { scoree=scoree+Integer.parseInt(snapshot.child("Anglais4").getValue().toString()); }
+                        if  ( snapshot.hasChild("Anglais5")) { scoree=scoree+Integer.parseInt(snapshot.child("Anglais5").getValue().toString()); }
+                        if  ( snapshot.hasChild("Anglais6")) { scoree=scoree+Integer.parseInt(snapshot.child("Anglais6").getValue().toString()); }
+                        if  ( snapshot.hasChild("Anglais7")) { scoree=scoree+Integer.parseInt(snapshot.child("Anglais7").getValue().toString()); }
+                        if (scoree<=9) {score.setText("0"+scoree+"/70");}
+                        else if (scoree>9) {score.setText(+scoree+"/70");}
+                        SCOREE=SCOREE+scoree;
+                    }
+
+                    if  ( snapshot.hasChild("Français")) {
+                        scoree=0 ;
+                        if  ( snapshot.hasChild("Français1")) { scoree=scoree+Integer.parseInt(snapshot.child("Français1").getValue().toString()) ;}
+                        if  ( snapshot.hasChild("Français2")) { scoree=scoree+Integer.parseInt(snapshot.child("Français2").getValue().toString()) ;}
+                        if  ( snapshot.hasChild("Français3")) { scoree=scoree+Integer.parseInt(snapshot.child("Français3").getValue().toString()) ;}
+                        if  ( snapshot.hasChild("Français4")) { scoree=scoree+Integer.parseInt(snapshot.child("Français4").getValue().toString()) ;}
+                        if  ( snapshot.hasChild("Français5")) { scoree=scoree+Integer.parseInt(snapshot.child("Français5").getValue().toString()) ;}
+                        if  ( snapshot.hasChild("Français6")) { scoree=scoree+Integer.parseInt(snapshot.child("Français6").getValue().toString()) ;}
+                        if  ( snapshot.hasChild("Français7")) { scoree=scoree+Integer.parseInt(snapshot.child("Français7").getValue().toString()) ;}
+                        SCOREE=SCOREE+scoree;
+
+                        if (scoree<=9) {score2.setText("0"+scoree+"/70");}
+                        else if (scoree>9) {score2.setText(+scoree+"/70");} }
+
+
+
+                    if  ( snapshot.hasChild("Arabe")) {
+                        scoree=0 ;
+                        if  ( snapshot.hasChild("Arabe1")) { scoree=scoree+Integer.parseInt(snapshot.child("Arabe1").getValue().toString()) ;}
+                        if  ( snapshot.hasChild("Arabe2")) { scoree=scoree+Integer.parseInt(snapshot.child("Arabe2").getValue().toString()) ;}
+                        if  ( snapshot.hasChild("Arabe3")) { scoree=scoree+Integer.parseInt(snapshot.child("Arabe3").getValue().toString()) ;}
+                        if  ( snapshot.hasChild("Arabe4")) { scoree=scoree+Integer.parseInt(snapshot.child("Arabe4").getValue().toString()) ;}
+                        if  ( snapshot.hasChild("Arabe5")) { scoree=scoree+Integer.parseInt(snapshot.child("Arabe5").getValue().toString()) ;}
+                        if  ( snapshot.hasChild("Arabe6")) { scoree=scoree+Integer.parseInt(snapshot.child("Arabe6").getValue().toString()) ;}
+                        if  ( snapshot.hasChild("Arabe7")) { scoree=scoree+Integer.parseInt(snapshot.child("Arabe7").getValue().toString()) ;}
+                        SCOREE=SCOREE+scoree;
+
+                        if (scoree<=9) {score3.setText("0"+scoree+"/70");}
+                        else if (scoree>9) {score3.setText(+scoree+"/70");}
+
+
+
+                    }
+                    progress.setText(SCOREE*100/210+"%");
+                    circleProgress.setProgress(SCOREE*100/210);
+
                 }
 
                 @Override
@@ -114,7 +288,21 @@ name.setText(Name);
                 }
 
 
-    } ) ; }}
+    } ) ; }
+
+
+//       sc = score2.getText().toString().charAt(0)+score2.getText().toString().charAt(1)+"";
+//        scoree=scoree+Integer.parseInt(sc);
+//        sc = score3.getText().toString().charAt(0)+score3.getText().toString().charAt(1)+"";
+//
+//        scoree=scoree+Integer.parseInt(sc);
+//        scoree = scoree * 100;
+//        double scoreee= scoree / 210 ;
+
+
+    }
+
+
 
     @Override
     public void onActivityResult(int reqCode, int resultCode, Intent data) {
@@ -130,4 +318,6 @@ name.setText(Name);
             DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO");
             reference.updateChildren(map) ;
         }
-} }
+}
+
+}

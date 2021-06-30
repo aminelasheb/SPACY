@@ -33,9 +33,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
 import org.w3c.dom.Text;
+
+import java.util.HashMap;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -149,6 +153,8 @@ txt6=view.findViewById(R.id.terms);
         String language = sharedPreferences.getString("LangApp", "/");
         languageLearn = sharedPreferences.getString("LangLearn", "/");
         String GM = sharedPreferences.getString("GM","/") ;
+        String act = sharedPreferences.getString("acct", "/");
+
         txt.setText(language);
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -382,7 +388,25 @@ txt1.setGravity(Gravity.RIGHT);
                         txt2.setGravity(Gravity.LEFT);
                         txt2.setText("Langue d'apprentissage : Anglais "); }
 
-                    editor.putString("LangLearn","An");}
+                    editor.putString("LangLearn","An");
+                    if (GM.equals("LATER"))  { editor.putString("Anglais","true"); }
+                    if (GM.equals("MAIL") || GM.equals("GOOGLE")) {
+
+
+
+                        HashMap<String, Object> map = new HashMap<>();
+                        map.put("َAnglais", "true");
+
+
+                        if (GM.equals("MAIL")) {
+                            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                            reference.updateChildren(map);
+
+                        } else if (GM.equals("GOOGLE")) {
+                            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(act);
+                            reference.updateChildren(map);
+                        } }
+            }
                 else if (spinner2.getSelectedItem().toString().equals("العربية")) {
                     if (txt.getText().toString().equals("English") ) {
                         txt2.setGravity(Gravity.LEFT);
@@ -392,8 +416,25 @@ txt1.setGravity(Gravity.RIGHT);
                     else if (txt.getText().toString().equals("Français") ) {
                         txt2.setGravity(Gravity.LEFT);
                         txt2.setText("Langue d'apprentissage : Arabe"); }
+                    editor.putString("LangLearn","Ar");
 
-                    editor.putString("LangLearn","Ar");}
+                    if (GM.equals("LATER"))  { editor.putString("العربية","true"); }
+                    if (GM.equals("MAIL") || GM.equals("GOOGLE")) {
+
+
+
+                        HashMap<String, Object> map = new HashMap<>();
+                        map.put("Arabe", "true");
+
+
+                        if (GM.equals("MAIL")) {
+                            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                            reference.updateChildren(map);
+
+                        } else if (GM.equals("GOOGLE")) {
+                            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(act);
+                            reference.updateChildren(map);
+                        } }}
 
 
                 else if (spinner2.getSelectedItem().toString().equals("Français")) {
@@ -403,7 +444,26 @@ txt1.setGravity(Gravity.RIGHT);
                 else if (txt.getText().toString().equals("العربية") ) {       txt2.setGravity(Gravity.RIGHT);txt2.setText("لغة التعلم : الفرنسية"); }
                 else if (txt.getText().toString().equals("Français") ) {                        txt2.setGravity(Gravity.LEFT);
                         txt2.setText("Langue d'apprentissage : Français"); }
-                editor.putString("LangLearn","Fr");}
+                editor.putString("LangLearn","Fr");
+                 if (GM.equals("LATER"))  { editor.putString("Français","true"); }
+                    if (GM.equals("MAIL") || GM.equals("GOOGLE")) {
+
+
+
+                        HashMap<String, Object> map = new HashMap<>();
+                        map.put("Français", "true");
+
+
+                        if (GM.equals("MAIL")) {
+                            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                            reference.updateChildren(map);
+
+                        } else if (GM.equals("GOOGLE")) {
+                            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(act);
+                            reference.updateChildren(map);
+                        } }
+
+                }
 
                 editor.commit();
                 FancyToast.makeText(getContext(),"Language of learning changed successfully!",FancyToast.LENGTH_SHORT,FancyToast.INFO,false).show();

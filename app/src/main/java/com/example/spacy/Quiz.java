@@ -587,7 +587,7 @@ String id ;
                 if (GM.equals("MAIL")) {id=FirebaseAuth.getInstance().getCurrentUser().getUid() ;}
                 else if (GM.equals("GOOGLE")) {id = sharedPreferences.getString("acct", "/"); ;}
             HashMap<String , Object> map = new HashMap<>();
-            map.put("Anglais" ,userscore+"");
+            map.put("Anglais1" ,userscore+"");
             DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(id);
             reference.updateChildren(map) ; }
             else if (GM.equals("LATER")) {

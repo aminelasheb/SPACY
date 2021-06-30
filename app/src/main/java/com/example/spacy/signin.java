@@ -187,6 +187,8 @@ public class signin extends AppCompatActivity  {
             });
 
             editor.putString("Name",acct.getDisplayName()) ;
+            editor.putString("email",acct.getEmail()) ;
+
             try {
                 String PhotoUrl = acct.getPhotoUrl().toString();
                 editor.putString("Image",PhotoUrl) ;

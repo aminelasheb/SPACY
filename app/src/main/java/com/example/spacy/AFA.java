@@ -94,8 +94,10 @@ public class AFA extends AppCompatActivity {
                 Intent intent = new Intent(AFA.this, levels.class);
                 SharedPreferences.Editor editor = MyPre.edit();
                 editor.putString("LangLearn", "An");
+                if (gm.equals("LATER")) { editor.putString("Anglais", "true") ; }
+                if (gm.equals("MAIL") || gm.equals("GOOGLE")) {
                 HashMap<String, Object> map = new HashMap<>();
-                map.put("Anglais", "0");
+                map.put("Anglais", "true");
                 map.put("new", "false");
                 editor.putString("image", "1");
 
@@ -107,7 +109,7 @@ public class AFA extends AppCompatActivity {
                 } else if (gm.equals("GOOGLE")) {
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(act);
                     reference.updateChildren(map);
-                }
+                } }
 
 
                 editor.commit();
@@ -125,8 +127,13 @@ public class AFA extends AppCompatActivity {
                 Intent intent = new Intent(AFA.this, levels.class);
                 SharedPreferences.Editor editor = MyPre.edit();
                 editor.putString("LangLearn", "Ar");
-                HashMap<String, Object> map = new HashMap<>();
-                map.put("العربية", "0");
+
+                if (gm.equals("LATER")) { editor.putString("العربية", "true") ; }
+
+                if (gm.equals("MAIL") || gm.equals("GOOGLE")) {
+
+                    HashMap<String, Object> map = new HashMap<>();
+                map.put("Arabe", "true");
                 map.put("new", "false");
                 map.put("image", "1");
                 editor.putString("image", "1");
@@ -138,7 +145,7 @@ public class AFA extends AppCompatActivity {
                 } else if (gm.equals("GOOGLE")) {
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(act);
                     reference.updateChildren(map);
-                }
+                } }
                 editor.commit();
                 startActivity(intent);
                 finish();
@@ -154,8 +161,15 @@ public class AFA extends AppCompatActivity {
                 Intent intent = new Intent(AFA.this, levels.class);
                 SharedPreferences.Editor editor = MyPre.edit();
                 editor.putString("LangLearn", "Fr");
-                HashMap<String, Object> map = new HashMap<>();
-                map.put("Français", "0");
+
+                if (gm.equals("LATER")) { editor.putString("Français", "true") ; }
+
+                if (gm.equals("MAIL") || gm.equals("GOOGLE")) {
+
+
+
+                    HashMap<String, Object> map = new HashMap<>();
+                map.put("Français", "true");
                 map.put("new", "false");
                 map.put("image", "1");
                 editor.putString("image", "1");
@@ -168,7 +182,7 @@ public class AFA extends AppCompatActivity {
                 } else if (gm.equals("GOOGLE")) {
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(act);
                     reference.updateChildren(map);
-                }
+                } }
                 editor.commit();
                 startActivity(intent);
                 finish();

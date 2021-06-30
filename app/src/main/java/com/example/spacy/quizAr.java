@@ -579,10 +579,7 @@ String id;
                 editor.putString("Arabe1", userscore+"");
                 editor.commit();
             }
-            HashMap<String , Object> map = new HashMap<>();
-            map.put("العربية" ,userscore+"");
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO");
-            reference.updateChildren(map) ;
+
             AlertDialog.Builder alert = new AlertDialog.Builder(this);
             alert.setTitle("انتهت اللعبة");
             alert.setCancelable(false);

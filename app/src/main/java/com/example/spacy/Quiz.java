@@ -345,7 +345,7 @@ String id ;
                     }
 
                     checkAnsweri(currentOptionB);
-                    userscore=userscore-1 ;
+
                 }
             }
         });
@@ -372,7 +372,7 @@ String id ;
                     }
 
                     checkAnsweri(currentOptionC);
-                    userscore=userscore-1 ;
+
                 }
             }
         });
@@ -393,7 +393,7 @@ String id ;
                         userscore=userscore+1;
                     }
                     checkAnsweri(currentOptionD);
-                    userscore=userscore-1 ;
+
                 }
 
             }

@@ -428,6 +428,7 @@
     <string name="questionf">if you are sick you will go to the :</string>
     <string name="questionf1">nurce</string>
     <string name="questionf12">doctor</string>
+    <string name="questionf122">Sinner</string>
     <string name="questionf13">teacher</string>
     <string name="questionf14">chef</string>
     <string name="answerf1">doctor</string>
@@ -437,6 +438,11 @@
     <string name="answerf3">chef</string>
     <string name="questionf5">sinner</string>
     <string name="answerf4">chef</string>
-
+    <string name="answerf44">farmer</string>
+    <string name="answerf41">baby</string>
+    <string name="answerf42">cousins</string>
+    <string name="answerf45">sister</string>
+    <string name="answerf48">my mother</string>
+    <string name="answerf51">architect</string>
 
 </resources>

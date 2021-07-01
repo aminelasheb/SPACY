@@ -311,12 +311,21 @@ public class signin extends AppCompatActivity  {
             editor.commit();
 
 //             Signed in successfully, show authenticated UI.
-            updateUI(account);
+            updatezUI(account);
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
             Log.w("SignInActivity", "signInResult:failed code=" + e.getStatusCode());
 //            updateUI(null);
+        }
+    }
+
+    private void updatezUI(GoogleSignInAccount account) {
+        if(account != null ) {
+            Toast.makeText(this,"Welcome",Toast.LENGTH_LONG).show();
+            startActivity(new Intent(this,AFA.class));
+
+        }else {
         }
     }
 

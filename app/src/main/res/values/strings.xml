@@ -444,5 +444,20 @@
     <string name="answerf45">sister</string>
     <string name="answerf48">my mother</string>
     <string name="answerf51">architect</string>
+    <string name="answerf52">pecheur</string>
+    <string name="answerf53">facteur</string>
+    <string name="answerf54">chef</string>
+    <string name="answerf55">architecte</string>
+    <string name="answerf56">infirmière</string>
+    <string name="answerf57">docteur</string>
+    <string name="answerf58">coiffeur</string>
+    <string name="answerf59">maçon</string>
+    <string name="answerf60">pompier</string>
+    <string name="answerf61">petit frère</string>
+    <string name="answerf62">maman</string>
+    <string name="answerf63">papa</string>
+    <string name="answerf64">sœur</string>
+    <string name="answerf65">grand-mère</string>
+
 
 </resources>

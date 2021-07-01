@@ -52,26 +52,27 @@ public class qjobsfr extends AppCompatActivity {
     //table of answers
     private final answerClass[] questionBank = new answerClass[]{
 
-            new answerClass(2, R.drawable.shirt ,R.string.question101_a, R.string.question104_a,
-                    R.string.question102_a,R.string.question103_a,R.string.question101_a),
-            new answerClass(5, R.raw.tete, R.drawable.eye, R.drawable.orl
-                    , R.drawable.head1, R.drawable.hair4, R.drawable.head1),
-            new answerClass(4, R.string.question101_c, R.drawable.face, R.drawable.pied
-                    , R.drawable.nose, R.drawable.mainn, R.drawable.face),
-            new answerClass(3, R.raw.botte,R.string.question102_a,R.string.question105_a,
-                    R.string.question105_b,R.string.question105_d,R.string.question105_d ),
-            new answerClass(2, R.drawable.pied, R.string.question101_a,R.string.question104_b,
-                    R.string.question104_c, R.string.question104_d, R.string.question104_d),
-            new answerClass(5, R.raw.ey2, R.drawable.eye, R.drawable.orl
-                    , R.drawable.hair4, R.drawable.head1, R.drawable.eye),
-            new answerClass(2, R.drawable.face ,R.string.question101_c, R.string.question104_c,
-                    R.string.question104_d,R.string.question104_b,R.string.question101_c),
-            new answerClass(5, R.raw.bouch, R.drawable.bouch, R.drawable.head1
-                    , R.drawable.hair4, R.drawable.mollet, R.drawable.bouch),
-            new answerClass(3, R.raw.veste,R.string.question101_a,R.string.question105_d,
-                    R.string.question105_a,R.string.question105_d1,R.string.question105_d1 ),
-            new answerClass(2, R.drawable.jambe1, R.string.question104_b,R.string.question101_a,
-                    R.string.question104_c, R.string.question104_d, R.string.question104_b),
+            new answerClass(2, R.drawable.pecheur,R.string.answerf52, R.string.answerf53,
+                    R.string.answerf54,R.string.answerf55,R.string.answerf52),
+            new answerClass(5, R.raw.dad2, R.drawable.dad, R.drawable.mam
+                    , R.drawable.bigbro, R.drawable.sis, R.drawable.dad),
+            new answerClass(4, R.string.answerf56, R.drawable.doctor, R.drawable.infirmiere
+                    , R.drawable.macon, R.drawable.policier, R.drawable.infirmiere),
+            new answerClass(3, R.raw.dcer,R.string.answerf57,R.string.answerf58,
+                    R.string.answerf59,R.string.answerf60,R.string.answerf57 ),
+            new answerClass(2, R.drawable.baby, R.string.answerf61,R.string.answerf62,
+                    R.string.answerf63, R.string.answerf64, R.string.answerf61),
+            new answerClass(5, R.raw.ant2, R.drawable.antt, R.drawable.cons
+                    , R.drawable.bigbro, R.drawable.mam, R.drawable.antt),
+            new answerClass(2, R.drawable.architecte ,R.string.answerf55, R.string.answerf56,
+                    R.string.answerf53,R.string.answerf58,R.string.answerf55),
+            new answerClass(5, R.raw.grp2, R.drawable.grapa, R.drawable.grama
+                    , R.drawable.bigbro, R.drawable.dad, R.drawable.grapa),
+            new answerClass(3, R.raw.grm2,R.string.answerf65,R.string.answerf63,
+                    R.string.answerf62,R.string.answerf64,R.string.answerf65 ),
+
+            new answerClass(5, R.raw.cffr2, R.drawable.coiffeur, R.drawable.facteur
+                    , R.drawable.infirmiere, R.drawable.macon, R.drawable.coiffeur),
 
 
 
@@ -567,12 +568,12 @@ public class qjobsfr extends AppCompatActivity {
                 if (GM.equals("MAIL")) {id= FirebaseAuth.getInstance().getCurrentUser().getUid() ;}
                 else if (GM.equals("GOOGLE")) {id = sharedPreferences.getString("acct", "/"); ;}
                 HashMap<String , Object> map = new HashMap<>();
-                map.put("Français3" ,userscore+"");
+                map.put("Français4" ,userscore+"");
                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(id);
                 reference.updateChildren(map) ; }
             else if (GM.equals("LATER")) {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("Français3", userscore+"");
+                editor.putString("Français4", userscore+"");
                 editor.commit();
             }
             AlertDialog.Builder alert = new AlertDialog.Builder(this);

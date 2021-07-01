@@ -105,7 +105,8 @@ public class JOFA extends AppCompatActivity {
                     startActivity(intent);
                 }
                 if (languageLearn.equals("Ar")) {
-                    Intent intent = new Intent(JOFA.this, qjobsfr.class);
+                    
+                    Intent intent = new Intent(JOFA.this, qjobsar.class);
                     startActivity(intent);
                 }
 

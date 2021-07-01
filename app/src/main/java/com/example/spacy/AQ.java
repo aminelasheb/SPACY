@@ -75,8 +75,7 @@ public class AQ extends AppCompatActivity {
         card6_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast toast = Toast.makeText(AQ.this, "Right ✅!", FancyToast.LENGTH_LONG);
-            toast.show();
+
                 if (languageLearn.equals("An")) {
                     Intent intent = new Intent(AQ.this, Quiz6An.class);
                     startActivity(intent);

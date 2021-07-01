@@ -91,6 +91,8 @@ sc=view.findViewById(R.id.scoreee);
 
 
             email.setText("البريد الالكتروني");
+            if (email.getGravity()!=Gravity.RIGHT) {
+            email.setGravity(Gravity.RIGHT); }
             txt5.setText("التقدم");
             sc.setText("مجموع النقاط");
             a.setText("الانجليزية");
@@ -106,6 +108,9 @@ sc=view.findViewById(R.id.scoreee);
 
 
             email.setText("E-mail");
+            if (email.getGravity()!=Gravity.LEFT) {
+                email.setGravity(Gravity.LEFT); }
+
             txt5.setText("Mon progrès");
             sc.setText("Mon score");
             a.setText("Anglais");
@@ -118,6 +123,10 @@ sc=view.findViewById(R.id.scoreee);
         }
         else {
             email.setText("E-mail");
+            if (email.getGravity()!=Gravity.LEFT) {
+                email.setGravity(Gravity.LEFT); }
+
+
             txt5.setText("My progrès");
             sc.setText("My score");
             a.setText("English");

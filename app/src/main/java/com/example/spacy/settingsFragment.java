@@ -294,7 +294,7 @@ txt1.setGravity(Gravity.RIGHT);
 
                         ShareCompat.IntentBuilder.from(activity)
                                 .setType("message/rfc822")
-                                .addEmailTo("ma.lasheb@esi-sba.dz")
+                                .addEmailTo("spacyaaaaac@gmail.com")
                                 .setSubject("About Spacy App")
                                 .setText("I was given the opportunity to try your application, and I want to say")
                                 //.setHtmlText(body) //If you are using HTML in your body text

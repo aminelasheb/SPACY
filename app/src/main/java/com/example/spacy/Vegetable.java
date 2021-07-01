@@ -109,7 +109,6 @@ public class Vegetable extends AppCompatActivity {
         aymenmodelArrayList=new ArrayList<>();
 
         aymenmodelArrayList.add(new aymenmodel("Garlic",R.drawable.ail));
-        aymenmodelArrayList.add(new aymenmodel("Turnip",R.drawable.lifte));
         aymenmodelArrayList.add(new aymenmodel("Carrot",R.drawable.carotte));
         aymenmodelArrayList.add(new aymenmodel("Cucumber", R.drawable.concombre));
         aymenmodelArrayList.add(new aymenmodel("Lettuce",R.drawable.laitue));

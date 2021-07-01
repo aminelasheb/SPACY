@@ -115,7 +115,6 @@ private void releaseMediaPlayer() {
         aymenmodelArrayList.add(new aymenmodel("فلفل",R.drawable.felfel));
         aymenmodelArrayList.add(new aymenmodel("خس",R.drawable.laitue));
         aymenmodelArrayList.add(new aymenmodel("خيار",R.drawable.concombre));
-        aymenmodelArrayList.add(new aymenmodel("لفت",R.drawable.lifte ));
         aymenmodelArrayList.add(new aymenmodel("ذرة",R.drawable.maiis));
         aymenmodelArrayList.add(new aymenmodel("بطاطا",R.drawable.pommedeterre));
         aymenmodelArrayList.add(new aymenmodel("ثوم",R.drawable.ail));

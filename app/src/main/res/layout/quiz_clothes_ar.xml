@@ -12,7 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/QuestionNumber"
+
         android:text="1/8 Question"
+
         android:fontFamily="@font/baloo"
 
         android:layout_marginTop="20dp"

@@ -289,8 +289,6 @@ public class signin extends AppCompatActivity  {
 
                         FirebaseDatabase.getInstance().getReference().child("INFO").child(acct.getId()).setValue(map) ;
 
-                        Toast toast = Toast.makeText(signin.this, "Right ✅!", FancyToast.LENGTH_LONG);
-            toast.show();
                     }
                 }
 

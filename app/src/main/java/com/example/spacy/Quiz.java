@@ -186,12 +186,15 @@ String id ;
             if (optionT.getVisibility() != View.GONE) {
                 optionT.setVisibility(View.GONE);
             }
+
+
             optionAi.setImageResource(currentOptionA);
             optionBi.setImageResource(currentOptionB);
             optionCi.setImageResource(currentOptionC);
             optionDi.setImageResource(currentOptionD);
 
         }
+
 
         score.setText("Score :" + userscore + "/" + questionBank.length);
         questionNumber.setText(qn + "/" + questionBank.length + " Question");

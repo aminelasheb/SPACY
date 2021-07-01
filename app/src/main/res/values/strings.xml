@@ -458,6 +458,22 @@
     <string name="answerf63">papa</string>
     <string name="answerf64">sœur</string>
     <string name="answerf65">grand-mère</string>
+    <string name="answerf66">صياد</string>
+    <string name="answerf67">فلاح</string>
+    <string name="answerf68">طباخ</string>
+    <string name="answerf69">حطاب</string>
+    <string name="answerf70">معلم</string>
+    <string name="answerf71">طبيب</string>
+    <string name="answerf72">معلم</string>
 
+    <string name="answerf73">مهندس معماري</string>
+
+    <string name="answerf74">اخي الصغير</string>
+    <string name="answerf75"> اختي</string>
+    <string name="answerf76"> اخي الاكبر</string>
+    <string name="answerf77"> ابناء العم </string>
+    <string name="answerf78">  حلاق </string>
+
+    <string name="answerf79">  عالم فضاء </string>
 
 </resources>

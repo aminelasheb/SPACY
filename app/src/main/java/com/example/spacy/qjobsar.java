@@ -50,32 +50,28 @@ public class qjobsar extends AppCompatActivity {
     //table of answers
     private final answerClass[] questionBank = new answerClass[]{
 
-            new answerClass(2, R.drawable.shirt ,R.string.question108_a, R.string.question108_b,
-                    R.string.question108_c,R.string.question108_d,R.string.question108_a),
-            new answerClass(5, R.raw.tet, R.drawable.eye, R.drawable.orl
-                    , R.drawable.head1, R.drawable.hair4, R.drawable.head1),
-            new answerClass(4, R.string.question108_e, R.drawable.face, R.drawable.pied
-                    , R.drawable.nose, R.drawable.mainn, R.drawable.face),
-            new answerClass(3, R.raw.hidaa,R.string.question108_c,R.string.question108_h,
-
-                    R.string.question108_j,R.string.question108_k,R.string.question108_k),
-
-            new answerClass(2, R.drawable.pied, R.string.question108_a,R.string.question108_l,
-                    R.string.question108_ll, R.string.question108_ll1, R.string.question108_ll1),
-
-            new answerClass(5, R.raw.ain, R.drawable.eye, R.drawable.orl
-                    , R.drawable.hair4, R.drawable.head1, R.drawable.eye),
-            new answerClass(2, R.drawable.face ,R.string.question108_e, R.string.question108_ll,
-                    R.string.question108_ll1,R.string.question108_l,R.string.question108_e),
-            new answerClass(5, R.raw.fam, R.drawable.bouch, R.drawable.head1
-                    , R.drawable.orl, R.drawable.hair4, R.drawable.bouch),
-            new answerClass(3, R.raw.miitaf,R.string.question108_ll12,R.string.question108_ll15,
-
-                    R.string.question108_b,R.string.question108_h,R.string.question108_ll12),
+            new answerClass(2, R.drawable.pecheur ,R.string.answerf66, R.string.answerf67,
+                    R.string.answerf69,R.string.answerf68,R.string.answerf66),
+            new answerClass(5, R.raw.dad3, R.drawable.dad, R.drawable.bigbro
+                    , R.drawable.sis, R.drawable.grapa, R.drawable.dad),
+            new answerClass(4, R.string.answerf70, R.drawable.prof, R.drawable.astronome
+                    , R.drawable.infirmiere, R.drawable.bucheron, R.drawable.prof),
+            new answerClass(3, R.raw.ardoc,R.string.answerf71,R.string.answerf67,
+                    R.string.answerf73,R.string.answerf72,R.string.answerf71),
+            new answerClass(2, R.drawable.baby, R.string.answerf74,R.string.answerf75,
+                    R.string.answerf76, R.string.answerf77, R.string.answerf74),
+            new answerClass(5, R.raw.ant3, R.drawable.antt, R.drawable.ancl
+                    , R.drawable.mam, R.drawable.bigbro, R.drawable.antt),
+            new answerClass(2, R.drawable.coiffeur ,R.string.answerf78, R.string.answerf67,
+                    R.string.answerf71,R.string.answerf72,R.string.answerf78),
+            new answerClass(5, R.raw.grp3, R.drawable.grapa, R.drawable.grama
+                    , R.drawable.ancl, R.drawable.dad, R.drawable.grapa),
+            new answerClass(4, R.string.answerf79, R.drawable.astronome, R.drawable.pompier
+                    , R.drawable.bucheron, R.drawable.policier, R.drawable.astronome),
+            new answerClass(5, R.raw.arbas, R.drawable.architecte, R.drawable.astronome
+                    , R.drawable.doctor, R.drawable.bucheron, R.drawable.astronome),
 
 
-            new answerClass(2, R.drawable.mollet, R.string.question108_l,R.string.question108_ll,
-                    R.string.question108_e, R.string.question108_ll1, R.string.question108_l),
 
 
 // 1 : Question text and replies text
@@ -576,12 +572,12 @@ public class qjobsar extends AppCompatActivity {
                 if (GM.equals("MAIL")) {id= FirebaseAuth.getInstance().getCurrentUser().getUid() ;}
                 else if (GM.equals("GOOGLE")) {id = sharedPreferences.getString("acct", "/"); ;}
                 HashMap<String , Object> map = new HashMap<>();
-                map.put("Arabe3" ,userscore+"");
+                map.put("Arabe4" ,userscore+"");
                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(id);
                 reference.updateChildren(map) ; }
             else if (GM.equals("LATER")) {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("Arabe3", userscore+"");
+                editor.putString("Arabe4", userscore+"");
                 editor.commit();
             }
             AlertDialog.Builder alert = new AlertDialog.Builder(this);

@@ -57,12 +57,16 @@ public class signin extends AppCompatActivity  {
     GoogleSignInClient mGoogleSignInClient ;
     private FirebaseAuth mAuth;
     String neww ;
+    SharedPreferences MyPre;
 
     @Override
     protected void onStart() {
         super.onStart();
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        updateUI(account);
+        MyPre = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = this.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+
+        updateeUI(sharedPreferences.getString("GM","/"));
     }
 
     
@@ -342,9 +346,21 @@ editor.putString("GM","MAIL") ;
 
     public void updateUI(GoogleSignInAccount account){
 
-        if(account != null){
+        if(account != null ) {
             Toast.makeText(this,"U Signed In successfully",Toast.LENGTH_LONG).show();
-            startActivity(new Intent(this,AFA.class));
+            startActivity(new Intent(this,levels.class));
+
+        }else {
+            Toast.makeText(this,"U Didnt signed in",Toast.LENGTH_LONG).show();
+        }
+
+    }
+
+    public void updateeUI(String account){
+
+        if((account == "GOOGLE") || (account == "MAIL") ){
+            Toast.makeText(this,"U Signed In successfully",Toast.LENGTH_LONG).show();
+            startActivity(new Intent(this,levels.class));
 
         }else {
             Toast.makeText(this,"U Didnt signed in",Toast.LENGTH_LONG).show();

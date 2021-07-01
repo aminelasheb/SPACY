@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,41 +31,31 @@ public class AFA extends AppCompatActivity {
     private View Ar;
     private  String language;
 
-
     SharedPreferences MyPre;
     String New ;
+    TextView txt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.afa);
+        txt=findViewById(R.id.txt) ;
         MyPre = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         SharedPreferences sharedPreferences = this.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
-        if (!sharedPreferences.getString("newwww","yy").equals("no")) {
-
-            if(getResources().getConfiguration().locale.getDefault().getDisplayLanguage().equals("English")) {
-
-
-            language = "English";
-            New = "no";
-
+        String Language =this.getSharedPreferences("MyPref", Context.MODE_PRIVATE).getString("LangApp","/");
+        if (Language.equals("العربية")) {
+            txt.setText( " مرحبا \n تعلم معنا " );
 
         }
-        else if(getResources().getConfiguration().locale.getDefault().getDisplayLanguage().equals("français")){
-            language =  "Français";
-            New = "no";
+        else  if (Language.equals("Français")) {
+            txt.setText( " Bonjour \n Apprenez avec nous !" );
 
         }
-        else {  Toast toast = Toast.makeText(AFA.this ,"you can change language of application from settings",FancyToast.LENGTH_LONG);
-            toast.show();
+        else {
+            txt.setText( " Hello \n Learn with us !" );
 
         }
-
-            SharedPreferences.Editor editor = MyPre.edit();
-            editor.putString("LangApp", language);
-            editor.putString("newwww", New)  ;
-            editor.commit(); }
 
         String act = sharedPreferences.getString("acct", "/");
         String gm = sharedPreferences.getString("GM", "/");

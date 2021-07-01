@@ -11,6 +11,10 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 
 import org.intellij.lang.annotations.Language;
 
@@ -18,6 +22,23 @@ public class login extends AppCompatActivity {
 private CardView sign;
     private CardView sign2;
     ImageView later ;
+    SharedPreferences MyPre;
+
+    @Override
+    protected void onStart() {
+
+        super.onStart();
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+
+        MyPre = getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+
+        SharedPreferences sharedPreferences = this.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+
+        updateeUI(sharedPreferences.getString("GM","/"));
+
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,6 +119,18 @@ private CardView sign;
                 startActivity(intent);
             }
         });
+
+    }
+
+    public void updateeUI(String account){
+
+        if((account == "GOOGLE") || (account == "MAIL") ){
+            Toast.makeText(this,"U Signed In successfully",Toast.LENGTH_LONG).show();
+            startActivity(new Intent(this,levels.class));
+
+        }else {
+            Toast.makeText(this,"U Didnt signed in",Toast.LENGTH_LONG).show();
+        }
 
     }
 }

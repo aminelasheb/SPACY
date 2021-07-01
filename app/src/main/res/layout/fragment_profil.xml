@@ -72,7 +72,8 @@
                     android:text="Email"
                     android:layout_weight="3"
                     android:textColor="@color/white"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    />
 
                 <TextView
 
@@ -165,6 +166,7 @@
                 android:weightSum="2"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:id="@+id/a"
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -204,7 +206,8 @@
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Franch"
+                    android:text="French"
+                    android:id="@+id/f"
                     android:fontFamily="@font/baloo"
                     android:textColor="@color/white"
                     android:textSize="18sp"/>
@@ -241,6 +244,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Arabic"
+                    android:id="@+id/aa"
                     android:fontFamily="@font/baloo"
                     android:textColor="@color/white"
                     android:textSize="18sp"/>

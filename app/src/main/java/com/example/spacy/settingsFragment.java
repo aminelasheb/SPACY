@@ -111,7 +111,11 @@ View Contact ;
     @Override
     public void onStart() {
         super.onStart();
+
+
          account = GoogleSignIn.getLastSignedInAccount(getContext());
+
+
 
     }
 
@@ -119,6 +123,7 @@ View Contact ;
     public  View onCreateView(LayoutInflater inflater, ViewGroup container,
                                    Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
+
         // Inflate the layout for this fragment
         spinner = (Spinner) view.findViewById(R.id.spinner);
         spinner2 = (Spinner) view.findViewById(R.id.spinner2);
@@ -126,17 +131,13 @@ View Contact ;
         change2 = view.findViewById(R.id.changee2);
         logOut = view.findViewById(R.id.logout);
         Contact = view.findViewById(R.id.contact);
-
-     txt3=view.findViewById(R.id.logoutt);
+        txt3=view.findViewById(R.id.logoutt);
         txt4=view.findViewById(R.id.contactt);
         txt1=view.findViewById(R.id.txt1);
         txt2 = view.findViewById(R.id.txt2);
         txt = view.findViewById(R.id.txt);
-ShareIt =view.findViewById(R.id.shareit);
-txt6=view.findViewById(R.id.terms);
-
-
-
+        ShareIt =view.findViewById(R.id.shareit);
+        txt6=view.findViewById(R.id.terms);
 
 
         return view ;

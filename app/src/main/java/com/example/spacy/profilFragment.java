@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +48,7 @@ public class profilFragment extends Fragment {
     ProgressBar circleProgress;
     RecyclerView recyclerView;
     ImageView profile,plus ;
-    TextView name,score,score2,score3,progress ;  final int PICK_IMAGE = 100;
+    TextView name,score,score2,score3,progress,txt5,a,f,aa ,sc;  final int PICK_IMAGE = 100;
     String GM ,Name ,IM ;
     int scoree,SCOREE;
     int SCORE=0 ;
@@ -57,12 +58,20 @@ public class profilFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.fragment_profil, container, false) ;
+
         profile = view.findViewById(R.id.profile_image) ;
         name =view.findViewById(R.id.Name) ;
         plus=view.findViewById(R.id.imageView5) ;
         score=view.findViewById(R.id.score);
         score2=view.findViewById(R.id.score2);
 email=view.findViewById(R.id.txt2);
+txt5=view.findViewById(R.id.text5);
+a=view.findViewById(R.id.a) ;
+sc=view.findViewById(R.id.scoreee);
+        f=view.findViewById(R.id.f) ;
+        aa=view.findViewById(R.id.aa) ;
+
+
         emailx=view.findViewById(R.id.txtx);
         progress=view.findViewById(R.id.text_view_progress);
         circleProgress=view.findViewById(R.id.progress_bar);
@@ -76,6 +85,47 @@ email=view.findViewById(R.id.txt2);
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+        String language = sharedPreferences.getString("LangApp", "/");
+        if (language.equals("العربية")) {
+
+
+
+            email.setText("البريد الالكتروني");
+            txt5.setText("التقدم");
+            sc.setText("مجموع النقاط");
+            a.setText("الانجليزية");
+            f.setText("الفرنسية");
+
+            aa.setText("العربية");
+
+
+
+        }
+        else    if (language.equals("Français")) {
+
+
+
+            email.setText("E-mail");
+            txt5.setText("Mon progrès");
+            sc.setText("Mon score");
+            a.setText("Anglais");
+            f.setText("Français");
+
+            aa.setText("Arabe");
+
+
+
+        }
+        else {
+            email.setText("E-mail");
+            txt5.setText("My progrès");
+            sc.setText("My score");
+            a.setText("English");
+            f.setText("French");
+
+            aa.setText("Arabic");
+
+        }
         String GM = sharedPreferences.getString("GM","/") ;
         String Name = sharedPreferences.getString("Name","/") ;
         String emaill = sharedPreferences.getString("email","/") ;

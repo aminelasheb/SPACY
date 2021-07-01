@@ -66,7 +66,7 @@ String id;
             new answerClass(2, R.drawable.ail, R.string.question5_0033, R.string.question5_010,
                     R.string.question5_004, R.string.question5_011, R.string.question5_0033),
             new answerClass(4, R.string.question5_001, R.drawable.pomme, R.drawable.ananas
-                    , R.drawable.lifte, R.drawable.pastheque, R.drawable.pomme),
+                    , R.drawable.brocoli, R.drawable.pastheque, R.drawable.pomme),
             new answerClass(5, R.raw.tomatean, R.drawable.tomatte, R.drawable.poire
                     , R.drawable.carotte, R.drawable.champignon, R.drawable.tomatte),
             new answerClass(2, R.drawable.pastheque, R.string.question5_010,

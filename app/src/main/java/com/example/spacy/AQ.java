@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 public class AQ extends AppCompatActivity {
     private RelativeLayout card5_6;
@@ -72,6 +75,8 @@ public class AQ extends AppCompatActivity {
         card6_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast toast = Toast.makeText(AQ.this, "Right ✅!", FancyToast.LENGTH_LONG);
+            toast.show();
                 if (languageLearn.equals("An")) {
                     Intent intent = new Intent(AQ.this, Quiz6An.class);
                     startActivity(intent);

@@ -8,6 +8,9 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.DragEvent;
 import android.view.View;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -30,6 +33,12 @@ public class quizAr extends AppCompatActivity {
     private TextView questionNumber, question, score;
     private TextView checkout1, checkout2;
     private View optionT, optionI;
+    private FrameLayout ooptionA,ooptionB,ooptionC,ooptionD;
+    int clicks =0;
+    int clickss =0;
+    Button nextbutton2;
+    ImageButton next;
+    boolean Reponse1 = false;
     boolean Reponse = false;
     boolean correctanswer;
     boolean verifier,verifier1,verifier2,verifier3,verifier4,verifier5,verifier6,verifier7,verifier8;
@@ -101,7 +110,10 @@ String id;
 //        questionNumber.setText(qn+"/"+questionBank.length+"Question");
 //        score.setText("Score :"+userscore+"/"+questionBank.length);
 
-
+        android.widget.FrameLayout ooptionA = findViewById(R.id.Opttion11);
+        android.widget.FrameLayout ooptionB = findViewById(R.id.Opttion22);
+        android.widget.FrameLayout ooptionC = findViewById(R.id.Opttion33);
+        android.widget.FrameLayout ooptionD = findViewById(R.id.Opttion44);
         optionA = findViewById(R.id.Option1);
         optionB = findViewById(R.id.Option2);
         optionC = findViewById(R.id.Option3);
@@ -206,13 +218,14 @@ String id;
             public void onClick(View view) {
                 if (Reponse == false) {
                     Reponse = true;
-                    optionA.setBackgroundColor(0xFF323360);
+
+                    ooptionA.setBackgroundResource(R.drawable.optiondesign33);
                     verifier=true;
                     verifier1=false; verifier2=false; verifier3=false; verifier4=false;
                     verifier5=false; verifier6=false; verifier7=false;
-                    //boolean resultt = checkAnswer(currentOptionA);
+                    // boolean resultt = checkAnswer(currentOptionA);
                     //if (resultt) {
-                    //  userscore=userscore-1 ;
+                    //    userscore=userscore ;
                     //optionA.setBackgroundColor(0xFF00FF00);
                     //OptionAa = true;
                     //} else {
@@ -232,7 +245,7 @@ String id;
             public void onClick(View view) {
                 if (Reponse == false) {
                     Reponse = true;
-                    optionB.setBackgroundColor(0xFF323360);
+                    ooptionB.setBackgroundResource(R.drawable.optiondesign33);
                     verifier1=true;
                     verifier=false; verifier2=false; verifier3=false; verifier4=false;
                     verifier5=false; verifier6=false; verifier7=false;
@@ -259,7 +272,7 @@ String id;
             public void onClick(View view) {
                 if (Reponse == false) {
                     Reponse = true;
-                    optionC.setBackgroundColor(0xFF323360);
+                    ooptionC.setBackgroundResource(R.drawable.optiondesign33);
                     verifier2=true;
                     verifier=false; verifier1=false; verifier3=false; verifier4=false;
                     verifier5=false; verifier6=false; verifier7=false;
@@ -285,7 +298,7 @@ String id;
             public void onClick(View view) {
                 if (Reponse == false) {
                     Reponse = true;
-                    optionD.setBackgroundColor(0xFF323360);
+                    ooptionD.setBackgroundResource(R.drawable.optiondesign33);
                     verifier3=true;
                     verifier=false; verifier1=false; verifier2=false; verifier4=false;
                     verifier5=false; verifier6=false; verifier7=false;
@@ -410,7 +423,10 @@ String id;
     }
 
     private void updateQuestionn() {
-
+        android.widget.FrameLayout ooptionA = findViewById(R.id.Opttion11);
+        android.widget.FrameLayout ooptionB = findViewById(R.id.Opttion22);
+        android.widget.FrameLayout ooptionC = findViewById(R.id.Opttion33);
+        android.widget.FrameLayout ooptionD = findViewById(R.id.Opttion44);
         boolean correctansweri = checkAnsweri(currentOptionA);
         boolean correctanswerib = checkAnsweri(currentOptionB);
         boolean correctansweric = checkAnsweri(currentOptionC);
@@ -423,11 +439,11 @@ String id;
         if (verifier) {
             boolean result = checkAnswer(currentOptionA);
             if (result) {
-                optionA.setBackgroundColor(0xFF00FF00);
+                ooptionA.setBackgroundResource(R.drawable.optiondesign333);
                 userscore=userscore-1;
                 OptionAa = true;
             } else {
-                optionA.setBackgroundColor(0xFFFF0000);
+                ooptionA.setBackgroundResource(R.drawable.optiondesign3333);
                 OptionAa = false;
             }
             checkAnswer(currentOptionA);
@@ -438,11 +454,11 @@ String id;
         if (verifier1) {
             boolean result1 = checkAnswer(currentOptionB);
             if (result1) {
-                optionB.setBackgroundColor(0xFF00FF00);
+                ooptionB.setBackgroundResource(R.drawable.optiondesign333);
                 OptionBb = true;
                 userscore=userscore-1;
             } else {
-                optionB.setBackgroundColor(0xFFFF0000);
+                ooptionB.setBackgroundResource(R.drawable.optiondesign3333);
                 OptionBb = false;
             }
             checkAnswer(currentOptionB);
@@ -451,11 +467,11 @@ String id;
             boolean result2 = checkAnswer(currentOptionC);
             if (result2) {
 
-                optionC.setBackgroundColor(0xFF00FF00);
+                ooptionC.setBackgroundResource(R.drawable.optiondesign333);
                 userscore=userscore-1;
                 OptionCc = true;
             } else {
-                optionC.setBackgroundColor(0xFFFF0000);
+                ooptionC.setBackgroundResource(R.drawable.optiondesign3333);
                 OptionCc = false;
             }
             checkAnswer(currentOptionC);
@@ -464,10 +480,10 @@ String id;
             boolean result3 = checkAnswer(currentOptionD);
             if (result3) {
                 userscore=userscore-1;
-                optionD.setBackgroundColor(0xFF00FF00);
+                ooptionD.setBackgroundResource(R.drawable.optiondesign333);
                 OptionDd = true;
             } else {
-                optionD.setBackgroundColor(0xFFFF0000);
+                ooptionD.setBackgroundResource(R.drawable.optiondesign3333);
                 OptionDd = false;
             }
             checkAnswer(currentOptionD);
@@ -522,36 +538,43 @@ String id;
         }
 
         if (correctanswer == true){
-            optionA.setBackgroundColor(0xFF00FF00);
             userscore=userscore-1 ;
+            ooptionA.setBackgroundResource(R.drawable.optiondesign333);
         }
         if (correctanswerb == true){
-            optionB.setBackgroundColor(0xFF00FF00);
             userscore=userscore-1 ;
+
+            ooptionB.setBackgroundResource(R.drawable.optiondesign333);
         }
         if (correctanswerc == true){
-            optionC.setBackgroundColor(0xFF00FF00);
             userscore=userscore-1 ;
+
+            ooptionC.setBackgroundResource(R.drawable.optiondesign333);
         }
         if (correctanswerd == true){
-            optionD.setBackgroundColor(0xFF00FF00);
             userscore=userscore-1 ;
+
+            ooptionD.setBackgroundResource(R.drawable.optiondesign333);
         }
         if (correctansweri == true){
-            optionAi.setBackgroundColor(0xFF00FF00);
             userscore=userscore-1 ;
+
+            optionAi.setBackgroundColor(0xFF00FF00);
         }
         if (correctanswerib == true){
-            optionBi.setBackgroundColor(0xFF00FF00);
             userscore=userscore-1 ;
+
+            optionBi.setBackgroundColor(0xFF00FF00);
         }
         if (correctansweric == true){
-            optionCi.setBackgroundColor(0xFF00FF00);
             userscore=userscore-1 ;
+
+            optionCi.setBackgroundColor(0xFF00FF00);
         }
         if (correctanswerid == true){
-            optionDi.setBackgroundColor(0xFF00FF00);
             userscore=userscore-1 ;
+
+            optionDi.setBackgroundColor(0xFF00FF00);
         }
 
 
@@ -559,55 +582,66 @@ String id;
 
 
 
-    private void updateQuestion() {
 
+    private void updateQuestion() {
+        android.widget.FrameLayout ooptionA = findViewById(R.id.Opttion11);
+        android.widget.FrameLayout ooptionB = findViewById(R.id.Opttion22);
+        android.widget.FrameLayout ooptionC = findViewById(R.id.Opttion33);
+        android.widget.FrameLayout ooptionD = findViewById(R.id.Opttion44);
         Reponse=false;
-        optionA.setBackgroundColor(1);
-        optionB.setBackgroundColor(1);
-        optionC.setBackgroundColor(1);
-        optionD.setBackgroundColor(1);
+
+        ooptionA.setBackgroundResource(R.drawable.optiondesign3);
+        ooptionB.setBackgroundResource(R.drawable.optiondesign3);
+        ooptionC.setBackgroundResource(R.drawable.optiondesign3);
+        ooptionD.setBackgroundResource(R.drawable.optiondesign3);
         optionAi.setBackgroundColor(1);
         optionBi.setBackgroundColor(1);
         optionCi.setBackgroundColor(1);
         optionDi.setBackgroundColor(1);
 
+        Reponse1=true;
+        if(Reponse1){
+            clicks=0;
+        }
+
+
 
         currentIndex = (currentIndex + 1) % questionBank.length;
         if (currentIndex == 0) {
+
             SharedPreferences sharedPreferences = this.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
             String GM = sharedPreferences.getString("GM","/") ;
             if (GM.equals("MAIL")||GM.equals("GOOGLE")) {
-                if (GM.equals("MAIL")) {id= FirebaseAuth.getInstance().getCurrentUser().getUid() ;}
+                if (GM.equals("MAIL")) {id=FirebaseAuth.getInstance().getCurrentUser().getUid() ;}
                 else if (GM.equals("GOOGLE")) {id = sharedPreferences.getString("acct", "/"); ;}
                 HashMap<String , Object> map = new HashMap<>();
-                map.put("Arabe1" ,userscore+"");
+                map.put("Anglais1" ,userscore+"");
                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("INFO").child(id);
                 reference.updateChildren(map) ; }
             else if (GM.equals("LATER")) {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("Arabe1", userscore+"");
+                editor.putString("Anglais1", userscore+"");
                 editor.commit();
             }
-
             AlertDialog.Builder alert = new AlertDialog.Builder(this);
-            alert.setTitle("انتهت اللعبة");
+            alert.setTitle("Game Over");
             alert.setCancelable(false);
-            alert.setMessage("النتيجة  : " + userscore + "/" + questionBank.length);
-            alert.setPositiveButton("عودة", new DialogInterface.OnClickListener() {
+            alert.setMessage("Your score: " + userscore + "/" + questionBank.length);
+            alert.setPositiveButton("Back to app ", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     finish();
                 }
             });
 
-            alert.setNegativeButton("اعادة اللعبة", new DialogInterface.OnClickListener() {
+            alert.setNegativeButton("Repeat Quiz", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     userscore = 0;
                     qn = 1;
                     progressBar.setProgress(0);
-                    score.setText("النتيحة :" + userscore + "/" + questionBank.length);
-                    questionNumber.setText(qn + "/" + questionBank.length + " السؤال ");
+                    score.setText("Score :" + userscore + "/" + questionBank.length);
+                    questionNumber.setText(qn + "/" + questionBank.length + " Question");
 
 
                 }
@@ -693,13 +727,16 @@ String id;
 
         if (qn < questionBank.length) {
             qn = qn + 1;
-            questionNumber.setText(qn + "/" + questionBank.length + "السؤال");
+            questionNumber.setText(qn + "/" + questionBank.length + "Question");
         }
 
-        score.setText("النتيجة :" + userscore + "/" + questionBank.length);
+        score.setText("Score :" + userscore + "/" + questionBank.length);
         progressBar.incrementProgressBy(PROGRESS_BAR);
 
+
+
     }
+
 
 
     private boolean checkAnswer(int currentSelection) {
@@ -711,14 +748,14 @@ String id;
         if (checkout1.getText().toString().trim().equals(checkout2.getText().toString().trim())) {
 //            Toast toast = Toast.makeText(this, "Right ✅!", FancyToast.LENGTH_LONG);
 //            toast.show();
-            //FancyToast.makeText(this, "صحيح ✅!", FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, false).show();
-            userscore = userscore + 1;
-            return  true;
+            //FancyToast.makeText(this, "Right ✅!", FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, false).show();
+            userscore = userscore +1;
+            return true;
         } else {
 //        {                 Toast toast = Toast.makeText(this, "Wrong ❌!", FancyToast.LENGTH_LONG);
 //            toast.show();
 
-          //    FancyToast.makeText(this, "خطأ ❌!", FancyToast.LENGTH_SHORT, FancyToast.ERROR, false).show();
+            //FancyToast.makeText(this, "Wrong ❌!", FancyToast.LENGTH_SHORT, FancyToast.ERROR, false).show();
             return false;
         }
     }
@@ -732,17 +769,20 @@ String id;
         if (currentSelection == currentAnswer) {
 //            Toast toast = Toast.makeText(this, "Right ✅!", FancyToast.LENGTH_LONG);
 //            toast.show();
-          //  FancyToast.makeText(this, "صحيح ✅!", FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, false).show();
-            userscore = userscore + 1;
+            //FancyToast.makeText(this, "Right ✅!", FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, false).show();
+            userscore=userscore+1 ;
             return true;
-        } else {
+        } else{
 //        {                 Toast toast = Toast.makeText(this, "Wrong ❌!", FancyToast.LENGTH_LONG);
 //            toast.show();
 
-            //FancyToast.makeText(this, "خطأ ❌!", FancyToast.LENGTH_SHORT, FancyToast.ERROR, false).show();
+            //FancyToast.makeText(this, "Wrong ❌!", FancyToast.LENGTH_SHORT, FancyToast.ERROR, false).show();
+
             return false;
         }
     }
+
+
 
     @Override
     protected void onStop() {
@@ -765,21 +805,44 @@ String id;
         }
     }
 
+
     public void updateQuestion(View view) {
 
         updateQuestion();
+        next=findViewById(R.id.nextbutton1);
+        clickss++;
+        if (clickss==0 || clickss==1 ){
+            nextbutton2.setEnabled(true);
+            clicks=0;
+        }
+
+
+    }
+
+
+
+    public void updateQuestionn(View view){
+        if (Reponse == true) {
+            updateQuestionn();}
+        nextbutton2 = findViewById(R.id.nextbutton2);
+        clicks++;
+
+        if (clicks >= 1) {
+            nextbutton2.setEnabled(false);
+            clickss = 0;
+        }
+
+
 
 
 
 
     }
-    public void updateQuestionn(View view) {
-        updateQuestionn();
 
 
 
 
-    }
+
 
 
 }

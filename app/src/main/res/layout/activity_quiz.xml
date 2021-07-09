@@ -155,7 +155,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/optiondesign3"
-
+                android:id="@+id/Ooption1"
                 android:paddingTop="14dp">
 
             <TextView
@@ -177,7 +177,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/optiondesign3"
-
+            android:id="@+id/Ooption2"
             android:paddingTop="14dp">
 
             <TextView
@@ -197,7 +197,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/optiondesign3"
-
+            android:id="@+id/Ooption3"
             android:paddingTop="14dp">
 
             <TextView
@@ -218,7 +218,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/optiondesign3"
-
+            android:id="@+id/Ooption4"
             android:paddingTop="14dp">
 
             <TextView
@@ -280,7 +280,7 @@
 
 
             android:onClick="updateQuestionn"
-            android:text="Ckeck"
+            android:text="Check"
             android:textSize="25sp" />
     </RelativeLayout>
 

@@ -1,13 +1,18 @@
 package com.example.spacy;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -26,13 +31,19 @@ public class Quiz extends AppCompatActivity {
     private ImageView Questionimagee;
     private TextView optionA, optionB, optionC, optionD;
     private ImageView optionAi, optionBi, optionCi, optionDi;
+    private FrameLayout ooptionA,ooptionB,ooptionC,ooptionD;
+    int clicks =0;
+    int clickss =0;
+    Button nextbutton2;
     private TextView questionNumber, question, score;
     private TextView checkout1, checkout2;
     private View optionT, optionI;
     boolean Reponse = false;
+
     boolean correctanswer;
+
     boolean verifier,verifier1,verifier2,verifier3,verifier4,verifier5,verifier6,verifier7,verifier8;
-String id ;
+    String id ;
     boolean OptionAa,OptionBb,OptionCc,OptionDd,OptionAii,OptionBii,OptionCii,OptionDii ;
     ImageButton next;
     int currentIndex;
@@ -60,7 +71,7 @@ String id ;
             new answerClass(3, R.raw.benglish, R.string.question9_A, R.string.question9_B
                     , R.string.question9_C, R.string.question9_D, R.string.answer9),
             new answerClass(1, R.string.question2, R.string.question2_A, R.string.question2_B
-                    , R.string.question2_C, R.string.question2_D, R.string.answer2),
+                     , R.string.question2_C, R.string.question2_D, R.string.answer2),
             new answerClass(2, R.drawable.two, R.string.question6_A, R.string.question6_B
                     , R.string.question6_C, R.string.question6_D, R.string.answer6),
             new answerClass(1, R.string.question3, R.string.question3_A, R.string.question3_B
@@ -86,6 +97,8 @@ String id ;
     };
 
     final int PROGRESS_BAR = (int) Math.ceil(100 / questionBank.length);
+     boolean Reponse1 = false;
+
 
 
     @Override
@@ -97,7 +110,10 @@ String id ;
 //        questionNumber.setText(qn+"/"+questionBank.length+"Question");
 //        score.setText("Score :"+userscore+"/"+questionBank.length);
 
-        next=findViewById(R.id.nextbutton1);
+        android.widget.FrameLayout ooptionA = findViewById(R.id.Ooption1);
+        android.widget.FrameLayout ooptionB = findViewById(R.id.Ooption2);
+        android.widget.FrameLayout ooptionC = findViewById(R.id.Ooption3);
+        android.widget.FrameLayout ooptionD = findViewById(R.id.Ooption4);
         optionA = findViewById(R.id.Option1);
         optionB = findViewById(R.id.Option2);
         optionC = findViewById(R.id.Option3);
@@ -200,12 +216,15 @@ String id ;
         questionNumber.setText(qn + "/" + questionBank.length + " Question");
 
 
+
+
         optionA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (Reponse == false) {
                     Reponse = true;
-                    optionA.setBackgroundColor(0xFF323360);
+
+                    ooptionA.setBackgroundResource(R.drawable.optiondesign33);
                     verifier=true;
                     verifier1=false; verifier2=false; verifier3=false; verifier4=false;
                     verifier5=false; verifier6=false; verifier7=false;
@@ -231,7 +250,7 @@ String id ;
             public void onClick(View view) {
                 if (Reponse == false) {
                     Reponse = true;
-                    optionB.setBackgroundColor(0xFF323360);
+                    ooptionB.setBackgroundResource(R.drawable.optiondesign33);
                     verifier1=true;
                     verifier=false; verifier2=false; verifier3=false; verifier4=false;
                     verifier5=false; verifier6=false; verifier7=false;
@@ -258,7 +277,7 @@ String id ;
             public void onClick(View view) {
                 if (Reponse == false) {
                     Reponse = true;
-                    optionC.setBackgroundColor(0xFF323360);
+                    ooptionC.setBackgroundResource(R.drawable.optiondesign33);
                     verifier2=true;
                     verifier=false; verifier1=false; verifier3=false; verifier4=false;
                     verifier5=false; verifier6=false; verifier7=false;
@@ -284,7 +303,7 @@ String id ;
             public void onClick(View view) {
                 if (Reponse == false) {
                     Reponse = true;
-                    optionD.setBackgroundColor(0xFF323360);
+                    ooptionD.setBackgroundResource(R.drawable.optiondesign33);
                     verifier3=true;
                     verifier=false; verifier1=false; verifier2=false; verifier4=false;
                     verifier5=false; verifier6=false; verifier7=false;
@@ -409,7 +428,10 @@ String id ;
     }
 
     private void updateQuestionn() {
-
+        android.widget.FrameLayout ooptionA = findViewById(R.id.Ooption1);
+        android.widget.FrameLayout ooptionB = findViewById(R.id.Ooption2);
+        android.widget.FrameLayout ooptionC = findViewById(R.id.Ooption3);
+        android.widget.FrameLayout ooptionD = findViewById(R.id.Ooption4);
         boolean correctansweri = checkAnsweri(currentOptionA);
         boolean correctanswerib = checkAnsweri(currentOptionB);
         boolean correctansweric = checkAnsweri(currentOptionC);
@@ -422,11 +444,11 @@ String id ;
         if (verifier) {
             boolean result = checkAnswer(currentOptionA);
             if (result) {
-                optionA.setBackgroundColor(0xFF00FF00);
+                ooptionA.setBackgroundResource(R.drawable.optiondesign333);
                 userscore=userscore-1;
                 OptionAa = true;
             } else {
-                optionA.setBackgroundColor(0xFFFF0000);
+                ooptionA.setBackgroundResource(R.drawable.optiondesign3333);
                 OptionAa = false;
             }
             checkAnswer(currentOptionA);
@@ -437,11 +459,11 @@ String id ;
         if (verifier1) {
             boolean result1 = checkAnswer(currentOptionB);
             if (result1) {
-                optionB.setBackgroundColor(0xFF00FF00);
+                ooptionB.setBackgroundResource(R.drawable.optiondesign333);
                 OptionBb = true;
                 userscore=userscore-1;
             } else {
-                optionB.setBackgroundColor(0xFFFF0000);
+                ooptionB.setBackgroundResource(R.drawable.optiondesign3333);
                 OptionBb = false;
             }
             checkAnswer(currentOptionB);
@@ -450,11 +472,11 @@ String id ;
             boolean result2 = checkAnswer(currentOptionC);
             if (result2) {
 
-                optionC.setBackgroundColor(0xFF00FF00);
+                ooptionC.setBackgroundResource(R.drawable.optiondesign333);
                 userscore=userscore-1;
                 OptionCc = true;
             } else {
-                optionC.setBackgroundColor(0xFFFF0000);
+                ooptionC.setBackgroundResource(R.drawable.optiondesign3333);
                 OptionCc = false;
             }
             checkAnswer(currentOptionC);
@@ -463,10 +485,10 @@ String id ;
             boolean result3 = checkAnswer(currentOptionD);
             if (result3) {
                 userscore=userscore-1;
-                optionD.setBackgroundColor(0xFF00FF00);
+                ooptionD.setBackgroundResource(R.drawable.optiondesign333);
                 OptionDd = true;
             } else {
-                optionD.setBackgroundColor(0xFFFF0000);
+                ooptionD.setBackgroundResource(R.drawable.optiondesign3333);
                 OptionDd = false;
             }
             checkAnswer(currentOptionD);
@@ -522,22 +544,22 @@ String id ;
 
         if (correctanswer == true){
                userscore=userscore-1 ;
-               optionA.setBackgroundColor(0xFF00FF00);
+            ooptionA.setBackgroundResource(R.drawable.optiondesign333);
            }
         if (correctanswerb == true){
             userscore=userscore-1 ;
 
-            optionB.setBackgroundColor(0xFF00FF00);
+            ooptionB.setBackgroundResource(R.drawable.optiondesign333);
         }
         if (correctanswerc == true){
             userscore=userscore-1 ;
 
-            optionC.setBackgroundColor(0xFF00FF00);
+            ooptionC.setBackgroundResource(R.drawable.optiondesign333);
         }
         if (correctanswerd == true){
             userscore=userscore-1 ;
 
-            optionD.setBackgroundColor(0xFF00FF00);
+            ooptionD.setBackgroundResource(R.drawable.optiondesign333);
         }
         if (correctansweri == true){
             userscore=userscore-1 ;
@@ -567,17 +589,25 @@ String id ;
 
 
     private void updateQuestion() {
+        FrameLayout ooptionA = findViewById(R.id.Ooption1);
+        android.widget.FrameLayout ooptionB = findViewById(R.id.Ooption2);
+        android.widget.FrameLayout ooptionC = findViewById(R.id.Ooption3);
+        android.widget.FrameLayout ooptionD = findViewById(R.id.Ooption4);
         Reponse=false;
-        optionA.setBackgroundColor(1);
-        optionB.setBackgroundColor(1);
-        optionC.setBackgroundColor(1);
-        optionD.setBackgroundColor(1);
+
+        ooptionA.setBackgroundResource(R.drawable.optiondesign3);
+        ooptionB.setBackgroundResource(R.drawable.optiondesign3);
+        ooptionC.setBackgroundResource(R.drawable.optiondesign3);
+        ooptionD.setBackgroundResource(R.drawable.optiondesign3);
         optionAi.setBackgroundColor(1);
         optionBi.setBackgroundColor(1);
         optionCi.setBackgroundColor(1);
         optionDi.setBackgroundColor(1);
 
-
+        Reponse1=true;
+        if(Reponse1){
+            clicks=0;
+        }
 
 
 
@@ -784,16 +814,39 @@ String id ;
     public void updateQuestion(View view) {
 
         updateQuestion();
+        next=findViewById(R.id.nextbutton1);
+        clickss++;
+        if (clickss==0 || clickss==1){
+            nextbutton2.setEnabled(true);
+            clicks=0;
+        }
+
+
+    }
+
+
+
+    public void updateQuestionn(View view){
+      if (Reponse == true) {
+          updateQuestionn();}
+          nextbutton2 = findViewById(R.id.nextbutton2);
+          clicks++;
+
+          if (clicks >= 1) {
+              nextbutton2.setEnabled(false);
+              clickss = 0;
+          }
+
+
 
 
 
 
     }
-    public void updateQuestionn(View view) {
-        updateQuestionn();
 
 
 
 
-    }
+
+
 }

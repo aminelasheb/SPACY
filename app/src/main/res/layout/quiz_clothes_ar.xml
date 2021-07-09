@@ -153,7 +153,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/optiondesign3"
-
+            android:id="@+id/Opttion11"
             android:paddingTop="14dp">
 
             <TextView
@@ -174,7 +174,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/optiondesign3"
-
+            android:id="@+id/Opttion22"
             android:paddingTop="14dp">
 
             <TextView
@@ -194,7 +194,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/optiondesign3"
-
+            android:id="@+id/Opttion33"
             android:paddingTop="14dp">
 
             <TextView
@@ -215,7 +215,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/optiondesign3"
-
+            android:id="@+id/Opttion44"
             android:paddingTop="14dp">
 
             <TextView

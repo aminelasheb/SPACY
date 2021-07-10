@@ -115,18 +115,18 @@ loadcards();
 
         aymenmodelArrayList=new ArrayList<>();
 
-        aymenmodelArrayList.add(new aymenmodel("Backpack",R.drawable.backpack));
-        aymenmodelArrayList.add(new aymenmodel("chair",R.drawable.chair));
-        aymenmodelArrayList.add(new aymenmodel("Drums",R.drawable.drum));
-        aymenmodelArrayList.add(new aymenmodel("Hammer", R.drawable.hammer));
-        aymenmodelArrayList.add(new aymenmodel("Pillow",R.drawable.pillow));
-        aymenmodelArrayList.add(new aymenmodel("Computer",R.drawable.pc));
-        aymenmodelArrayList.add(new aymenmodel("Bed",R.drawable.bed));
-        aymenmodelArrayList.add(new aymenmodel("Clock",R.drawable.clock));
-        aymenmodelArrayList.add(new aymenmodel("Book",R.drawable.book));
-        aymenmodelArrayList.add(new aymenmodel("Ball",R.drawable.ball));
-        aymenmodelArrayList.add(new aymenmodel("Keys",R.drawable.keys));
-        aymenmodelArrayList.add(new aymenmodel("Shoes",R.drawable.shoes));
+        aymenmodelArrayList.add(new aymenmodel("Sacados",R.drawable.backpack));
+        aymenmodelArrayList.add(new aymenmodel("Chaise",R.drawable.chair));
+        aymenmodelArrayList.add(new aymenmodel("Tambours",R.drawable.drum));
+        aymenmodelArrayList.add(new aymenmodel("Marteau", R.drawable.hammer));
+        aymenmodelArrayList.add(new aymenmodel("Oreiller",R.drawable.pillow));
+        aymenmodelArrayList.add(new aymenmodel("L'ordinateur",R.drawable.pc));
+        aymenmodelArrayList.add(new aymenmodel("Lit",R.drawable.bed));
+        aymenmodelArrayList.add(new aymenmodel("L'horloge",R.drawable.clock));
+        aymenmodelArrayList.add(new aymenmodel("Livre",R.drawable.book));
+        aymenmodelArrayList.add(new aymenmodel("Balle",R.drawable.ball));
+        aymenmodelArrayList.add(new aymenmodel("Clés",R.drawable.keys));
+        aymenmodelArrayList.add(new aymenmodel("Chaussures",R.drawable.shoes));
 
 
 

@@ -27,6 +27,7 @@ public class JOFA extends AppCompatActivity {
         SharedPreferences sharedPreferences = this.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         language = sharedPreferences.getString("LangApp","/");
         languageLearn = sharedPreferences.getString("LangLearn","/");
+        String level=intent.getStringExtra("Level");
 
 
         setContentView(R.layout.activity_level4);
@@ -61,14 +62,16 @@ public class JOFA extends AppCompatActivity {
         JOFA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (languageLearn.equals("An")) {
-                    Intent intent = new Intent(JOFA.this, Famag.class);
+                if (language.equals("English")||language.equals("Français") ) {
+                    Intent intent = new Intent(JOFA.this, Learn.class);
+                    intent.putExtra("Level",level);
+
                     startActivity(intent);
-                } else if (languageLearn.equals("Fr")) {
-                    Intent intent = new Intent(JOFA.this, Famfr.class);
-                    startActivity(intent);
-                } else if (languageLearn.equals("Ar")) {
-                    Intent intent = new Intent(JOFA.this, Famar.class);
+                }
+                if (language.equals("العربية")) {
+                    Intent intent = new Intent(JOFA.this, LearnAr.class);
+                    intent.putExtra("Level",level);
+
                     startActivity(intent);
                 }
             }
@@ -77,15 +80,16 @@ public class JOFA extends AppCompatActivity {
         cardf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (languageLearn.equals("An")) {
-                    Intent intent = new Intent(JOFA.this, Jobsag.class);
-                    startActivity(intent);
-                } else if (languageLearn.equals("Fr")) {
-                    Intent intent = new Intent(JOFA.this, Jobsfr.class);
+                if (language.equals("English")||language.equals("Français") ) {
+                    Intent intent = new Intent(JOFA.this, Learn.class);
+                    intent.putExtra("Level","4/2");
+
                     startActivity(intent);
                 }
-                if (languageLearn.equals("Ar")) {
-                    Intent intent = new Intent(JOFA.this, Jobsar.class);
+                if (language.equals("العربية")) {
+                    Intent intent = new Intent(JOFA.this, LearnAr.class);
+                    intent.putExtra("Level","4/2");
+
                     startActivity(intent);
                 }
             }

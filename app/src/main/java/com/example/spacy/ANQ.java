@@ -31,6 +31,8 @@ public class ANQ extends AppCompatActivity {
         languageLearn = sharedPreferences.getString("LangLearn","/");
         Intent intent = getIntent();
         String lang=intent.getStringExtra("Lang");
+        String level=intent.getStringExtra("Level");
+
         setContentView(R.layout.anq);
         TextView Lang=findViewById(R.id.alphaa) ;
         Lang.setText(lang);
@@ -66,9 +68,11 @@ public class ANQ extends AppCompatActivity {
             public void onClick(View view) {
                 if (languageLearn.equals("An")) {
                     Intent intent = new Intent(ANQ.this, Quiz.class);
+
                     startActivity(intent);
                 } else if (languageLearn.equals("Fr")) {
                     Intent intent = new Intent(ANQ.this, quizFr.class);
+
                     startActivity(intent);
                 } else if (languageLearn.equals("Ar")) {
                     Intent intent = new Intent(ANQ.this, quizAr.class);
@@ -80,15 +84,16 @@ public class ANQ extends AppCompatActivity {
         card5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (languageLearn.equals("An")) {
-                    Intent intent = new Intent(ANQ.this, AlphabetAng.class);
-                    startActivity(intent);
-                } else if (languageLearn.equals("Fr")) {
-                    Intent intent = new Intent(ANQ.this, AlphabitFr.class);
+                if (language.equals("English")||language.equals("Français") ) {
+                    Intent intent = new Intent(ANQ.this, Learn.class);
+                    intent.putExtra("Level",level);
+
                     startActivity(intent);
                 }
-                if (languageLearn.equals("Ar")) {
-                    Intent intent = new Intent(ANQ.this, alphabitArab.class);
+                if (language.equals("العربية")) {
+                    Intent intent = new Intent(ANQ.this, LearnAr.class);
+                    intent.putExtra("Level",level);
+
                     startActivity(intent);
                 }
             }
@@ -98,15 +103,16 @@ public class ANQ extends AppCompatActivity {
         numbers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (languageLearn.equals("An")) {
-                    Intent intent = new Intent(ANQ.this, NumAn.class);
-                    startActivity(intent);
-                } else if (languageLearn.equals("Fr")) {
-                    Intent intent = new Intent(ANQ.this, NumbersFr.class);
+                if (language.equals("English")||language.equals("Français") ) {
+                    Intent intent = new Intent(ANQ.this, Learn.class);
+                    intent.putExtra("Level","1/2");
+
                     startActivity(intent);
                 }
-                if (languageLearn.equals("Ar")) {
-                    Intent intent = new Intent(ANQ.this, NumAr.class);
+                if (language.equals("العربية")) {
+                    Intent intent = new Intent(ANQ.this, LearnAr.class);
+                    intent.putExtra("Level","1/2");
+
                     startActivity(intent);
                 }
 

@@ -30,6 +30,8 @@ public class level5menu extends AppCompatActivity {
         SharedPreferences sharedPreferences = this.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         language = sharedPreferences.getString("LangApp","/");
         languageLearn = sharedPreferences.getString("LangLearn","/");
+        String level=intent.getStringExtra("Level");
+
 
         setContentView(R.layout.activity_level5menu);
         TextView Lang=findViewById(R.id.alphaa) ;
@@ -63,16 +65,16 @@ public class level5menu extends AppCompatActivity {
         Quiiiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (languageLearn.equals("An")) {
+                if (language.equals("English")||language.equals("Français") ) {
+                    Intent intent = new Intent(level5menu.this, Learn.class);
+                    intent.putExtra("Level",level);
 
-                    Intent intentt = new Intent(level5menu.this, Vegetable.class);
-                    startActivity(intentt);
-
-                } else if (languageLearn.equals("Fr")) {
-                    Intent intent = new Intent(level5menu.this,Legumesfr.class);
                     startActivity(intent);
-                } else if (languageLearn.equals("Ar")) {
-                    Intent intent = new Intent(level5menu.this, LegumesAr.class);
+                }
+                if (language.equals("العربية")) {
+                    Intent intent = new Intent(level5menu.this, LearnAr.class);
+                    intent.putExtra("Level",level);
+
                     startActivity(intent);
                 }
             }
@@ -81,15 +83,16 @@ public class level5menu extends AppCompatActivity {
         card115.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (languageLearn.equals("An")) {
-                    Intent intent = new Intent(level5menu.this, FruitsAN.class);
-                    startActivity(intent);
-                } else if (languageLearn.equals("Fr")) {
-                    Intent intent = new Intent(level5menu.this, FruitsFR.class);
+                if (language.equals("English")||language.equals("Français") ) {
+                    Intent intent = new Intent(level5menu.this, Learn.class);
+                    intent.putExtra("Level","5/2");
+
                     startActivity(intent);
                 }
-                if (languageLearn.equals("Ar")) {
-                    Intent intent = new Intent(level5menu.this, FruitsAR.class);
+                if (language.equals("العربية")) {
+                    Intent intent = new Intent(level5menu.this, LearnAr.class);
+                    intent.putExtra("Level","5/2");
+
                     startActivity(intent);
                 }
             }

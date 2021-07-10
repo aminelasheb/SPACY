@@ -253,8 +253,7 @@ public class signup extends AppCompatActivity {
        mRootRef = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
         pd = new ProgressDialog(this);
-
-
+        
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override

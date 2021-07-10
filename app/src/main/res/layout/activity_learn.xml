@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:id="@+id/back"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/artf7"
-    tools:context=".AlphabetAng">
+    android:background="@drawable/artf2"
+    tools:context=".Learn">
+
 
 
     <TextView
@@ -18,8 +19,8 @@
         android:fontFamily="@font/baloo"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="37dp"
-        android:text="Alphabets "
-        android:textColor="@color/white" />
+        android:text="Animals "
+        android:textColor="@color/black" />
     <ImageView
         android:layout_marginTop="10dp"
         android:layout_marginLeft="13dp"
@@ -35,14 +36,14 @@
         android:fontFamily="@font/baloo"
         android:textSize="18dp"
         android:id="@+id/ident2"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:layout_below="@+id/ident"
         android:layout_marginLeft="30dp"/>
 
 
     <androidx.viewpager.widget.ViewPager
 
-        android:id="@+id/vp_horizontal1"
+        android:id="@+id/vpp_horizontal3fb"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
@@ -56,11 +57,10 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/speakeraan"
+            android:id="@+id/speakerfrfb"
             android:layout_width="160dp"
             android:layout_height="240dp"
             android:background="?android:attr/selectableItemBackground"
             app:srcCompat="@drawable/astromusic2" />
     </LinearLayout>
-
 </RelativeLayout>

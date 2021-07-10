@@ -27,6 +27,8 @@ public class CSQ extends AppCompatActivity {
         SharedPreferences sharedPreferences = this.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         language = sharedPreferences.getString("LangApp","/");
         languageLearn = sharedPreferences.getString("LangLearn","/");
+        String level=intent.getStringExtra("Level");
+
 
         setContentView(R.layout.activity_c_s_q);
         TextView Lang=findViewById(R.id.alphaa) ;
@@ -59,14 +61,16 @@ public class CSQ extends AppCompatActivity {
         card21.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (languageLearn.equals("An")) {
-                    Intent intent = new Intent(CSQ.this, ColorsAn.class);
+                if (language.equals("English")||language.equals("Français") ) {
+                    Intent intent = new Intent(CSQ.this, Learn.class);
+                    intent.putExtra("Level",level);
+
                     startActivity(intent);
-                } else if (languageLearn.equals("Fr")) {
-                    Intent intent = new Intent(CSQ.this, ColorsFr.class);
-                    startActivity(intent);
-                } else if (languageLearn.equals("Ar")) {
-                    Intent intent = new Intent(CSQ.this, ColorsAr.class);
+                }
+                if (language.equals("العربية")) {
+                    Intent intent = new Intent(CSQ.this, LearnAr.class);
+                    intent.putExtra("Level",level);
+
                     startActivity(intent);
                 }
             }
@@ -75,15 +79,16 @@ public class CSQ extends AppCompatActivity {
         card22.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (languageLearn.equals("An")) {
-                    Intent intent = new Intent(CSQ.this, ShapesAng.class);
-                    startActivity(intent);
-                } else if (languageLearn.equals("Fr")) {
-                    Intent intent = new Intent(CSQ.this, ShapesFr.class);
+                if (language.equals("English")||language.equals("Français") ) {
+                    Intent intent = new Intent(CSQ.this, Learn.class);
+                    intent.putExtra("Level","2/2");
+
                     startActivity(intent);
                 }
-                if (languageLearn.equals("Ar")) {
-                    Intent intent = new Intent(CSQ.this, ShapesAr.class);
+                if (language.equals("العربية")) {
+                    Intent intent = new Intent(CSQ.this, LearnAr.class);
+                    intent.putExtra("Level","2/2");
+
                     startActivity(intent);
                 }
             }

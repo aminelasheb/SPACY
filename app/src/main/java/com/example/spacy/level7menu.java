@@ -28,6 +28,8 @@ public class level7menu extends AppCompatActivity {
         languageLearn = sharedPreferences.getString("LangLearn","/");
         Intent intent = getIntent();
         String lang=intent.getStringExtra("Lang");
+        String level=intent.getStringExtra("Level");
+
         TextView Lang=findViewById(R.id.alphaa) ;
         Lang.setText(lang);
 
@@ -53,16 +55,16 @@ public class level7menu extends AppCompatActivity {
         card5_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (languageLearn.equals("An")) {
+                if (language.equals("English")||language.equals("Français") ) {
+                    Intent intent = new Intent(level7menu.this, Learn.class);
+                    intent.putExtra("Level",level);
 
-                    Intent intentt = new Intent(level7menu.this, objectsAn.class);
-                    startActivity(intentt);
-
-                } else if (languageLearn.equals("Fr")) {
-                    Intent intent = new Intent(level7menu.this, objectsFR.class);
                     startActivity(intent);
-                } else if (languageLearn.equals("Ar")) {
-                    Intent intent = new Intent(level7menu.this, objectsarabe.class);
+                }
+                if (language.equals("العربية")) {
+                    Intent intent = new Intent(level7menu.this, LearnAr.class);
+                    intent.putExtra("Level",level);
+
                     startActivity(intent);
                 }
             }

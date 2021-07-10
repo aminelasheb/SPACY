@@ -29,6 +29,7 @@ public class level3menu extends AppCompatActivity {
         SharedPreferences sharedPreferences = this.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         language = sharedPreferences.getString("LangApp","/");
         languageLearn = sharedPreferences.getString("LangLearn","/");
+        String level=intent.getStringExtra("Level");
 
         setContentView(R.layout.activity_level3);
         TextView Lang=findViewById(R.id.alphaa) ;
@@ -79,15 +80,16 @@ public class level3menu extends AppCompatActivity {
         card11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (languageLearn.equals("An")) {
-                    Intent intent = new Intent(level3menu.this, body_ang.class);
-                    startActivity(intent);
-                } else if (languageLearn.equals("Fr")) {
-                    Intent intent = new Intent(level3menu.this, body_fr.class);
+                if (language.equals("English")||language.equals("Français") ) {
+                    Intent intent = new Intent(level3menu.this, Learn.class);
+                    intent.putExtra("Level",level);
+
                     startActivity(intent);
                 }
-                if (languageLearn.equals("Ar")) {
-                    Intent intent = new Intent(level3menu.this, body_ar.class);
+                if (language.equals("العربية")) {
+                    Intent intent = new Intent(level3menu.this, LearnAr.class);
+                    intent.putExtra("Level",level);
+
                     startActivity(intent);
                 }
             }
@@ -95,16 +97,16 @@ public class level3menu extends AppCompatActivity {
         clooth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (languageLearn.equals("An")) {
+                if (language.equals("English")||language.equals("Français") ) {
+                    Intent intent = new Intent(level3menu.this, Learn.class);
+                    intent.putExtra("Level","3/2");
 
-                    Intent intentt = new Intent(level3menu.this, clothes_ang.class);
-                    startActivity(intentt);
-
-                } else if (languageLearn.equals("Fr")) {
-                    Intent intent = new Intent(level3menu.this, clothes_fr.class);
                     startActivity(intent);
-                } else if (languageLearn.equals("Ar")) {
-                    Intent intent = new Intent(level3menu.this, clothes_ar.class);
+                }
+                if (language.equals("العربية")) {
+                    Intent intent = new Intent(level3menu.this, LearnAr.class);
+                    intent.putExtra("Level","3/2");
+
                     startActivity(intent);
                 }
             }

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:id="@+id/back"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/artf7"
-    tools:context=".AlphabetAng">
+    android:background="@drawable/artff6"
+    tools:context=".LearnAr">
 
 
     <TextView
@@ -16,33 +16,33 @@
         android:layout_height="wrap_content"
         android:textSize="41dp"
         android:fontFamily="@font/baloo"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="200dp"
         android:layout_marginTop="37dp"
-        android:text="Alphabets "
-        android:textColor="@color/white" />
+        android:text="الاشياء "
+        android:textColor="@color/black" />
     <ImageView
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="13dp"
+        android:layout_marginLeft="60dp"
         android:layout_width="127dp"
         android:layout_height="143dp"
         android:scaleType="centerCrop"
         android:src="@drawable/astroui1"
-        android:layout_toRightOf="@+id/ident"/>
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tap the astronaut"
+        android:text="اضغط على رائد الفضاء"
         android:fontFamily="@font/baloo"
         android:textSize="18dp"
         android:id="@+id/ident2"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:layout_below="@+id/ident"
-        android:layout_marginLeft="30dp"/>
+        android:layout_marginLeft="170dp"/>
 
 
     <androidx.viewpager.widget.ViewPager
 
-        android:id="@+id/vp_horizontal1"
+        android:id="@+id/vp_horizontal2f"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
@@ -53,14 +53,14 @@
         android:layout_width="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/speakeraan"
+            android:id="@+id/speakerfrf1"
             android:layout_width="160dp"
             android:layout_height="240dp"
             android:background="?android:attr/selectableItemBackground"
             app:srcCompat="@drawable/astromusic2" />
     </LinearLayout>
-
 </RelativeLayout>

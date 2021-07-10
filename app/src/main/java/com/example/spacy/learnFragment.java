@@ -193,42 +193,51 @@ Mes.setVisibility(View.GONE);
     public void onItemClick(int position) {
         if(position==0){
             Intent intent=new Intent(getActivity(),ANQ.class);
+
             intent.putExtra("Lang",L1);
+            intent.putExtra("Level","1");
+
             startActivity(intent);
         }
         if(position==1){
             Intent intent=new Intent(getActivity(),CSQ.class);
             intent.putExtra("Lang",L2);
+            intent.putExtra("Level","2");
 
             startActivity(intent);
         }
         if(position==2){
             Intent intent=new Intent(getActivity(),level3menu.class);
             intent.putExtra("Lang",L3);
+            intent.putExtra("Level","3");
 
             startActivity(intent);
         }
         if(position==3){
             Intent intent=new Intent(getActivity(),JOFA.class);
             intent.putExtra("Lang",L4);
+            intent.putExtra("Level","4");
 
             startActivity(intent);
         }
         if(position==4){
             Intent intent=new Intent(getActivity(),level5menu.class);
             intent.putExtra("Lang",L5);
+            intent.putExtra("Level","5");
 
             startActivity(intent);
         }
         if(position==5){
             Intent intent=new Intent(getActivity(),AQ.class);
             intent.putExtra("Lang",L6);
+            intent.putExtra("Level","6");
 
             startActivity(intent);
         }
         if(position==6){
             Intent intent=new Intent(getActivity(),level7menu.class);
             intent.putExtra("Lang",L7);
+            intent.putExtra("Level","7");
 
             startActivity(intent);
         }

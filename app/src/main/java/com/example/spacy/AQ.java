@@ -30,6 +30,7 @@ public class AQ extends AppCompatActivity {
         language = sharedPreferences.getString("LangApp","/");
         languageLearn = sharedPreferences.getString("LangLearn","/");
 
+        String level=intent.getStringExtra("Level");
 
 
 
@@ -59,14 +60,16 @@ public class AQ extends AppCompatActivity {
         card5_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (languageLearn.equals("An")) {
-                    Intent intent = new Intent(AQ.this, AnimalsAn.class);
+                if (language.equals("English")||language.equals("Français") ) {
+                    Intent intent = new Intent(AQ.this, Learn.class);
+                    intent.putExtra("Level",level);
+
                     startActivity(intent);
-                } else if (languageLearn.equals("Fr")) {
-                    Intent intent = new Intent(AQ.this, AnimalsFr.class);
-                    startActivity(intent);
-                } else if (languageLearn.equals("Ar")) {
-                    Intent intent = new Intent(AQ.this, AnimalsAr.class);
+                }
+                if (language.equals("العربية")) {
+                    Intent intent = new Intent(AQ.this, LearnAr.class);
+                    intent.putExtra("Level",level);
+
                     startActivity(intent);
                 }
             }

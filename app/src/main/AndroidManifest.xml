@@ -16,13 +16,11 @@
         <activity android:name=".Learn" />
         <activity android:name=".quiz7_arabe" />
         <activity android:name=".quiz7_fr" />
-        <activity android:name=".ColorsAn" />
         <activity android:name=".login" />
         <activity android:name=".signin" />
         <activity android:name=".signup" />
         <activity android:name=".level7menu" />
         <activity android:name=".quiz7_ang" />
-        <activity android:name=".objectsAn" />
         <activity android:name=".QUIZCSAr" />
         <activity android:name=".aftercsquizar" />
         <activity android:name=".QUIZCSFr" />
@@ -32,54 +30,24 @@
         <activity android:name=".CSQUIZAr" />
         <activity android:name=".CSQUIZFr" />
         <activity android:name=".SCQUIZAn" />
-        <activity android:name=".ShapesAr" />
-        <activity android:name=".ShapesFr" />
-        <activity android:name=".ShapesAng" />
-        <activity android:name=".ColorsAr" />
-        <activity android:name=".ColorsFr" />
-        <activity android:name=".objectsarabe" />
-        <activity android:name=".objectsFR" />
         <activity android:name=".CSQ" />
         <activity android:name=".Quiz6An" />
         <activity android:name=".Quiz6Fr" />
         <activity android:name=".Quiz6Ar" />
-        <activity android:name=".AnimalsAn" />
-        <activity android:name=".AnimalsFr" />
-        <activity android:name=".AnimalsAr" />
         <activity android:name=".AQ" />
         <activity android:name=".quizAr" />
         <activity android:name=".quizFr" />
-        <activity android:name=".AlphabitFr" />
-        <activity android:name=".alphabitArab" />
-        <activity android:name=".FruitsAR" />
-        <activity android:name=".FruitsFR" />
-        <activity android:name=".FruitsAN" />
-        <activity android:name=".LegumesAr" />
-        <activity android:name=".Legumesfr" />
-        <activity android:name=".Vegetable" />
         <activity android:name=".level5menu" />
         <activity android:name=".Quiz5AN" />
         <activity android:name=".Quiz5AR" />
         <activity android:name=".Quiz5FR" />
         <activity android:name=".level3menu" />
-        <activity android:name=".body_fr" />
-        <activity android:name=".body_ar" />
         <activity android:name=".Quiz3Fr" />
         <activity android:name=".Quiz3Ar" />
         <activity android:name=".Quiz3AN" />
-        <activity android:name=".body_ang" />
-        <activity android:name=".clothes_fr" />
-        <activity android:name=".clothes_ar" />
-        <activity android:name=".clothes_ang" />
         <activity android:name=".Famqfr" />
         <activity android:name=".FamqAr" />
         <activity android:name=".FamqAn" />
-        <activity android:name=".Famag" />
-        <activity android:name=".Famar" />
-        <activity android:name=".Famfr" />
-        <activity android:name=".Jobsag" />
-        <activity android:name=".Jobsar" />
-        <activity android:name=".Jobsfr" />
         <activity android:name=".qjobsfr" />
         <activity android:name=".qjobsar" />
         <activity android:name=".qjobsag" />
@@ -87,27 +55,17 @@
         <activity android:name=".afamqan" />
         <activity android:name=".afamqar" />
         <activity android:name=".afamqfr" />
-        <activity
-            android:name=".AlphabetAng"
-            android:theme="@style/Theme.Design.NoActionBar" />
+
         <activity android:name=".AFA" />
         <activity
             android:name=".Quiz"
             android:theme="@style/Theme.Design.NoActionBar" />
-        <activity
-            android:name=".NumbersFr"
-            android:theme="@style/Theme.Design.NoActionBar" />
+
         <activity
             android:name=".ANQ"
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".levels"
-            android:theme="@style/Theme.Design.NoActionBar" />
-        <activity
-            android:name=".NumAn"
-            android:theme="@style/Theme.Design.NoActionBar" />
-        <activity
-            android:name=".NumAr"
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".Splash"

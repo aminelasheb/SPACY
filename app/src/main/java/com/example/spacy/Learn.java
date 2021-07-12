@@ -116,15 +116,15 @@ public class Learn extends AppCompatActivity {
         }
         if (level.equals("5")) {
             learn.setBackgroundResource(R.drawable.artf3);
-            if (Language.equals("Français")) { ident.setText("Fruits"); ident2.setText("Appuyez sur l'astronaute"); }
+            if (Language.equals("Français")) { ident.setText("Légumes"); ident2.setText("Appuyez sur l'astronaute"); }
 
-            else { ident.setText("Fruits"); ident2.setText("Tap the astronaut"); }
+            else { ident.setText("Vegetable"); ident2.setText("Tap the astronaut"); }
         }
         if (level.equals("5/2")) {
             learn.setBackgroundResource(R.drawable.artf3);
-            if (Language.equals("Français")) { ident.setText("Légumes"); ident2.setText("Appuyez sur l'astronaute"); }
+            if (Language.equals("Français")) { ident.setText("Fruits"); ident2.setText("Appuyez sur l'astronaute"); }
 
-            else { ident.setText("Vegetables"); ident2.setText("Tap the astronaut"); }
+            else { ident.setText("Fruits"); ident2.setText("Tap the astronaut"); }
         }
         if (level.equals("6")) {
             learn.setBackgroundResource(R.drawable.artf2);
@@ -148,50 +148,6 @@ public class Learn extends AppCompatActivity {
 //        Toast toast=Toast.makeText(getApplicationContext(),"Hello Javatpoint",Toast.LENGTH_SHORT);
 //        toast.show();
         loadcards();
-        if ((level.equals("1")) && languageLearn.equals("Ar")) {
-            vocals =new int[] {R.raw.alifara, R.raw.baaara, R.raw.taaara, R.raw.thaaara, R.raw.jimara, R.raw.haara, R.raw.khaara,
-                    R.raw.dalara, R.raw.dhalara, R.raw.raaara, R.raw.zayara, R.raw.sinara, R.raw.chineara, R.raw.sadara,
-                    R.raw.dhaara, R.raw.ttara, R.raw.dhaara, R.raw.ayenara, R.raw.ghayenara, R.raw.faaara, R.raw.kafara,
-                    R.raw.kafeara, R.raw.lamara, R.raw.mimara, R.raw.nonara,R.raw.haara, R.raw.wawara, R.raw.yaara,};
-
-        } else if ((level.equals("1/2")) && languageLearn.equals("Ar")) {
-            vocals = new int[]{R.raw.a00, R.raw.a01, R.raw.a02, R.raw.a03, R.raw.a04, R.raw.a05, R.raw.a06, R.raw.a07
-                    , R.raw.a08, R.raw.a09, R.raw.a10ar};
-        }
-        else if ((level.equals("2")) && languageLearn.equals("Ar")) {vocals = new int[]{R.raw.blackar, R.raw.whitear, R.raw.yellowar, R.raw.purplear, R.raw.redar,
-                R.raw.pinkar, R.raw.greyar, R.raw.greenar, R.raw.brownar, R.raw.bleuar, R.raw.orangear}; }
-        else if ((level.equals("2/2")) && languageLearn.equals("Ar")) {    vocals = new int[] {R.raw.squarear, R.raw.trianglear, R.raw.circlear, R.raw.rectanglear, R.raw.ovalear,
-                R.raw.starar, R.raw.rohmbusar, R.raw.pentagoar, R.raw.hexagonar, R.raw.heartar};
-        }
-        else if ((level.equals("3")) && languageLearn.equals("Ar")) {    vocals = new  int[]  {R.raw.tet, R.raw.vsg, R.raw.chvv, R.raw.ain, R.raw.anf,   R.raw.odon, R.raw.fam, R.raw.yad, R.raw.dra
-                , R.raw.sak, R.raw.sakk, R.raw.kadm, };
-        }
-        else if ((level.equals("4")) && languageLearn.equals("Ar")) {    vocals =new  int[] {R.raw.grp3, R.raw.grm, R.raw.dad3, R.raw.mom3, R.raw.bgb3, R.raw.sis3, R.raw.bbb3, R.raw.ancl3
-                , R.raw.ant3, R.raw.csns3};}
-        else if ((level.equals("7")) && languageLearn.equals("Ar")) { }
-        else if ((level.equals("3/2")) && languageLearn.equals("Ar")) {     vocals = new int[]{R.raw.kamis, R.raw.serwal, R.raw.hidaa, R.raw.kobaa, R.raw.kobaa, R.raw.kofazat,
-                R.raw.nadarat, R.raw.tanora, R.raw.miitaf, R.raw.badlat, R.raw.khatem,R.raw.saaa ,};
-        }
-        else if ((level.equals("4/2")) && languageLearn.equals("Ar")) { vocals =new  int[]{R.raw.arbas, R.raw.ardoc, R.raw.armom, R.raw.armm3, R.raw.plc3, R.raw.pmp3, R.raw.arc3, R.raw.mc3
-                , R.raw.hatt3, R.raw.khob, R.raw.hala9, R.raw.fac3, R.raw.falh, R.raw.say}; }
-        else if ((level.equals("5")) && languageLearn.equals("Ar")) {   vocals = new   int[]{R.raw.baazilaa, R.raw.badhinjan, R.raw.bassal, R.raw.brookli,R.raw.carottear, R.raw.champignonar, R.raw.felfel ,
-                R.raw.khass, R.raw.kheyar, R.raw.lifte,R.raw.maiisar, R.raw.pommedeterrear,R.raw.thoum, R.raw.tomattear};
-        }
-
-        else if ((level.equals("5/2")) && languageLearn.equals("Ar")) {  vocals =new   int[]   {R.raw.dattear, R.raw.ananasar, R.raw.cerisear, R.raw.citronar, R.raw.figuear, R.raw.fraisear, R.raw.mawza,
-                R.raw.grenadear, R.raw.mechmech, R.raw.orangear ,R.raw.khoukh, R.raw.pommear,R.raw.raisinar,  R.raw.pasthequear};
-        }
-
-        else if ((level.equals("6")) && languageLearn.equals("Ar"))   { vocals =new int[] {R.raw.catar, R.raw.dogar, R.raw.elephantar, R.raw.foxar,
-                R.raw.horsear, R.raw.lionar, R.raw.monkeyar, R.raw.pandaar, R.raw.snakear,
-
-                R.raw.rabitar};}
-
-
-        else if ((level.equals("7")) && languageLearn.equals("Ar"))  {  vocals =new int[] {R.raw.ha9iba, R.raw.korsi, R.raw.table, R.raw.mitra9a, R.raw.wisada, R.raw.hasoub, R.raw.sarir, R.raw.sa3a, R.raw.kitab, R.raw.kora, R.raw.mafati7, R.raw.hidae
-        };
-        }
-
         if ((level.equals("1")) && languageLearn.equals("An")) {
             vocals = new int[]{R.raw.aenglish, R.raw.benglish, R.raw.cenglish, R.raw.demglish, R.raw.eenglish, R.raw.fenglish, R.raw.genglish, R.raw.henglish
                     , R.raw.ienglish, R.raw.jenglish, R.raw.kenglish, R.raw.lenglish, R.raw.menglish, R.raw.nenglish, R.raw.oenglish, R.raw.penglish, R.raw.qenglish, R.raw.renglish
@@ -212,14 +168,14 @@ public class Learn extends AppCompatActivity {
                     R.raw.pinkk, R.raw.grey, R.raw.green, R.raw.brown, R.raw.bleu, R.raw.orangee};
 
         } else if ((level.equals("2")) && languageLearn.equals("Fr")) {
-            int[] vocals = {R.raw.noir, R.raw.blanc, R.raw.jaune, R.raw.violet, R.raw.rouge,
+            vocals =new int[]{R.raw.noir, R.raw.blanc, R.raw.jaune, R.raw.violet, R.raw.rouge,
                     R.raw.rose, R.raw.gris, R.raw.vert, R.raw.marron, R.raw.bleufr, R.raw.orangeee};
         } else if ((level.equals("2/2")) && languageLearn.equals("An")) {
             vocals = new int[]{R.raw.square, R.raw.triangle, R.raw.circle, R.raw.rectangle, R.raw.oval,
                     R.raw.star, R.raw.rohmbus, R.raw.pentagon, R.raw.hexagon, R.raw.heart};
 
         } else if ((level.equals("2/2")) && languageLearn.equals("Fr")) {
-            vocals =new  int[] {R.raw.carree, R.raw.trianglee, R.raw.cercle, R.raw.rectanglee, R.raw.ovale,
+            vocals = new int[]{R.raw.carree, R.raw.trianglee, R.raw.cercle, R.raw.rectanglee, R.raw.ovale,
                     R.raw.etoile, R.raw.losange, R.raw.pentagone, R.raw.hexagone, R.raw.coeur};
 
         } else if ((level.equals("3")) && languageLearn.equals("An")) {
@@ -252,13 +208,13 @@ public class Learn extends AppCompatActivity {
             vocals = new int[]{R.raw.astr, R.raw.doc, R.raw.nrc, R.raw.tch, R.raw.plc, R.raw.frft, R.raw.artan, R.raw.buil
                     , R.raw.lumbr, R.raw.chefan, R.raw.hair, R.raw.pst, R.raw.frm, R.raw.snn};
         } else if ((level.equals("5")) && languageLearn.equals("An")) {
-            vocals = new int[]{R.raw.ailan, R.raw.betteravean, R.raw.carottean, R.raw.concombrean, R.raw.laituean, R.raw.leekan,
+            vocals = new int[]{ R.raw.carottean, R.raw.concombrean, R.raw.laituean, R.raw.leekan,
                     R.raw.maiisan, R.raw.oberginean, R.raw.onionan, R.raw.pepperan, R.raw.pommedeterrean, R.raw.shampignonan,
                     R.raw.tomatean};
         } else if ((level.equals("5")) && languageLearn.equals("Fr")) {
-            vocals = new int[]{R.raw.tomatte, R.raw.pommedeterre, R.raw.poivron, R.raw.onion, R.raw.obergine, R.raw.courgette,
-                    R.raw.fenouil, R.raw.concombre, R.raw.choufleur, R.raw.champignon, R.raw.carotte, R.raw.brocoli,
-                    R.raw.betterave, R.raw.artichaut, R.raw.maiis, R.raw.petitpois, R.raw.aiie, R.raw.laitue};
+            vocals = new int[]{R.raw.tomatte, R.raw.pommedeterre, R.raw.poivron, R.raw.onion, R.raw.obergine,R.raw.maiis, R.raw.courgette,
+                    R.raw.concombre,R.raw.choufleur, R.raw.champignon, R.raw.carotte, R.raw.brocoli,
+                    R.raw.betterave, R.raw.artichaut,  R.raw.petitpois, R.raw.aiie, R.raw.laitue};
         } else if ((level.equals("5/2")) && languageLearn.equals("An")) {
             vocals = new int[]{R.raw.abricotan, R.raw.apple, R.raw.bannanean, R.raw.cerisean, R.raw.figan,
                     R.raw.kiwian, R.raw.mango, R.raw.melonan, R.raw.orangean, R.raw.pear, R.raw.peech, R.raw.pineapple, R.raw.pomegranarte,
@@ -271,13 +227,56 @@ public class Learn extends AppCompatActivity {
             vocals = new int[]{R.raw.cow, R.raw.dog, R.raw.elephant, R.raw.fox, R.raw.giraffe,
                     R.raw.horse, R.raw.lion, R.raw.monkey, R.raw.panda, R.raw.snake, R.raw.gorilla, R.raw.rabit};
         } else if ((level.equals("6")) && languageLearn.equals("Fr")) {
-            vocals = new int[]{R.raw.catfr, R.raw.cowfr, R.raw.dogfr, R.raw.elephantfr, R.raw.foxfr, R.raw.girafefr,
-                    R.raw.gorillafr, R.raw.horsefr, R.raw.lionfr, R.raw.monkeyfr, R.raw.rabitfr, R.raw.snakefr,};
+            vocals = new int[]{R.raw.catfr,  R.raw.dogfr, R.raw.elephantfr, R.raw.foxfr, R.raw.horsefr,R.raw.lionfr,R.raw.monkeyfr,
+
+                    R.raw.snakefr,    R.raw.rabitfr,};
         } else if ((level.equals("7")) && languageLearn.equals("An")) {
-            vocals =new int[]  {R.raw.backpack, R.raw.chair, R.raw.drums, R.raw.hammer, R.raw.pillow, R.raw.computer, R.raw.bed, R.raw.clock, R.raw.book, R.raw.ball, R.raw.keys, R.raw.shoes
+            vocals = new int[]{R.raw.backpack, R.raw.chair, R.raw.drums, R.raw.hammer, R.raw.pillow, R.raw.computer, R.raw.bed, R.raw.clock, R.raw.book, R.raw.ball, R.raw.keys, R.raw.shoes
             };
         } else if ((level.equals("7")) && languageLearn.equals("Fr")) {
-             vocals = new int[]{R.raw.sacados, R.raw.chaise, R.raw.batterie, R.raw.marteau, R.raw.oreiller, R.raw.ordinateur, R.raw.lit, R.raw.horloge, R.raw.livres, R.raw.ballon, R.raw.cles, R.raw.chaussure
+            vocals = new int[]{R.raw.sacados, R.raw.chaise, R.raw.marteau, R.raw.oreiller, R.raw.ordinateur, R.raw.lit, R.raw.horloge, R.raw.livres, R.raw.ballon, R.raw.cles, R.raw.chaussure
+            };
+        } else if ((level.equals("1")) && languageLearn.equals("Ar")) {
+            vocals = new int[]{R.raw.alifara, R.raw.baaara, R.raw.taaara, R.raw.thaaara, R.raw.jimara, R.raw.haara, R.raw.khaara,
+                    R.raw.dalara, R.raw.dhalara, R.raw.raaara, R.raw.zayara, R.raw.sinara, R.raw.chineara, R.raw.sadara,
+                    R.raw.dhaara, R.raw.ttara, R.raw.dhaara, R.raw.ayenara, R.raw.ghayenara, R.raw.faaara, R.raw.kafara,
+                    R.raw.kafeara, R.raw.lamara, R.raw.mimara, R.raw.nonara, R.raw.haara, R.raw.wawara, R.raw.yaara,};
+
+        } else if ((level.equals("1/2")) && languageLearn.equals("Ar")) {
+            vocals = new int[]{R.raw.a00, R.raw.a01, R.raw.a02, R.raw.a03, R.raw.a04, R.raw.a05, R.raw.a06, R.raw.a07
+                    , R.raw.a08, R.raw.a09, R.raw.a10ar};
+        } else if ((level.equals("2")) && languageLearn.equals("Ar")) {
+            vocals = new int[]{R.raw.blackar, R.raw.whitear, R.raw.yellowar, R.raw.purplear, R.raw.redar,
+                    R.raw.pinkar, R.raw.greyar, R.raw.greenar, R.raw.brownar, R.raw.bleuar, R.raw.orangear};
+        } else if ((level.equals("2/2")) && languageLearn.equals("Ar")) {
+            vocals = new int[]{R.raw.squarear, R.raw.trianglear, R.raw.circlear, R.raw.rectanglear, R.raw.ovalear,
+                    R.raw.starar, R.raw.rohmbusar, R.raw.pentagoar, R.raw.hexagonar, R.raw.heartar};
+        } else if ((level.equals("3")) && languageLearn.equals("Ar")) {
+            vocals = new int[]{R.raw.tet, R.raw.vsg, R.raw.chvv, R.raw.ain, R.raw.anf, R.raw.odon, R.raw.fam, R.raw.yad, R.raw.dra
+                    , R.raw.sak, R.raw.sakk, R.raw.kadm,};
+        } else if ((level.equals("4")) && languageLearn.equals("Ar")) {
+            vocals = new int[]{R.raw.grp3, R.raw.grm, R.raw.dad3, R.raw.mom3, R.raw.bgb3, R.raw.sis3, R.raw.bbb3, R.raw.ancl3
+                    , R.raw.ant3, R.raw.csns3};
+        } else if ((level.equals("7")) && languageLearn.equals("Ar")) {
+        } else if ((level.equals("3/2")) && languageLearn.equals("Ar")) {
+            vocals = new int[]{R.raw.kamis, R.raw.serwal, R.raw.hidaa, R.raw.kobaa, R.raw.kobaa, R.raw.kofazat,
+                    R.raw.nadarat, R.raw.tanora, R.raw.miitaf, R.raw.badlat, R.raw.khatem, R.raw.saaa,};
+        } else if ((level.equals("4/2")) && languageLearn.equals("Ar")) {
+            vocals = new int[]{R.raw.arbas, R.raw.ardoc, R.raw.armom, R.raw.armm3, R.raw.plc3, R.raw.pmp3, R.raw.arc3, R.raw.mc3
+                    , R.raw.hatt3, R.raw.khob, R.raw.hala9, R.raw.fac3, R.raw.falh, R.raw.say};
+        } else if ((level.equals("5")) && languageLearn.equals("Ar")) {
+            vocals = new int[]{R.raw.baazilaa, R.raw.badhinjan, R.raw.bassal, R.raw.brookli, R.raw.carottear, R.raw.champignonar, R.raw.felfel,
+                    R.raw.khass, R.raw.kheyar, R.raw.lifte, R.raw.maiisar, R.raw.pommedeterrear, R.raw.thoum, R.raw.tomattear};
+        } else if ((level.equals("5/2")) && languageLearn.equals("Ar")) {
+            vocals = new int[]{R.raw.dattear, R.raw.ananasar, R.raw.cerisear, R.raw.citronar, R.raw.figuear, R.raw.fraisear, R.raw.mawza,
+                    R.raw.grenadear, R.raw.mechmech, R.raw.orangear, R.raw.khoukh, R.raw.pommear, R.raw.raisinar, R.raw.pasthequear};
+        } else if ((level.equals("6")) && languageLearn.equals("Ar")) {
+            vocals = new int[]{R.raw.catar, R.raw.dogar, R.raw.elephantar, R.raw.foxar,
+                    R.raw.horsear, R.raw.lionar, R.raw.monkeyar, R.raw.pandaar, R.raw.snakear,
+
+                    R.raw.rabitar};
+        } else if ((level.equals("7")) && languageLearn.equals("Ar")) {
+            vocals = new int[]{R.raw.ha9iba, R.raw.korsi, R.raw.table, R.raw.mitra9a, R.raw.wisada, R.raw.hasoub, R.raw.sarir, R.raw.sa3a, R.raw.kitab, R.raw.kora, R.raw.mafati7, R.raw.hidae
             };
         }
 
@@ -745,7 +744,6 @@ public class Learn extends AppCompatActivity {
             aymenmodelArrayList.add(new aymenmodel("farmer", R.drawable.agriculteur));
             aymenmodelArrayList.add(new aymenmodel("sinner", R.drawable.pecheur));
         } else if ((level.equals("5")) && languageLearn.equals("An")) {
-            aymenmodelArrayList.add(new aymenmodel("Garlic", R.drawable.ail));
             aymenmodelArrayList.add(new aymenmodel("Carrot", R.drawable.carotte));
             aymenmodelArrayList.add(new aymenmodel("Cucumber", R.drawable.concombre));
             aymenmodelArrayList.add(new aymenmodel("Lettuce", R.drawable.laitue));
@@ -831,13 +829,12 @@ public class Learn extends AppCompatActivity {
             aymenmodelArrayList.add(new aymenmodel("Rabbit", R.drawable.rabbit));
         } else if ((level.equals("6")) && languageLearn.equals("Fr")) {
             aymenmodelArrayList.add(new aymenmodel("Chat", R.drawable.cat));
-            aymenmodelArrayList.add(new aymenmodel("CHien", R.drawable.dog));
+            aymenmodelArrayList.add(new aymenmodel("Chien", R.drawable.dog));
             aymenmodelArrayList.add(new aymenmodel("Elephant", R.drawable.elepant));
             aymenmodelArrayList.add(new aymenmodel("Renard", R.drawable.fox));
             aymenmodelArrayList.add(new aymenmodel("Cheval", R.drawable.horse));
             aymenmodelArrayList.add(new aymenmodel("Lyon", R.drawable.lion));
-            aymenmodelArrayList.add(new aymenmodel("jcp", R.drawable.monkey));
-            aymenmodelArrayList.add(new aymenmodel("Panda", R.drawable.panda));
+            aymenmodelArrayList.add(new aymenmodel("singe", R.drawable.monkey));
             aymenmodelArrayList.add(new aymenmodel("Serpant", R.drawable.snake));
             aymenmodelArrayList.add(new aymenmodel("Lappin", R.drawable.rabbit));
         } else if ((level.equals("7")) && languageLearn.equals("An")) {
@@ -856,7 +853,6 @@ public class Learn extends AppCompatActivity {
         } else if ((level.equals("7")) && languageLearn.equals("Fr")) {
             aymenmodelArrayList.add(new aymenmodel("Sacados", R.drawable.backpack));
             aymenmodelArrayList.add(new aymenmodel("Chaise", R.drawable.chair));
-            aymenmodelArrayList.add(new aymenmodel("Tambours", R.drawable.drum));
             aymenmodelArrayList.add(new aymenmodel("Marteau", R.drawable.hammer));
             aymenmodelArrayList.add(new aymenmodel("Oreiller", R.drawable.pillow));
             aymenmodelArrayList.add(new aymenmodel("L'ordinateur", R.drawable.pc));
@@ -867,7 +863,6 @@ public class Learn extends AppCompatActivity {
             aymenmodelArrayList.add(new aymenmodel("Clés", R.drawable.keys));
             aymenmodelArrayList.add(new aymenmodel("Chaussures", R.drawable.shoes));
         }
-
 
         adaptervpp = new adaptervp(this, aymenmodelArrayList);
 
